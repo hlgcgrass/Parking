@@ -112,7 +112,30 @@ function updateMark(type, id, on) {
   try { wx.setStorageSync(MARKS_KEY, marks); } catch (e) {}
 }
 
+// 同步静态缓存里的点赞数：详情页列表和收藏列表可能通过不同索引读取同一车场。
+// 同时更新原始车场数据、索引副本并落盘，避免返回页面后又读回旧的 0。
+function updateLikeCount(id, count) {
+  if (!mem) loadStaticFromStorage();
+  if (!mem) return;
+
+  const value = Math.max(0, Number(count) || 0);
+  const sameId = pk => pk && String(pk.id) === String(id);
+  (mem.parkings || []).filter(sameId).forEach(pk => { pk.like_count = value; });
+
+  if (mem._maps) {
+    const groups = mem._maps.parkingsByPlace || {};
+    Object.keys(groups).forEach(key => {
+      (groups[key] || []).filter(sameId).forEach(pk => { pk.like_count = value; });
+    });
+    if (mem._maps.parkingById && mem._maps.parkingById[id]) {
+      mem._maps.parkingById[id].like_count = value;
+    }
+  }
+
+  try { wx.setStorageSync(STATIC_KEY, mem); } catch (e) {}
+}
+
 module.exports = {
   ensureStatic, isReady, getStatic,
-  ensureUserMarks, getMarks, isMarked, updateMark
+  ensureUserMarks, getMarks, isMarked, updateMark, updateLikeCount
 };

@@ -162,18 +162,29 @@ module.exports = {
     return r;
   }),
   getFavorites: (userId) => {
-    if (localReady()) {
+    const getLocalFavorites = () => {
+      if (!localReady()) return null;
       const { fav } = cache.getMarks();
+      const favoriteIds = Array.from(fav || []);
       const s = cache.getStatic();
       const maps = query.ensureMaps(s);
-      const list = fav
+      const list = favoriteIds
         .map(id => maps.parkingById[id])
         .filter(Boolean)
         .map(pk => Object.assign({}, pk, { like_count: pk.like_count || 0 }));
       // 本地标记为空，或都能映射到车位时直接用本地；否则回退云
-      if (fav.length === 0 || list.length === fav.length) return Promise.resolve({ list });
-    }
-    return call('favorites', `/api/favorites/${userId}`);
+      return favoriteIds.length === 0 || list.length === favoriteIds.length ? { list } : null;
+    };
+
+    if (!localReady()) return call('favorites', `/api/favorites/${userId}`);
+
+    // 登录后标记刷新是异步的；进入收藏页前先等最新收藏 ID 到位。
+    return cache.ensureUserMarks()
+      .then(() => {
+        const local = getLocalFavorites();
+        return local || call('favorites', `/api/favorites/${userId}`);
+      })
+      .catch(() => call('favorites', `/api/favorites/${userId}`));
   },
   toggleFavorite: (data) => {
     const id = data.parking_id;
@@ -192,11 +203,8 @@ module.exports = {
     cache.updateMark('like', id, on); // 乐观更新
     return call('like', '/api/likes', data, 'POST').then(r => {
       cache.updateMark('like', id, !!r.liked);
-      // 同步端点上缓存里该车场的 like_count（乐观 +1/-1，避免等下次 bootstrap）
-      const s = cache.getStatic();
-      if (s && s._maps && s._maps.parkingById[id]) {
-        s._maps.parkingById[id].like_count = (s._maps.parkingById[id].like_count || 0) + (on ? 1 : -1);
-      }
+      // 以服务端计数为准，并同步详情列表、索引和本地持久缓存。
+      cache.updateLikeCount(id, r.like_count);
       return r;
     }).catch(e => { cache.updateMark('like', id, before); throw e; });
   },

@@ -419,7 +419,16 @@ async function toggleLike(openid, parkingId) {
     liked = true;
     await incParkingLike(parkingId, 1);
   }
-  return ok({ liked, like_count: await countLikes(parkingId) });
+  const likeCount = await countLikes(parkingId);
+  // 云函数实例也会缓存车场数据；点赞后同步两份索引，避免同一实例再次打开详情仍返回旧数量。
+  const cached = cache.parkingById[parkingId];
+  if (cached) cached.like_count = likeCount;
+  for (const rows of Object.values(cache.parkingsByPlace)) {
+    for (const pk of rows) {
+      if (String(pk.id) === String(parkingId)) pk.like_count = likeCount;
+    }
+  }
+  return ok({ liked, like_count: likeCount });
 }
 
 async function listFavorites(openid) {
