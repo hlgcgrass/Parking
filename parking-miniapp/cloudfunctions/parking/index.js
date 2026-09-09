@@ -22,6 +22,7 @@ cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV });
 const db = cloud.database();
 const _ = db.command;
 const BUNDLED_DATA = require('./data.json');
+const PLACE_IMAGES = require('./place-images.js');
 
 // ---------- 集合名 ----------
 const C_META = 'p_meta';        // 单文档：cities / categories / exported_at / version
@@ -322,12 +323,13 @@ async function getDetail(id, lat, lng, sort, openid) {
   }
 
   const c0 = city0();
+  const image = PLACE_IMAGES[place.id] || {};
   return {
     id: place.id, name: place.name, category: place.category, address: place.address,
     district: place.district, city_name: (c0 && c0.name) || '广州',
     city_code: (c0 && c0.code) || '440100', lng: place.lng, lat: place.lat,
     heat: place.heat, summary: place.summary, tags: place.tags || [], area_tips: place.area_tips,
-    updated_at: place.updated_at, parkings: parkingList, tips: cache.tipsByPlace[place.id] || []
+    updated_at: place.updated_at, ...image, parkings: parkingList, tips: cache.tipsByPlace[place.id] || []
   };
 }
 

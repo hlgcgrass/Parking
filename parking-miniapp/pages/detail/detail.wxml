@@ -13,6 +13,12 @@
     <view class="fs-caption t3 mt-md">{{place.address}}</view>
   </view>
 
+  <!-- 地点形象图 -->
+  <view class="place-photo" wx:if="{{place.image_url}}">
+    <image class="place-photo__image" src="{{place.image_url}}" mode="aspectFill" lazy-load="true" />
+    <view class="place-photo__caption">{{place.image_alt}} · {{place.image_credit}}</view>
+  </view>
+
   <!-- 区域攻略 -->
   <view class="pad" wx:if="{{place.area_tips}}">
     <view class="tipbar mt-md">

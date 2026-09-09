@@ -26,6 +26,7 @@ const CONF_TEXT = {
   medium: '来源：公开信息整理',
   low: '信息未核实，以现场为准'
 };
+const PLACE_IMAGES = require('./place-images.js');
 
 // 构建索引（parkingsByPlace / parkingById / tipsByPlace），结果缓存到 s._maps 避免重复计算
 function ensureMaps(s) {
@@ -142,12 +143,13 @@ function getDetailStatic(s, id, lat, lng, sort, favSet, likeSet) {
   }
 
   const c0 = city0(s);
+  const image = PLACE_IMAGES[place.id] || {};
   return {
     id: place.id, name: place.name, category: place.category, address: place.address,
     district: place.district, city_name: (c0 && c0.name) || '广州',
     city_code: (c0 && c0.code) || '440100', lng: place.lng, lat: place.lat,
     heat: place.heat, summary: place.summary, tags: place.tags || [], area_tips: place.area_tips,
-    updated_at: place.updated_at, parkings: parkingList, tips: maps.tipsByPlace[place.id] || []
+    updated_at: place.updated_at, ...image, parkings: parkingList, tips: maps.tipsByPlace[place.id] || []
   };
 }
 

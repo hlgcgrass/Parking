@@ -4,6 +4,25 @@
   border-radius: 0 0 32rpx 32rpx;
 }
 
+.place-photo {
+  margin: 24rpx 32rpx 0;
+  overflow: hidden;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4rpx 16rpx rgba(16, 62, 55, 0.06);
+}
+.place-photo__image {
+  display: block;
+  width: 100%;
+  height: 320rpx;
+}
+.place-photo__caption {
+  padding: 14rpx 20rpx 16rpx;
+  color: var(--text-4);
+  font-size: 20rpx;
+  line-height: 1.4;
+}
+
 .tipbar__dot {
   width: 12rpx;
   height: 12rpx;
