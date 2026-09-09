@@ -4,6 +4,8 @@
 # Local tooling and machine-specific project settings
 .workbuddy/
 parking-miniapp/project.private.config.json
+.xhs-edge-profile/
+server/xhs-captures.json
 
 # Local runtime data and SQLite temporary files
 deploy/store.json
