@@ -118,7 +118,7 @@ function nearbyPlaces(s, lat, lng, radius = 3000, limit = 20) {
     });
 }
 
-function getDetailStatic(s, id, lat, lng, sort, favSet, likeSet) {
+function getDetailStatic(s, id, lat, lng, sort, favSet, likeSet, imageMap) {
   const maps = ensureMaps(s);
   const place = (s.places || []).find(p => p.id === Number(id));
   if (!place) return null;
@@ -143,7 +143,7 @@ function getDetailStatic(s, id, lat, lng, sort, favSet, likeSet) {
   }
 
   const c0 = city0(s);
-  const image = PLACE_IMAGES[place.id] || {};
+  const image = Object.assign({}, PLACE_IMAGES[place.id] || {}, imageMap && (imageMap[place.id] || imageMap[String(place.id)]) || {});
   return {
     id: place.id, name: place.name, category: place.category, address: place.address,
     district: place.district, city_name: (c0 && c0.name) || '广州',

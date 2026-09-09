@@ -15,7 +15,7 @@
 
   <!-- 地点形象图 -->
   <view class="place-photo" wx:if="{{place.image_url}}">
-    <image class="place-photo__image" src="{{place.image_url}}" mode="aspectFill" lazy-load="true" />
+    <image class="place-photo__image" src="{{place.image_file_id || place.image_url}}" mode="aspectFill" lazy-load="true" />
     <view class="place-photo__caption">{{place.image_alt}} · {{place.image_credit}}</view>
   </view>
 
@@ -46,7 +46,6 @@
           <view class="grow">
             <view class="row">
               <text class="item__title ellipsis">{{item.name}}</text>
-              <view wx:if="{{item.confidence === 'low'}}" class="badge badge--warn" style="margin-left:16rpx">待核实</view>
             </view>
             <view class="fs-caption t3 mt-sm">
               {{item.type}}<text wx:if="{{item.scale}}"> · {{item.scale}}</text>
@@ -55,9 +54,8 @@
 
           <view class="col" style="align-items:flex-end;margin-left:24rpx">
             <view wx:if="{{item.min_price_hour}}">
-              <text wx:if="{{item.confidence === 'low'}}" class="price__tilde">~</text>
               <text class="price price--md">¥{{item.min_price_hour}}</text>
-              <text class="price__unit">/h起</text>
+              <text class="price__unit">/h</text>
             </view>
             <text wx:else class="fs-tag t4">价格待补充</text>
           </view>
@@ -71,21 +69,23 @@
 
         <view wx:if="{{item.tips}}" class="fs-caption t2 mt-md park-tip">{{item.tips}}</view>
 
-        <!-- 收藏 / 点赞 -->
-        <view class="acts mt-md">
-          <view class="act {{item.is_favorited ? 'act--on' : ''}}" catchtap="onFavorite" data-index="{{index}}">
-            <text class="act__ico">★</text>
-            <text class="act__txt">{{item.is_favorited ? '已收藏' : '收藏'}}</text>
+        <view class="card__bottom mt-md">
+          <view class="fee-toggle row">
+            <text class="fs-caption tp">{{item._open ? '收起收费明细' : '查看收费明细'}}</text>
+            <view class="arrow {{item._open ? 'arrow--up' : ''}}"></view>
           </view>
-          <view class="act {{item.is_liked ? 'act--like' : ''}}" catchtap="onLike" data-index="{{index}}">
-            <text class="act__ico">♥</text>
-            <text class="act__txt">{{item.like_count || 0}}</text>
-          </view>
-        </view>
 
-        <view class="row mt-md">
-          <text class="fs-caption tp">{{item._open ? '收起收费明细' : '查看收费明细'}}</text>
-          <view class="arrow {{item._open ? 'arrow--up' : ''}}"></view>
+          <!-- 收藏 / 点赞 -->
+          <view class="acts">
+            <view class="act {{item.is_favorited ? 'act--on' : ''}}" catchtap="onFavorite" data-index="{{index}}">
+              <text class="act__ico">{{item.is_favorited ? '★' : '☆'}}</text>
+              <text class="act__txt">{{item.is_favorited ? '已收藏' : '收藏'}}</text>
+            </view>
+            <view class="act {{item.is_liked ? 'act--like' : ''}}" catchtap="onLike" data-index="{{index}}">
+              <text class="act__ico">{{item.is_liked ? '♥' : '♡'}}</text>
+              <text class="act__txt">{{item.like_count || 0}}</text>
+            </view>
+          </view>
         </view>
       </view>
 

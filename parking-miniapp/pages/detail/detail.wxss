@@ -66,32 +66,54 @@
 }
 .arrow--up { transform: rotate(-135deg); }
 
+/* 卡片底部操作区 */
+.card__bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20rpx;
+  border-top: 1rpx solid var(--line);
+}
+.fee-toggle {
+  flex: 1;
+  min-width: 0;
+}
+
 /* 收藏 / 点赞 */
 .acts {
   display: flex;
   flex-direction: row;
-  gap: 20rpx;
+  align-items: center;
+  gap: 12rpx;
+  flex-shrink: 0;
+  margin-left: 20rpx;
 }
 .act {
   height: 64rpx;
-  padding: 0 28rpx;
-  border-radius: var(--radius-md);
-  background: var(--bg-page);
+  min-width: 108rpx;
+  padding: 0 18rpx;
+  border-radius: 40rpx;
+  background: #FAFCFB;
   display: flex;
   align-items: center;
+  justify-content: center;
   border: 1rpx solid transparent;
   transition: all 0.15s ease;
 }
 .act:active { transform: scale(0.96); }
 .act__ico {
-  font-size: 30rpx;
+  font-size: 28rpx;
   color: var(--text-3);
-  margin-right: 10rpx;
+  margin-right: 8rpx;
   line-height: 1;
 }
 .act__txt {
-  font-size: 26rpx;
+  font-size: 24rpx;
   color: var(--text-2);
+}
+.act:not(.act--on):not(.act--like) {
+  border-color: var(--line);
 }
 .act--on {
   background: var(--primary-50);

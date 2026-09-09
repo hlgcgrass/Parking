@@ -17,6 +17,8 @@
  * 返回格式与旧版保持一致：{ code:0, message:'success', data } / { code:-1, message }
  */
 const cloud = require('wx-server-sdk');
+const fs = require('fs');
+const path = require('path');
 cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV });
 
 const db = cloud.database();
@@ -229,6 +231,65 @@ async function incParkingLike(parkingId, delta) {
     }
   } catch (e) { /* 计数异常不影响点赞主流程 */ }
 }
+
+let placeImageSyncPromise = null;
+function publicPlaceImage(id, fileID) {
+  const meta = PLACE_IMAGES[id] || {};
+  return {
+    image_file_id: fileID || meta.image_file_id || '',
+    image_storage_path: meta.cloud_path || '',
+    image_url: meta.image_url || '',
+    image_alt: meta.image_alt || '',
+    image_credit: meta.image_credit || '',
+    image_source_url: meta.image_source_url || ''
+  };
+}
+
+// 小程序启动时同步地点图片；如果旧记录仍指向数字文件名，也会迁移到按地点命名的新路径。
+async function syncPlaceImages() {
+  if (placeImageSyncPromise) return placeImageSyncPromise;
+  placeImageSyncPromise = (async () => {
+    const result = {};
+    const entries = Object.entries(PLACE_IMAGES);
+    let cursor = 0;
+    async function worker() {
+      while (cursor < entries.length) {
+        const current = entries[cursor++];
+        const [id, meta] = current;
+      const placeId = Number(id);
+      const existing = await safe(
+        () => db.collection(C_PLACE).where({ id: placeId }).limit(1).get(),
+        { data: [] }
+      );
+      const doc = existing.data && existing.data[0];
+      let fileID = doc && doc.image_file_id;
+      const needsNamedPath = !doc || doc.image_storage_path !== meta.cloud_path;
+      if (!fileID || needsNamedPath) {
+        const filePath = path.join(__dirname, meta.asset_path);
+        const uploaded = await cloud.uploadFile({
+          cloudPath: meta.cloud_path,
+          fileContent: fs.createReadStream(filePath)
+        });
+        fileID = uploaded.fileID;
+        if (doc) {
+          await db.collection(C_PLACE).doc(doc._id).update({
+            data: publicPlaceImage(placeId, fileID)
+          });
+        }
+      }
+      const image = publicPlaceImage(placeId, fileID);
+      result[placeId] = image;
+      const cachedPlace = cache.places.find(p => p.id === placeId);
+      if (cachedPlace) Object.assign(cachedPlace, image);
+      }
+    }
+    // 受控并发：避免 54 张图串行上传超时，也避免一次性打满云存储连接。
+    await Promise.all(Array.from({ length: Math.min(8, entries.length) }, () => worker()));
+    return result;
+  })();
+  try { return await placeImageSyncPromise; } finally { placeImageSyncPromise = null; }
+}
+
 async function countFavorites(openid) {
   try {
     const r = await db.collection(C_FAV).where({ openid }).count();
@@ -323,7 +384,8 @@ async function getDetail(id, lat, lng, sort, openid) {
   }
 
   const c0 = city0();
-  const image = PLACE_IMAGES[place.id] || {};
+  const imageMeta = PLACE_IMAGES[place.id] || {};
+  const image = publicPlaceImage(place.id, place.image_file_id || imageMeta.image_file_id);
   return {
     id: place.id, name: place.name, category: place.category, address: place.address,
     district: place.district, city_name: (c0 && c0.name) || '广州',
@@ -563,6 +625,10 @@ exports.main = async (event = {}, context) => {
         const l = await safe(() => db.collection(C_LIKE).where({ openid }).limit(100).get(), { data: [] });
         return ok({ favorites: (f.data || []).map(x => x.parking_id), likes: (l.data || []).map(x => x.parking_id) });
       }
+
+      case 'sync-place-images':
+        await loadStatic();
+        return ok(await syncPlaceImages());
 
       case 'categories': {
         await loadStatic();

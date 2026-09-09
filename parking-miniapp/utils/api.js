@@ -132,7 +132,7 @@ module.exports = {
   getPlaceDetail: (id, lat, lng, userId, sort) => {
     if (localReady()) {
       const { fav, like } = cache.getMarks();
-      const d = query.getDetailStatic(cache.getStatic(), id, lat, lng, sort, fav, like);
+      const d = query.getDetailStatic(cache.getStatic(), id, lat, lng, sort, fav, like, cache.getPlaceImages());
       if (d) return Promise.resolve(d); // 命中本地；未找到才回退云（可能数据尚未同步）
     }
     return call('place', `/api/places/${id}`, { lat, lng, userId, sort });
@@ -152,6 +152,10 @@ module.exports = {
 
   // ===== 写操作 / 日志：走云 =====
   submitReport: (data) => call('report', '/api/reports', data, 'POST'),
+  syncPlaceImages: () => {
+    if (!useCloud) return Promise.reject(new Error('图片迁移仅支持云开发通道'));
+    return call('sync-place-images', '/api/place-images', {}, 'POST');
+  },
   logSearch: (keyword, resultCount, cityId) =>
     call('search-log', '/api/search-log', { keyword, result_count: resultCount, city_id: cityId }, 'POST'),
 

@@ -4,7 +4,7 @@
   "description": "停车攻略数据服务：静态停车数据 + 云数据库互动数据",
   "main": "index.js",
   "cloudfunction-config": {
-    "timeout": 20,
+    "timeout": 60,
     "memorySize": 256
   },
   "dependencies": {
