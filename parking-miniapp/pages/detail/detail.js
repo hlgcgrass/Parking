@@ -122,7 +122,10 @@ Page({
   // 未登录：引导去「我的」页，通过微信授权登录
   gotoLogin() {
     wx.showToast({ title: '登录后即可操作，去「我的」页登录', icon: 'none' });
-    setTimeout(() => wx.switchTab({ url: '/pages/mine/mine' }), 800);
+    setTimeout(() => {
+      app.globalData.tabBar.current = 2;
+      wx.switchTab({ url: '/pages/index/index' });
+    }, 800);
   },
 
   openMap() {

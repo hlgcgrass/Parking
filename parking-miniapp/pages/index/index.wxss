@@ -1,3 +1,6 @@
+@import "../nearby/nearby.wxss";
+@import "../mine/mine.wxss";
+
 .header {
   background: #FFFFFF;
   padding: 24rpx 32rpx 28rpx;

@@ -33,10 +33,14 @@ Page({
   },
 
   goExplore() {
+    const app = getApp();
+    app.globalData.tabBar.current = 0;
     wx.switchTab({ url: '/pages/index/index' });
   },
 
   goLogin() {
-    wx.switchTab({ url: '/pages/mine/mine' });
+    const app = getApp();
+    app.globalData.tabBar.current = 2;
+    wx.switchTab({ url: '/pages/index/index' });
   }
 });

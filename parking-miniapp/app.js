@@ -6,11 +6,9 @@ App({
     location: null,      // { lat, lng }
     locationReady: false,
     cloudReady: false,
-    // Tab 切换事务：pendingIndex 只用于目标页组件首帧定位，不直接改当前页 UI。
+    // 单页壳内的当前 Tab。
     tabBar: {
-      current: 0,
-      pendingIndex: null,
-      switching: false
+      current: 0
     }
   },
 
@@ -18,24 +16,6 @@ App({
     this.initCloud();
     this.requestLocation();
     this.warmCache();
-    this.preloadTabPages();
-  },
-
-  // 首屏稳定后尝试预加载两个 Tab，减少首次进入页面时创建自定义 TabBar 的抖动。
-  // 部分基础库没有 wx.preloadPage，因此必须做能力检测并静默跳过。
-  preloadTabPages() {
-    if (typeof wx.preloadPage !== 'function') return;
-
-    const paths = ['/pages/nearby/nearby', '/pages/mine/mine'];
-    setTimeout(() => {
-      paths.forEach(url => {
-        try {
-          wx.preloadPage({ url });
-        } catch (e) {
-          // 预加载只是体验优化，失败时不影响正常切 Tab。
-        }
-      });
-    }, 200);
   },
 
   // 启动预热端上缓存：拉一次全量静态数据 + 用户收藏/点赞标记，之后浏览全程本地计算
