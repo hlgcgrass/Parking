@@ -154,7 +154,16 @@ try {
 
     $snapshot = Get-VisiblePageSnapshot -Socket $socket -CommandId ([ref]$commandId)
     $blockedText = [string]$snapshot.text
-    $blocked = $blockedText -match 'captcha|login|restricted|too frequent|failed to load|security check'
+    $blockedSignals = @(
+      'captcha', 'login', 'restricted', 'too frequent', 'failed to load', 'security check',
+      ([string]::Concat([char]0x767b, [char]0x5f55, [char]0x540e, [char]0x67e5, [char]0x770b)), # 登录后查看
+      ([string]::Concat([char]0x9a8c, [char]0x8bc1, [char]0x7801)), # 验证码
+      ([string]::Concat([char]0x8bbf, [char]0x95ee, [char]0x53d7, [char]0x9650)), # 访问受限
+      ([string]::Concat([char]0x64cd, [char]0x4f5c, [char]0x9891, [char]0x7e41)), # 操作频繁
+      ([string]::Concat([char]0x52a0, [char]0x8f7d, [char]0x5931, [char]0x8d25)), # 加载失败
+      ([string]::Concat([char]0x5b89, [char]0x5168, [char]0x9a8c, [char]0x8bc1))  # 安全验证
+    )
+    $blocked = @($blockedSignals | Where-Object { $blockedText.Contains($_) }).Count -gt 0
 
     $captures += [ordered]@{
       keyword = $keyword
