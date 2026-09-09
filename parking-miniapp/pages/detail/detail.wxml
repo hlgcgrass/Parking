@@ -28,10 +28,7 @@
   <view class="section">
     <view class="between">
       <text class="section__title">停车场</text>
-      <view class="sortseg">
-        <view class="sortseg__item {{sort === 'recommend' ? 'is-active' : ''}}" data-sort="recommend" bindtap="switchSort">推荐</view>
-        <view class="sortseg__item {{sort === 'like' ? 'is-active' : ''}}" data-sort="like" bindtap="switchSort">点赞</view>
-      </view>
+      <text class="section__more">按点赞量排序</text>
     </view>
   </view>
 
@@ -43,7 +40,6 @@
           <view class="grow">
             <view class="row">
               <text class="item__title ellipsis">{{item.name}}</text>
-              <view wx:if="{{item.is_recommended}}" class="badge badge--primary" style="margin-left:16rpx">推荐</view>
               <view wx:if="{{item.confidence === 'low'}}" class="badge badge--warn" style="margin-left:16rpx">待核实</view>
             </view>
             <view class="fs-caption t3 mt-sm">

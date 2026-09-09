@@ -47,31 +47,6 @@
 }
 .arrow--up { transform: rotate(-135deg); }
 
-/* 排序胶囊 */
-.sortseg {
-  display: flex;
-  flex-direction: row;
-  background: var(--bg-fill);
-  border-radius: 28rpx;
-  padding: 4rpx;
-}
-.sortseg__item {
-  height: 52rpx;
-  padding: 0 28rpx;
-  border-radius: 24rpx;
-  display: flex;
-  align-items: center;
-  font-size: 24rpx;
-  color: var(--text-3);
-  transition: all 0.18s ease;
-}
-.sortseg__item.is-active {
-  background: #FFFFFF;
-  color: var(--primary-600);
-  font-weight: 500;
-  box-shadow: 0 1rpx 4rpx rgba(16, 62, 55, 0.08);
-}
-
 /* 收藏 / 点赞 */
 .acts {
   display: flex;

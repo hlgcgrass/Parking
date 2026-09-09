@@ -10,8 +10,7 @@ Page({
     id: null,
     place: null,
     errorText: '',
-    hoursOptions: HOURS_OPTIONS,
-    sort: 'recommend'
+    hoursOptions: HOURS_OPTIONS
   },
 
   onLoad(options) {
@@ -33,7 +32,7 @@ Page({
       loc ? loc.lat : undefined,
       loc ? loc.lng : undefined,
       userId,
-      this.data.sort === 'like' ? 'like' : undefined
+      'like'
     )
       .then(place => {
         if (!place || !Array.isArray(place.parkings)) {
@@ -60,13 +59,6 @@ Page({
 
   retryLoad() {
     if (this.data.id != null) this.loadDetail();
-  },
-
-  switchSort(e) {
-    const sort = e.currentTarget.dataset.sort;
-    if (sort === this.data.sort) return;
-    this.setData({ sort });
-    this.loadDetail();
   },
 
   toggleFee(e) {
