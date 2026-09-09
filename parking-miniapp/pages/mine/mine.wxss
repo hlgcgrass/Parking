@@ -1,0 +1,103 @@
+.avatar {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--bg-fill);
+}
+.avatar--ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  color: var(--text-3);
+}
+
+.stats-card {
+  display: flex;
+  flex-direction: row;
+  padding: 32rpx 16rpx;
+}
+.stat {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+.stat:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 16rpx;
+  bottom: 16rpx;
+  width: 1rpx;
+  background: var(--line);
+}
+
+.about-text { line-height: 1.7; }
+
+/* ============ 登录授权卡 ============ */
+.login-card { padding-top: 32rpx; padding-bottom: 32rpx; }
+.login-icon {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-50);
+  color: var(--primary-600);
+  font-size: 24rpx;
+}
+.profile-avatar {
+  width: 96rpx;
+  height: 96rpx;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  line-height: 1;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.profile-avatar .avatar,
+.profile-avatar .avatar--ph {
+  width: 96rpx;
+  height: 96rpx;
+}
+.avatar--ph { background: var(--primary-50); }
+.avatar--char { font-size: 36rpx; color: var(--primary-600); }
+
+/* 未登录卡：可点头像/按钮拉起微信原生头像选择 */
+.avatar-pick-ph {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  font-size: 32rpx;
+}
+.profile-avatar::after { border: none; }
+
+/* 昵称输入（type=nickname，键盘可一键填微信昵称） */
+.nick-input {
+  width: 100%;
+  height: 56rpx;
+  line-height: 56rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  color: var(--text-1);
+  background: var(--bg-fill);
+  border-radius: 28rpx;
+}
+.nick-ph { color: var(--text-4); font-size: 24rpx; }
+.nick-edit {
+  margin-left: 16rpx;
+  font-size: 22rpx;
+  color: var(--text-4);
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+  background: var(--bg-fill);
+}
+
+.btn-block { width: 100%; }
+.login-note { line-height: 1.6; }

@@ -1,0 +1,126 @@
+.hero {
+  background: #FFFFFF;
+  padding: 32rpx;
+  border-radius: 0 0 32rpx 32rpx;
+}
+
+.tipbar__dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: var(--primary-400);
+  margin-right: 16rpx;
+  margin-top: 14rpx;
+  flex-shrink: 0;
+}
+
+.park-tip {
+  background: var(--bg-page);
+  border-radius: var(--radius-md);
+  padding: 16rpx 20rpx;
+  line-height: 1.6;
+}
+
+.fee-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14rpx 0;
+  border-bottom: 1rpx solid var(--line);
+}
+.fee-row:last-child { border-bottom: none; }
+
+.calc {
+  background: var(--bg-page);
+  border-radius: var(--radius-lg);
+  padding: 24rpx;
+}
+
+.arrow {
+  width: 14rpx;
+  height: 14rpx;
+  border-right: 2rpx solid var(--primary-600);
+  border-bottom: 2rpx solid var(--primary-600);
+  transform: rotate(45deg);
+  margin-left: 8rpx;
+  transition: transform 0.2s;
+}
+.arrow--up { transform: rotate(-135deg); }
+
+/* 排序胶囊 */
+.sortseg {
+  display: flex;
+  flex-direction: row;
+  background: var(--bg-fill);
+  border-radius: 28rpx;
+  padding: 4rpx;
+}
+.sortseg__item {
+  height: 52rpx;
+  padding: 0 28rpx;
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: var(--text-3);
+  transition: all 0.18s ease;
+}
+.sortseg__item.is-active {
+  background: #FFFFFF;
+  color: var(--primary-600);
+  font-weight: 500;
+  box-shadow: 0 1rpx 4rpx rgba(16, 62, 55, 0.08);
+}
+
+/* 收藏 / 点赞 */
+.acts {
+  display: flex;
+  flex-direction: row;
+  gap: 20rpx;
+}
+.act {
+  height: 64rpx;
+  padding: 0 28rpx;
+  border-radius: var(--radius-md);
+  background: var(--bg-page);
+  display: flex;
+  align-items: center;
+  border: 1rpx solid transparent;
+  transition: all 0.15s ease;
+}
+.act:active { transform: scale(0.96); }
+.act__ico {
+  font-size: 30rpx;
+  color: var(--text-3);
+  margin-right: 10rpx;
+  line-height: 1;
+}
+.act__txt {
+  font-size: 26rpx;
+  color: var(--text-2);
+}
+.act--on {
+  background: var(--primary-50);
+  border-color: var(--primary-100);
+}
+.act--on .act__ico,
+.act--on .act__txt { color: var(--primary-600); }
+.act--like {
+  background: #FDECEC;
+  border-color: #F6C9C8;
+}
+.act--like .act__ico,
+.act--like .act__txt { color: var(--danger); }
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FFFFFF;
+  padding: 24rpx 32rpx calc(24rpx + env(safe-area-inset-bottom));
+  border-top: 1rpx solid var(--line);
+  display: flex;
+  flex-direction: row;
+}
+.footer__btn { flex: 1; }

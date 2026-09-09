@@ -1,0 +1,27 @@
+# Dependencies and generated package trees
+**/node_modules/
+
+# Local tooling and machine-specific project settings
+.workbuddy/
+parking-miniapp/project.private.config.json
+
+# Local runtime data and SQLite temporary files
+deploy/store.json
+server/parking.db
+server/parking.db-shm
+server/parking.db-wal
+
+# Downloaded installers and archives
+_installers/
+*.zip
+*.7z
+*.rar
+*.exe
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.swp
+Thumbs.db
+.DS_Store

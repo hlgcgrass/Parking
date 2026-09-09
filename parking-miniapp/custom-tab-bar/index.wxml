@@ -1,0 +1,25 @@
+<view class="tabbar-wrap">
+  <view class="tabbar">
+    <view
+      wx:if="{{selected !== null}}"
+      class="tabbar__indicator"
+      style="transform: translate3d({{selected * 100}}%, 0, 0);"
+    ></view>
+    <view
+      wx:for="{{list}}"
+      wx:key="text"
+      class="tabbar__item {{selected === index ? 'tabbar__item--active' : ''}}"
+      data-index="{{index}}"
+      data-path="{{item.pagePath}}"
+      bindtap="switchTab"
+    >
+      <view class="tabbar__icon">
+        <image
+          src="{{selected === index ? item.activeIcon : item.icon}}"
+          mode="aspectFit"
+        />
+      </view>
+      <text class="tabbar__text">{{item.text}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,42 @@
+.header {
+  background: #FFFFFF;
+  padding: 24rpx 32rpx 28rpx;
+  border-radius: 0 0 32rpx 32rpx;
+}
+
+.locbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: var(--primary-50);
+  border-radius: var(--radius-lg);
+  padding: 16rpx 24rpx;
+}
+.locbar__pin {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: var(--primary-400);
+  margin-right: 12rpx;
+  flex-shrink: 0;
+}
+.locbar__sep { margin: 0 16rpx; color: var(--text-4); }
+
+.searchbar__icon {
+  width: 26rpx;
+  height: 26rpx;
+  border: 2rpx solid var(--text-3);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chips-scroll { white-space: nowrap; width: 100%; }
+.chips-scroll .chips { display: inline-flex; }
+
+.empty__icon {
+  width: 96rpx;
+  height: 96rpx;
+  margin: 0 auto;
+  border-radius: var(--radius-xl);
+  background: var(--primary-50);
+}

@@ -1,0 +1,98 @@
+/* 悬浮胶囊 tabBar
+ * 设计要点：
+ *  - 外层白色药丸浮动在底部中央；
+ *  - 绿色选中块只占一个 Tab 的格子，沿胶囊内部平滑滑动；
+ *  - 非选中项保持固定宽度，保证切换时文字和图标不抖动；
+ *  - 色块只做瞬时定位，不播放切换动效。
+ */
+
+.tabbar-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  /* 悬浮，底部留安全区 + 间距 */
+  padding-bottom: calc(18rpx + env(safe-area-inset-bottom));
+  /* 让出空白区域点击，只命中药丸本身 */
+  pointer-events: none;
+}
+
+.tabbar {
+  pointer-events: auto;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: calc(100vw - 96rpx);
+  max-width: 680rpx;
+  height: 112rpx;
+  padding: 8rpx;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 56rpx;
+  box-shadow: 0 8rpx 28rpx rgba(15, 110, 86, 0.14), 0 2rpx 6rpx rgba(0, 0, 0, 0.04);
+}
+
+.tabbar__indicator {
+  position: absolute;
+  left: 8rpx;
+  top: 8rpx;
+  bottom: 8rpx;
+  width: calc((100% - 16rpx) / 3);
+  border-radius: 48rpx;
+  background: #E1F5EE;
+  /* 关键：默认无动画，目标页和 onShow 同步永远是瞬时定位。 */
+  transition: none;
+  will-change: transform;
+  z-index: 0;
+}
+
+.tabbar__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 96rpx;
+  /* 选中与非选中内边距一致 → 切换不跳动 */
+  padding: 0 24rpx;
+  border-radius: 48rpx;
+  background: transparent;
+  box-sizing: border-box;
+  /* 明确禁用动效 */
+  transition: none;
+  z-index: 1;
+}
+
+.tabbar__icon {
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  margin-bottom: 4rpx;
+}
+
+.tabbar__icon image {
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.tabbar__text {
+  font-size: 22rpx;
+  line-height: 1;
+  color: #8A8F8B;
+  font-weight: 400;
+  transition: none;
+}
+
+.tabbar__item--active .tabbar__text {
+  color: #0F6E56;
+  font-weight: 500;
+}

@@ -1,0 +1,15 @@
+.empty-ico {
+  width: 112rpx;
+  height: 112rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: var(--primary-50);
+  color: var(--primary-400);
+  font-size: 56rpx;
+  line-height: 112rpx;
+  text-align: center;
+}
+.empty__btn {
+  width: 320rpx;
+  margin: 40rpx auto 0;
+}

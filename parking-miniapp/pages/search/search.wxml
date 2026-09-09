@@ -1,0 +1,88 @@
+<view class="page">
+
+  <view class="search-head">
+    <view class="searchbar">
+      <view class="searchbar__icon"></view>
+      <input
+        class="search-input"
+        value="{{keyword}}"
+        placeholder="搜索地点，如北京路、省医"
+        placeholder-class="ph"
+        focus="{{true}}"
+        confirm-type="search"
+        bindinput="onInput"
+        bindconfirm="doSearch" />
+      <view wx:if="{{keyword}}" class="clear" bindtap="clear">×</view>
+    </view>
+    <text class="fs-body tp cancel" bindtap="goBack">取消</text>
+  </view>
+
+  <!-- 搜索历史 -->
+  <view wx:if="{{!searched && history.length}}">
+    <view class="section">
+      <view class="between">
+        <text class="section__title">搜索历史</text>
+        <text class="section__more" bindtap="clearHistory">清空</text>
+      </view>
+    </view>
+    <view class="chips-wrap mt-md">
+      <view
+        class="chip"
+        wx:for="{{history}}"
+        wx:key="*this"
+        data-kw="{{item}}"
+        bindtap="tapHistory">{{item}}</view>
+    </view>
+  </view>
+
+  <!-- 快捷入口 -->
+  <view wx:if="{{!searched}}">
+    <view class="section mt-lg">
+      <text class="section__title">大家都在找</text>
+    </view>
+    <view class="chips-wrap mt-md">
+      <view class="chip" wx:for="{{hotWords}}" wx:key="*this" data-kw="{{item}}" bindtap="tapHistory">{{item}}</view>
+    </view>
+  </view>
+
+  <!-- 结果 -->
+  <view wx:if="{{searched}}">
+    <view class="section mt-md">
+      <text class="section__more">找到 {{list.length}} 个结果</text>
+    </view>
+
+    <view class="card-list mt-md">
+      <view
+        class="card card--tap"
+        wx:for="{{list}}"
+        wx:key="id"
+        data-id="{{item.id}}"
+        bindtap="goDetail">
+        <view class="between">
+          <view class="grow">
+            <view class="row">
+              <text class="item__title ellipsis">{{item.name}}</text>
+              <view class="badge badge--plain" style="margin-left:16rpx">{{item.category}}</view>
+            </view>
+            <view class="fs-caption t3 ellipsis mt-sm">{{item.district}} · {{item.address}}</view>
+          </view>
+          <view class="col" style="align-items:flex-end;margin-left:24rpx">
+            <view wx:if="{{item.min_price}}">
+              <text class="price price--md">¥{{item.min_price}}</text>
+              <text class="price__unit">/h起</text>
+            </view>
+            <text wx:else class="fs-tag t4">价格待补充</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{list.length === 0}}" class="empty">
+      <view class="empty__icon"></view>
+      <view class="empty__title">没找到「{{keyword}}」的停车攻略</view>
+      <view class="empty__desc">这个地点还没有收录，你可以提交给我们补充</view>
+    </view>
+  </view>
+
+  <view class="safe-bottom"></view>
+</view>

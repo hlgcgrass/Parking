@@ -1,0 +1,37 @@
+.locbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: var(--primary-50);
+  border-radius: var(--radius-lg);
+  padding: 16rpx 24rpx;
+  margin-top: 24rpx;
+}
+.locbar__pin {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: var(--primary-400);
+  margin-right: 12rpx;
+  flex-shrink: 0;
+}
+
+.map {
+  width: calc(100% - 64rpx);
+  height: 420rpx;
+  margin: 24rpx 32rpx 0;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.empty__icon {
+  width: 96rpx;
+  height: 96rpx;
+  margin: 0 auto;
+  border-radius: var(--radius-xl);
+  background: var(--primary-50);
+}
+.empty__btn {
+  width: 320rpx;
+  margin: 40rpx auto 0;
+}

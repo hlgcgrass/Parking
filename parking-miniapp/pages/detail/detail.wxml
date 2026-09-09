@@ -1,0 +1,150 @@
+<view class="page" wx:if="{{place}}">
+
+  <!-- 地点信息 -->
+  <view class="hero">
+    <view class="row">
+      <text class="fs-display t1 grow">{{place.name}}</text>
+    </view>
+    <view class="row mt-sm">
+      <view class="badge badge--primary">{{place.category}}</view>
+      <text class="fs-caption t3" style="margin-left:16rpx">{{place.district}}</text>
+      <text class="fs-caption t3" style="margin-left:16rpx">{{place.parkings.length}} 个车场</text>
+    </view>
+    <view class="fs-caption t3 mt-md">{{place.address}}</view>
+  </view>
+
+  <!-- 区域攻略 -->
+  <view class="pad" wx:if="{{place.area_tips}}">
+    <view class="tipbar mt-md">
+      <view class="tipbar__dot"></view>
+      <view class="grow">
+        <view class="fs-caption tp">停车攻略</view>
+        <view class="tipbar__text mt-sm">{{place.area_tips}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 停车场列表 -->
+  <view class="section">
+    <view class="between">
+      <text class="section__title">停车场</text>
+      <view class="sortseg">
+        <view class="sortseg__item {{sort === 'recommend' ? 'is-active' : ''}}" data-sort="recommend" bindtap="switchSort">推荐</view>
+        <view class="sortseg__item {{sort === 'like' ? 'is-active' : ''}}" data-sort="like" bindtap="switchSort">点赞</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card-list mt-md">
+    <view class="card" wx:for="{{place.parkings}}" wx:key="id">
+
+      <view bindtap="toggleFee" data-index="{{index}}">
+        <view class="between">
+          <view class="grow">
+            <view class="row">
+              <text class="item__title ellipsis">{{item.name}}</text>
+              <view wx:if="{{item.is_recommended}}" class="badge badge--primary" style="margin-left:16rpx">推荐</view>
+              <view wx:if="{{item.confidence === 'low'}}" class="badge badge--warn" style="margin-left:16rpx">待核实</view>
+            </view>
+            <view class="fs-caption t3 mt-sm">
+              {{item.type}}<text wx:if="{{item.scale}}"> · {{item.scale}}</text>
+            </view>
+          </view>
+
+          <view class="col" style="align-items:flex-end;margin-left:24rpx">
+            <view wx:if="{{item.min_price_hour}}">
+              <text wx:if="{{item.confidence === 'low'}}" class="price__tilde">~</text>
+              <text class="price price--md">¥{{item.min_price_hour}}</text>
+              <text class="price__unit">/h起</text>
+            </view>
+            <text wx:else class="fs-tag t4">价格待补充</text>
+          </view>
+        </view>
+
+        <view class="row mt-md">
+          <view wx:if="{{item.free_minutes}}" class="badge badge--free">免费 {{item.free_minutes}} 分钟</view>
+          <view wx:if="{{item.daily_cap}}" class="badge badge--plain" style="margin-left:12rpx">封顶 ¥{{item.daily_cap}}</view>
+          <text wx:if="{{item.walk_minutes}}" class="fs-caption t3" style="margin-left:16rpx">步行 {{item.walk_minutes}} 分钟</text>
+        </view>
+
+        <view wx:if="{{item.tips}}" class="fs-caption t2 mt-md park-tip">{{item.tips}}</view>
+
+        <!-- 收藏 / 点赞 -->
+        <view class="acts mt-md">
+          <view class="act {{item.is_favorited ? 'act--on' : ''}}" catchtap="onFavorite" data-index="{{index}}">
+            <text class="act__ico">★</text>
+            <text class="act__txt">{{item.is_favorited ? '已收藏' : '收藏'}}</text>
+          </view>
+          <view class="act {{item.is_liked ? 'act--like' : ''}}" catchtap="onLike" data-index="{{index}}">
+            <text class="act__ico">♥</text>
+            <text class="act__txt">{{item.like_count || 0}}</text>
+          </view>
+        </view>
+
+        <view class="row mt-md">
+          <text class="fs-caption tp">{{item._open ? '收起收费明细' : '查看收费明细'}}</text>
+          <view class="arrow {{item._open ? 'arrow--up' : ''}}"></view>
+        </view>
+      </view>
+
+      <!-- 展开：收费明细 + 试算 -->
+      <view wx:if="{{item._open}}">
+        <view class="divider mt-md"></view>
+
+        <view class="mt-md" wx:if="{{item.fee_rules.length}}">
+          <view class="fs-caption t3">收费明细</view>
+          <view class="fee-row" wx:for="{{item.fee_rules}}" wx:for-item="r" wx:key="index">
+            <text class="fs-caption t2 grow">{{r.description}}</text>
+            <text class="fs-caption price">¥{{r.price}}</text>
+          </view>
+        </view>
+        <view wx:else class="fs-caption t4 mt-md">暂无结构化收费规则，欢迎拍照补充</view>
+
+        <!-- 费用试算 -->
+        <view class="calc mt-md">
+          <view class="fs-caption t3">停车费试算</view>
+          <scroll-view scroll-x class="mt-sm" enable-flex>
+            <view class="chips">
+              <view
+                wx:for="{{hoursOptions}}"
+                wx:for-item="h"
+                wx:key="*this"
+                class="chip {{item._hours === h ? 'chip--active' : ''}}"
+                data-index="{{index}}"
+                data-hours="{{h}}"
+                bindtap="setHours">{{h}} 小时</view>
+            </view>
+          </scroll-view>
+
+          <view class="row mt-md" wx:if="{{item._fee}}">
+            <text class="fs-body t2">预计</text>
+            <text class="price price--lg" style="margin-left:16rpx">¥{{item._fee.total}}</text>
+          </view>
+          <view class="fs-tag t3 mt-sm" wx:if="{{item._fee && item._fee.steps.length}}">{{item._fee.steps[item._fee.steps.length - 1]}}</view>
+          <view class="fs-tag t4 mt-sm" wx:if="{{!item._fee}}">收费规则不足，无法试算</view>
+        </view>
+
+        <!-- 来源标注 -->
+        <view class="fs-tag t4 mt-md">{{item.confidence_text}} · {{item.source || '未标注来源'}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="source-note">数据更新于 2026-09 · 实际收费以现场为准 · 发现错误欢迎纠错</view>
+  <view class="safe-bottom" style="height:200rpx"></view>
+</view>
+
+<view class="page detail-error" wx:elif="{{errorText}}">
+  <view class="empty">
+    <view class="empty__icon"></view>
+    <view class="empty__title">详情暂时打不开</view>
+    <view class="empty__desc">{{errorText}}</view>
+    <view class="btn-primary" bindtap="retryLoad" style="margin-top:32rpx">重新加载</view>
+  </view>
+</view>
+
+<!-- 底部操作栏 -->
+<view class="footer" wx:if="{{place}}">
+  <view class="btn-secondary footer__btn" bindtap="openMap">导航到 {{place.name}}</view>
+  <view class="btn-primary footer__btn" style="margin-left:24rpx" bindtap="onReport">纠错 / 补充</view>
+</view>

@@ -1,0 +1,124 @@
+<view class="page">
+
+  <!-- ======== 顶部用户卡 ======== -->
+  <view class="pad" style="padding-top:32rpx">
+
+    <!-- 未登录：点按钮 → 微信原生头像选择 → 即完成登录 -->
+    <view class="card login-card" wx:if="{{!profile}}">
+      <view class="row">
+        <button class="profile-avatar" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar" hover-class="none">
+          <image wx:if="{{form.avatar}}" src="{{form.avatar}}" class="avatar" mode="aspectFill"></image>
+          <view wx:else class="avatar--ph avatar--char avatar-pick-ph">微</view>
+        </button>
+        <view class="grow" style="margin-left:24rpx">
+          <view class="fs-title t1">登录停车攻略</view>
+          <input class="nick-input mt-sm" type="nickname" value="{{form.nickname}}"
+                 placeholder="选填昵称（不填默认「微信用户」）" placeholder-class="nick-ph"
+                 maxlength="16" bindblur="onNickInput"></input>
+        </view>
+      </view>
+      <button class="btn-primary btn-block mt-lg" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar"
+              loading="{{busy}}" hover-class="none">
+        微信一键授权登录
+      </button>
+      <view class="fs-tag t4 mt-md login-note">选一张头像即完成登录，昵称选填、登录后随时可改</view>
+    </view>
+
+    <!-- 已登录 -->
+    <view class="card" wx:else>
+      <view class="row">
+        <button class="profile-avatar" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar" hover-class="none">
+          <image wx:if="{{profile.avatar}}" src="{{profile.avatar}}" class="avatar" mode="aspectFill"></image>
+          <view wx:else class="avatar--ph avatar--char avatar-pick-ph">{{profile.initial}}</view>
+        </button>
+        <view class="grow" style="margin-left:28rpx">
+          <!-- 昵称：点「修改」进入编辑，用 type=nickname 键盘可一键填入微信昵称 -->
+          <view wx:if="{{!editingNick}}" class="row" style="align-items:center">
+            <text class="fs-title t1">{{profile.nickname}}</text>
+            <text class="nick-edit" bindtap="onEditNick">修改</text>
+          </view>
+          <input wx:else class="nick-input" type="nickname" value="{{nickDraft}}"
+                 focus="{{editingNick}}" placeholder="点输入框可用微信昵称一键填充"
+                 placeholder-class="nick-ph" maxlength="16"
+                 bindinput="onNickDraft" bindblur="onSaveNick"></input>
+          <view class="fs-caption t3 mt-sm">{{profile.phone ? profile.phone : '已登录'}}</view>
+        </view>
+      </view>
+
+      <view class="divider divider--full mt-lg"></view>
+      <view class="stats-card mt-md">
+        <view class="stat card--tap" bindtap="goFavorites">
+          <view class="fs-display price">{{profile.favorite_count}}</view>
+          <view class="fs-tag t3">我的收藏</view>
+        </view>
+        <view class="stat">
+          <view class="fs-display price">{{profile.like_count}}</view>
+          <view class="fs-tag t3">我的点赞</view>
+        </view>
+        <view class="stat">
+          <view class="fs-display price">{{stats.places || '-'}}</view>
+          <view class="fs-tag t3">收录地点</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section mt-lg">
+    <text class="section__title">我的收藏</text>
+  </view>
+  <view class="card-list mt-md">
+    <view class="card card--tap" bindtap="goFavorites">
+      <view class="between">
+        <text class="fs-body t1">查看收藏的停车场</text>
+        <text class="fs-caption t3">›</text>
+      </view>
+      <view class="fs-caption t3 mt-sm">你收藏过的停车场都在这里，随时翻看</view>
+    </view>
+  </view>
+
+  <view class="section mt-lg">
+    <text class="section__title">参与共建</text>
+  </view>
+  <view class="card-list mt-md">
+    <view class="card card--tap" bindtap="onFeedback">
+      <view class="between">
+        <text class="fs-body t1">纠错 / 补充停车场</text>
+        <text class="fs-caption t3">›</text>
+      </view>
+      <view class="fs-caption t3 mt-sm">拍下收费牌上传，帮大家把价格更新准确</view>
+    </view>
+
+    <view class="card card--tap" bindtap="onSuggestPlace">
+      <view class="between">
+        <text class="fs-body t1">提交还没收录的地点</text>
+        <text class="fs-caption t3">›</text>
+      </view>
+      <view class="fs-caption t3 mt-sm">我们记录了大家搜索却没结果的地点，会优先补充</view>
+    </view>
+  </view>
+
+  <view class="section mt-lg">
+    <text class="section__title">关于数据</text>
+  </view>
+  <view class="card-list mt-md">
+    <view class="card">
+      <view class="fs-body t1">数据从哪里来</view>
+      <view class="fs-caption t2 mt-sm about-text">
+        停车收费数据来自政府价目表、医院与景区官网、公开媒体报道以及地图 POI 信息，人工整理后入库。
+      </view>
+      <view class="fs-caption t2 mt-sm about-text">
+        我们不会为无法核实的信息编造数字：未核实的车场会标注「待核实」，价格前加 ~ 号；没有接入实时空位接口，因此不显示「剩余车位」这类假数据。
+      </view>
+      <view class="fs-tag t4 mt-md">数据更新于 {{stats.updated_text || '2026-09'}} · 实际收费以现场为准</view>
+    </view>
+
+    <view class="card card--tap" wx:if="{{profile}}" bindtap="onLogout">
+      <view class="between">
+        <text class="fs-body t2">退出登录</text>
+        <text class="fs-caption t3">›</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="safe-bottom"></view>
+</view>

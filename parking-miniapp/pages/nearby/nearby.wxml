@@ -1,0 +1,76 @@
+<view class="page">
+
+  <view class="pad">
+    <view class="locbar">
+      <view class="locbar__pin"></view>
+      <text class="fs-body t1 grow">{{statusText}}</text>
+      <text class="fs-caption tp" wx:if="{{located && hasLoc}}" bindtap="reload">刷新</text>
+    </view>
+  </view>
+
+  <map
+    wx:if="{{hasLoc}}"
+    class="map"
+    latitude="{{lat}}"
+    longitude="{{lng}}"
+    markers="{{markers}}"
+    scale="14"
+    show-location
+    bindmarkertap="onMarkerTap"></map>
+
+  <view class="section">
+    <view class="between">
+      <text class="section__title">附近可停车的地点</text>
+      <text class="section__more" wx:if="{{hasLoc}}">3km 内 {{list.length}} 个</text>
+    </view>
+  </view>
+
+  <view class="card-list mt-md">
+    <view
+      class="card card--tap"
+      wx:for="{{list}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="goDetail">
+
+      <view class="between">
+        <view class="grow">
+          <view class="row">
+            <text class="item__title ellipsis">{{item.name}}</text>
+            <view class="badge badge--plain" style="margin-left:16rpx">{{item.category}}</view>
+          </view>
+          <view class="fs-caption t3 ellipsis mt-sm">{{item.top_parking}}</view>
+        </view>
+
+        <view class="col" style="align-items:flex-end;margin-left:24rpx">
+          <view wx:if="{{item.min_price}}">
+            <text class="price price--md">¥{{item.min_price}}</text>
+            <text class="price__unit">/h起</text>
+          </view>
+          <text wx:else class="fs-tag t4">价格待补充</text>
+        </view>
+      </view>
+
+      <view class="row mt-md">
+        <text class="fs-caption tp">{{item.distance_text}}</text>
+        <text class="fs-caption t3" style="margin-left:24rpx">{{item.parking_count}} 个车场</text>
+        <text class="fs-caption t3 grow" style="text-align:right">{{item.district}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{located && !hasLoc}}" class="empty">
+    <view class="empty__icon"></view>
+    <view class="empty__title">需要位置权限</view>
+    <view class="empty__desc">开启后可以查看附近最便宜的停车场</view>
+    <view class="btn-primary empty__btn" bindtap="openSetting">去开启定位</view>
+  </view>
+
+  <view wx:if="{{located && hasLoc && list.length === 0}}" class="empty">
+    <view class="empty__icon"></view>
+    <view class="empty__title">3 公里内还没有收录的地点</view>
+    <view class="empty__desc">目前数据以广州热门商圈、景点、医院为主</view>
+  </view>
+
+  <view class="safe-bottom"></view>
+</view>

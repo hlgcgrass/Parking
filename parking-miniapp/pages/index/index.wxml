@@ -1,0 +1,81 @@
+<view class="page">
+
+  <!-- 顶部：定位 + 搜索 + 分类 -->
+  <view class="header">
+    <view class="locbar" bindtap="onCityTap">
+      <view class="locbar__pin"></view>
+      <text class="fs-body t1">{{cityName}}</text>
+      <text class="fs-tag t3 locbar__sep">|</text>
+      <text class="fs-caption t3">{{locText}}</text>
+    </view>
+
+    <view class="searchbar mt-md" bindtap="goSearch">
+      <view class="searchbar__icon"></view>
+      <text class="searchbar__ph">搜索目的地，如北京路、省医</text>
+    </view>
+
+    <scroll-view scroll-x class="chips-scroll mt-md" enable-flex>
+      <view class="chips">
+        <view
+          wx:for="{{categories}}"
+          wx:key="*this"
+          class="chip {{item === category ? 'chip--active' : ''}}"
+          data-cat="{{item}}"
+          bindtap="onCategoryTap">{{item}}</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 列表 -->
+  <view class="section">
+    <view class="between">
+      <text class="section__title">{{category === '全部' ? '热门目的地' : category}}</text>
+      <text class="section__more">共 {{list.length}} 个</text>
+    </view>
+  </view>
+
+  <view class="card-list mt-md">
+    <view
+      wx:for="{{list}}"
+      wx:key="id"
+      class="card card--tap"
+      data-id="{{item.id}}"
+      bindtap="goDetail">
+
+      <view class="between">
+        <view class="grow">
+          <view class="row">
+            <text class="item__title ellipsis">{{item.name}}</text>
+            <view class="badge badge--plain" style="margin-left:16rpx">{{item.category}}</view>
+          </view>
+          <view class="fs-caption t3 ellipsis mt-sm">
+            {{item.district}} · {{item.address}}
+          </view>
+        </view>
+
+        <view class="col" style="align-items:flex-end;margin-left:24rpx">
+          <view wx:if="{{item.min_price}}">
+            <text class="price price--md">¥{{item.min_price}}</text>
+            <text class="price__unit">/h起</text>
+          </view>
+          <text wx:else class="fs-tag t4">价格待补充</text>
+        </view>
+      </view>
+
+      <view class="row mt-md">
+        <text class="fs-caption t3">{{item.parking_count}} 个车场</text>
+        <text wx:if="{{item.distance_text}}" class="fs-caption t3" style="margin-left:24rpx">{{item.distance_text}}</text>
+        <text class="fs-caption tp grow" style="text-align:right">查看攻略</text>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{!loading && list.length === 0}}" class="empty">
+    <view class="empty__icon"></view>
+    <view class="empty__title">这个分类还没有收录</view>
+    <view class="empty__desc">可以先去搜索别的地点，或补充你熟悉的停车场</view>
+  </view>
+
+  <view class="source-note">数据更新于 2026-09 · 来源：公开信息整理 · 实际收费以现场为准</view>
+  <view class="safe-bottom"></view>
+</view>

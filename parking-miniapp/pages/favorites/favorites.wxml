@@ -1,0 +1,51 @@
+<view class="page">
+  <view class="pad" style="padding-top:32rpx">
+    <view class="fs-title t1">我的收藏</view>
+    <view class="fs-caption t3 mt-sm">你收藏的停车场，按收藏时间倒序</view>
+  </view>
+
+  <view class="card-list mt-md" wx:if="{{list.length}}">
+    <view class="card card--tap" wx:for="{{list}}" wx:key="id" data-id="{{item.place_id}}" bindtap="goDetail">
+      <view class="between">
+        <view class="grow">
+          <view class="row">
+            <text class="item__title ellipsis">{{item.name}}</text>
+            <view wx:if="{{item.confidence === 'low'}}" class="badge badge--warn" style="margin-left:16rpx">待核实</view>
+          </view>
+          <view class="fs-caption t3 mt-sm">{{item.place_name}} · {{item.type}}</view>
+        </view>
+        <view class="col" style="align-items:flex-end;margin-left:24rpx">
+          <view wx:if="{{item.min_price_hour}}">
+            <text wx:if="{{item.confidence === 'low'}}" class="price__tilde">~</text>
+            <text class="price price--md">¥{{item.min_price_hour}}</text>
+            <text class="price__unit">/h起</text>
+          </view>
+          <text wx:else class="fs-tag t4">价格待补充</text>
+        </view>
+      </view>
+      <view class="row mt-md">
+        <view wx:if="{{item.free_minutes}}" class="badge badge--free">免费 {{item.free_minutes}} 分钟</view>
+        <view wx:if="{{item.daily_cap}}" class="badge badge--plain" style="margin-left:12rpx">封顶 ¥{{item.daily_cap}}</view>
+        <text wx:if="{{item.like_count}}" class="fs-caption t3" style="margin-left:16rpx">♥ {{item.like_count}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 未登录 -->
+  <view class="empty" wx:if="{{!logged}}">
+    <view class="empty-ico">♥</view>
+    <view class="empty__title">登录后查看收藏</view>
+    <view class="empty__desc">在停车攻略里点「收藏」，就会保存在这里</view>
+    <view class="btn-primary empty__btn" bindtap="goLogin">去登录</view>
+  </view>
+
+  <!-- 已登录但暂无收藏 -->
+  <view class="empty" wx:elif="{{!loading && !list.length}}">
+    <view class="empty-ico">★</view>
+    <view class="empty__title">还没有收藏任何停车场</view>
+    <view class="empty__desc">在攻略里点开某个地点，给合适的车场点「收藏」吧</view>
+    <view class="btn-primary empty__btn" bindtap="goExplore">去逛逛</view>
+  </view>
+
+  <view class="safe-bottom"></view>
+</view>

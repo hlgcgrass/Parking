@@ -1,0 +1,9 @@
+{
+  "name": "miniapp",
+  "version": "1.0.0",
+  "description": "微信小程序项目",
+  "private": true,
+  "dependencies": {
+    "tdesign-miniprogram": "^1.16.0"
+  }
+}
