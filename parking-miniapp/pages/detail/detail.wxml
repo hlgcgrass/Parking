@@ -88,11 +88,11 @@
           <!-- 收藏 / 点赞 -->
           <view class="parking-actions">
             <view class="parking-action {{item.is_favorited ? 'parking-action--selected' : ''}}" catchtap="onFavorite" data-index="{{parkingIndex}}">
-              <text class="parking-action__icon">☆</text>
+              <view class="parking-action__icon"><t-icon name="star-1" size="32rpx" /></view>
               <text class="parking-action__text">{{item.is_favorited ? '已收藏' : '收藏'}}</text>
             </view>
             <view class="parking-action {{item.is_liked ? 'parking-action--liked' : ''}}" catchtap="onLike" data-index="{{parkingIndex}}">
-              <text class="parking-action__icon">♡</text>
+              <view class="parking-action__icon"><t-icon name="heart" size="32rpx" /></view>
               <text class="parking-action__text">{{item.like_count || 0}}</text>
             </view>
           </view>

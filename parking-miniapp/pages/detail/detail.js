@@ -108,8 +108,8 @@ Page({
           ...p,
           _tipLines: splitTipLines(p.tips),
           _open: false,
-          _hours: 4,
-          _fee: calcFee(p.fee_rules, 4 * 60)
+          _hours: 3,
+          _fee: calcFee(p.fee_rules, 3 * 60)
         }));
         this.prepareImagePreview(this.data.id, place);
         this.setData({ place: { ...place, parkings }, errorText: '' });
@@ -150,12 +150,17 @@ Page({
       this.gotoLogin();
       return;
     }
+    const busyKey = `favorite:${pk.id}`;
+    this._actionBusy = this._actionBusy || {};
+    if (this._actionBusy[busyKey]) return;
+    this._actionBusy[busyKey] = true;
     api.toggleFavorite({ userId: user.getUserId(), parking_id: pk.id })
       .then(r => {
         this.setData({ [`place.parkings[${index}].is_favorited`]: r.favorited });
         wx.showToast({ title: r.favorited ? '已收藏' : '已取消收藏', icon: 'none' });
       })
-      .catch(() => wx.showToast({ title: '操作失败，请稍后再试', icon: 'none' }));
+      .catch(() => wx.showToast({ title: '操作失败，请稍后再试', icon: 'none' }))
+      .then(() => { delete this._actionBusy[busyKey]; });
   },
 
   // 点赞：未登录引导登录，已登录切换（一人一次）
@@ -166,6 +171,10 @@ Page({
       this.gotoLogin();
       return;
     }
+    const busyKey = `like:${pk.id}`;
+    this._actionBusy = this._actionBusy || {};
+    if (this._actionBusy[busyKey]) return;
+    this._actionBusy[busyKey] = true;
     api.toggleLike({ userId: user.getUserId(), parking_id: pk.id })
       .then(r => {
         this.setData({
@@ -173,7 +182,8 @@ Page({
           [`place.parkings[${index}].like_count`]: r.like_count
         });
       })
-      .catch(() => wx.showToast({ title: '操作失败，请稍后再试', icon: 'none' }));
+      .catch(() => wx.showToast({ title: '操作失败，请稍后再试', icon: 'none' }))
+      .then(() => { delete this._actionBusy[busyKey]; });
   },
 
   // 未登录：引导去「我的」页，通过微信授权登录
