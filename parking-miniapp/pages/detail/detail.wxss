@@ -89,7 +89,7 @@
   gap: 12rpx;
   flex-shrink: 0;
   margin-left: 20rpx;
-  width: 260rpx;
+  width: 320rpx;
 }
 .parking-action {
   flex: 1;
@@ -108,23 +108,19 @@
 }
 .parking-action:active { transform: scale(0.96); }
 .parking-action__icon {
-  display: inline-block;
-  width: 34rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40rpx;
+  height: 40rpx;
   flex-shrink: 0;
-  font-family: "Times New Roman", "Segoe UI Symbol", sans-serif;
-  font-size: 36rpx;
-  font-weight: 400;
-  text-align: center;
-  transform: scaleX(1.16);
   color: var(--text-3);
   margin-right: 10rpx;
   line-height: 1;
 }
 .parking-action__text {
-  min-width: 0;
-  overflow: hidden;
+  flex: 0 0 auto;
   white-space: nowrap;
-  text-overflow: ellipsis;
   font-size: 24rpx;
   font-weight: 400;
   color: var(--text-2);

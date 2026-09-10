@@ -2,19 +2,29 @@
   <view class="pad">
     <view class="locbar">
       <view class="locbar__pin"></view>
-      <text class="fs-body t1 grow">{{statusText}}</text>
-      <text class="fs-caption tp" wx:if="{{located && hasLoc}}" bindtap="reload">刷新</text>
+      <text class="fs-body t1 grow ellipsis">{{statusText}}</text>
+      <text class="fs-caption tp" wx:if="{{located && hasLoc && !selected}}" bindtap="reload">刷新</text>
+    </view>
+  </view>
+
+  <view class="map-toolbar pad">
+    <text wx:if="{{selected}}" class="fs-caption t3">已选地点 · 点击地图可重新选择</text>
+    <text wx:elif="{{hasDeviceLoc}}" class="fs-caption t3">当前位置 · 点击地图选择位置</text>
+    <text wx:else class="fs-caption t3">地图中心 · 点击地图选择位置</text>
+    <view class="row map-toolbar__actions">
+      <text class="fs-caption tp" bindtap="chooseLocation">地图选点</text>
+      <text wx:if="{{selected && hasDeviceLoc}}" class="fs-caption tp map-toolbar__reset" bindtap="reload">回到当前位置</text>
     </view>
   </view>
 
   <map
-    wx:if="{{hasLoc}}"
     class="map"
     latitude="{{lat}}"
     longitude="{{lng}}"
     markers="{{markers}}"
     scale="14"
-    show-location
+    show-location="{{hasDeviceLoc}}"
+    bindtap="chooseLocation"
     bindmarkertap="onMarkerTap"
   ></map>
 
@@ -45,7 +55,7 @@
         <view class="col" style="align-items:flex-end;margin-left:24rpx">
           <view wx:if="{{item.min_price}}">
             <text class="price price--md">¥{{item.min_price}}</text>
-            <text class="price__unit">/h起</text>
+            <text class="price__unit">/h</text>
           </view>
           <text wx:else class="fs-tag t4">价格待补充</text>
         </view>
@@ -62,11 +72,12 @@
   <view wx:if="{{located && !hasLoc}}" class="empty">
     <view class="empty__icon"></view>
     <view class="empty__title">需要位置权限</view>
-    <view class="empty__desc">开启后可以查看附近最便宜的停车场</view>
+    <view class="empty__desc">开启定位，或直接在地图上选择一个位置</view>
     <view class="btn-primary empty__btn" bindtap="openSetting">去开启定位</view>
+    <view class="btn-secondary empty__btn empty__choose" bindtap="chooseLocation">在地图上选位置</view>
   </view>
 
-  <view wx:if="{{located && hasLoc && nearbyList.length === 0}}" class="empty">
+  <view wx:if="{{located && hasLoc && !nearbyLoading && nearbyList.length === 0}}" class="empty">
     <view class="empty__icon"></view>
     <view class="empty__title">3 公里内还没有收录的地点</view>
     <view class="empty__desc">目前数据以广州热门商圈、景点、医院为主</view>

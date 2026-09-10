@@ -130,8 +130,20 @@ function getPlaceImages() {
 }
 
 function updatePlaceImages(images) {
-  placeImages = Object.assign({}, getPlaceImages(), images || {});
-  try { wx.setStorageSync(PLACE_IMAGES_KEY, placeImages); } catch (e) {}
+  const previous = getPlaceImages();
+  const incoming = images || {};
+  placeImages = Object.assign({}, previous, incoming);
+  if (!placeImageFiles) loadPlaceImageFilesFromStorage();
+  Object.keys(incoming).forEach(id => {
+    const oldPath = previous[id] && previous[id].image_storage_path;
+    const newPath = incoming[id] && incoming[id].image_storage_path;
+    // 图片版本切换时清掉旧的本地文件，避免详情页继续优先显示旧图。
+    if (oldPath && newPath && oldPath !== newPath) delete placeImageFiles[String(id)];
+  });
+  try {
+    wx.setStorageSync(PLACE_IMAGES_KEY, placeImages);
+    wx.setStorageSync(PLACE_IMAGE_FILES_KEY, placeImageFiles);
+  } catch (e) {}
 }
 
 function getPlaceImageFile(id) {

@@ -15,10 +15,14 @@ param(
   [string[]]$Query = @('沙面 停车'),
   [int]$DebugPort = 9222,
   [int]$WaitSeconds = 5,
-  [string]$OutputPath = (Join-Path $PSScriptRoot 'xhs-captures.json')
+  [int]$OpenNotes = 3,
+  [string]$OutputPath = ''
 )
 
 $ErrorActionPreference = 'Stop'
+if ([string]::IsNullOrWhiteSpace($OutputPath)) {
+  $OutputPath = Join-Path $PSScriptRoot 'xhs-captures.json'
+}
 
 function Receive-WebSocketMessage {
   param([System.Net.WebSockets.ClientWebSocket]$Socket)
@@ -81,6 +85,34 @@ function Invoke-Javascript {
   $result.value
 }
 
+function Click-PageText {
+  param(
+    [System.Net.WebSockets.ClientWebSocket]$Socket,
+    [ref]$CommandId,
+    [string]$Text
+  )
+
+  $safeText = $Text.Replace('\\', '\\\\').Replace("'", "\\'")
+  $script = @'
+(() => {
+  const wanted = '__TEXT__';
+  const visible = el => {
+    const s = getComputedStyle(el);
+    const r = el.getBoundingClientRect();
+    return s.display !== 'none' && s.visibility !== 'hidden' && r.width > 0 && r.height > 0;
+  };
+  const nodes = Array.from(document.querySelectorAll('button,[role="button"],a,span,div'))
+    .filter(el => visible(el) && (el.innerText || '').trim() === wanted);
+  const node = nodes.sort((a, b) => (a.innerText || '').length - (b.innerText || '').length)[0];
+  if (!node) return false;
+  node.click();
+  return true;
+})()
+'@
+  $script = $script.Replace('__TEXT__', $safeText)
+  Invoke-Javascript -Socket $Socket -CommandId $CommandId -Expression $script
+}
+
 function Get-PageTarget {
   param([int]$Port)
 
@@ -141,6 +173,9 @@ $socket = New-Object System.Net.WebSockets.ClientWebSocket
 $socket.ConnectAsync([Uri]$target.webSocketDebuggerUrl, [Threading.CancellationToken]::None).GetAwaiter().GetResult()
 $commandId = 0
 $captures = @()
+$filterLabel = [string]::Concat([char]0x7b5b, [char]0x9009) # 筛选
+$mostCollectedLabel = [string]::Concat([char]0x6700, [char]0x591a, [char]0x6536, [char]0x85cf) # 最多收藏
+$sortUnavailableLabel = [string]::Concat([char]0x672a, [char]0x80fd, [char]0x5e94, [char]0x7528, [char]0x6700, [char]0x591a, [char]0x6536, [char]0x85cf, [char]0x7b5b, [char]0x9009) # 未能应用最多收藏筛选
 
 try {
   foreach ($keyword in $Query) {
@@ -152,6 +187,15 @@ try {
     [void](Send-CdpCommand -Socket $socket -Id $commandId -Method 'Page.navigate' -Params @{ url = $url })
     Start-Sleep -Seconds $WaitSeconds
 
+    $sortApplied = $false
+    if (Click-PageText -Socket $socket -CommandId ([ref]$commandId) -Text $filterLabel) {
+      Start-Sleep -Milliseconds 500
+      $sortApplied = [bool](Click-PageText -Socket $socket -CommandId ([ref]$commandId) -Text $mostCollectedLabel)
+      Start-Sleep -Seconds 2
+    }
+    $sortMode = $sortUnavailableLabel
+    if ($sortApplied) { $sortMode = $mostCollectedLabel }
+
     $snapshot = Get-VisiblePageSnapshot -Socket $socket -CommandId ([ref]$commandId)
     $blockedText = [string]$snapshot.text
     $blockedSignals = @(
@@ -161,21 +205,63 @@ try {
       ([string]::Concat([char]0x8bbf, [char]0x95ee, [char]0x53d7, [char]0x9650)), # 访问受限
       ([string]::Concat([char]0x64cd, [char]0x4f5c, [char]0x9891, [char]0x7e41)), # 操作频繁
       ([string]::Concat([char]0x52a0, [char]0x8f7d, [char]0x5931, [char]0x8d25)), # 加载失败
-      ([string]::Concat([char]0x5b89, [char]0x5168, [char]0x9a8c, [char]0x8bc1))  # 安全验证
+      ([string]::Concat([char]0x5b89, [char]0x5168, [char]0x9a8c, [char]0x8bc1)), # 安全验证
+      ([string]::Concat([char]0x5f53, [char]0x524d, [char]0x7b14, [char]0x8bb0, [char]0x6682, [char]0x65f6, [char]0x65e0, [char]0x6cd5, [char]0x6d4f, [char]0x89c8)), # 当前笔记暂时无法浏览
+      ([string]::Concat([char]0x4f60, [char]0x8bbf, [char]0x95ee, [char]0x7684, [char]0x9875, [char]0x9762, [char]0x4e0d, [char]0x89c1, [char]0x4e86)) # 你访问的页面不见了
     )
     $blocked = @($blockedSignals | Where-Object { $blockedText.Contains($_) }).Count -gt 0
+
+    $notes = @()
+    $noteLinks = @()
+    $seenNoteCards = @{}
+    foreach ($candidate in @($snapshot.links)) {
+      # 搜索结果页的 search_result 链接带有 xsec_token，优先于裸 explore 链接。
+      if ($candidate.href -notmatch '/search_result/[0-9a-z]+' -or -not $candidate.cardText) { continue }
+      $cardKey = [string]$candidate.cardText
+      if (-not $seenNoteCards.ContainsKey($cardKey)) {
+        $seenNoteCards[$cardKey] = $true
+        $noteLinks += $candidate
+      }
+      if ($noteLinks.Count -ge [Math]::Max(0, $OpenNotes)) { break }
+    }
+
+    foreach ($noteLink in $noteLinks) {
+      $commandId++
+      [void](Send-CdpCommand -Socket $socket -Id $commandId -Method 'Page.navigate' -Params @{ url = $noteLink.href })
+      Start-Sleep -Seconds $WaitSeconds
+      $noteSnapshot = Get-VisiblePageSnapshot -Socket $socket -CommandId ([ref]$commandId)
+      $noteText = [string]$noteSnapshot.text
+      $noteBlocked = @($blockedSignals | Where-Object { $noteText.Contains($_) }).Count -gt 0
+
+      $notes += [ordered]@{
+        source_card = $noteLink.cardText
+        note_url = $noteSnapshot.url
+        title = $noteSnapshot.title
+        blocked_or_incomplete = $noteBlocked
+        visible_text = $noteText
+        visible_links = $noteSnapshot.links
+      }
+      $noteStatus = 'captured'
+      if ($noteBlocked) { $noteStatus = 'manual check required' }
+      Write-Host ("  note {0} | visible text {1} chars | status {2}" -f $noteSnapshot.url, $noteText.Length, $noteStatus)
+      if ($noteBlocked) { break }
+    }
 
     $captures += [ordered]@{
       keyword = $keyword
       captured_at = (Get-Date).ToUniversalTime().ToString('o')
       url = $snapshot.url
       title = $snapshot.title
+      sort_mode = $sortMode
       blocked_or_incomplete = $blocked
       visible_text = $snapshot.text
       visible_links = $snapshot.links
+      notes = $notes
     }
 
-    Write-Host ("[{0}] {1} | visible links {2} | status {3}" -f $keyword, $snapshot.title, @($snapshot.links).Count, $(if ($blocked) { 'manual check required' } else { 'captured' }))
+    $pageStatus = 'captured'
+    if ($blocked) { $pageStatus = 'manual check required' }
+    Write-Host ("[{0}] {1} | visible links {2} | status {3}" -f $keyword, $snapshot.title, @($snapshot.links).Count, $pageStatus)
     if ($blocked) {
       Write-Warning 'The page shows a login/captcha/restriction/load failure signal. Collection stopped.'
       break

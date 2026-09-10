@@ -9,6 +9,27 @@
   line-height: 112rpx;
   text-align: center;
 }
+.favorites-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx 0 16rpx;
+  color: var(--text-4);
+  font-size: 22rpx;
+}
+.favorites-loading__spinner {
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+  border: 2rpx solid var(--primary-100);
+  border-top-color: var(--primary-400);
+  border-radius: 50%;
+  animation: favorites-loading-spin 0.9s linear infinite;
+}
+@keyframes favorites-loading-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 .empty__btn {
   width: 320rpx;
   margin: 40rpx auto 0;

@@ -49,6 +49,11 @@
   z-index: 0;
 }
 
+/* 单页壳内只有这一个实例播放滑动，页面同步不会重复触发。 */
+.tabbar-wrap.is-animating .tabbar__indicator {
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
 .tabbar__item {
   position: relative;
   display: flex;

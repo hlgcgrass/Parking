@@ -4,21 +4,24 @@
     <view class="fs-caption t3 mt-sm">你收藏的停车场，按收藏时间倒序</view>
   </view>
 
+  <view wx:if="{{loading}}" class="favorites-loading" aria-label="正在加载收藏">
+    <view class="favorites-loading__spinner"></view>
+    <text>正在加载</text>
+  </view>
+
   <view class="card-list mt-md" wx:if="{{list.length}}">
     <view class="card card--tap" wx:for="{{list}}" wx:key="id" data-id="{{item.place_id}}" bindtap="goDetail">
       <view class="between">
         <view class="grow">
           <view class="row">
             <text class="item__title ellipsis">{{item.name}}</text>
-            <view wx:if="{{item.confidence === 'low'}}" class="badge badge--warn" style="margin-left:16rpx">待核实</view>
           </view>
           <view class="fs-caption t3 mt-sm">{{item.place_name}} · {{item.type}}</view>
         </view>
         <view class="col" style="align-items:flex-end;margin-left:24rpx">
           <view wx:if="{{item.min_price_hour}}">
-            <text wx:if="{{item.confidence === 'low'}}" class="price__tilde">~</text>
             <text class="price price--md">¥{{item.min_price_hour}}</text>
-            <text class="price__unit">/h起</text>
+            <text class="price__unit">/h</text>
           </view>
           <text wx:else class="fs-tag t4">价格待补充</text>
         </view>

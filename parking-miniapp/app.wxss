@@ -123,12 +123,6 @@ button::after { border: none; }
   font-weight: 600;
   box-shadow: 0 6rpx 14rpx rgba(15, 110, 86, 0.24);
 }
-.chip__check {
-  margin-left: 8rpx;
-  font-size: 26rpx;
-  font-weight: 700;
-  line-height: 1;
-}
 
 /* ============ 按钮 ============ */
 .btn-primary {

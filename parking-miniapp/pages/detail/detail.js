@@ -157,7 +157,6 @@ Page({
     api.toggleFavorite({ userId: user.getUserId(), parking_id: pk.id })
       .then(r => {
         this.setData({ [`place.parkings[${index}].is_favorited`]: r.favorited });
-        wx.showToast({ title: r.favorited ? '已收藏' : '已取消收藏', icon: 'none' });
       })
       .catch(() => wx.showToast({ title: '操作失败，请稍后再试', icon: 'none' }))
       .then(() => { delete this._actionBusy[busyKey]; });

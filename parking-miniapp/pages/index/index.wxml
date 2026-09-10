@@ -1,4 +1,4 @@
-<view class="page tab-panel" hidden="{{activeTab !== 0}}">
+<view class="page tab-panel home-panel" hidden="{{activeTab !== 0}}">
   <include src="./home.wxml" />
 </view>
 

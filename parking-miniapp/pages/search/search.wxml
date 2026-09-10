@@ -69,7 +69,7 @@
           <view class="col" style="align-items:flex-end;margin-left:24rpx">
             <view wx:if="{{item.min_price}}">
               <text class="price price--md">¥{{item.min_price}}</text>
-              <text class="price__unit">/h起</text>
+              <text class="price__unit">/h</text>
             </view>
             <text wx:else class="fs-tag t4">价格待补充</text>
           </view>

@@ -1,15 +1,15 @@
 <!-- 顶部：定位 + 搜索 + 分类 -->
 <view class="header">
-  <view class="locbar" bindtap="onCityTap">
-    <view class="locbar__pin"></view>
-    <text class="fs-body t1">{{cityName}}</text>
-    <text class="fs-tag t3 locbar__sep">|</text>
-    <text class="fs-caption t3">{{locText}}</text>
-  </view>
+  <view class="header__top row">
+    <view class="locbar home-locbar" bindtap="onCityTap">
+      <view class="locbar__pin"></view>
+      <text class="fs-body t1 ellipsis">{{cityName}}</text>
+    </view>
 
-  <view class="searchbar mt-md" bindtap="goSearch">
-    <view class="searchbar__icon"></view>
-    <text class="searchbar__ph">搜索目的地，如北京路、省医</text>
+    <view class="searchbar header__searchbar" bindtap="goSearch">
+      <view class="searchbar__icon"></view>
+      <text class="searchbar__ph">搜索目的地，如北京路、省医</text>
+    </view>
   </view>
 
   <scroll-view scroll-x class="chips-scroll mt-md" enable-flex>
@@ -52,7 +52,7 @@
       <view class="col" style="align-items:flex-end;margin-left:24rpx">
         <view wx:if="{{item.min_price}}">
           <text class="price price--md">¥{{item.min_price}}</text>
-          <text class="price__unit">/h起</text>
+          <text class="price__unit">/h</text>
         </view>
         <text wx:else class="fs-tag t4">价格待补充</text>
       </view>
@@ -61,7 +61,6 @@
     <view class="row mt-md">
       <text class="fs-caption t3">{{item.parking_count}} 个车场</text>
       <text wx:if="{{item.distance_text}}" class="fs-caption t3" style="margin-left:24rpx">{{item.distance_text}}</text>
-      <text class="fs-caption tp grow" style="text-align:right">查看攻略</text>
     </view>
   </view>
 </view>

@@ -91,12 +91,58 @@
 }
 .nick-ph { color: var(--text-4); font-size: 24rpx; }
 .nick-edit {
-  margin-left: 16rpx;
-  font-size: 22rpx;
-  color: var(--text-4);
-  padding: 4rpx 16rpx;
-  border-radius: 20rpx;
-  background: var(--bg-fill);
+  width: 44rpx;
+  height: 44rpx;
+  margin-left: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.nick-edit:active {
+  opacity: 0.7;
+}
+.nick-edit__pencil {
+  position: relative;
+  width: 24rpx;
+  height: 11rpx;
+  border: 2rpx solid var(--primary-400);
+  border-radius: 6rpx 3rpx 3rpx 6rpx;
+  background: transparent;
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+.nick-edit__pencil::before {
+  content: '';
+  position: absolute;
+  left: 5rpx;
+  top: -2rpx;
+  width: 2rpx;
+  height: 12rpx;
+  background: var(--primary-400);
+  opacity: 0.65;
+}
+.nick-edit__pencil::after {
+  content: '';
+  position: absolute;
+  right: -7rpx;
+  top: -2rpx;
+  width: 0;
+  height: 0;
+  border-top: 6rpx solid transparent;
+  border-bottom: 6rpx solid transparent;
+  border-left: 7rpx solid var(--primary-400);
+}
+.nick-edit__pencil-tip {
+  position: absolute;
+  z-index: 1;
+  right: -5rpx;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 4rpx solid transparent;
+  border-bottom: 4rpx solid transparent;
+  border-left: 5rpx solid var(--bg-card);
 }
 
 .btn-block { width: 100%; }

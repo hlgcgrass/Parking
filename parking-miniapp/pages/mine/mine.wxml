@@ -35,7 +35,11 @@
           <!-- 昵称：点「修改」进入编辑，用 type=nickname 键盘可一键填入微信昵称 -->
           <view wx:if="{{!editingNick}}" class="row" style="align-items:center">
             <text class="fs-title t1">{{profile.nickname}}</text>
-            <text class="nick-edit" bindtap="onEditNick">修改</text>
+            <view class="nick-edit" bindtap="onEditNick" aria-label="修改昵称">
+              <view class="nick-edit__pencil">
+                <view class="nick-edit__pencil-tip"></view>
+              </view>
+            </view>
           </view>
           <input wx:else class="nick-input" type="nickname" value="{{nickDraft}}"
                  focus="{{editingNick}}" placeholder="点输入框可用微信昵称一键填充"
@@ -107,7 +111,7 @@
         停车收费数据来自政府价目表、医院与景区官网、公开媒体报道以及地图 POI 信息，人工整理后入库。
       </view>
       <view class="fs-caption t2 mt-sm about-text">
-        我们不会为无法核实的信息编造数字：未核实的车场会标注「待核实」，价格前加 ~ 号；没有接入实时空位接口，因此不显示「剩余车位」这类假数据。
+        我们不会为无法核实的信息编造数字；没有接入实时空位接口，因此不显示「剩余车位」这类假数据。
       </view>
       <view class="fs-tag t4 mt-md">数据更新于 {{stats.updated_text || '2026-09'}} · 实际收费以现场为准</view>
     </view>
