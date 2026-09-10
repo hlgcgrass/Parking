@@ -15,6 +15,7 @@
   display: block;
   width: 100%;
   height: 320rpx;
+  background: #EEF3F1;
 }
 .place-photo__caption {
   padding: 14rpx 20rpx 16rpx;
@@ -90,43 +91,39 @@
   margin-left: 20rpx;
 }
 .act {
-  height: 64rpx;
-  min-width: 108rpx;
-  padding: 0 18rpx;
-  border-radius: 40rpx;
-  background: #FAFCFB;
+  height: 76rpx;
+  min-width: 116rpx;
+  padding: 0 24rpx;
+  border-radius: 999rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1rpx solid transparent;
+  border: none;
+  box-shadow: 0 4rpx 12rpx rgba(16, 62, 55, 0.05);
   transition: all 0.15s ease;
 }
 .act:active { transform: scale(0.96); }
 .act__ico {
-  font-size: 28rpx;
+  font-size: 34rpx;
   color: var(--text-3);
-  margin-right: 8rpx;
+  margin-right: 10rpx;
   line-height: 1;
 }
 .act__txt {
-  font-size: 24rpx;
+  font-size: 26rpx;
+  font-weight: 500;
   color: var(--text-2);
 }
-.act:not(.act--on):not(.act--like) {
-  border-color: var(--line);
-}
+.act--favorite { background: #DDF5ED; }
+.act--favorite .act__ico,
+.act--favorite .act__txt { color: var(--primary-600); }
 .act--on {
-  background: var(--primary-50);
-  border-color: var(--primary-100);
+  background: #BDEBD9;
 }
-.act--on .act__ico,
-.act--on .act__txt { color: var(--primary-600); }
-.act--like {
-  background: #FDECEC;
-  border-color: #F6C9C8;
-}
+.act--like { background: #FCE3E2; }
 .act--like .act__ico,
 .act--like .act__txt { color: var(--danger); }
+.act--like.act--liked { background: #F8C9C8; }
 
 .footer {
   position: fixed;

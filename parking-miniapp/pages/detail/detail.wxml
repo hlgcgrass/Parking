@@ -1,7 +1,7 @@
-<view class="page" wx:if="{{place}}">
+<view class="page" wx:if="{{place || (imagePreview && imagePreview.src && !errorText)}}">
 
   <!-- 地点信息 -->
-  <view class="hero">
+  <view class="hero" wx:if="{{place}}">
     <view class="row">
       <text class="fs-display t1 grow">{{place.name}}</text>
     </view>
@@ -14,13 +14,21 @@
   </view>
 
   <!-- 地点形象图 -->
-  <view class="place-photo" wx:if="{{place.image_url}}">
-    <image class="place-photo__image" src="{{place.image_file_id || place.image_url}}" mode="aspectFill" lazy-load="true" />
-    <view class="place-photo__caption">{{place.image_alt}} · {{place.image_credit}}</view>
+  <view class="place-photo" wx:if="{{imagePreview && imagePreview.src}}">
+    <image
+      class="place-photo__image"
+      src="{{imagePreview.src}}"
+      mode="aspectFill"
+      lazy-load="false"
+      bindload="onPlaceImageLoad"
+      binderror="onPlaceImageError"
+    />
+    <view class="place-photo__caption">{{imagePreview.alt}} · {{imagePreview.credit}}</view>
   </view>
 
-  <!-- 区域攻略 -->
-  <view class="pad" wx:if="{{place.area_tips}}">
+  <block wx:if="{{place}}">
+    <!-- 区域攻略 -->
+    <view class="pad" wx:if="{{place.area_tips}}">
     <view class="tipbar mt-md">
       <view class="tipbar__dot"></view>
       <view class="grow">
@@ -28,20 +36,20 @@
         <view class="tipbar__text mt-sm">{{place.area_tips}}</view>
       </view>
     </view>
-  </view>
+    </view>
 
   <!-- 停车场列表 -->
-  <view class="section">
+    <view class="section">
     <view class="between">
       <text class="section__title">停车场</text>
       <text class="section__more">按点赞量排序</text>
     </view>
-  </view>
+    </view>
 
-  <view class="card-list mt-md">
-    <view class="card" wx:for="{{place.parkings}}" wx:key="id">
+    <view class="card-list mt-md">
+    <view class="card" wx:for="{{place.parkings}}" wx:for-index="parkingIndex" wx:key="id">
 
-      <view bindtap="toggleFee" data-index="{{index}}">
+      <view bindtap="toggleFee" data-index="{{parkingIndex}}">
         <view class="between">
           <view class="grow">
             <view class="row">
@@ -67,7 +75,9 @@
           <text wx:if="{{item.walk_minutes}}" class="fs-caption t3" style="margin-left:16rpx">步行 {{item.walk_minutes}} 分钟</text>
         </view>
 
-        <view wx:if="{{item.tips}}" class="fs-caption t2 mt-md park-tip">{{item.tips}}</view>
+        <view wx:if="{{item.tips}}" class="fs-caption t2 mt-md park-tip">
+          <view wx:for="{{item._tipLines}}" wx:for-item="line" wx:key="index">{{line}}</view>
+        </view>
 
         <view class="card__bottom mt-md">
           <view class="fee-toggle row">
@@ -77,11 +87,11 @@
 
           <!-- 收藏 / 点赞 -->
           <view class="acts">
-            <view class="act {{item.is_favorited ? 'act--on' : ''}}" catchtap="onFavorite" data-index="{{index}}">
+            <view class="act act--favorite {{item.is_favorited ? 'act--on' : ''}}" catchtap="onFavorite" data-index="{{parkingIndex}}">
               <text class="act__ico">{{item.is_favorited ? '★' : '☆'}}</text>
               <text class="act__txt">{{item.is_favorited ? '已收藏' : '收藏'}}</text>
             </view>
-            <view class="act {{item.is_liked ? 'act--like' : ''}}" catchtap="onLike" data-index="{{index}}">
+            <view class="act act--like {{item.is_liked ? 'act--liked' : ''}}" catchtap="onLike" data-index="{{parkingIndex}}">
               <text class="act__ico">{{item.is_liked ? '♥' : '♡'}}</text>
               <text class="act__txt">{{item.like_count || 0}}</text>
             </view>
@@ -112,9 +122,12 @@
                 wx:for-item="h"
                 wx:key="*this"
                 class="chip {{item._hours === h ? 'chip--active' : ''}}"
-                data-index="{{index}}"
+                data-index="{{parkingIndex}}"
                 data-hours="{{h}}"
-                bindtap="setHours">{{h}} 小时</view>
+                catchtap="setHours">
+                <text>{{h}} 小时</text>
+                <text wx:if="{{item._hours === h}}" class="chip__check">✓</text>
+              </view>
             </view>
           </scroll-view>
 
@@ -130,10 +143,11 @@
         <view class="fs-tag t4 mt-md">{{item.confidence_text}} · {{item.source || '未标注来源'}}</view>
       </view>
     </view>
-  </view>
+    </view>
 
-  <view class="source-note">数据更新于 2026-09 · 实际收费以现场为准 · 发现错误欢迎纠错</view>
-  <view class="safe-bottom" style="height:200rpx"></view>
+    <view class="source-note">数据更新于 2026-09 · 实际收费以现场为准 · 发现错误欢迎纠错</view>
+    <view class="safe-bottom" style="height:200rpx"></view>
+  </block>
 </view>
 
 <view class="page detail-error" wx:elif="{{errorText}}">

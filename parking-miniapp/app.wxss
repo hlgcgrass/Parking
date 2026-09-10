@@ -117,7 +117,18 @@ button::after { border: none; }
   font-size: 24rpx;
   flex-shrink: 0;
 }
-.chip--active { background: var(--primary-50); color: var(--primary-600); }
+.chip--active {
+  background: var(--primary-600);
+  color: #FFFFFF;
+  font-weight: 600;
+  box-shadow: 0 6rpx 14rpx rgba(15, 110, 86, 0.24);
+}
+.chip__check {
+  margin-left: 8rpx;
+  font-size: 26rpx;
+  font-weight: 700;
+  line-height: 1;
+}
 
 /* ============ 按钮 ============ */
 .btn-primary {
@@ -167,7 +178,6 @@ button::after { border: none; }
 .price--lg { font-size: 40rpx; }
 .price--md { font-size: 30rpx; }
 .price__unit { font-size: 24rpx; font-weight: 400; color: var(--text-3); margin-left: 4rpx; }
-.price__tilde { font-size: 24rpx; color: var(--text-3); margin-right: 2rpx; }
 
 /* ============ 状态点 ============ */
 .dot { width: 12rpx; height: 12rpx; border-radius: 50%; margin-right: 8rpx; flex-shrink: 0; }

@@ -1,14 +1,18 @@
 const api = require('../../utils/api.js');
 const user = require('../../utils/user.js');
 const { calcFee } = require('../../utils/fee.js');
+const cache = require('../../utils/cache.js');
+const PLACE_IMAGES = require('../../utils/place-images.js');
 const app = getApp();
 
-const HOURS_OPTIONS = [1, 2, 4, 8, 24];
+const HOURS_OPTIONS = [1, 2, 3, 4, 8, 24];
+const splitTipLines = text => String(text || '').split(/\r?\n|\\n/);
 
 Page({
   data: {
     id: null,
     place: null,
+    imagePreview: null,
     errorText: '',
     hoursOptions: HOURS_OPTIONS
   },
@@ -20,11 +24,72 @@ Page({
       return;
     }
     this.setData({ id, errorText: '' });
+    this.prepareImagePreview(id);
     this.loadDetail();
   },
 
+  // 详情接口还没返回时，先用本地图片元数据启动首图请求。
+  prepareImagePreview(id, place) {
+    const meta = PLACE_IMAGES[id] || PLACE_IMAGES[String(id)] || {};
+    const stored = cache.getPlaceImages()[id] || cache.getPlaceImages()[String(id)] || {};
+    const localPath = cache.getPlaceImageFile(id);
+    const sources = [
+      localPath,
+      stored.image_file_id,
+      meta.image_url,
+      place && place.image_file_id,
+      place && place.image_url
+    ].filter(Boolean).filter((src, index, list) => list.indexOf(src) === index);
+    if (!sources.length) return;
+    const old = this.data.imagePreview || {};
+    const oldSrc = old.src && sources.indexOf(old.src) >= 0 ? old.src : sources[0];
+    const index = Math.max(0, sources.indexOf(oldSrc));
+    this.setData({
+      imagePreview: {
+        src: oldSrc,
+        sources,
+        index,
+        alt: (place && place.image_alt) || meta.image_alt || '地点实景图',
+        credit: (place && place.image_credit) || meta.image_credit || ''
+      }
+    });
+  },
+
+  onPlaceImageLoad() {
+    const preview = this.data.imagePreview;
+    if (!preview || !preview.src || cache.getPlaceImageFile(this.data.id)) return;
+    if (this._imageCaching) return;
+    this._imageCaching = true;
+
+    const save = (tempFilePath) => {
+      wx.saveFile({
+        tempFilePath,
+        success: (res) => cache.updatePlaceImageFile(this.data.id, res.savedFilePath || tempFilePath),
+        complete: () => { this._imageCaching = false; }
+      });
+    };
+    const fail = () => { this._imageCaching = false; };
+    const src = preview.src;
+    if (/^cloud:\/\//.test(src) && wx.cloud && wx.cloud.downloadFile) {
+      wx.cloud.downloadFile({ fileID: src, success: res => save(res.tempFilePath), fail });
+    } else if (/^https?:\/\//.test(src)) {
+      wx.downloadFile({ url: src, success: res => save(res.tempFilePath), fail });
+    } else {
+      this._imageCaching = false;
+    }
+  },
+
+  onPlaceImageError() {
+    const preview = this.data.imagePreview;
+    if (!preview || !preview.sources) return;
+    const nextIndex = (preview.index || 0) + 1;
+    if (nextIndex >= preview.sources.length) return;
+    this.setData({
+      imagePreview: { ...preview, index: nextIndex, src: preview.sources[nextIndex] }
+    });
+  },
+
   loadDetail() {
-    wx.showLoading({ title: '加载中', mask: true });
     const loc = app.globalData.location;
     const userId = user.getUserId();
     api.getPlaceDetail(
@@ -41,15 +106,15 @@ Page({
         wx.setNavigationBarTitle({ title: place.name });
         const parkings = place.parkings.map(p => ({
           ...p,
+          _tipLines: splitTipLines(p.tips),
           _open: false,
           _hours: 4,
           _fee: calcFee(p.fee_rules, 4 * 60)
         }));
+        this.prepareImagePreview(this.data.id, place);
         this.setData({ place: { ...place, parkings }, errorText: '' });
-        wx.hideLoading();
       })
       .catch((err) => {
-        wx.hideLoading();
         const message = err && err.message ? err.message : '详情加载失败，请稍后重试';
         console.error('[detail] load failed', { id: this.data.id, message, error: err });
         this.setData({ errorText: message });

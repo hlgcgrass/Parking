@@ -9,10 +9,12 @@
 const STATIC_KEY = 'parking_static_v1';
 const MARKS_KEY = 'parking_marks_v1';
 const PLACE_IMAGES_KEY = 'parking_place_images_v1';
+const PLACE_IMAGE_FILES_KEY = 'parking_place_image_files_v1';
 
 let mem = null;    // 静态数据集：{ version, meta, places[], parkings[], tips[], cachedAt }
 let marks = null;  // 用户标记：{ fav:[parking_id...], like:[parking_id...] }
 let placeImages = null;
+let placeImageFiles = null;
 let ready = false;
 
 // 内部云函数调用（带一次冷启动重试），避免与 api.js 形成循环依赖
@@ -51,6 +53,10 @@ function loadMarksFromStorage() {
 function loadPlaceImagesFromStorage() {
   try { placeImages = wx.getStorageSync(PLACE_IMAGES_KEY) || {}; } catch (e) { placeImages = {}; }
   return placeImages;
+}
+function loadPlaceImageFilesFromStorage() {
+  try { placeImageFiles = wx.getStorageSync(PLACE_IMAGE_FILES_KEY) || {}; } catch (e) { placeImageFiles = {}; }
+  return placeImageFiles;
 }
 
 // 拉取并缓存全量静态数据（仅在版本变化或本地缺失时真正请求网络）
@@ -128,6 +134,17 @@ function updatePlaceImages(images) {
   try { wx.setStorageSync(PLACE_IMAGES_KEY, placeImages); } catch (e) {}
 }
 
+function getPlaceImageFile(id) {
+  if (!placeImageFiles) loadPlaceImageFilesFromStorage();
+  return (placeImageFiles && (placeImageFiles[id] || placeImageFiles[String(id)])) || '';
+}
+
+function updatePlaceImageFile(id, filePath) {
+  if (!placeImageFiles) loadPlaceImageFilesFromStorage();
+  placeImageFiles[String(id)] = filePath;
+  try { wx.setStorageSync(PLACE_IMAGE_FILES_KEY, placeImageFiles); } catch (e) {}
+}
+
 // 同步静态缓存里的点赞数：详情页列表和收藏列表可能通过不同索引读取同一车场。
 // 同时更新原始车场数据、索引副本并落盘，避免返回页面后又读回旧的 0。
 function updateLikeCount(id, count) {
@@ -154,5 +171,5 @@ function updateLikeCount(id, count) {
 module.exports = {
   ensureStatic, isReady, getStatic,
   ensureUserMarks, getMarks, isMarked, updateMark, updateLikeCount,
-  getPlaceImages, updatePlaceImages
+  getPlaceImages, updatePlaceImages, getPlaceImageFile, updatePlaceImageFile
 };
