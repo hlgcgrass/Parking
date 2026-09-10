@@ -82,7 +82,7 @@
 }
 
 /* 收藏 / 点赞 */
-.acts {
+.parking-actions {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -90,40 +90,43 @@
   flex-shrink: 0;
   margin-left: 20rpx;
 }
-.act {
+.parking-action {
   height: 76rpx;
   min-width: 116rpx;
   padding: 0 24rpx;
-  border-radius: 999rpx;
+  border-radius: 20rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  box-shadow: 0 4rpx 12rpx rgba(16, 62, 55, 0.05);
+  border: 1rpx solid var(--line);
+  background: #FBFDFC;
+  box-shadow: none;
   transition: all 0.15s ease;
 }
-.act:active { transform: scale(0.96); }
-.act__ico {
-  font-size: 34rpx;
+.parking-action:active { transform: scale(0.96); }
+.parking-action__icon {
+  font-size: 30rpx;
   color: var(--text-3);
   margin-right: 10rpx;
   line-height: 1;
 }
-.act__txt {
-  font-size: 26rpx;
-  font-weight: 500;
+.parking-action__text {
+  font-size: 24rpx;
+  font-weight: 400;
   color: var(--text-2);
 }
-.act--favorite { background: #DDF5ED; }
-.act--favorite .act__ico,
-.act--favorite .act__txt { color: var(--primary-600); }
-.act--on {
-  background: #BDEBD9;
+.parking-action--selected {
+  border-color: var(--primary-400);
+  background: var(--primary-50);
 }
-.act--like { background: #FCE3E2; }
-.act--like .act__ico,
-.act--like .act__txt { color: var(--danger); }
-.act--like.act--liked { background: #F8C9C8; }
+.parking-action--selected .parking-action__icon,
+.parking-action--selected .parking-action__text { color: var(--primary-600); }
+.parking-action--liked {
+  border-color: #E9A8AD;
+  background: #FFF0F1;
+}
+.parking-action--liked .parking-action__icon,
+.parking-action--liked .parking-action__text { color: var(--danger); }
 
 .footer {
   position: fixed;

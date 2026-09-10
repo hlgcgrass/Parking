@@ -86,14 +86,14 @@
           </view>
 
           <!-- 收藏 / 点赞 -->
-          <view class="acts">
-            <view class="act act--favorite {{item.is_favorited ? 'act--on' : ''}}" catchtap="onFavorite" data-index="{{parkingIndex}}">
-              <text class="act__ico">{{item.is_favorited ? '★' : '☆'}}</text>
-              <text class="act__txt">{{item.is_favorited ? '已收藏' : '收藏'}}</text>
+          <view class="parking-actions">
+            <view class="parking-action {{item.is_favorited ? 'parking-action--selected' : ''}}" catchtap="onFavorite" data-index="{{parkingIndex}}">
+              <text class="parking-action__icon">{{item.is_favorited ? '★' : '☆'}}</text>
+              <text class="parking-action__text">{{item.is_favorited ? '已收藏' : '收藏'}}</text>
             </view>
-            <view class="act act--like {{item.is_liked ? 'act--liked' : ''}}" catchtap="onLike" data-index="{{parkingIndex}}">
-              <text class="act__ico">{{item.is_liked ? '♥' : '♡'}}</text>
-              <text class="act__txt">{{item.like_count || 0}}</text>
+            <view class="parking-action {{item.is_liked ? 'parking-action--liked' : ''}}" catchtap="onLike" data-index="{{parkingIndex}}">
+              <text class="parking-action__icon">{{item.is_liked ? '♥' : '♡'}}</text>
+              <text class="parking-action__text">{{item.like_count || 0}}</text>
             </view>
           </view>
         </view>
@@ -113,7 +113,7 @@
         <view wx:else class="fs-caption t4 mt-md">暂无结构化收费规则，欢迎拍照补充</view>
 
         <!-- 费用试算 -->
-        <view class="calc mt-md">
+        <view class="calc mt-md" wx:if="{{item.fee_rules && item.fee_rules.length && item.min_price_hour}}">
           <view class="fs-caption t3">停车费试算</view>
           <scroll-view scroll-x class="mt-sm" enable-flex>
             <view class="chips">
@@ -126,7 +126,6 @@
                 data-hours="{{h}}"
                 catchtap="setHours">
                 <text>{{h}} 小时</text>
-                <text wx:if="{{item._hours === h}}" class="chip__check">✓</text>
               </view>
             </view>
           </scroll-view>
@@ -135,8 +134,6 @@
             <text class="fs-body t2">预计</text>
             <text class="price price--lg" style="margin-left:16rpx">¥{{item._fee.total}}</text>
           </view>
-          <view class="fs-tag t3 mt-sm" wx:if="{{item._fee && item._fee.steps.length}}">{{item._fee.steps[item._fee.steps.length - 1]}}</view>
-          <view class="fs-tag t4 mt-sm" wx:if="{{!item._fee}}">收费规则不足，无法试算</view>
         </view>
 
         <!-- 来源标注 -->
