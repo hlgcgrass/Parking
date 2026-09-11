@@ -1,0 +1,62 @@
+[
+  {
+    "place": "白云山",
+    "query": "广州 白云山 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-first10-restart\\01-白云山.json"
+  },
+  {
+    "place": "陈家祠",
+    "query": "广州 陈家祠 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-first10-restart\\02-陈家祠.json"
+  },
+  {
+    "place": "大夫山森林公园",
+    "query": "广州 大夫山森林公园 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-first10-restart\\03-大夫山森林公园.json"
+  },
+  {
+    "place": "二沙岛",
+    "query": "广州 二沙岛 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-first10-restart\\04-二沙岛.json"
+  },
+  {
+    "place": "广东省博物馆",
+    "query": "广州 广东省博物馆 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-first10-restart\\05-广东省博物馆.json"
+  },
+  {
+    "place": "广州动物园",
+    "query": "广州 广州动物园 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-first10-restart\\06-广州动物园.json"
+  },
+  {
+    "place": "广州塔",
+    "query": "广州 广州塔 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-first10-restart\\07-广州塔.json"
+  },
+  {
+    "place": "广州图书馆",
+    "query": "广州 广州图书馆 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-first10-restart\\08-广州图书馆.json"
+  },
+  {
+    "place": "海心沙",
+    "query": "广州 海心沙 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-first10-restart\\09-海心沙.json"
+  },
+  {
+    "place": "海珠湖",
+    "query": "广州 海珠湖 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-first10-restart\\10-海珠湖.json"
+  }
+]

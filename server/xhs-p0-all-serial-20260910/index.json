@@ -1,0 +1,272 @@
+[
+  {
+    "place": "白云山",
+    "query": "广州 白云山 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\01-白云山.json"
+  },
+  {
+    "place": "陈家祠",
+    "query": "广州 陈家祠 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\02-陈家祠.json"
+  },
+  {
+    "place": "大夫山森林公园",
+    "query": "广州 大夫山森林公园 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\03-大夫山森林公园.json"
+  },
+  {
+    "place": "二沙岛",
+    "query": "广州 二沙岛 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\04-二沙岛.json"
+  },
+  {
+    "place": "广东省博物馆",
+    "query": "广州 广东省博物馆 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\05-广东省博物馆.json"
+  },
+  {
+    "place": "广州动物园",
+    "query": "广州 广州动物园 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\06-广州动物园.json"
+  },
+  {
+    "place": "广州塔",
+    "query": "广州 广州塔 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\07-广州塔.json"
+  },
+  {
+    "place": "广州图书馆",
+    "query": "广州 广州图书馆 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\08-广州图书馆.json"
+  },
+  {
+    "place": "海心沙",
+    "query": "广州 海心沙 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\09-海心沙.json"
+  },
+  {
+    "place": "海珠湖",
+    "query": "广州 海珠湖 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\10-海珠湖.json"
+  },
+  {
+    "place": "花城广场",
+    "query": "广州 花城广场 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\11-花城广场.json"
+  },
+  {
+    "place": "华南植物园",
+    "query": "广州 华南植物园 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\12-华南植物园.json"
+  },
+  {
+    "place": "黄埔军校",
+    "query": "广州 黄埔军校 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\13-黄埔军校.json"
+  },
+  {
+    "place": "莲花山",
+    "query": "广州 莲花山 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\14-莲花山.json"
+  },
+  {
+    "place": "南越王博物院",
+    "query": "广州 南越王博物院 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\15-南越王博物院.json"
+  },
+  {
+    "place": "沙面",
+    "query": "广州 沙面 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\16-沙面.json"
+  },
+  {
+    "place": "沙湾古镇",
+    "query": "广州 沙湾古镇 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\17-沙湾古镇.json"
+  },
+  {
+    "place": "永庆坊",
+    "query": "广州 永庆坊 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\18-永庆坊.json"
+  },
+  {
+    "place": "余荫山房",
+    "query": "广州 余荫山房 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\19-余荫山房.json"
+  },
+  {
+    "place": "越秀公园",
+    "query": "广州 越秀公园 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\20-越秀公园.json"
+  },
+  {
+    "place": "长隆",
+    "query": "广州 长隆 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\21-长隆.json"
+  },
+  {
+    "place": "中山纪念堂",
+    "query": "广州 中山纪念堂 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\22-中山纪念堂.json"
+  },
+  {
+    "place": "广东省妇幼保健院",
+    "query": "广州 广东省妇幼保健院 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\23-广东省妇幼保健院.json"
+  },
+  {
+    "place": "广东省人民医院",
+    "query": "广州 广东省人民医院 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\24-广东省人民医院.json"
+  },
+  {
+    "place": "广东省中医院",
+    "query": "广州 广东省中医院 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\25-广东省中医院.json"
+  },
+  {
+    "place": "广州市第一人民医院",
+    "query": "广州 广州市第一人民医院 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\26-广州市第一人民医院.json"
+  },
+  {
+    "place": "广州市妇女儿童医疗中心",
+    "query": "广州 广州市妇女儿童医疗中心 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\27-广州市妇女儿童医疗中心.json"
+  },
+  {
+    "place": "广州医科大学附属第一医院",
+    "query": "广州 广州医科大学附属第一医院 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\28-广州医科大学附属第一医院.json"
+  },
+  {
+    "place": "广州中医药大学第一附属医院",
+    "query": "广州 广州中医药大学第一附属医院 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\29-广州中医药大学第一附属医院.json"
+  },
+  {
+    "place": "南方医科大学南方医院",
+    "query": "广州 南方医科大学南方医院 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\30-南方医科大学南方医院.json"
+  },
+  {
+    "place": "中山大学附属第六医院",
+    "query": "广州 中山大学附属第六医院 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\31-中山大学附属第六医院.json"
+  },
+  {
+    "place": "中山大学附属第三医院",
+    "query": "广州 中山大学附属第三医院 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\32-中山大学附属第三医院.json"
+  },
+  {
+    "place": "中山大学附属第一医院",
+    "query": "广州 中山大学附属第一医院 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\33-中山大学附属第一医院.json"
+  },
+  {
+    "place": "中山大学孙逸仙纪念医院",
+    "query": "广州 中山大学孙逸仙纪念医院 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\34-中山大学孙逸仙纪念医院.json"
+  },
+  {
+    "place": "中山大学肿瘤防治中心",
+    "query": "广州 中山大学肿瘤防治中心 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\35-中山大学肿瘤防治中心.json"
+  },
+  {
+    "place": "北京路",
+    "query": "广州 北京路 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\36-北京路.json"
+  },
+  {
+    "place": "体育西路",
+    "query": "广州 体育西路 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\37-体育西路.json"
+  },
+  {
+    "place": "珠江新城",
+    "query": "广州 珠江新城 停车攻略",
+    "status": "already_captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\38-珠江新城.json"
+  },
+  {
+    "place": "上下九",
+    "query": "广州 上下九 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\39-上下九.json"
+  },
+  {
+    "place": "番禺万博",
+    "query": "广州 番禺万博 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\40-番禺万博.json"
+  },
+  {
+    "place": "江南西",
+    "query": "广州 江南西 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-all-serial-20260910\\41-江南西.json"
+  },
+  {
+    "place": "黄埔大沙地",
+    "query": "广州 黄埔大沙地 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "岗顶",
+    "query": "广州 岗顶 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "五羊新城",
+    "query": "广州 五羊新城 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "琶洲",
+    "query": "广州 琶洲 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  }
+]

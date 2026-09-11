@@ -1,0 +1,74 @@
+{
+  "place": "北京路",
+  "query": "北京路停车攻略",
+  "sort_mode": "最多收藏",
+  "captured_at": "2026-09-09",
+  "selection": {
+    "candidate_count": 27,
+    "valid_note_count": 3,
+    "skipped": [
+      {
+        "reason": "正文基本没有停车信息",
+        "card": "北京路商圈免费停车攻略"
+      }
+    ],
+    "note": "页面未展示独立的收藏量数字，但已通过筛选菜单应用“最多收藏”排序。"
+  },
+  "parking_points": [
+    {
+      "name": "北京路天河城地下停车场",
+      "address": "广州市越秀区北京路168号附近；导航词：北京路天河城地下停车场",
+      "fee_detail": "注册天河城会员后，可通过小程序领取约3小时停车优惠；部分优惠方案为3张1小时券。超过优惠时长后按实际计费，页面信息中出现约5元/30分钟和优惠后3小时约10元两种口径；机械停车场封顶约80元/天。",
+      "notes": "立体机械车位，部分车位较窄；大型SUV和新能源车型的适配情况需现场确认；节假日可能排队，建议预留进场时间。",
+      "confidence": "low",
+      "conflict_flag": true,
+      "conflict_note": "免费时长、优惠券叠加方式和超时价格存在不同说法，需以现场及天河城小程序当日规则为准。",
+      "source_records": [
+        {
+          "source_url": "https://www.xiaohongshu.com/explore/67fdac3c000000001c012440",
+          "source_title": "📍北京路步行街，0元停车攻略‼️",
+          "source_author": "带娃行万里路.省钱版",
+          "source_published_at": "2025-04-15"
+        },
+        {
+          "source_url": "https://www.xiaohongshu.com/explore/698c0d6d000000001502375f",
+          "source_title": "广州北京路天河城3小时10元！",
+          "source_author": "赫赫最响亮",
+          "source_published_at": "02-11"
+        }
+      ]
+    },
+    {
+      "name": "越秀尚御大厦停车场",
+      "address": "北京路步行街附近",
+      "fee_detail": "约6元/小时，白天封顶约30元。",
+      "notes": "距离北京路较近，但车位数量偏少；可通过共享停车小程序提前查看车位并预约优惠。",
+      "confidence": "medium",
+      "conflict_flag": false,
+      "source_records": [
+        {
+          "source_url": "https://www.xiaohongshu.com/explore/68cd20e7000000001003f900",
+          "source_title": "北京路步行街0元停车攻略‼️",
+          "source_author": "共享停车",
+          "source_published_at": "2025-09-19"
+        }
+      ]
+    },
+    {
+      "name": "海日苑停车场",
+      "address": "北京路步行街附近",
+      "fee_detail": "约8元/小时，白天封顶约45元。",
+      "notes": "车位相对较多；共享停车信息提示需按可停区域选择车位，进场前确认车位状态。",
+      "confidence": "medium",
+      "conflict_flag": false,
+      "source_records": [
+        {
+          "source_url": "https://www.xiaohongshu.com/explore/68cd20e7000000001003f900",
+          "source_title": "北京路步行街0元停车攻略‼️",
+          "source_author": "共享停车",
+          "source_published_at": "2025-09-19"
+        }
+      ]
+    }
+  ]
+}

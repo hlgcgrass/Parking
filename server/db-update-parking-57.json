@@ -1,0 +1,22 @@
+{
+  "$set": {
+    "tips": "到沙面步行约10分钟；会员可享约3小时停车优惠（生日券抵扣2小时、积分抵扣1小时），需注册会员、绑定生日和车牌后在缴费页面抵扣；消费满100元可免4小时。热门时段可能排队。5月有反馈生日券未到账，6月又有反馈仍可领取，权益可能调整，请以当日规则为准。",
+    "source": "编辑整理（公开信息）",
+    "confidence": "low",
+    "verified_at": "2026-09-09",
+    "walk_minutes": 10,
+    "source_records": [
+      {
+        "source_type": "existing",
+        "source": "第一商业网/大众点评"
+      },
+      {
+        "source_type": "xiaohongshu",
+        "source_url": "https://www.xiaohongshu.com/explore/69954e39000000001503b230",
+        "source_title": "26年春节亲测！沙面永庆坊免费停车！",
+        "source_author": "媛美Ayma",
+        "source_published_at": "2026-02-18"
+      }
+    ]
+  }
+}

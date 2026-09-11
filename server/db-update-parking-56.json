@@ -1,0 +1,38 @@
+{
+  "$set": {
+    "name": "沙面岛立体停车场",
+    "min_price_hour": 10,
+    "fee_rules": [
+      {
+        "rule_type": "normal",
+        "start_minute": null,
+        "end_minute": null,
+        "time_start": null,
+        "time_end": null,
+        "price": 10,
+        "unit": "hour",
+        "unit_minutes": 60,
+        "description": "约10元/小时（原始信息为5元/半小时）",
+        "confidence": "low",
+        "priority": 50
+      }
+    ],
+    "tips": "岛内停车约10元/小时，停车位有限；属于机械车位，大型车辆或不熟悉机械车位操作时需谨慎。停车后可直接步行进入沙面景区，具体步行距离以现场为准。",
+    "source": "编辑整理（公开信息）",
+    "confidence": "low",
+    "verified_at": "2026-09-09",
+    "source_records": [
+      {
+        "source_type": "existing",
+        "source": "携程（国家地理游沙面）"
+      },
+      {
+        "source_type": "xiaohongshu",
+        "source_url": "https://www.xiaohongshu.com/explore/686b67f5000000001203f13d",
+        "source_title": "📍广州沙面岛",
+        "source_author": "来之不易女士",
+        "source_published_at": "2025-12-14"
+      }
+    ]
+  }
+}

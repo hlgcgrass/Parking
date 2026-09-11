@@ -1,0 +1,100 @@
+{
+  "place": "沙面",
+  "query": "沙面停车攻略",
+  "sort_mode": "最多收藏",
+  "captured_at": "2026-09-09T12:49:46.5563775Z",
+  "selection": {
+    "candidate_count": null,
+    "opened_note_count": 10,
+    "processed_note_count": 5,
+    "valid_note_count": 5,
+    "completed攻略_count": 3,
+    "skipped": [
+      {
+        "position": 6,
+        "reason": "前5条已完成3个独立停车点，按规则停止处理，未继续纳入。"
+      },
+      {
+        "position": 7,
+        "reason": "前5条已完成3个独立停车点，按规则停止处理，未继续纳入。"
+      },
+      {
+        "position": 8,
+        "reason": "前5条已完成3个独立停车点，按规则停止处理，未继续纳入。"
+      },
+      {
+        "position": 9,
+        "reason": "前5条已完成3个独立停车点，按规则停止处理，未继续纳入。"
+      },
+      {
+        "position": 10,
+        "reason": "前5条已完成3个独立停车点，按规则停止处理，未继续纳入。"
+      }
+    ],
+    "note": "已重新应用“最多收藏”排序。本轮前5条均有实质停车信息和收费或优惠口径，其中前3条为同一信义路停车场，合并去重后得到3个独立停车点：信义路停车场、沙面机械停车场、荔湾领展广场停车场。评论中的涨价、排队、道路较窄和优惠到账差异已放入备注，并与正文收费口径区分。"
+  },
+  "parking_points": [
+    {
+      "name": "信义路停车场",
+      "address": "导航关键词：信义路停车场；靠近白鹅潭艺术中心码头",
+      "fee_detail": "约5元/小时；08:00—20:00封顶约20元，20:00—次日08:00约10元。",
+      "notes": "1、收费：约5元/小时；08:00—20:00封顶约20元，20:00—次日08:00约10元。2月有反馈调整为4元/30分钟，另有反馈出现涨价或实际支付约31元，收费可能已有变化，请现场留意停车场收费标准。\n2、路线：停车场出口向左步行约100米到白鹅潭艺术中心码头，乘水上巴士到黄沙码头，下船后步行约100米或2—3分钟到沙面；返程可原路返回取车。\n3、注意：停车场规模有限，周末和节假日车位情况可能变化；周边道路高峰期可能排队。不建议直接导航沙面岛内地面停车场，已有反馈提到入口拥堵及车辆高度限制。",
+      "confidence": "low",
+      "conflict_flag": true,
+      "conflict_note": "正文给出约5元/小时及分时封顶口径，但评论区出现4元/30分钟、涨价和不同实际支付金额的反馈，不能视为当前统一收费标准。",
+      "source_records": [
+        {
+          "source_url": "https://www.xiaohongshu.com/explore/6886189a00000000100243f2",
+          "source_title": "沙面永庆坊停车攻略",
+          "source_author": "山竹",
+          "source_published_at": "2025-07-27"
+        },
+        {
+          "source_url": "https://www.xiaohongshu.com/explore/67b0bb70000000001800fd44",
+          "source_title": "自驾怎么去沙面岛",
+          "source_author": "蝴蝶🦋",
+          "source_published_at": "2025-02-16"
+        },
+        {
+          "source_url": "https://www.xiaohongshu.com/explore/689469cf000000002302d093",
+          "source_title": "沙面岛停车攻略！",
+          "source_author": "Sofiazhang8403",
+          "source_published_at": "2025-08-16"
+        }
+      ]
+    },
+    {
+      "name": "沙面机械停车场",
+      "address": "沙面岛内；导航关键词：沙面立体停车场",
+      "fee_detail": "约10元/小时。",
+      "notes": "1、收费：约10元/小时。\n2、路线：停车后可直接步行进入沙面景区，当前信息未提供明确步行距离。\n3、注意：车位数量有限，节假日可能需要等位；属于立体机械车位，车辆尺寸、停车操作和现场交通管制情况请提前确认。",
+      "confidence": "low",
+      "conflict_flag": false,
+      "source_records": [
+        {
+          "source_url": "https://www.xiaohongshu.com/explore/686b67f5000000001203f13d",
+          "source_title": "📍广州沙面岛",
+          "source_author": "来之不易女士",
+          "source_published_at": "2025-12-14"
+        }
+      ]
+    },
+    {
+      "name": "荔湾领展广场停车场",
+      "address": "导航关键词：荔湾领展广场；注意区分广州其他同名商场",
+      "fee_detail": "注册会员并绑定车牌后，可用生日权益抵扣约2小时、积分抵扣约1小时，合计约3小时优惠；超过优惠时长的常规收费标准未明确。",
+      "notes": "1、收费：注册会员并绑定车牌后，可用生日权益抵扣约2小时、积分抵扣约1小时，合计约3小时优惠；有4小时多实际支付约18元的反馈，超出部分请以现场计费为准。\n2、路线：停车后步行到沙面约10分钟。\n3、注意：周边道路较窄，2月有反馈入口排队20多分钟、车辆进出较慢；上午车位相对充足，建议尽早到场。生日券是否到账存在不同反馈，注册、绑定和优惠规则请以现场二维码及当日小程序为准。",
+      "confidence": "low",
+      "conflict_flag": true,
+      "conflict_note": "免费时长属于会员权益，不是无条件免费；评论区对生日券到账情况存在不同反馈，且超出优惠时长的收费标准未明确。",
+      "source_records": [
+        {
+          "source_url": "https://www.xiaohongshu.com/explore/69954e39000000001503b230",
+          "source_title": "26年春节亲测！沙面永庆坊免费停车！",
+          "source_author": "媛美Ayma",
+          "source_published_at": "2026-02-18"
+        }
+      ]
+    }
+  ]
+}

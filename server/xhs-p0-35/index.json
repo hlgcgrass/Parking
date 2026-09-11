@@ -1,0 +1,212 @@
+[
+  {
+    "place": "白云山",
+    "query": "广州 白云山 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-35\\01-白云山.json"
+  },
+  {
+    "place": "陈家祠",
+    "query": "广州 陈家祠 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-35\\02-陈家祠.json"
+  },
+  {
+    "place": "大夫山森林公园",
+    "query": "广州 大夫山森林公园 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-35\\03-大夫山森林公园.json"
+  },
+  {
+    "place": "二沙岛",
+    "query": "广州 二沙岛 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-35\\04-二沙岛.json"
+  },
+  {
+    "place": "广东省博物馆",
+    "query": "广州 广东省博物馆 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-35\\05-广东省博物馆.json"
+  },
+  {
+    "place": "广州动物园",
+    "query": "广州 广州动物园 停车攻略",
+    "status": "failed",
+    "error": "CDP command failed: Runtime.evaluate - Inspected target navigated or closed"
+  },
+  {
+    "place": "广州塔",
+    "query": "广州 广州塔 停车攻略",
+    "status": "failed",
+    "error": "Exception calling \"GetResult\" with \"0\" argument(s): \"The remote party closed the WebSocket connection without completing the close handshake.\""
+  },
+  {
+    "place": "广州图书馆",
+    "query": "广州 广州图书馆 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-35\\08-广州图书馆.json"
+  },
+  {
+    "place": "海心沙",
+    "query": "广州 海心沙 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-35\\09-海心沙.json"
+  },
+  {
+    "place": "海珠湖",
+    "query": "广州 海珠湖 停车攻略",
+    "status": "captured",
+    "file": "I:\\ChatGPT\\Parking\\server\\xhs-p0-35\\10-海珠湖.json"
+  },
+  {
+    "place": "花城广场",
+    "query": "广州 花城广场 停车攻略",
+    "status": "failed",
+    "error": "Exception calling \"GetResult\" with \"0\" argument(s): \"The remote party closed the WebSocket connection without completing the close handshake.\""
+  },
+  {
+    "place": "华南植物园",
+    "query": "广州 华南植物园 停车攻略",
+    "status": "failed",
+    "error": "Exception calling \"GetResult\" with \"0\" argument(s): \"The remote party closed the WebSocket connection without completing the close handshake.\""
+  },
+  {
+    "place": "黄埔军校",
+    "query": "广州 黄埔军校 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "莲花山",
+    "query": "广州 莲花山 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "南越王博物院",
+    "query": "广州 南越王博物院 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "沙面",
+    "query": "广州 沙面 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "沙湾古镇",
+    "query": "广州 沙湾古镇 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "永庆坊",
+    "query": "广州 永庆坊 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "余荫山房",
+    "query": "广州 余荫山房 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "越秀公园",
+    "query": "广州 越秀公园 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "长隆",
+    "query": "广州 长隆 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "中山纪念堂",
+    "query": "广州 中山纪念堂 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "广东省妇幼保健院",
+    "query": "广州 广东省妇幼保健院 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "广东省人民医院",
+    "query": "广州 广东省人民医院 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "广东省中医院",
+    "query": "广州 广东省中医院 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "广州市第一人民医院",
+    "query": "广州 广州市第一人民医院 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "广州市妇女儿童医疗中心",
+    "query": "广州 广州市妇女儿童医疗中心 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "广州医科大学附属第一医院",
+    "query": "广州 广州医科大学附属第一医院 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "广州中医药大学第一附属医院",
+    "query": "广州 广州中医药大学第一附属医院 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "南方医科大学南方医院",
+    "query": "广州 南方医科大学南方医院 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "中山大学附属第六医院",
+    "query": "广州 中山大学附属第六医院 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "中山大学附属第三医院",
+    "query": "广州 中山大学附属第三医院 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "中山大学附属第一医院",
+    "query": "广州 中山大学附属第一医院 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "中山大学孙逸仙纪念医院",
+    "query": "广州 中山大学孙逸仙纪念医院 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  },
+  {
+    "place": "中山大学肿瘤防治中心",
+    "query": "广州 中山大学肿瘤防治中心 停车攻略",
+    "status": "failed",
+    "error": "Cannot connect to browser debug port 9222. Run server\\\\start-xhs-edge.ps1 first, then sign in in the new browser window."
+  }
+]

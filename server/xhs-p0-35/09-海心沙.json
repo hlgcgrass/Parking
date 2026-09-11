@@ -1,0 +1,17 @@
+{
+  "keyword": "广州 海心沙 停车攻略",
+  "captured_at": "2026-09-10T02:49:41.3217016Z",
+  "url": "chrome-error://chromewebdata/",
+  "title": "www.xiaohongshu.com",
+  "sort_mode": "未能应用最多收藏筛选",
+  "blocked_or_incomplete": false,
+  "visible_text": "嗯… 无法访问此页面 www.xiaohongshu.com 响应时间太长 请尝试： 检查连接 检查代理和防火墙 ERR_TIMED_OUT 刷新 Microsoft Edge",
+  "visible_links": [
+    {
+      "text": "检查代理和防火墙",
+      "href": "chrome-error://chromewebdata/#buttons",
+      "cardText": "检查代理和防火墙"
+    }
+  ],
+  "notes": []
+}
