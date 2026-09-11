@@ -3,6 +3,8 @@ const path = require('path');
 
 const root = path.resolve(__dirname, '..');
 const items = JSON.parse(fs.readFileSync(path.join(root, 'data/place-image-selections.json'), 'utf8'));
+const targetScope = JSON.parse(fs.readFileSync(path.join(root, 'server/xhs-p0-import-41.json'), 'utf8'));
+const targetIds = new Set((targetScope.places || []).map(item => Number(item.id)));
 
 function js(value) {
   return JSON.stringify(value);
@@ -11,7 +13,8 @@ function js(value) {
 function render(kind) {
   const rows = items.map(item => {
     // 每次整批替换图片递增版本目录，触发云端重新上传并清理旧 fileID。
-    const storagePath = `place-images/v3/${item.fileName}`;
+    const version = targetIds.has(Number(item.id)) ? 'v4' : 'v3';
+    const storagePath = `place-images/${version}/${item.fileName}`;
     const fields = [
       `    image_url: ${js(item.image_url)}`,
       `    image_alt: ${js(`${item.name}地点实景图`)}`,

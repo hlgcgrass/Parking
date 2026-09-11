@@ -43,8 +43,10 @@ function makeQuery(name, cond) {
 }
 
 const db = {
+  command: { inc: value => ({ __inc: value }) },
   collection(name) {
     return {
+      limit: n => makeQuery(name, {}).limit(n),
       where: cond => makeQuery(name, cond),
       async add({ data }) {
         const rec = { ...data, _id: 'rid_' + (++seq) };
@@ -55,7 +57,15 @@ const db = {
         return {
           async update({ data }) {
             const i = rows(name).findIndex(r => r._id === id);
-            if (i >= 0) Object.assign(rows(name)[i], data);
+            if (i >= 0) {
+              for (const [key, value] of Object.entries(data || {})) {
+                if (value && typeof value === 'object' && value.__inc != null) {
+                  rows(name)[i][key] = Number(rows(name)[i][key] || 0) + Number(value.__inc);
+                } else {
+                  rows(name)[i][key] = value;
+                }
+              }
+            }
             return { stats: { updated: i >= 0 ? 1 : 0 } };
           },
           async remove() {
@@ -79,13 +89,26 @@ const db = {
   }
 };
 
+const uploadedFiles = [];
+const deletedFiles = [];
+let uploadSeq = 0;
+
 // ---------------- mock wx-server-sdk ----------------
 const mockSdk = {
   init() {},
   DYNAMIC_CURRENT_ENV: 'mock-env',
   getWXContext: () => ({ OPENID: 'test_openid_001', APPID: 'wx74cf1625553c595b' }),
   database: () => db,
-  command: {}
+  command: { inc: value => ({ __inc: value }) },
+  async uploadFile({ cloudPath }) {
+    const fileID = `cloud://mock/place-image-${++uploadSeq}`;
+    uploadedFiles.push({ cloudPath, fileID });
+    return { fileID };
+  },
+  async deleteFile({ fileList }) {
+    deletedFiles.push(...(fileList || []));
+    return { fileList };
+  }
 };
 
 const origResolve = Module._resolveFilename;
@@ -102,7 +125,13 @@ require.cache[require.resolve('./_mock_wx_server_sdk.js')] = {
 
 // ---------------- 载入云函数 ----------------
 const FN_PATH = path.join(__dirname, '..', 'parking-miniapp', 'cloudfunctions', 'parking', 'index.js');
+process.env.ADMIN_OPENIDS = 'test_openid_001';
 const { main } = require(FN_PATH);
+const bundled = require(path.join(__dirname, '..', 'parking-miniapp', 'cloudfunctions', 'parking', 'data.json'));
+const bundledParkingCount = Object.values(bundled.parkingsByPlace || {})
+  .reduce((n, rows) => n + (rows || []).length, 0);
+const bundledTipCount = Object.values(bundled.tipsByPlace || {})
+  .reduce((n, rows) => n + (rows || []).length, 0);
 
 // ---------------- 断言 ----------------
 let pass = 0, failed = 0;
@@ -117,7 +146,9 @@ function check(name, cond, extra) {
   check('health', r.code === 0 && r.data.status === 'ok', r);
 
   r = await main({ action: 'stats' });
-  check('stats 54/113/323', r.code === 0 && r.data.places === 54 && r.data.parkings === 113 && r.data.fee_rules === 323, r.data);
+  check(`stats ${bundled.places.length}/${bundledParkingCount}/${bundled.meta.fee_rules}`,
+    r.code === 0 && r.data.places === bundled.places.length && r.data.parkings === bundledParkingCount && r.data.fee_rules === bundled.meta.fee_rules,
+    r.data);
 
   r = await main({ action: 'categories' });
   check('categories 非空', r.code === 0 && Array.isArray(r.data) && r.data.length > 0, r.data);
@@ -207,6 +238,22 @@ function check(name, cond, extra) {
   check('未知 action 安全返回', r.code === -1, r.message);
   r = await main({ action: 'nearby' });
   check('缺少经纬度参数返回错误', r.code === -1, r.message);
+
+  console.log('\n=== 10. 地点图片管理员接口 ===');
+  r = await main({ action: 'admin-upsert-place', data: { id: 1, name: '测试地点' } });
+  check('管理员可准备测试地点', r.code === 0, r);
+  r = await main({
+    action: 'admin-add-place-image',
+    data: { place_id: 1, cloud_path: 'place-images/test/admin-add.jpg' }
+  });
+  check('新增图片接口上传并写库', r.code === 0 && r.data.image.image_file_id && r.data.image.image_storage_path === 'place-images/test/admin-add.jpg', r);
+  check('新增接口未误删旧图', r.code === 0 && r.data.old_file_deleted === false, r && r.data);
+  r = await main({ action: 'admin-delete-place-image', data: { place_id: 1 } });
+  check('删除图片接口清空数据库字段', r.code === 0 && r.data.image.image_file_id === '', r);
+  check('删除图片接口清理云存储文件', r.code === 0 && r.data.old_file_deleted === true && deletedFiles.length === 1, r);
+  mockSdk.getWXContext = () => ({ OPENID: 'not_admin' });
+  r = await main({ action: 'admin-delete-place-image', data: { place_id: 1 } });
+  check('非管理员不能删除图片', r.code === -1 && r.message === '无权限', r);
 
   console.log(`\n========== 测试结束：通过 ${pass} / 失败 ${failed} ==========\n`);
   process.exit(failed ? 1 : 0);

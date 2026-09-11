@@ -152,10 +152,9 @@ module.exports = {
 
   // ===== 写操作 / 日志：走云 =====
   submitReport: (data) => call('report', '/api/reports', data, 'POST'),
-  syncPlaceImages: () => {
-    if (!useCloud) return Promise.reject(new Error('图片迁移仅支持云开发通道'));
-    return call('sync-place-images', '/api/place-images', {}, 'POST');
-  },
+  // 管理员图片接口：由后台/管理员工具显式调用，不在小程序启动时自动执行。
+  adminAddPlaceImage: (data) => call('admin-add-place-image', '/api/admin/place-images', data, 'POST'),
+  adminDeletePlaceImage: (data) => call('admin-delete-place-image', '/api/admin/place-images', data, 'DELETE'),
   logSearch: (keyword, resultCount, cityId) =>
     call('search-log', '/api/search-log', { keyword, result_count: resultCount, city_id: cityId }, 'POST'),
 

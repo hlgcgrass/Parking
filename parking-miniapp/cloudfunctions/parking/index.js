@@ -64,11 +64,30 @@ async function loadStatic() {
       withTimeout(safe(() => db.collection(C_TIP).where({ status: 'ok' }).limit(2000).get(), { data: [] }), 700, { data: [] })
     ]);
 
-    // 云数据库完成迁移后优先使用数据库；若首次部署还没导入静态集合，
-    // 直接使用随云函数部署的数据包，保证首页和详情页都能正常打开。
+    // 新数据包带有一次性数据集标识。首次请求发现云库仍是旧数据时，自动覆盖静态集合，
+    // 避免只能部署、却无法执行 migrate 的场景；用户/收藏/点赞/反馈/日志集合不受影响。
+    const bundleDatasetId = (BUNDLED_DATA.meta && BUNDLED_DATA.meta.dataset_id) || null;
+    const dbDatasetId = metaRes.data && metaRes.data[0] && metaRes.data[0].dataset_id;
+    const bundlePlaceCount = (BUNDLED_DATA.places || []).length;
+    const bundleParkingCount = Object.values(BUNDLED_DATA.parkingsByPlace || {})
+      .reduce((n, rows) => n + (rows || []).length, 0);
     const dbPlaces = placesRes.data || [];
     const dbParkings = parkingsRes.data || [];
-    const useBundle = !metaRes.data || !metaRes.data.length || !dbPlaces.length || !dbParkings.length;
+    const incompleteSameDataset = Boolean(
+      bundleDatasetId && dbDatasetId === bundleDatasetId &&
+      (dbPlaces.length !== bundlePlaceCount || dbParkings.length !== bundleParkingCount)
+    );
+    const replaceBundle = Boolean(
+      BUNDLED_DATA.meta && BUNDLED_DATA.meta.replace_static_data && bundleDatasetId &&
+      (dbDatasetId !== bundleDatasetId || incompleteSameDataset)
+    );
+    // 重灌包含较多串行写入，不能阻塞当前读请求；本次先使用随包的完整数据，
+    // 让后台继续完成云数据库同步，后续请求再切回数据库。
+    if (replaceBundle) selfSeed(true);
+
+    // 云数据库完成迁移后优先使用数据库；若首次部署还没导入静态集合，
+    // 直接使用随云函数部署的数据包，保证首页和详情页都能正常打开。
+    const useBundle = replaceBundle || !metaRes.data || !metaRes.data.length || !dbPlaces.length || !dbParkings.length;
     // 数据库为空时，后台自动灌入随包 data.json（幂等，下次请求即走数据库）
     if (useBundle) selfSeed();
     const bundleMeta = {
@@ -135,14 +154,20 @@ async function bumpVersion() {
 
 // 首次部署且数据库为空时，用随包 data.json 自动灌库（幂等：seeding 标志防重入，batchRemoveAll 防重复）
 let seeding = null;
-async function selfSeed() {
+async function selfSeed(force = false) {
   if (seeding) return seeding;
   seeding = (async () => {
     await ensureCollections();
     const B = BUNDLED_DATA;
+    const bundledParkings = Object.values(B.parkingsByPlace || {}).reduce((n, rows) => n + (rows || []).length, 0);
+    const bundledTips = Object.values(B.tipsByPlace || {}).reduce((n, rows) => n + (rows || []).length, 0);
     const meta = {
       cities: B.cities || [], categories: B.categories || [],
       exported_at: (B.meta && B.meta.exported_at) || null,
+      dataset_id: (B.meta && B.meta.dataset_id) || null,
+      places: (B.places || []).length,
+      parkings: bundledParkings,
+      tips: bundledTips,
       fee_rules: (B.meta && B.meta.fee_rules) || 0,
       updated_at: nowISO(), version: Date.now()
     };
@@ -232,7 +257,6 @@ async function incParkingLike(parkingId, delta) {
   } catch (e) { /* 计数异常不影响点赞主流程 */ }
 }
 
-let placeImageSyncPromise = null;
 function publicPlaceImage(id, fileID) {
   const meta = PLACE_IMAGES[id] || {};
   return {
@@ -245,67 +269,129 @@ function publicPlaceImage(id, fileID) {
   };
 }
 
-// 小程序启动时同步地点图片；如果旧记录仍指向数字文件名，也会迁移到按地点命名的新路径。
-async function syncPlaceImages() {
-  if (placeImageSyncPromise) return placeImageSyncPromise;
-  placeImageSyncPromise = (async () => {
-    const result = {};
-    const entries = Object.entries(PLACE_IMAGES);
-    let cursor = 0;
-    async function worker() {
-      while (cursor < entries.length) {
-        const current = entries[cursor++];
-        const [id, meta] = current;
-      const placeId = Number(id);
-      const existing = await safe(
-        () => db.collection(C_PLACE).where({ id: placeId }).limit(1).get(),
-        { data: [] }
-      );
-      const doc = existing.data && existing.data[0];
-      const oldFileID = doc && doc.image_file_id;
-      const oldStoragePath = doc && doc.image_storage_path;
-      let fileID = oldFileID;
-      const needsUpload = !doc || !oldFileID || oldStoragePath !== meta.cloud_path;
-      if (needsUpload) {
-        const filePath = path.join(__dirname, meta.asset_path);
-        const uploaded = await cloud.uploadFile({
-          cloudPath: meta.cloud_path,
-          fileContent: fs.createReadStream(filePath)
-        });
-        fileID = uploaded.fileID;
-        if (doc) {
-          await db.collection(C_PLACE).doc(doc._id).update({
-            data: publicPlaceImage(placeId, fileID)
-          });
-        }
-        // 新图写库成功后再删除旧 fileID，避免更新失败造成旧图不可恢复。
-        if (oldFileID && oldFileID !== fileID) {
-          try {
-            await cloud.deleteFile({ fileList: [oldFileID] });
-          } catch (e) {
-            console.warn(`[images] 旧图清理失败 place=${placeId}`, e && e.message ? e.message : e);
-          }
-        }
-      } else if (doc) {
-        // 同一版本路径下也刷新来源元数据，确保换图后数据库不会残留旧链接。
-        const nextImage = publicPlaceImage(placeId, fileID);
-        const metadataChanged = ['image_url', 'image_alt', 'image_credit', 'image_source_url']
-          .some(key => doc[key] !== nextImage[key]);
-        if (metadataChanged) {
-          await db.collection(C_PLACE).doc(doc._id).update({ data: nextImage });
-        }
-      }
-      const image = publicPlaceImage(placeId, fileID);
-      result[placeId] = image;
-      const cachedPlace = cache.places.find(p => p.id === placeId);
-      if (cachedPlace) Object.assign(cachedPlace, image);
-      }
-    }
-    // 受控并发：避免 54 张图串行上传超时，也避免一次性打满云存储连接。
-    await Promise.all(Array.from({ length: Math.min(8, entries.length) }, () => worker()));
-    return result;
-  })();
-  try { return await placeImageSyncPromise; } finally { placeImageSyncPromise = null; }
+function emptyPlaceImage() {
+  return {
+    image_file_id: '', image_storage_path: '', image_url: '', image_alt: '',
+    image_credit: '', image_source_url: ''
+  };
+}
+
+function resolveImageAsset(assetPath) {
+  const relative = String(assetPath || '').replace(/\\/g, '/').trim();
+  if (!relative.startsWith('assets/place-images/') || relative.includes('..')) {
+    throw new Error('asset_path 必须位于 assets/place-images 目录内');
+  }
+  const root = path.resolve(__dirname, 'assets', 'place-images');
+  const resolved = path.resolve(__dirname, relative);
+  if (resolved !== root && !resolved.startsWith(root + path.sep)) {
+    throw new Error('asset_path 越界');
+  }
+  if (!fs.existsSync(resolved)) throw new Error(`图片文件不存在：${relative}`);
+  return resolved;
+}
+
+function validateCloudPath(cloudPath) {
+  const value = String(cloudPath || '').replace(/\\/g, '/').trim();
+  if (!value || !value.startsWith('place-images/') || value.includes('..') || value.startsWith('/')) {
+    throw new Error('cloud_path 必须是 place-images/ 下的安全路径');
+  }
+  return value;
+}
+
+async function findPlaceImageDoc(placeId) {
+  const result = await db.collection(C_PLACE).where({ id: placeId }).limit(1).get();
+  return result.data && result.data[0];
+}
+
+// 只有旧 fileID 不再被其他地点引用时才删除，避免共享文件被误删。
+async function deleteUnreferencedFile(fileID, currentDocId) {
+  if (!fileID) return { deleted: false, reason: 'empty' };
+  const refs = await db.collection(C_PLACE).where({ image_file_id: fileID }).limit(2).get();
+  const shared = (refs.data || []).some(row => row._id !== currentDocId);
+  if (shared) return { deleted: false, reason: 'shared' };
+  await cloud.deleteFile({ fileList: [fileID] });
+  return { deleted: true };
+}
+
+// 管理员接口：上传/替换一个地点图片。图片必须已随云函数部署包提供。
+async function adminAddPlaceImage(openid, data) {
+  if (!isAdmin(openid)) return fail('无权限');
+  const placeId = Number(data.place_id);
+  if (!Number.isInteger(placeId) || placeId <= 0) return fail('缺少有效 place_id');
+
+  const doc = await findPlaceImageDoc(placeId);
+  if (!doc) return fail(`地点不存在：${placeId}`);
+  const bundled = PLACE_IMAGES[placeId] || {};
+  const assetPath = data.asset_path || bundled.asset_path;
+  const filePath = resolveImageAsset(assetPath);
+  const cloudPath = validateCloudPath(
+    data.cloud_path || bundled.cloud_path || `place-images/admin/${placeId}-${Date.now()}.jpg`
+  );
+  const oldFileID = doc.image_file_id || '';
+
+  let uploaded;
+  try {
+    uploaded = await cloud.uploadFile({
+      cloudPath,
+      fileContent: fs.createReadStream(filePath)
+    });
+  } catch (e) {
+    return fail(`图片上传失败：${e.message || e}`);
+  }
+
+  const nextImage = {
+    image_file_id: uploaded.fileID,
+    image_storage_path: cloudPath,
+    image_url: data.image_url || bundled.image_url || '',
+    image_alt: data.image_alt || bundled.image_alt || '',
+    image_credit: data.image_credit || bundled.image_credit || '',
+    image_source_url: data.image_source_url || bundled.image_source_url || ''
+  };
+  try {
+    await db.collection(C_PLACE).doc(doc._id).update({ data: nextImage });
+  } catch (e) {
+    await safe(() => cloud.deleteFile({ fileList: [uploaded.fileID] }), null);
+    return fail(`数据库更新失败，新图已回滚：${e.message || e}`);
+  }
+
+  let oldFile = { deleted: false, reason: 'none' };
+  if (oldFileID && oldFileID !== uploaded.fileID) {
+    oldFile = await safe(
+      () => deleteUnreferencedFile(oldFileID, doc._id),
+      { deleted: false, reason: 'delete_failed' }
+    );
+  }
+  await bumpVersion();
+  return ok({
+    place_id: placeId, image: nextImage, replaced: Boolean(oldFileID),
+    old_file_deleted: oldFile.deleted, old_file_delete_reason: oldFile.reason || null
+  });
+}
+
+// 管理员接口：删除一个地点当前图片及数据库图片字段；不接受外部 fileID，防止误删其他文件。
+async function adminDeletePlaceImage(openid, data) {
+  if (!isAdmin(openid)) return fail('无权限');
+  const placeId = Number(data.place_id);
+  if (!Number.isInteger(placeId) || placeId <= 0) return fail('缺少有效 place_id');
+  const doc = await findPlaceImageDoc(placeId);
+  if (!doc) return fail(`地点不存在：${placeId}`);
+  const oldFileID = doc.image_file_id || '';
+
+  try {
+    await db.collection(C_PLACE).doc(doc._id).update({ data: emptyPlaceImage() });
+  } catch (e) {
+    return fail(`数据库清理失败，旧图未删除：${e.message || e}`);
+  }
+
+  const oldFile = await safe(
+    () => deleteUnreferencedFile(oldFileID, doc._id),
+    { deleted: false, reason: 'delete_failed' }
+  );
+  await bumpVersion();
+  return ok({
+    place_id: placeId, image: emptyPlaceImage(), old_file_deleted: oldFile.deleted,
+    old_file_delete_reason: oldFile.reason || null
+  });
 }
 
 async function countFavorites(openid) {
@@ -659,9 +745,11 @@ exports.main = async (event = {}, context) => {
         return ok({ favorites: (f.data || []).map(x => x.parking_id), likes: (l.data || []).map(x => x.parking_id) });
       }
 
-      case 'sync-place-images':
-        await loadStatic();
-        return ok(await syncPlaceImages());
+      // ===== 管理员：地点图片接口 =====
+      case 'admin-add-place-image':
+        return adminAddPlaceImage(openid, event.data || {});
+      case 'admin-delete-place-image':
+        return adminDeletePlaceImage(openid, event.data || {});
 
       case 'categories': {
         await loadStatic();

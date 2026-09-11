@@ -8,7 +8,8 @@
 
   说明：
     - 只读取浏览器中实际可见的文字和链接，不读取接口、不绕过登录/验证码/风控。
-    - 结果先保存为待审核 JSON，后续确认字段后再导入 parking.db。
+    - 搜索页和每条笔记详情页都会先保存为本地原始 JSON，后续整理阶段只读取这些文件。
+    - 不保存图片、视频、Cookie 或账号信息；结果确认字段后再导入 parking.db。
 #>
 [CmdletBinding()]
 param(
@@ -17,12 +18,41 @@ param(
   [int]$WaitSeconds = 5,
   [int]$PageReadyTimeoutSeconds = 40,
   [int]$OpenNotes = 3,
-  [string]$OutputPath = ''
+  [string]$OutputPath = '',
+  [string]$RawOutputDir = ''
 )
 
 $ErrorActionPreference = 'Stop'
 if ([string]::IsNullOrWhiteSpace($OutputPath)) {
   $OutputPath = Join-Path $PSScriptRoot 'xhs-captures.json'
+}
+if ([string]::IsNullOrWhiteSpace($RawOutputDir)) {
+  $RawOutputDir = Join-Path $PSScriptRoot 'xhs-raw'
+}
+New-Item -ItemType Directory -Path $RawOutputDir -Force | Out-Null
+
+function Get-SafeFilePart {
+  param([string]$Value)
+  $safe = [string]$Value -replace '[\\/:*?"<>|\r\n]+', '_'
+  $safe = $safe.Trim(' ', '.')
+  if ([string]::IsNullOrWhiteSpace($safe)) { return 'unknown' }
+  return $safe.Substring(0, [Math]::Min(80, $safe.Length))
+}
+
+function Get-NoteIdFromUrl {
+  param([string]$Url)
+  if ([string]::IsNullOrWhiteSpace($Url)) { return '' }
+  $match = [regex]::Match($Url, '/(?:search_result|explore|note)/([0-9a-f]+)', [Text.RegularExpressions.RegexOptions]::IgnoreCase)
+  if ($match.Success) { return $match.Groups[1].Value }
+  return ''
+}
+
+function Save-RawJson {
+  param(
+    [string]$Path,
+    [object]$Value
+  )
+  $Value | ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $Path -Encoding UTF8
 }
 
 function Receive-WebSocketMessage {
@@ -154,7 +184,11 @@ function Get-PageTarget {
     throw "Cannot connect to browser debug port $Port. Run server\\start-xhs-edge.ps1 first, then sign in in the new browser window."
   }
 
-  $target = @($targets | Where-Object { $_.type -eq 'page' -and $_.webSocketDebuggerUrl } | Select-Object -First 1)
+  $pageTargets = @($targets | Where-Object { $_.type -eq 'page' -and $_.webSocketDebuggerUrl })
+  $target = @($pageTargets | Where-Object { $_.url -match 'xiaohongshu\.com' } | Select-Object -First 1)
+  if (-not $target) {
+    $target = @($pageTargets | Select-Object -First 1)
+  }
   if (-not $target) {
     throw "The debug port is reachable, but no usable page target was found. Open Xiaohongshu in the debug browser."
   }
@@ -259,6 +293,21 @@ try {
     }
 
     $snapshot = Get-VisiblePageSnapshot -Socket $socket -CommandId ([ref]$commandId)
+    $captureStamp = (Get-Date).ToUniversalTime().ToString('yyyyMMddTHHmmssfffZ')
+    $queryFilePart = Get-SafeFilePart -Value $keyword
+    $searchRawPath = Join-Path $RawOutputDir ("{0}-search-{1}.json" -f $captureStamp, $queryFilePart)
+    Save-RawJson -Path $searchRawPath -Value ([ordered]@{
+      schema_version = 1
+      capture_type = 'xhs_search_page'
+      captured_at = (Get-Date).ToUniversalTime().ToString('o')
+      keyword = $keyword
+      url = $snapshot.url
+      title = $snapshot.title
+      sort_mode = $sortMode
+      blocked_or_incomplete = $blocked
+      visible_text = $snapshot.text
+      visible_links = $snapshot.links
+    })
     $blockedText = [string]$snapshot.text
     $blockedSignals = @(
       'captcha', 'login', 'restricted', 'too frequent', 'failed to load', 'security check',
@@ -268,6 +317,9 @@ try {
       ([string]::Concat([char]0x64cd, [char]0x4f5c, [char]0x9891, [char]0x7e41)), # 操作频繁
       ([string]::Concat([char]0x52a0, [char]0x8f7d, [char]0x5931, [char]0x8d25)), # 加载失败
       ([string]::Concat([char]0x5b89, [char]0x5168, [char]0x9a8c, [char]0x8bc1)), # 安全验证
+      ([string]::Concat([char]0x5b89, [char]0x5168, [char]0x9650, [char]0x5236)), # 安全限制
+      ([string]::Concat([char]0x8bbf, [char]0x95ee, [char]0x94fe, [char]0x63a5, [char]0x5f02, [char]0x5e38)), # 访问链接异常
+      '300017', '300031',
       ([string]::Concat([char]0x5f53, [char]0x524d, [char]0x7b14, [char]0x8bb0, [char]0x6682, [char]0x65f6, [char]0x65e0, [char]0x6cd5, [char]0x6d4f, [char]0x89c8)), # 当前笔记暂时无法浏览
       ([string]::Concat([char]0x4f60, [char]0x8bbf, [char]0x95ee, [char]0x7684, [char]0x9875, [char]0x9762, [char]0x4e0d, [char]0x89c1, [char]0x4e86)) # 你访问的页面不见了
     )
@@ -287,23 +339,57 @@ try {
       if ($noteLinks.Count -ge [Math]::Max(0, $OpenNotes)) { break }
     }
 
+    $noteRank = 0
     foreach ($noteLink in $noteLinks) {
+      $noteRank++
       $commandId++
       [void](Send-CdpCommand -Socket $socket -Id $commandId -Method 'Page.navigate' -Params @{ url = $noteLink.href })
       Start-Sleep -Seconds $WaitSeconds
       $noteReadyExpression = @'
 (() => {
   const text = (document.body && document.body.innerText) || '';
-  return document.readyState === 'complete' && text.length > 500 && text.includes('关注');
+  const blocked = /安全限制|访问链接异常|安全验证|访问受限|操作频繁|加载失败|验证码|登录后查看|error_code=300017|error_code=300031/.test(text + ' ' + location.href);
+  return blocked || (document.readyState === 'complete' && text.length > 500 && text.includes('关注'));
 })()
 '@
       if (-not (Wait-PageCondition -Socket $socket -CommandId ([ref]$commandId) -Expression $noteReadyExpression -TimeoutSeconds $PageReadyTimeoutSeconds)) {
+        $incompleteSnapshot = Get-VisiblePageSnapshot -Socket $socket -CommandId ([ref]$commandId)
+        $incompletePath = Join-Path $RawOutputDir ("{0}-{1}-note-{2:D2}-{3}.json" -f $captureStamp, $queryFilePart, $noteRank, (Get-NoteIdFromUrl -Url $noteLink.href))
+        Save-RawJson -Path $incompletePath -Value ([ordered]@{
+          schema_version = 1
+          capture_type = 'xhs_note_page'
+          captured_at = (Get-Date).ToUniversalTime().ToString('o')
+          keyword = $keyword
+          rank = $noteRank
+          source_card = $noteLink.cardText
+          requested_url = $noteLink.href
+          note_url = $incompleteSnapshot.url
+          title = $incompleteSnapshot.title
+          blocked_or_incomplete = $true
+          visible_text = $incompleteSnapshot.text
+          visible_links = $incompleteSnapshot.links
+        })
         Write-Warning ("笔记页面未完成加载，跳过当前笔记，继续下一条。")
         continue
       }
       $noteSnapshot = Get-VisiblePageSnapshot -Socket $socket -CommandId ([ref]$commandId)
       $noteText = [string]$noteSnapshot.text
       $noteBlocked = @($blockedSignals | Where-Object { $noteText.Contains($_) }).Count -gt 0
+      $noteRawPath = Join-Path $RawOutputDir ("{0}-{1}-note-{2:D2}-{3}.json" -f $captureStamp, $queryFilePart, $noteRank, (Get-NoteIdFromUrl -Url $noteLink.href))
+      Save-RawJson -Path $noteRawPath -Value ([ordered]@{
+        schema_version = 1
+        capture_type = 'xhs_note_page'
+        captured_at = (Get-Date).ToUniversalTime().ToString('o')
+        keyword = $keyword
+        rank = $noteRank
+        source_card = $noteLink.cardText
+        requested_url = $noteLink.href
+        note_url = $noteSnapshot.url
+        title = $noteSnapshot.title
+        blocked_or_incomplete = $noteBlocked
+        visible_text = $noteText
+        visible_links = $noteSnapshot.links
+      })
 
       $notes += [ordered]@{
         source_card = $noteLink.cardText
@@ -312,6 +398,7 @@ try {
         blocked_or_incomplete = $noteBlocked
         visible_text = $noteText
         visible_links = $noteSnapshot.links
+        raw_file = $noteRawPath
       }
       $noteStatus = 'captured'
       if ($noteBlocked) { $noteStatus = 'manual check required' }
@@ -329,6 +416,7 @@ try {
       blocked_or_incomplete = $blocked
       visible_text = $snapshot.text
       visible_links = $snapshot.links
+      raw_search_file = $searchRawPath
       notes = $notes
     }
 

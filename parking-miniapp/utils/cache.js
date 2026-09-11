@@ -59,9 +59,33 @@ function loadPlaceImageFilesFromStorage() {
   return placeImageFiles;
 }
 
+// 数据包切换期间，云函数可能短暂返回“新 meta + 旧/不完整明细”。
+// 这类结果不能进入端上缓存，否则后续启动会一直复用不完整数据。
+function isIncompleteStatic(value) {
+  if (!value || !value.meta) return false;
+  const meta = value.meta;
+  const actualPlaces = Array.isArray(value.places) ? value.places.length : 0;
+  const actualParkings = Array.isArray(value.parkings) ? value.parkings.length : 0;
+  const declaredPlaces = Number(meta.places);
+  const declaredParkings = Number(meta.parkings);
+
+  if (Number.isFinite(declaredPlaces) && declaredPlaces > 0 && actualPlaces !== declaredPlaces) return true;
+  if (Number.isFinite(declaredParkings) && declaredParkings > 0 && actualParkings !== declaredParkings) return true;
+
+  // 当前数据集 ID 含有地点数量，兼容迁移过程中旧 meta 未带统计字段的情况。
+  const match = String(meta.dataset_id || '').match(/^xhs-p0-(\d+)-/);
+  if (match && actualPlaces !== Number(match[1])) return true;
+  return false;
+}
+
 // 拉取并缓存全量静态数据（仅在版本变化或本地缺失时真正请求网络）
 async function ensureStatic(force) {
   loadStaticFromStorage();
+  if (isIncompleteStatic(mem)) {
+    mem = null;
+    ready = false;
+    try { wx.removeStorageSync(STATIC_KEY); } catch (e) {}
+  }
   if (mem && !force) {
     // 轻量比对版本号，未变化直接复用本地
     try {
@@ -73,7 +97,7 @@ async function ensureStatic(force) {
   }
   try {
     const full = await invoke('bootstrap');
-    mem = {
+    const next = {
       version: full.version,
       meta: full.meta || {},
       places: full.places || [],
@@ -81,6 +105,8 @@ async function ensureStatic(force) {
       tips: full.tips || [],
       cachedAt: Date.now()
     };
+    if (isIncompleteStatic(next)) throw new Error('云端返回的静态数据不完整');
+    mem = next;
     wx.setStorageSync(STATIC_KEY, mem);
     ready = true;
   } catch (e) {
