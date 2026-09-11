@@ -8,6 +8,7 @@ App({
     location: null,      // { lat, lng }
     locationReady: false,
     cloudReady: false,
+    pendingDetailId: null,
     // 单页壳内的当前 Tab。
     tabBar: {
       current: 0

@@ -56,6 +56,21 @@ function city0(s) {
   return (s.meta && s.meta.cities && s.meta.cities[0]) || null;
 }
 
+// 支持“省医”这类简称：关键词字符按顺序出现在文本中即可命中。
+function fuzzyIncludes(text, keyword) {
+  const source = String(text || '').toLowerCase();
+  const query = String(keyword || '').trim().toLowerCase();
+  if (!query) return true;
+  if (source.includes(query)) return true;
+  let cursor = 0;
+  for (const char of query) {
+    cursor = source.indexOf(char, cursor);
+    if (cursor < 0) return false;
+    cursor += char.length;
+  }
+  return true;
+}
+
 function buildList(s, { cityCode, category, keyword, page = 1, size = 20, lat, lng, sort = 'heat' }) {
   let list = (s.places || []).filter(p => {
     if (cityCode && String(p.city_code || '440100') !== String(cityCode)) return false;
@@ -63,7 +78,7 @@ function buildList(s, { cityCode, category, keyword, page = 1, size = 20, lat, l
     if (keyword) {
       const kw = String(keyword).toLowerCase();
       const hay = `${p.name || ''} ${p.address || ''} ${p.search_text || ''} ${(p.tags || []).join(' ')}`.toLowerCase();
-      if (!hay.includes(kw)) return false;
+      if (!fuzzyIncludes(hay, kw)) return false;
     }
     return true;
   });
@@ -87,7 +102,7 @@ function searchPlaces(s, keyword, cityCode, limit = 20) {
     .filter(p => {
       if (cityCode && String(p.city_code || '440100') !== String(cityCode)) return false;
       const hay = `${p.name || ''} ${p.address || ''} ${p.search_text || ''}`.toLowerCase();
-      return hay.includes(kw);
+      return fuzzyIncludes(hay, kw);
     })
     .map(p => {
       const name = (p.name || '').toLowerCase();

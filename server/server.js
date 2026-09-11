@@ -110,6 +110,21 @@ function safeJson(s) {
   try { return JSON.parse(s); } catch { return []; }
 }
 
+// 支持“省医”这类简称：关键词字符按顺序出现在文本中即可命中。
+function fuzzyIncludes(text, keyword) {
+  const source = String(text || '').toLowerCase();
+  const query = String(keyword || '').trim().toLowerCase();
+  if (!query) return true;
+  if (source.includes(query)) return true;
+  let cursor = 0;
+  for (const char of query) {
+    cursor = source.indexOf(char, cursor);
+    if (cursor < 0) return false;
+    cursor += char.length;
+  }
+  return true;
+}
+
 function getPlaceDetail(id, lat, lng) {
   const place = db.prepare(`
     SELECT p.*, d.name AS district, c.name AS city_name, c.code AS city_code
@@ -174,12 +189,13 @@ function getPlaceDetail(id, lat, lng) {
 
 function searchPlaces(keyword, cityCode, limit = 20) {
   if (!keyword) return [];
-  const kw = `%${keyword}%`;
-  const args = [kw, kw, kw];
+  const kw = String(keyword).trim().toLowerCase();
+  const args = [];
   let cityClause = '';
   if (cityCode) { cityClause = 'AND c.code = ?'; args.push(cityCode); }
   const rows = db.prepare(`
-    SELECT p.id, p.name, p.category, p.address, p.lng, p.lat, d.name AS district,
+    SELECT p.id, p.name, p.category, p.address, p.lng, p.lat, p.heat, d.name AS district,
+           p.search_text,
            (SELECT MIN(pk.min_price_hour) FROM place_parking pp
               JOIN parkings pk ON pk.id = pp.parking_id
              WHERE pp.place_id = p.id AND pk.status = 1 AND pk.min_price_hour > 0) AS min_price
@@ -187,14 +203,19 @@ function searchPlaces(keyword, cityCode, limit = 20) {
       LEFT JOIN cities c ON c.id = p.city_id
       LEFT JOIN districts d ON d.id = p.district_id
      WHERE p.status = 1 ${cityClause}
-       AND (p.name LIKE ? OR p.address LIKE ? OR p.search_text LIKE ?)
-     ORDER BY
-       CASE WHEN p.name = ? THEN 0
-            WHEN p.name LIKE ? THEN 1
-            ELSE 2 END,
-       p.heat DESC
-     LIMIT ?
-  `).all(...args, keyword, `${keyword}%`, Number(limit));
+  `).all(...args)
+    .filter(row => fuzzyIncludes(`${row.name || ''} ${row.address || ''} ${row.search_text || ''}`, kw))
+    .map(row => {
+      const name = String(row.name || '').toLowerCase();
+      let rank = 3;
+      if (name === kw) rank = 0;
+      else if (name.startsWith(kw)) rank = 1;
+      else if (name.includes(kw)) rank = 2;
+      return { ...row, _rank: rank };
+    })
+    .sort((a, b) => a._rank - b._rank || (b.heat || 0) - (a.heat || 0))
+    .slice(0, Number(limit) || 20)
+    .map(({ search_text, _rank, ...row }) => row);
   return rows;
 }
 

@@ -26,10 +26,11 @@ Page({
     nearbyLoading: false,
     stats: {},
     profile: null,
-    form: { avatar: '', nickname: '' },
     editingNick: false,
     nickDraft: '',
-    busy: false
+    busy: false,
+    loginPromptVisible: false,
+    pendingDetailId: null
   },
 
   onLoad() {
@@ -45,6 +46,22 @@ Page({
     if (this.data.activeTab !== index) this.setData({ activeTab: index });
     this.updateNavigationTitle(index);
     this.syncTabBar(index);
+
+    const pendingDetailId = app.globalData.pendingDetailId;
+    if (pendingDetailId != null) {
+      app.globalData.pendingDetailId = null;
+      if (!user.isLogin()) {
+        this.setData({
+          activeTab: 0,
+          loginPromptVisible: true,
+          pendingDetailId
+        });
+        this.updateNavigationTitle(0);
+        this.syncTabBar(0);
+      } else {
+        setTimeout(() => this.goDetailById(pendingDetailId), 0);
+      }
+    }
 
     if (index === 1 && this.data.located && !this.data.hasLoc) this.reload();
     if (index === 2) {
@@ -263,7 +280,18 @@ Page({
   },
 
   goDetailById(id) {
+    if (!user.isLogin()) {
+      this.setData({ loginPromptVisible: true, pendingDetailId: id });
+      return;
+    }
     wx.navigateTo({ url: `/pages/detail/detail?id=${id}` });
+  },
+
+  stopLoginPromptTouch() {},
+
+  closeLoginPrompt() {
+    if (this.data.busy) return;
+    this.setData({ loginPromptVisible: false, pendingDetailId: null });
   },
 
   buildMarkers(list, selectedLoc, selectedName) {
@@ -330,27 +358,84 @@ Page({
       }));
   },
 
-  onChooseAvatar(e) {
+  // 登录只建立微信身份，不主动索取头像或昵称。
+  onLogin() {
     if (this.data.busy) return;
+    this.setData({ busy: true });
+    this.getLoginCode()
+      .then(code => api.login({ userId: user.getUserId(), code }))
+      .then(p => {
+        const server = p || {};
+        const nickname = String(server.nickname || '').trim() || '微信用户';
+        const avatar = server.avatar || '';
+        const u = { userId: user.getUserId(), nickname, avatar };
+        user.saveUser(u);
+        const pendingDetailId = this.data.pendingDetailId;
+        this.setData({
+          busy: false,
+          loginPromptVisible: false,
+          pendingDetailId: null,
+          profile: {
+            nickname,
+            avatar,
+            phone: server.phone || '',
+            initial: nickname[0],
+            favorite_count: server.favorite_count || 0,
+            like_count: server.like_count || 0
+          }
+        });
+        wx.showToast({ title: '登录成功', icon: 'success' });
+        if (pendingDetailId != null) {
+          setTimeout(() => this.goDetailById(pendingDetailId), 320);
+        }
+      })
+      .catch(() => {
+        this.setData({ busy: false });
+        wx.showToast({ title: '登录失败，请重试', icon: 'none' });
+      });
+  },
+
+  getLoginCode() {
+    return new Promise((resolve, reject) => {
+      wx.login({
+        success: res => res && res.code ? resolve(res.code) : reject(new Error('微信登录凭证获取失败')),
+        fail: reject
+      });
+    });
+  },
+
+  // 登录后单独更新头像，不再把头像选择当成登录动作。
+  onChooseAvatar(e) {
+    if (this.data.busy || !this.data.profile) return;
     const tmp = e.detail && e.detail.avatarUrl;
     if (!tmp) return;
 
     this.setData({ busy: true });
-    wx.showLoading({ title: '登录中', mask: true });
+    wx.showLoading({ title: '保存中', mask: true });
     this.toBase64(tmp)
       .then(dataUrl => {
-        this.setData({ 'form.avatar': dataUrl });
-        return this.completeLogin(this.data.form.nickname, dataUrl);
+        const local = user.getUser() || {};
+        const nickname = String(local.nickname || (this.data.profile && this.data.profile.nickname) || '微信用户').trim() || '微信用户';
+        const next = {
+          ...local,
+          userId: user.getUserId(),
+          nickname,
+          avatar: dataUrl
+        };
+        return api.login({ userId: next.userId, nickname: next.nickname, avatar: next.avatar })
+          .then(() => next);
+      })
+      .then(next => {
+        user.saveUser(next);
+        this.setData({ busy: false, 'profile.avatar': next.avatar });
+        wx.hideLoading();
+        wx.showToast({ title: '头像已更新', icon: 'success' });
       })
       .catch(() => {
         wx.hideLoading();
         this.setData({ busy: false });
-        wx.showToast({ title: '头像读取失败，请重试', icon: 'none' });
+        wx.showToast({ title: '头像保存失败，请重试', icon: 'none' });
       });
-  },
-
-  onNickInput(e) {
-    this.setData({ 'form.nickname': String((e.detail && e.detail.value) || '').trim() });
   },
 
   onEditNick() {
@@ -403,36 +488,6 @@ Page({
     });
   },
 
-  completeLogin(rawNick, avatar) {
-    const nickname = String(rawNick || '').trim() || '微信用户';
-    const u = { userId: user.getUserId(), nickname, avatar: avatar || '' };
-    return api.login(u)
-      .then(p => {
-        user.saveUser(u);
-        this.setData({
-          busy: false,
-          profile: {
-            nickname,
-            avatar: u.avatar,
-            phone: p.phone || '',
-            initial: nickname[0],
-            favorite_count: p.favorite_count || 0,
-            like_count: p.like_count || 0
-          }
-        });
-        wx.hideLoading();
-        wx.showToast({
-          title: nickname === '微信用户' ? '登录成功，可点昵称修改' : '登录成功',
-          icon: 'success'
-        });
-      })
-      .catch(() => {
-        wx.hideLoading();
-        this.setData({ busy: false });
-        wx.showToast({ title: '登录失败，请检查网络后重试', icon: 'none' });
-      });
-  },
-
   onLogout() {
     wx.showModal({
       title: '退出登录',
@@ -441,7 +496,7 @@ Page({
       success: r => {
         if (r.confirm) {
           user.clearUser();
-          this.setData({ profile: null });
+          this.setData({ profile: null, loginPromptVisible: false, pendingDetailId: null });
           wx.showToast({ title: '已退出登录', icon: 'none' });
         }
       }

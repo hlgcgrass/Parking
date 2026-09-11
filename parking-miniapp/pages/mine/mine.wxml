@@ -3,25 +3,22 @@
   <!-- ======== 顶部用户卡 ======== -->
   <view class="pad" style="padding-top:32rpx">
 
-    <!-- 未登录：点按钮 → 微信原生头像选择 → 即完成登录 -->
+    <!-- 未登录：先静默完成登录，头像和昵称登录后再完善 -->
     <view class="card login-card" wx:if="{{!profile}}">
       <view class="row">
-        <button class="profile-avatar" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar" hover-class="none">
-          <image wx:if="{{form.avatar}}" src="{{form.avatar}}" class="avatar" mode="aspectFill"></image>
-          <view wx:else class="avatar--ph avatar--char avatar-pick-ph">微</view>
-        </button>
+        <view class="profile-avatar profile-avatar--static" aria-hidden="true">
+          <view class="avatar--ph avatar--char avatar-pick-ph">微</view>
+        </view>
         <view class="grow" style="margin-left:24rpx">
           <view class="fs-title t1">登录停车攻略</view>
-          <input class="nick-input mt-sm" type="nickname" value="{{form.nickname}}"
-                 placeholder="选填昵称（不填默认「微信用户」）" placeholder-class="nick-ph"
-                 maxlength="16" bindblur="onNickInput"></input>
+          <view class="fs-caption t3 mt-sm">登录后同步收藏、点赞记录</view>
         </view>
       </view>
-      <button class="btn-primary btn-block mt-lg" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar"
-              loading="{{busy}}" hover-class="none">
-        微信一键授权登录
+      <button class="btn-primary btn-block mt-lg {{busy ? 'btn-primary--disabled' : ''}}"
+              bindtap="onLogin" loading="{{busy}}" disabled="{{busy}}" hover-class="none">
+        {{busy ? '登录中...' : '微信一键登录'}}
       </button>
-      <view class="fs-tag t4 mt-md login-note">选一张头像即完成登录，昵称选填、登录后随时可改</view>
+      <view class="fs-tag t4 mt-md login-note">登录后可随时完善头像和昵称</view>
     </view>
 
     <!-- 已登录 -->

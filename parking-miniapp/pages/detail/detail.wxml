@@ -54,6 +54,9 @@
           <view class="grow">
             <view class="row">
               <text class="item__title ellipsis">{{item.name}}</text>
+              <view class="parking-location" catchtap="openParkingMap" data-index="{{parkingIndex}}">
+                <t-icon name="location-parking-place-filled" size="34rpx" />
+              </view>
             </view>
             <view class="fs-caption t3 mt-sm">
               {{item.type}}<text wx:if="{{item.scale}}"> · {{item.scale}}</text>
@@ -158,6 +161,9 @@
 
 <!-- 底部操作栏 -->
 <view class="footer" wx:if="{{place}}">
-  <view class="btn-secondary footer__btn" bindtap="openMap">导航到 {{place.name}}</view>
+  <view class="btn-secondary footer__btn footer__nav-btn" bindtap="openMap">
+    <t-icon name="location-filled" size="36rpx" color="#0F6E56" />
+    <text>导航</text>
+  </view>
   <view class="btn-primary footer__btn" style="margin-left:24rpx" bindtap="onReport">纠错 / 补充</view>
 </view>

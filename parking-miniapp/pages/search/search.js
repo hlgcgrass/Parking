@@ -1,5 +1,6 @@
 const api = require('../../utils/api.js');
 const { DEFAULT_CITY } = require('../../utils/config.js');
+const detailEntry = require('../../utils/detail-entry.js');
 
 const HOT_WORDS = ['北京路', '广州塔', '省医', '正佳广场', '白云山', '长隆', '中山一院', '天河城'];
 const HISTORY_KEY = 'search_history';
@@ -67,7 +68,7 @@ Page({
   },
 
   goDetail(e) {
-    wx.navigateTo({ url: `/pages/detail/detail?id=${e.currentTarget.dataset.id}` });
+    detailEntry.open(e.currentTarget.dataset.id);
   },
 
   goBack() {

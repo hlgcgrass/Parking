@@ -262,9 +262,11 @@ async function syncPlaceImages() {
         { data: [] }
       );
       const doc = existing.data && existing.data[0];
-      let fileID = doc && doc.image_file_id;
-      const needsNamedPath = !doc || doc.image_storage_path !== meta.cloud_path;
-      if (!fileID || needsNamedPath) {
+      const oldFileID = doc && doc.image_file_id;
+      const oldStoragePath = doc && doc.image_storage_path;
+      let fileID = oldFileID;
+      const needsUpload = !doc || !oldFileID || oldStoragePath !== meta.cloud_path;
+      if (needsUpload) {
         const filePath = path.join(__dirname, meta.asset_path);
         const uploaded = await cloud.uploadFile({
           cloudPath: meta.cloud_path,
@@ -275,6 +277,22 @@ async function syncPlaceImages() {
           await db.collection(C_PLACE).doc(doc._id).update({
             data: publicPlaceImage(placeId, fileID)
           });
+        }
+        // 新图写库成功后再删除旧 fileID，避免更新失败造成旧图不可恢复。
+        if (oldFileID && oldFileID !== fileID) {
+          try {
+            await cloud.deleteFile({ fileList: [oldFileID] });
+          } catch (e) {
+            console.warn(`[images] 旧图清理失败 place=${placeId}`, e && e.message ? e.message : e);
+          }
+        }
+      } else if (doc) {
+        // 同一版本路径下也刷新来源元数据，确保换图后数据库不会残留旧链接。
+        const nextImage = publicPlaceImage(placeId, fileID);
+        const metadataChanged = ['image_url', 'image_alt', 'image_credit', 'image_source_url']
+          .some(key => doc[key] !== nextImage[key]);
+        if (metadataChanged) {
+          await db.collection(C_PLACE).doc(doc._id).update({ data: nextImage });
         }
       }
       const image = publicPlaceImage(placeId, fileID);
@@ -327,6 +345,21 @@ function city0() {
   return (cache.meta && cache.meta.cities && cache.meta.cities[0]) || null;
 }
 
+// 支持“省医”这类简称：关键词字符按顺序出现在文本中即可命中。
+function fuzzyIncludes(text, keyword) {
+  const source = String(text || '').toLowerCase();
+  const query = String(keyword || '').trim().toLowerCase();
+  if (!query) return true;
+  if (source.includes(query)) return true;
+  let cursor = 0;
+  for (const char of query) {
+    cursor = source.indexOf(char, cursor);
+    if (cursor < 0) return false;
+    cursor += char.length;
+  }
+  return true;
+}
+
 function buildList({ cityCode, category, keyword, page = 1, size = 20, lat, lng, sort = 'heat' }) {
   let list = cache.places.filter(p => {
     if (cityCode && String(p.city_code || '440100') !== String(cityCode)) return false;
@@ -334,7 +367,7 @@ function buildList({ cityCode, category, keyword, page = 1, size = 20, lat, lng,
     if (keyword) {
       const kw = String(keyword).toLowerCase();
       const hay = `${p.name || ''} ${p.address || ''} ${p.search_text || ''} ${(p.tags || []).join(' ')}`.toLowerCase();
-      if (!hay.includes(kw)) return false;
+      if (!fuzzyIncludes(hay, kw)) return false;
     }
     return true;
   });
@@ -402,7 +435,7 @@ function searchPlaces(keyword, cityCode, limit = 20) {
     .filter(p => {
       if (cityCode && String(p.city_code || '440100') !== String(cityCode)) return false;
       const hay = `${p.name || ''} ${p.address || ''} ${p.search_text || ''}`.toLowerCase();
-      return hay.includes(kw);
+      return fuzzyIncludes(hay, kw);
     })
     .map(p => {
       const name = (p.name || '').toLowerCase();

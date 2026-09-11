@@ -5,7 +5,7 @@ module.exports = {
     image_alt: "北京路步行街地点实景图",
     image_credit: "精英志文章图片",
     image_source_url: "https://www.jingyingzhi.com/news/12009",
-    cloud_path: "place-images/v2/北京路步行街.jpg",
+    cloud_path: "place-images/v3/北京路步行街.jpg",
     asset_path: "assets/place-images/北京路步行街.jpg"
   },
   2: {
@@ -13,7 +13,7 @@ module.exports = {
     image_alt: "天河城地点实景图",
     image_credit: "广州市人民政府外办网站（来源页图片）",
     image_source_url: "https://www.eguangzhou.gov.cn/gzspecialreports/intlblocks/fun/shopping/content/post_33517.html",
-    cloud_path: "place-images/v2/天河城.jpg",
+    cloud_path: "place-images/v3/天河城.jpg",
     asset_path: "assets/place-images/天河城.jpg"
   },
   3: {
@@ -21,7 +21,7 @@ module.exports = {
     image_alt: "正佳广场地点实景图",
     image_credit: "JLL 地产项目图片",
     image_source_url: "https://www.dichandadang.com/en/retail-leasing/guangzhou/tianhe/grandview-mall",
-    cloud_path: "place-images/v2/正佳广场.jpg",
+    cloud_path: "place-images/v3/正佳广场.jpg",
     asset_path: "assets/place-images/正佳广场.jpg"
   },
   4: {
@@ -29,7 +29,7 @@ module.exports = {
     image_alt: "天环广场地点实景图",
     image_credit: "观点网文章图片",
     image_source_url: "https://www.guandian.cn/m/show/172231",
-    cloud_path: "place-images/v2/天环广场.jpg",
+    cloud_path: "place-images/v3/天环广场.jpg",
     asset_path: "assets/place-images/天环广场.jpg"
   },
   5: {
@@ -37,7 +37,7 @@ module.exports = {
     image_alt: "太古汇地点实景图",
     image_credit: "Cathay Pacific（来源页标注 courtesy images）",
     image_source_url: "https://www.cathaypacific.com/cx/en_ID/inspiration/travel/best-things-to-do-guangzhou-east.html",
-    cloud_path: "place-images/v2/太古汇.jpg",
+    cloud_path: "place-images/v3/太古汇.jpg",
     asset_path: "assets/place-images/太古汇.jpg"
   },
   6: {
@@ -45,7 +45,7 @@ module.exports = {
     image_alt: "万菱汇地点实景图",
     image_credit: "捷停车/万菱汇项目文章图片",
     image_source_url: "https://www.jparking.cn/about/dynamic/0c5fcff5f9322fd2dc2f57c9d95c0b3",
-    cloud_path: "place-images/v2/万菱汇.jpg",
+    cloud_path: "place-images/v3/万菱汇.jpg",
     asset_path: "assets/place-images/万菱汇.jpg"
   },
   7: {
@@ -53,7 +53,7 @@ module.exports = {
     image_alt: "体育西路商圈地点实景图",
     image_credit: "来源页图片",
     image_source_url: "https://paco-business-hotel-guangzhou-tiyu-xilu-metro.allguangzhouhotels.com/en/",
-    cloud_path: "place-images/v2/体育西路商圈.jpg",
+    cloud_path: "place-images/v3/体育西路商圈.jpg",
     asset_path: "assets/place-images/体育西路商圈.jpg"
   },
   8: {
@@ -61,7 +61,7 @@ module.exports = {
     image_alt: "珠江新城（花城汇/高德置地）地点实景图",
     image_credit: "广州地标广告项目页面图片",
     image_source_url: "https://www.lightthecity.cn/info?id=1297",
-    cloud_path: "place-images/v2/珠江新城（花城汇-高德置地）.jpg",
+    cloud_path: "place-images/v3/珠江新城（花城汇-高德置地）.jpg",
     asset_path: "assets/place-images/珠江新城（花城汇-高德置地）.jpg"
   },
   9: {
@@ -69,7 +69,7 @@ module.exports = {
     image_alt: "上下九/第十甫地点实景图",
     image_credit: "新浪文章图片",
     image_source_url: "https://k.sina.com.cn/article_6022215800_166f3b87800100h931.html",
-    cloud_path: "place-images/v2/上下九-第十甫.jpg",
+    cloud_path: "place-images/v3/上下九-第十甫.jpg",
     asset_path: "assets/place-images/上下九-第十甫.jpg"
   },
   10: {
@@ -77,7 +77,7 @@ module.exports = {
     image_alt: "江南西地点实景图",
     image_credit: "数艺网文章图片",
     image_source_url: "https://www.d-arts.cn/article/article_info/key/MTIwNzcyODM0OTmEqYmtr5zKcw.html",
-    cloud_path: "place-images/v2/江南西.jpg",
+    cloud_path: "place-images/v3/江南西.jpg",
     asset_path: "assets/place-images/江南西.jpg"
   },
   11: {
@@ -85,7 +85,7 @@ module.exports = {
     image_alt: "岗顶地点实景图",
     image_credit: "淘工位/天娱广场楼宇页面图片",
     image_source_url: "https://www.taogongwei.com/building/detail/1964",
-    cloud_path: "place-images/v2/岗顶.jpg",
+    cloud_path: "place-images/v3/岗顶.jpg",
     asset_path: "assets/place-images/岗顶.jpg"
   },
   12: {
@@ -93,7 +93,7 @@ module.exports = {
     image_alt: "五羊新城地点实景图",
     image_credit: "搜狐文章图片",
     image_source_url: "https://www.sohu.com/a/411454300_391251",
-    cloud_path: "place-images/v2/五羊新城.jpg",
+    cloud_path: "place-images/v3/五羊新城.jpg",
     asset_path: "assets/place-images/五羊新城.jpg"
   },
   13: {
@@ -101,7 +101,7 @@ module.exports = {
     image_alt: "百信广场地点实景图",
     image_credit: "广州市白云区政府网站（来源页图片）",
     image_source_url: "https://en.by.gov.cn/2023-05/16/c_756740.htm",
-    cloud_path: "place-images/v2/百信广场.jpg",
+    cloud_path: "place-images/v3/百信广场.jpg",
     asset_path: "assets/place-images/百信广场.jpg"
   },
   14: {
@@ -109,7 +109,7 @@ module.exports = {
     image_alt: "万达广场（白云店）地点实景图",
     image_credit: "JLL 地产项目图片",
     image_source_url: "https://www.dichandadang.com/en/retail-leasing/guangzhou/baiyun/baiyun-wanda-plaza",
-    cloud_path: "place-images/v2/万达广场（白云店）.jpg",
+    cloud_path: "place-images/v3/万达广场（白云店）.jpg",
     asset_path: "assets/place-images/万达广场（白云店）.jpg"
   },
   15: {
@@ -117,7 +117,7 @@ module.exports = {
     image_alt: "番禺万博地点实景图",
     image_credit: "广州日报·新花城文章图片",
     image_source_url: "https://huacheng.gz-cmc.com/pages/2021/10/20/9147e8e041c34cb5959436d2eee314d2.html",
-    cloud_path: "place-images/v2/番禺万博.jpg",
+    cloud_path: "place-images/v3/番禺万博.jpg",
     asset_path: "assets/place-images/番禺万博.jpg"
   },
   16: {
@@ -125,7 +125,7 @@ module.exports = {
     image_alt: "黄埔大沙地地点实景图",
     image_credit: "Wikimedia Commons，Tim Wu，CC BY-SA 4.0",
     image_source_url: "https://commons.wikimedia.org/wiki/File:Exit_A,_Dashadi_Station,_Guangzhou_Metro_20220528.jpg",
-    cloud_path: "place-images/v2/黄埔大沙地.jpg",
+    cloud_path: "place-images/v3/黄埔大沙地.jpg",
     asset_path: "assets/place-images/黄埔大沙地.jpg"
   },
   17: {
@@ -133,7 +133,7 @@ module.exports = {
     image_alt: "荔湾西城都荟地点实景图",
     image_credit: "领展 Link REIT 官方网站（来源页图片）",
     image_source_url: "https://www.linkreit.com/tc/media/news-releases/growing-brighter-with-you-for-15-years/",
-    cloud_path: "place-images/v2/荔湾西城都荟.jpg",
+    cloud_path: "place-images/v3/荔湾西城都荟.jpg",
     asset_path: "assets/place-images/荔湾西城都荟.jpg"
   },
   18: {
@@ -141,7 +141,7 @@ module.exports = {
     image_alt: "天娱广场地点实景图",
     image_credit: "淘工位/天娱广场楼宇页面图片",
     image_source_url: "https://www.taogongwei.com/building/detail/1964",
-    cloud_path: "place-images/v2/天娱广场.jpg",
+    cloud_path: "place-images/v3/天娱广场.jpg",
     asset_path: "assets/place-images/天娱广场.jpg"
   },
   19: {
@@ -149,15 +149,15 @@ module.exports = {
     image_alt: "摩登百货（岗顶店）地点实景图",
     image_credit: "广州摩登百货官方网站（来源页图片）",
     image_source_url: "https://www.mopark.com.cn/cn/about.html",
-    cloud_path: "place-images/v2/摩登百货（岗顶店）.jpg",
+    cloud_path: "place-images/v3/摩登百货（岗顶店）.jpg",
     asset_path: "assets/place-images/摩登百货（岗顶店）.jpg"
   },
   20: {
-    image_url: "https://rmrbcmsonline.peopleapp.com/upload/ueditor/image/20180814/5662351534210785.jpg",
+    image_url: "https://i0.hdslb.com/bfs/archive/0a44b3289750ea7a0860c9e89693d9f2979ea2ba.jpg",
     image_alt: "广州塔（小蛮腰）地点实景图",
-    image_credit: "人民日报客户端文章图片",
-    image_source_url: "https://www.peopleapp.com/column/30036617975-500001657497",
-    cloud_path: "place-images/v2/广州塔（小蛮腰）.jpg",
+    image_credit: "百度图片前排结果，来源页为哔哩哔哩视频封面",
+    image_source_url: "https://www.bilibili.com/video/BV1WXVoznEdR",
+    cloud_path: "place-images/v3/广州塔（小蛮腰）.jpg",
     asset_path: "assets/place-images/广州塔（小蛮腰）.jpg"
   },
   21: {
@@ -165,7 +165,7 @@ module.exports = {
     image_alt: "海心沙地点实景图",
     image_credit: "Trip.com（来源页图片）",
     image_source_url: "https://hk.trip.com/moments/detail/guangzhou-152-119821129/",
-    cloud_path: "place-images/v2/海心沙.jpg",
+    cloud_path: "place-images/v3/海心沙.jpg",
     asset_path: "assets/place-images/海心沙.jpg"
   },
   22: {
@@ -173,7 +173,7 @@ module.exports = {
     image_alt: "花城广场地点实景图",
     image_credit: "广州市人民政府门户网站（来源页图片）",
     image_source_url: "https://www.gz.gov.cn/zt/jrshts/2023n/zqgq/hhyy/content/post_9225540.html",
-    cloud_path: "place-images/v2/花城广场.jpg",
+    cloud_path: "place-images/v3/花城广场.jpg",
     asset_path: "assets/place-images/花城广场.jpg"
   },
   23: {
@@ -181,7 +181,7 @@ module.exports = {
     image_alt: "广东省博物馆地点实景图",
     image_credit: "ChinaToursNet 景点页面图片",
     image_source_url: "https://www.chinatoursnet.com/guangzhou-travel-guide/attraction/guangdong-museum.html",
-    cloud_path: "place-images/v2/广东省博物馆.jpg",
+    cloud_path: "place-images/v3/广东省博物馆.jpg",
     asset_path: "assets/place-images/广东省博物馆.jpg"
   },
   24: {
@@ -189,7 +189,7 @@ module.exports = {
     image_alt: "广州图书馆地点实景图",
     image_credit: "Nikken Sekkei 项目官网（来源页图片）",
     image_source_url: "https://www.nikken.co.jp/en/projects/cultural/guangzhou_library.html",
-    cloud_path: "place-images/v2/广州图书馆.jpg",
+    cloud_path: "place-images/v3/广州图书馆.jpg",
     asset_path: "assets/place-images/广州图书馆.jpg"
   },
   25: {
@@ -197,7 +197,7 @@ module.exports = {
     image_alt: "白云山（南门/西门）地点实景图",
     image_credit: "广州市人民政府外办网站（来源页图片）",
     image_source_url: "https://www.eguangzhou.gov.cn/gzlatest/content/post_42330.html",
-    cloud_path: "place-images/v2/白云山（南门-西门）.jpg",
+    cloud_path: "place-images/v3/白云山（南门-西门）.jpg",
     asset_path: "assets/place-images/白云山（南门-西门）.jpg"
   },
   26: {
@@ -205,7 +205,7 @@ module.exports = {
     image_alt: "陈家祠地点实景图",
     image_credit: "Wikimedia Commons（来源页署名/许可信息）",
     image_source_url: "https://commons.wikimedia.org/wiki/File%3AGuangzhou_Chen_Clan_Ancestral_Hall.jpg",
-    cloud_path: "place-images/v2/陈家祠.jpg",
+    cloud_path: "place-images/v3/陈家祠.jpg",
     asset_path: "assets/place-images/陈家祠.jpg"
   },
   27: {
@@ -213,7 +213,7 @@ module.exports = {
     image_alt: "沙面岛地点实景图",
     image_credit: "当代中国/Our China Story（来源页图片）",
     image_source_url: "https://www.ourchinastory.com/zh/4578/%E5%85%AC%E6%B0%91%E7%A7%91%E8%80%83%E5%AF%9F%EF%BD%9C%E5%BB%A3%E5%B7%9E%E6%B2%99%E9%9D%A2150%E5%BA%A7%E6%AD%90%E5%BC%8F%E5%BB%BA%E7%AF%89-%E6%98%94%E6%97%A5%E8%8B%B1%E6%B3%95%E7%A7%9F%E7%95%8C%E6%88%90%E5%9C%8B%E5%AE%B6%E7%B4%9A%E3%80%8C%E9%9C%B2%E5%A4%A9%E5%8D%9A%E7%89%A9%E9%A4%A8%E3%80%8D",
-    cloud_path: "place-images/v2/沙面岛.jpg",
+    cloud_path: "place-images/v3/沙面岛.jpg",
     asset_path: "assets/place-images/沙面岛.jpg"
   },
   28: {
@@ -221,7 +221,7 @@ module.exports = {
     image_alt: "永庆坊/荔枝湾地点实景图",
     image_credit: "Trip.com（来源页图片）",
     image_source_url: "https://www.trip.com/moments/detail/guangzhou-152-142902755/",
-    cloud_path: "place-images/v2/永庆坊-荔枝湾.jpg",
+    cloud_path: "place-images/v3/永庆坊-荔枝湾.jpg",
     asset_path: "assets/place-images/永庆坊-荔枝湾.jpg"
   },
   29: {
@@ -229,7 +229,7 @@ module.exports = {
     image_alt: "越秀公园地点实景图",
     image_credit: "广州市林业和园林局网站（来源页图片）",
     image_source_url: "https://lyylj.gz.gov.cn/ztzl/cgzs/gyld/content/post_7758035.html",
-    cloud_path: "place-images/v2/越秀公园.jpg",
+    cloud_path: "place-images/v3/越秀公园.jpg",
     asset_path: "assets/place-images/越秀公园.jpg"
   },
   30: {
@@ -237,7 +237,7 @@ module.exports = {
     image_alt: "中山纪念堂地点实景图",
     image_credit: "广州日报·新花城文章图片",
     image_source_url: "https://huacheng.gz-cmc.com/pages/2019/10/08/0bc1bc66ed0244f2bb435643f266ab5f.html",
-    cloud_path: "place-images/v2/中山纪念堂.jpg",
+    cloud_path: "place-images/v3/中山纪念堂.jpg",
     asset_path: "assets/place-images/中山纪念堂.jpg"
   },
   31: {
@@ -245,7 +245,7 @@ module.exports = {
     image_alt: "南越王墓博物馆地点实景图",
     image_credit: "去哪儿攻略图片",
     image_source_url: "https://touch.travel.qunar.com/comment/4819819",
-    cloud_path: "place-images/v2/南越王墓博物馆.jpg",
+    cloud_path: "place-images/v3/南越王墓博物馆.jpg",
     asset_path: "assets/place-images/南越王墓博物馆.jpg"
   },
   32: {
@@ -253,7 +253,7 @@ module.exports = {
     image_alt: "长隆旅游度假区地点实景图",
     image_credit: "空间印象项目文章图片",
     image_source_url: "https://www.sidd.com.cn/xiaoxi/1608.html",
-    cloud_path: "place-images/v2/长隆旅游度假区.jpg",
+    cloud_path: "place-images/v3/长隆旅游度假区.jpg",
     asset_path: "assets/place-images/长隆旅游度假区.jpg"
   },
   33: {
@@ -261,7 +261,7 @@ module.exports = {
     image_alt: "华南植物园地点实景图",
     image_credit: "广州日报·新花城文章图片",
     image_source_url: "https://huacheng.gz-cmc.com/pages/2023/06/02/6347d3ac7c644c9e9d5b788e5b088846.html",
-    cloud_path: "place-images/v2/华南植物园.jpg",
+    cloud_path: "place-images/v3/华南植物园.jpg",
     asset_path: "assets/place-images/华南植物园.jpg"
   },
   34: {
@@ -269,7 +269,7 @@ module.exports = {
     image_alt: "黄埔军校地点实景图",
     image_credit: "搜狐文章图片",
     image_source_url: "https://www.sohu.com/a/794262097_100116740",
-    cloud_path: "place-images/v2/黄埔军校.jpg",
+    cloud_path: "place-images/v3/黄埔军校.jpg",
     asset_path: "assets/place-images/黄埔军校.jpg"
   },
   35: {
@@ -277,7 +277,7 @@ module.exports = {
     image_alt: "沙湾古镇地点实景图",
     image_credit: "新浪文章图片",
     image_source_url: "https://k.sina.cn/article_7023182205_p1a29d417d00100o6b7.html",
-    cloud_path: "place-images/v2/沙湾古镇.jpg",
+    cloud_path: "place-images/v3/沙湾古镇.jpg",
     asset_path: "assets/place-images/沙湾古镇.jpg"
   },
   36: {
@@ -285,7 +285,7 @@ module.exports = {
     image_alt: "余荫山房地点实景图",
     image_credit: "去哪儿攻略图片",
     image_source_url: "https://touch.travel.qunar.com/comment/17194182?bd_source=bdglxzh&from=client",
-    cloud_path: "place-images/v2/余荫山房.jpg",
+    cloud_path: "place-images/v3/余荫山房.jpg",
     asset_path: "assets/place-images/余荫山房.jpg"
   },
   37: {
@@ -293,7 +293,7 @@ module.exports = {
     image_alt: "莲花山地点实景图",
     image_credit: "广州日报·新花城文章图片",
     image_source_url: "https://huacheng.gz-cmc.com/pages/2022/10/02/8623c23a55f44d38b2b58fe9d07a7eaf.html",
-    cloud_path: "place-images/v2/莲花山.jpg",
+    cloud_path: "place-images/v3/莲花山.jpg",
     asset_path: "assets/place-images/莲花山.jpg"
   },
   38: {
@@ -301,7 +301,7 @@ module.exports = {
     image_alt: "大夫山森林公园地点实景图",
     image_credit: "图虫摄影页面图片",
     image_source_url: "https://liveline.tuchong.com/117751796/",
-    cloud_path: "place-images/v2/大夫山森林公园.jpg",
+    cloud_path: "place-images/v3/大夫山森林公园.jpg",
     asset_path: "assets/place-images/大夫山森林公园.jpg"
   },
   39: {
@@ -309,7 +309,7 @@ module.exports = {
     image_alt: "海珠湖地点实景图",
     image_credit: "去哪儿攻略图片",
     image_source_url: "https://touch.travel.qunar.com/comment/5808279",
-    cloud_path: "place-images/v2/海珠湖.jpg",
+    cloud_path: "place-images/v3/海珠湖.jpg",
     asset_path: "assets/place-images/海珠湖.jpg"
   },
   40: {
@@ -317,7 +317,7 @@ module.exports = {
     image_alt: "广州动物园地点实景图",
     image_credit: "搜狐文章图片",
     image_source_url: "https://www.sohu.com/a/830003205_121124574",
-    cloud_path: "place-images/v2/广州动物园.jpg",
+    cloud_path: "place-images/v3/广州动物园.jpg",
     asset_path: "assets/place-images/广州动物园.jpg"
   },
   41: {
@@ -325,7 +325,7 @@ module.exports = {
     image_alt: "二沙岛地点实景图",
     image_credit: "太平洋电脑网摄影部落图片",
     image_source_url: "https://dp.pconline.com.cn/photo/list_3517242.html",
-    cloud_path: "place-images/v2/二沙岛.jpg",
+    cloud_path: "place-images/v3/二沙岛.jpg",
     asset_path: "assets/place-images/二沙岛.jpg"
   },
   42: {
@@ -333,7 +333,7 @@ module.exports = {
     image_alt: "中山大学附属第一医院地点实景图",
     image_credit: "To China Care 医疗服务页面图片",
     image_source_url: "https://www.tochinacare.com/ja/hospital/",
-    cloud_path: "place-images/v2/中山大学附属第一医院.jpg",
+    cloud_path: "place-images/v3/中山大学附属第一医院.jpg",
     asset_path: "assets/place-images/中山大学附属第一医院.jpg"
   },
   43: {
@@ -341,7 +341,7 @@ module.exports = {
     image_alt: "广东省人民医院地点实景图",
     image_credit: "广东省人民医院官网图片",
     image_source_url: "https://www.gdghospital.org.cn/en/History/index.html",
-    cloud_path: "place-images/v2/广东省人民医院.jpg",
+    cloud_path: "place-images/v3/广东省人民医院.jpg",
     asset_path: "assets/place-images/广东省人民医院.jpg"
   },
   44: {
@@ -349,7 +349,7 @@ module.exports = {
     image_alt: "中山大学附属第三医院地点实景图",
     image_credit: "中山大学官网（来源页图片）",
     image_source_url: "https://www.sysu.edu.cn/sysuen/Health_Care/Clinical_Care.htm",
-    cloud_path: "place-images/v2/中山大学附属第三医院.jpg",
+    cloud_path: "place-images/v3/中山大学附属第三医院.jpg",
     asset_path: "assets/place-images/中山大学附属第三医院.jpg"
   },
   45: {
@@ -357,7 +357,7 @@ module.exports = {
     image_alt: "南方医科大学南方医院地点实景图",
     image_credit: "向日葵儿童页面图片",
     image_source_url: "https://www.curekids.cn/relarticle/0017f5518d4b4d39af1e782189307782",
-    cloud_path: "place-images/v2/南方医科大学南方医院.jpg",
+    cloud_path: "place-images/v3/南方医科大学南方医院.jpg",
     asset_path: "assets/place-images/南方医科大学南方医院.jpg"
   },
   46: {
@@ -365,7 +365,7 @@ module.exports = {
     image_alt: "广州医科大学附属第一医院地点实景图",
     image_credit: "Micurae 页面图片",
     image_source_url: "https://micurae.com/en/the-first-affiliated-hospital-of-guangzhou-medical-university/",
-    cloud_path: "place-images/v2/广州医科大学附属第一医院.jpg",
+    cloud_path: "place-images/v3/广州医科大学附属第一医院.jpg",
     asset_path: "assets/place-images/广州医科大学附属第一医院.jpg"
   },
   47: {
@@ -373,7 +373,7 @@ module.exports = {
     image_alt: "中山大学孙逸仙纪念医院（中山二院）地点实景图",
     image_credit: "孙逸仙纪念医院形象宣传页面图片",
     image_source_url: "https://www.hybirdcc.com/page125?article_id=118",
-    cloud_path: "place-images/v2/中山大学孙逸仙纪念医院（中山二院）.jpg",
+    cloud_path: "place-images/v3/中山大学孙逸仙纪念医院（中山二院）.jpg",
     asset_path: "assets/place-images/中山大学孙逸仙纪念医院（中山二院）.jpg"
   },
   48: {
@@ -381,7 +381,7 @@ module.exports = {
     image_alt: "中山大学附属第六医院地点实景图",
     image_credit: "孕小帮医院页面图片",
     image_source_url: "https://www.jmbon.net/zhongshan-6-yuan/intro",
-    cloud_path: "place-images/v2/中山大学附属第六医院.jpg",
+    cloud_path: "place-images/v3/中山大学附属第六医院.jpg",
     asset_path: "assets/place-images/中山大学附属第六医院.jpg"
   },
   49: {
@@ -389,7 +389,7 @@ module.exports = {
     image_alt: "广东省妇幼保健院地点实景图",
     image_credit: "WCOB 页面图片",
     image_source_url: "https://www.ishinin.com/question/10214",
-    cloud_path: "place-images/v2/广东省妇幼保健院.jpg",
+    cloud_path: "place-images/v3/广东省妇幼保健院.jpg",
     asset_path: "assets/place-images/广东省妇幼保健院.jpg"
   },
   50: {
@@ -397,7 +397,7 @@ module.exports = {
     image_alt: "广州市妇女儿童医疗中心（珠江新城院区）地点实景图",
     image_credit: "Nature 页面图片",
     image_source_url: "https://www.nature.com/articles/d42473-023-00318-y",
-    cloud_path: "place-images/v2/广州市妇女儿童医疗中心（珠江新城院区）.jpg",
+    cloud_path: "place-images/v3/广州市妇女儿童医疗中心（珠江新城院区）.jpg",
     asset_path: "assets/place-images/广州市妇女儿童医疗中心（珠江新城院区）.jpg"
   },
   51: {
@@ -405,7 +405,7 @@ module.exports = {
     image_alt: "广州市第一人民医院地点实景图",
     image_credit: "搜狐文章图片",
     image_source_url: "https://www.sohu.com/a/344598218_99958814",
-    cloud_path: "place-images/v2/广州市第一人民医院.jpg",
+    cloud_path: "place-images/v3/广州市第一人民医院.jpg",
     asset_path: "assets/place-images/广州市第一人民医院.jpg"
   },
   52: {
@@ -413,7 +413,7 @@ module.exports = {
     image_alt: "广东省中医院地点实景图",
     image_credit: "丁香人才/广东省中医院页面图片",
     image_source_url: "https://www.jobmd.cn/article/qtyzzx/10008789",
-    cloud_path: "place-images/v2/广东省中医院.jpg",
+    cloud_path: "place-images/v3/广东省中医院.jpg",
     asset_path: "assets/place-images/广东省中医院.jpg"
   },
   53: {
@@ -421,7 +421,7 @@ module.exports = {
     image_alt: "中山大学肿瘤防治中心地点实景图",
     image_credit: "高德地图地点图片",
     image_source_url: "https://ditu.amap.com/place/B00140KFHA",
-    cloud_path: "place-images/v2/中山大学肿瘤防治中心.jpg",
+    cloud_path: "place-images/v3/中山大学肿瘤防治中心.jpg",
     asset_path: "assets/place-images/中山大学肿瘤防治中心.jpg"
   },
   54: {
@@ -429,7 +429,7 @@ module.exports = {
     image_alt: "广州中医药大学第一附属医院地点实景图",
     image_credit: "广州市健康科普信息平台（来源页图片）",
     image_source_url: "https://kepu.wjw.gz.gov.cn/jd/content/mpost_4122.html",
-    cloud_path: "place-images/v2/广州中医药大学第一附属医院.jpg",
+    cloud_path: "place-images/v3/广州中医药大学第一附属医院.jpg",
     asset_path: "assets/place-images/广州中医药大学第一附属医院.jpg"
   }
 };

@@ -1,5 +1,6 @@
 const api = require('../../utils/api.js');
 const user = require('../../utils/user.js');
+const detailEntry = require('../../utils/detail-entry.js');
 const { calcFee } = require('../../utils/fee.js');
 const cache = require('../../utils/cache.js');
 const PLACE_IMAGES = require('../../utils/place-images.js');
@@ -21,6 +22,10 @@ Page({
     const id = options && options.id;
     if (id == null || id === '' || id === 'undefined') {
       this.setData({ errorText: '缺少地点参数，请从热门目的地重新进入' });
+      return;
+    }
+    if (!user.isLogin()) {
+      detailEntry.redirectToLogin(id);
       return;
     }
     this.setData({ id, errorText: '' });
@@ -185,13 +190,9 @@ Page({
       .then(() => { delete this._actionBusy[busyKey]; });
   },
 
-  // 未登录：引导去「我的」页，通过微信授权登录
+  // 详情页兜底：如果登录状态失效，回首页走统一登录弹层。
   gotoLogin() {
-    wx.showToast({ title: '登录后即可操作，去「我的」页登录', icon: 'none' });
-    setTimeout(() => {
-      app.globalData.tabBar.current = 2;
-      wx.switchTab({ url: '/pages/index/index' });
-    }, 800);
+    detailEntry.redirectToLogin(this.data.id);
   },
 
   openMap() {
@@ -201,6 +202,28 @@ Page({
       return;
     }
     wx.openLocation({ latitude: p.lat, longitude: p.lng, name: p.name, address: p.address || '', scale: 16 });
+  },
+
+  openParkingMap(e) {
+    const index = e.currentTarget.dataset.index;
+    const pk = this.data.place && this.data.place.parkings[index];
+    if (!pk) return;
+
+    const latitude = Number(pk.lat);
+    const longitude = Number(pk.lng);
+    if (!Number.isFinite(latitude) || !Number.isFinite(longitude)
+      || latitude < -90 || latitude > 90 || longitude < -180 || longitude > 180) {
+      wx.showToast({ title: '该停车场暂无定位信息', icon: 'none' });
+      return;
+    }
+
+    wx.openLocation({
+      latitude,
+      longitude,
+      name: pk.name,
+      address: pk.address || '',
+      scale: 18
+    });
   },
 
   onReport() {

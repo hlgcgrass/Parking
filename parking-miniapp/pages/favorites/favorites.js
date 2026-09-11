@@ -1,5 +1,6 @@
 const api = require('../../utils/api.js');
 const user = require('../../utils/user.js');
+const detailEntry = require('../../utils/detail-entry.js');
 
 Page({
   data: {
@@ -29,7 +30,7 @@ Page({
 
   goDetail(e) {
     const id = e.currentTarget.dataset.id;
-    wx.navigateTo({ url: `/pages/detail/detail?id=${id}` });
+    detailEntry.open(id);
   },
 
   goExplore() {

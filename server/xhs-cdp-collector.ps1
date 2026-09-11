@@ -15,6 +15,7 @@ param(
   [string[]]$Query = @('沙面 停车'),
   [int]$DebugPort = 9222,
   [int]$WaitSeconds = 5,
+  [int]$PageReadyTimeoutSeconds = 40,
   [int]$OpenNotes = 3,
   [string]$OutputPath = ''
 )
@@ -25,17 +26,26 @@ if ([string]::IsNullOrWhiteSpace($OutputPath)) {
 }
 
 function Receive-WebSocketMessage {
-  param([System.Net.WebSockets.ClientWebSocket]$Socket)
+  param(
+    [System.Net.WebSockets.ClientWebSocket]$Socket,
+    [int]$TimeoutMilliseconds = 15000
+  )
 
   $buffer = New-Object byte[] 16384
   $stream = New-Object System.IO.MemoryStream
-  do {
-    $segment = New-Object System.ArraySegment[byte] -ArgumentList @(,$buffer)
-    $received = $Socket.ReceiveAsync($segment, [Threading.CancellationToken]::None).GetAwaiter().GetResult()
-    if ($received.Count -gt 0) {
-      $stream.Write($buffer, 0, $received.Count)
-    }
-  } while (-not $received.EndOfMessage)
+  $cancel = New-Object System.Threading.CancellationTokenSource
+  $cancel.CancelAfter($TimeoutMilliseconds)
+  try {
+    do {
+      $segment = New-Object System.ArraySegment[byte] -ArgumentList @(,$buffer)
+      $received = $Socket.ReceiveAsync($segment, $cancel.Token).GetAwaiter().GetResult()
+      if ($received.Count -gt 0) {
+        $stream.Write($buffer, 0, $received.Count)
+      }
+    } while (-not $received.EndOfMessage)
+  } finally {
+    $cancel.Dispose()
+  }
 
   [Text.Encoding]::UTF8.GetString($stream.ToArray())
 }
@@ -83,6 +93,28 @@ function Invoke-Javascript {
     throw "Page script failed: $($result.description)"
   }
   $result.value
+}
+
+function Wait-PageCondition {
+  param(
+    [System.Net.WebSockets.ClientWebSocket]$Socket,
+    [ref]$CommandId,
+    [string]$Expression,
+    [int]$TimeoutSeconds = 40
+  )
+
+  $deadline = [DateTime]::UtcNow.AddSeconds($TimeoutSeconds)
+  do {
+    try {
+      if ([bool](Invoke-Javascript -Socket $Socket -CommandId $CommandId -Expression $Expression)) {
+        return $true
+      }
+    } catch {
+      # 页面切换期间 Runtime.evaluate 可能短暂失败，继续等待下一次轮询。
+    }
+    Start-Sleep -Milliseconds 1000
+  } while ([DateTime]::UtcNow -lt $deadline)
+  return $false
 }
 
 function Click-PageText {
@@ -187,14 +219,44 @@ try {
     [void](Send-CdpCommand -Socket $socket -Id $commandId -Method 'Page.navigate' -Params @{ url = $url })
     Start-Sleep -Seconds $WaitSeconds
 
+    $searchReadyExpression = @'
+(() => {
+  const text = (document.body && document.body.innerText) || '';
+  const cards = Array.from(document.querySelectorAll('a[href*="/search_result/"]'))
+    .filter(a => (a.innerText || a.textContent || '').trim() || (a.closest('section,article,li,div')?.innerText || '').trim()).length;
+  return document.readyState === 'complete' && text.includes('筛选') && cards > 0;
+})()
+'@
+    if (-not (Wait-PageCondition -Socket $socket -CommandId ([ref]$commandId) -Expression $searchReadyExpression -TimeoutSeconds $PageReadyTimeoutSeconds)) {
+      Write-Warning ("[$keyword] 搜索结果页面在规定时间内未完成，跳过本次，避免继续操作未加载页面。")
+      continue
+    }
+
     $sortApplied = $false
     if (Click-PageText -Socket $socket -CommandId ([ref]$commandId) -Text $filterLabel) {
-      Start-Sleep -Milliseconds 500
-      $sortApplied = [bool](Click-PageText -Socket $socket -CommandId ([ref]$commandId) -Text $mostCollectedLabel)
-      Start-Sleep -Seconds 2
+      Start-Sleep -Milliseconds 1000
+      $sortMenuExpression = @'
+(() => Array.from(document.querySelectorAll('button,[role="button"],a,span,div'))
+  .some(el => {
+    const s = getComputedStyle(el); const r = el.getBoundingClientRect();
+    return s.display !== 'none' && s.visibility !== 'hidden' && r.width > 0 && r.height > 0 && (el.innerText || '').trim() === '最多收藏';
+  }))()
+'@
+      if (Wait-PageCondition -Socket $socket -CommandId ([ref]$commandId) -Expression $sortMenuExpression -TimeoutSeconds 10) {
+        $sortApplied = [bool](Click-PageText -Socket $socket -CommandId ([ref]$commandId) -Text $mostCollectedLabel)
+      }
+      Start-Sleep -Seconds $WaitSeconds
     }
     $sortMode = $sortUnavailableLabel
     if ($sortApplied) { $sortMode = $mostCollectedLabel }
+
+    $noteLinksExpression = @'
+(() => Array.from(document.querySelectorAll('a[href*="/search_result/"]')).length > 0)()
+'@
+    if (-not (Wait-PageCondition -Socket $socket -CommandId ([ref]$commandId) -Expression $noteLinksExpression -TimeoutSeconds $PageReadyTimeoutSeconds)) {
+      Write-Warning ("[$keyword] 排序后的笔记卡片未完成加载，跳过本次，避免读取不完整结果。")
+      continue
+    }
 
     $snapshot = Get-VisiblePageSnapshot -Socket $socket -CommandId ([ref]$commandId)
     $blockedText = [string]$snapshot.text
@@ -229,6 +291,16 @@ try {
       $commandId++
       [void](Send-CdpCommand -Socket $socket -Id $commandId -Method 'Page.navigate' -Params @{ url = $noteLink.href })
       Start-Sleep -Seconds $WaitSeconds
+      $noteReadyExpression = @'
+(() => {
+  const text = (document.body && document.body.innerText) || '';
+  return document.readyState === 'complete' && text.length > 500 && text.includes('关注');
+})()
+'@
+      if (-not (Wait-PageCondition -Socket $socket -CommandId ([ref]$commandId) -Expression $noteReadyExpression -TimeoutSeconds $PageReadyTimeoutSeconds)) {
+        Write-Warning ("笔记页面未完成加载，跳过当前笔记，继续下一条。")
+        continue
+      }
       $noteSnapshot = Get-VisiblePageSnapshot -Socket $socket -CommandId ([ref]$commandId)
       $noteText = [string]$noteSnapshot.text
       $noteBlocked = @($blockedSignals | Where-Object { $noteText.Contains($_) }).Count -gt 0
@@ -245,6 +317,7 @@ try {
       if ($noteBlocked) { $noteStatus = 'manual check required' }
       Write-Host ("  note {0} | visible text {1} chars | status {2}" -f $noteSnapshot.url, $noteText.Length, $noteStatus)
       if ($noteBlocked) { break }
+      Start-Sleep -Seconds $WaitSeconds
     }
 
     $captures += [ordered]@{

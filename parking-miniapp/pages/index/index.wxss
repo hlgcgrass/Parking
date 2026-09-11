@@ -89,3 +89,55 @@
   border-radius: var(--radius-xl);
   background: var(--primary-50);
 }
+
+/* ============ 首页进入详情前的强制登录弹层 ============ */
+.login-prompt {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 48rpx;
+}
+.login-prompt__mask {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 38, 32, 0.46);
+}
+.login-prompt__sheet {
+  position: relative;
+  width: 100%;
+  padding: 56rpx 40rpx 40rpx;
+  border-radius: 28rpx;
+  background: #FFFFFF;
+  box-shadow: 0 16rpx 48rpx rgba(15, 52, 43, 0.2);
+  text-align: center;
+}
+.login-prompt__close {
+  position: absolute;
+  top: 18rpx;
+  right: 22rpx;
+  width: 48rpx;
+  height: 48rpx;
+  color: var(--text-4);
+  font-size: 40rpx;
+  font-weight: 300;
+  line-height: 44rpx;
+  text-align: center;
+}
+.login-prompt__title {
+  color: var(--text-1);
+  font-size: 34rpx;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.login-prompt__desc {
+  margin-top: 16rpx;
+  color: var(--text-2);
+  font-size: 26rpx;
+  line-height: 1.6;
+}
+.login-prompt__button {
+  margin-top: 32rpx;
+}

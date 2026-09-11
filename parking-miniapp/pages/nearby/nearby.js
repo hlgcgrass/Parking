@@ -1,4 +1,5 @@
 const api = require('../../utils/api.js');
+const detailEntry = require('../../utils/detail-entry.js');
 const app = getApp();
 const DEFAULT_MAP_CENTER = { lat: 23.1291, lng: 113.2644 };
 
@@ -173,7 +174,7 @@ Page({
   },
 
   goDetailById(id) {
-    wx.navigateTo({ url: `/pages/detail/detail?id=${id}` });
+    detailEntry.open(id);
   },
 
   buildMarkers(list, selectedLoc, selectedName) {

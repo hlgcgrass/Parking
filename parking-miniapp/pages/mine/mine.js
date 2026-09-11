@@ -5,7 +5,6 @@ Page({
   data: {
     stats: {},
     profile: null,                          // 已登录资料
-    form: { avatar: '', nickname: '' },     // 未登录卡：头像 + 昵称
     editingNick: false,                     // 已登录卡：昵称编辑态
     nickDraft: '',
     busy: false
@@ -63,29 +62,78 @@ Page({
 
   // ========== 登录 ==========
 
-  // 微信已在基础库 2.27.1 起回收 wx.getUserProfile（调用必失败），
-  // 现用新版能力：button open-type="chooseAvatar" 拉起微信原生头像选择 + input type="nickname"。
-  onChooseAvatar(e) {
+  // 登录只建立微信身份，不主动索取头像或昵称。
+  onLogin() {
     if (this.data.busy) return;
+    this.setData({ busy: true });
+    this.getLoginCode()
+      .then(code => api.login({ userId: user.getUserId(), code }))
+      .then(p => {
+        const server = p || {};
+        const nickname = String(server.nickname || '').trim() || '微信用户';
+        const avatar = server.avatar || '';
+        const u = { userId: user.getUserId(), nickname, avatar };
+        user.saveUser(u);
+        this.setData({
+          busy: false,
+          profile: {
+            nickname,
+            avatar,
+            phone: server.phone || '',
+            initial: nickname[0],
+            favorite_count: server.favorite_count || 0,
+            like_count: server.like_count || 0
+          }
+        });
+        wx.showToast({ title: '登录成功', icon: 'success' });
+      })
+      .catch(() => {
+        this.setData({ busy: false });
+        wx.showToast({ title: '登录失败，请重试', icon: 'none' });
+      });
+  },
+
+  getLoginCode() {
+    return new Promise((resolve, reject) => {
+      wx.login({
+        success: res => res && res.code ? resolve(res.code) : reject(new Error('微信登录凭证获取失败')),
+        fail: reject
+      });
+    });
+  },
+
+  // 登录后单独更新头像，不再把头像选择当成登录动作。
+  onChooseAvatar(e) {
+    if (this.data.busy || !this.data.profile) return;
     const tmp = e.detail && e.detail.avatarUrl;
     if (!tmp) return;                       // 用户取消选择
 
     this.setData({ busy: true });
-    wx.showLoading({ title: '登录中', mask: true });
+    wx.showLoading({ title: '保存中', mask: true });
     this.toBase64(tmp)
       .then(dataUrl => {
-        this.setData({ 'form.avatar': dataUrl });
-        return this.completeLogin(this.data.form.nickname, dataUrl);
+        const local = user.getUser() || {};
+        const nickname = String(local.nickname || (this.data.profile && this.data.profile.nickname) || '微信用户').trim() || '微信用户';
+        const next = {
+          ...local,
+          userId: user.getUserId(),
+          nickname,
+          avatar: dataUrl
+        };
+        return api.login({ userId: next.userId, nickname: next.nickname, avatar: next.avatar })
+          .then(() => next);
+      })
+      .then(next => {
+        user.saveUser(next);
+        this.setData({ busy: false, 'profile.avatar': next.avatar });
+        wx.hideLoading();
+        wx.showToast({ title: '头像已更新', icon: 'success' });
       })
       .catch(() => {
         wx.hideLoading();
         this.setData({ busy: false });
-        wx.showToast({ title: '头像读取失败，请重试', icon: 'none' });
+        wx.showToast({ title: '头像保存失败，请重试', icon: 'none' });
       });
-  },
-
-  onNickInput(e) {
-    this.setData({ 'form.nickname': String((e.detail && e.detail.value) || '').trim() });
   },
 
   // ===== 已登录后改昵称 =====
@@ -133,40 +181,6 @@ Page({
         });
       });
     });
-  },
-
-  completeLogin(rawNick, avatar) {
-    const nickname = String(rawNick || '').trim() || '微信用户';
-    const u = {
-      userId: user.getUserId(),
-      nickname,
-      avatar: avatar || ''
-    };
-    return api.login(u)
-      .then(p => {
-        user.saveUser(u);
-        this.setData({
-          busy: false,
-          profile: {
-            nickname,
-            avatar: u.avatar,
-            phone: p.phone || '',
-            initial: nickname[0],
-            favorite_count: p.favorite_count || 0,
-            like_count: p.like_count || 0
-          }
-        });
-        wx.hideLoading();
-        wx.showToast({
-          title: nickname === '微信用户' ? '登录成功，可点昵称修改' : '登录成功',
-          icon: 'success'
-        });
-      })
-      .catch(() => {
-        wx.hideLoading();
-        this.setData({ busy: false });
-        wx.showToast({ title: '登录失败，请检查网络后重试', icon: 'none' });
-      });
   },
 
   onLogout() {

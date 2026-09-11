@@ -41,6 +41,23 @@
   line-height: 1.6;
 }
 
+.parking-location {
+  width: 52rpx;
+  height: 52rpx;
+  margin-left: 12rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--primary-600);
+  background: var(--primary-50);
+}
+.parking-location:active {
+  background: var(--primary-100);
+  transform: scale(0.94);
+}
+
 .fee-row {
   display: flex;
   align-items: center;
@@ -149,4 +166,17 @@
   display: flex;
   flex-direction: row;
 }
-.footer__btn { flex: 1; }
+.footer__btn {
+  flex: 1;
+  border-radius: 44rpx;
+}
+.footer__nav-btn {
+  border: none;
+  border-radius: 44rpx;
+  background: #EAF7F2;
+  color: var(--primary-600);
+  font-weight: 500;
+  box-shadow: 0 4rpx 12rpx rgba(16, 62, 55, 0.06);
+}
+.footer__nav-btn:active { background: var(--primary-100); }
+.footer__nav-btn .t-icon { margin-right: 10rpx; }

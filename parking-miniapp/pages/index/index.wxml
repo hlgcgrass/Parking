@@ -9,3 +9,17 @@
 <view class="tab-panel" hidden="{{activeTab !== 2}}">
   <include src="../mine/mine.wxml" />
 </view>
+
+<!-- 首页进入目的地前的登录弹层：关闭后留在首页，登录后才进入详情 -->
+<view wx:if="{{loginPromptVisible}}" class="login-prompt" catchtouchmove="stopLoginPromptTouch">
+  <view class="login-prompt__mask" bindtap="closeLoginPrompt"></view>
+  <view class="login-prompt__sheet" catchtap="stopLoginPromptTouch">
+    <view class="login-prompt__close" bindtap="closeLoginPrompt" aria-label="关闭">×</view>
+    <view class="login-prompt__title">登录停车攻略</view>
+    <view class="login-prompt__desc">登录后即可收藏停车场、点赞并同步记录</view>
+    <button class="btn-primary btn-block login-prompt__button {{busy ? 'btn-primary--disabled' : ''}}"
+            bindtap="onLogin" loading="{{busy}}" disabled="{{busy}}" hover-class="none">
+      {{busy ? '登录中...' : '微信一键登录'}}
+    </button>
+  </view>
+</view>
