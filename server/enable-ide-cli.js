@@ -11,7 +11,7 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
-const PORT = 9420;
+const PORT = Number(process.env.PARKING_IDE_PORT) || 9420;
 const base = path.join(
   os.homedir(),
   'AppData', 'Local', '微信开发者工具', 'User Data'

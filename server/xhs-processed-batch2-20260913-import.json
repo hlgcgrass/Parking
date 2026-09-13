@@ -1,0 +1,935 @@
+{
+  "meta": {
+    "city": "广州",
+    "city_code": "440100",
+    "exported_at": "2026-09-13T15:12:42.966Z",
+    "source": "小红书图文原始 JSON 按数据整理规则整理",
+    "places": 4,
+    "parkings": 19,
+    "fee_rules": 35
+  },
+  "places": [
+    {
+      "name": "白云山",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市白云区广园中路801号",
+      "district": "白云区",
+      "summary": "白云山入口分散，南门、西门和云台花园方向停车选择不同，周末节假日车位和排队情况变化明显。",
+      "area_tips": "白云山本轮整理了南门、西门和云台花园方向的停车点。国际会堂及益友汽配城一带有较明确的收费和步行信息，云台花园附近步行较短；南门官方车场在节假日可能排队，部分机械车位和商场车场需要留意车型、入口及现场收费变化。",
+      "tags": [
+        "自然景区",
+        "亲子"
+      ],
+      "parkings": [
+        {
+          "name": "广州白云国际会议中心国际会堂停车场",
+          "fee_detail": "10元/次；中途驶出后再次进入需重新收费。近期有不同收费反馈，现场以当日公示为准。",
+          "guide_text": "导航到国际会堂北门方向，停车后步行约300米可到白云山一侧入口；周末相对容易找到位置，但开放情况可能随日期变化。",
+          "location": "广州白云国际会议中心国际会堂停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 10,
+              "unit": "time",
+              "unit_minutes": null,
+              "priority": 50,
+              "description": "单次收费",
+              "confidence": "low"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "low",
+          "conflict_flag": true,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": []
+        },
+        {
+          "name": "白云山西门停车场",
+          "fee_detail": "10元/小时。",
+          "guide_text": "适合从西门进山，车位情况会随周末和节假日变化；高峰时段可能在入口处排队，带儿童或推车建议提前规划进山路线。",
+          "location": "白云山西门停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "medium"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "medium",
+          "conflict_flag": false,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": [
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T145459081Z-广州 白云山 停车攻略-note-02-6a379741000000001102f319.json",
+              "source_url": "https://www.xiaohongshu.com/explore/6a379741000000001102f319?xsec_token=AB7u9VUNS7Xym2BNaHieiJ7zlVcb2DwmMmJt7KA9CQEQg=&xsec_source=pc_feed",
+              "source_title": "白云山溜娃一定要从西门进～ - 小红书",
+              "captured_at": "2026-09-13T14:55:25.0672131Z"
+            }
+          ]
+        },
+        {
+          "name": "益友（广园东）汽配城停车场",
+          "fee_detail": "5元/30分钟，即10元/小时。",
+          "guide_text": "到云台花园南门步行约5至8分钟，停车位约200个；上午10点后车位可能趋紧，建议尽量提前到达。",
+          "location": "益友广园东汽配城停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 5,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "priority": 50,
+              "description": "每30分钟收费",
+              "confidence": "medium"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "medium",
+          "conflict_flag": false,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "total_spots": 200,
+          "source_records": [
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T145459081Z-广州 白云山 停车攻略-note-04-67c1a9110000000029027a5a.json",
+              "source_url": "https://www.xiaohongshu.com/explore/67c1a9110000000029027a5a?xsec_token=ABnJf2D6XbW2YB2gAoPSL5z2GVeBjVBSocdLtpRLwXs7A=&xsec_source=pc_feed",
+              "source_title": "云台花园🌷白云山 自驾停车🅿攻略来啦 - 小红书",
+              "captured_at": "2026-09-13T14:55:57.9952974Z"
+            }
+          ]
+        },
+        {
+          "name": "益友（国际）汽配用品展贸中心停车场",
+          "fee_detail": "5元/30分钟，即10元/小时。",
+          "guide_text": "到云台花园南门步行约10分钟，停车位相对宽裕，高峰期可容纳较多车辆；下午到达时可作为云台花园方向的优先备选。",
+          "location": "益友国际汽配用品展贸中心停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 5,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "priority": 50,
+              "description": "每30分钟收费",
+              "confidence": "medium"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "medium",
+          "conflict_flag": false,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "total_spots": 900,
+          "source_records": []
+        },
+        {
+          "name": "白云双燕机器人停车场",
+          "fee_detail": "10元/小时。",
+          "guide_text": "位于白云山南门方向，门牌较容易辨认，位置相对多；从最早的路口进入时距离缆车方向较近。",
+          "location": "白云双燕机器人停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "medium"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "medium",
+          "conflict_flag": false,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": [
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T145459081Z-广州 白云山 停车攻略-note-05-67ee902b0000000009038678.json",
+              "source_url": "https://www.xiaohongshu.com/explore/67ee902b0000000009038678?xsec_token=ABTPiiIKHY5D5SY9Mbrx3uZwCrgwavnXiZeCe3yk3oNTs=&xsec_source=pc_feed",
+              "source_title": "广州白云山【南门/索道】停车攻略 - 小红书",
+              "captured_at": "2026-09-13T14:56:14.3966827Z"
+            }
+          ]
+        },
+        {
+          "name": "白云双燕机器人停车场（金溪小卖部）",
+          "fee_detail": "10元/小时。",
+          "guide_text": "与主停车场相邻但需要继续往里开，步行距离更长；南门方向多个车场相邻，进场前注意不要错过对应入口。",
+          "location": "白云双燕机器人停车场 金溪小卖部",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "medium"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "medium",
+          "conflict_flag": false,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": []
+        },
+        {
+          "name": "云山天地商场停车场",
+          "fee_detail": "白天12元/小时；深夜6元/小时；消费可抵2小时停车。",
+          "guide_text": "靠近白云山南门，商场入口和停车楼相对好找；高峰及节假日可能出现满位或排队，使用消费优惠前先核对现场规则。",
+          "location": "云山天地商场停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 12,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "白天收费",
+              "confidence": "low"
+            },
+            {
+              "rule_type": "night",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 6,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "深夜收费",
+              "confidence": "low"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "low",
+          "conflict_flag": true,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": [
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T145459081Z-广州 白云山 停车攻略-note-05-67ee902b0000000009038678.json",
+              "source_url": "https://www.xiaohongshu.com/explore/67ee902b0000000009038678?xsec_token=ABTPiiIKHY5D5SY9Mbrx3uZwCrgwavnXiZeCe3yk3oNTs=&xsec_source=pc_feed",
+              "source_title": "广州白云山【南门/索道】停车攻略 - 小红书",
+              "captured_at": "2026-09-13T14:56:14.3966827Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "陈家祠",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市荔湾区中山七路恩龙里34号",
+      "district": "荔湾区",
+      "summary": "陈家祠周边停车场较集中，收费差异和开放状态差别较大，适合按停留时长比较封顶价。",
+      "area_tips": "陈家祠本轮整理了康王路、中山七路和荔湾路方向的停车点。荔湾体育馆停车场步行到陈家祠约3分钟，价格和封顶信息较完整；康王阁、荔康大厦等车库收费分时段，世纪广场存在开放状态变化，停车前要确认入口和当日公示。",
+      "tags": [
+        "历史建筑",
+        "荔湾"
+      ],
+      "parkings": [
+        {
+          "name": "五行科技创意园停车场",
+          "fee_detail": "6元/小时，24小时限价35元。",
+          "guide_text": "位于陈家祠周边，入口到园区内部道路可能有路边停车车辆，进场时留意会车和入口方向。",
+          "location": "五行科技创意园停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 6,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 35,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "24小时限价",
+              "confidence": "medium"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "medium",
+          "conflict_flag": false,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": []
+        },
+        {
+          "name": "康王阁停车场",
+          "fee_detail": "日间（08:00-20:00）4元/小时；夜间收费记录为10元，24小时最高限价24元，夜间计费单位以现场公示为准。",
+          "guide_text": "位于康王路926号负一、负二层，适合陈家祠周边短时或过夜停车；进场后建议确认夜间计费口径。",
+          "location": "康王路926号康王阁停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": "08:00",
+              "time_end": "20:00",
+              "price": 4,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "日间收费",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 24,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "24小时最高限价",
+              "confidence": "medium"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "low",
+          "conflict_flag": true,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": [
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T145803884Z-广州 陈家祠 停车攻略-note-02-64105d630000000027029f15.json",
+              "source_url": "https://www.xiaohongshu.com/explore/64105d630000000027029f15?xsec_token=ABM0rx3BUbI9WgWZHMXC9ixdQ0rpOGgJKas2-lOmZ0zMI=&xsec_source=pc_feed",
+              "source_title": "陈家祠一带停车攻略！ - 小红书",
+              "captured_at": "2026-09-13T14:58:29.2403928Z"
+            }
+          ]
+        },
+        {
+          "name": "荔康大厦停车场",
+          "fee_detail": "日间（08:00-20:00）8元/小时，最高48元；夜间8元/小时，夜间最高24元，24小时最高68元。",
+          "guide_text": "位于康王北路978号负一、负二层，分时收费和封顶价较多，长时间停放前要核对当前时段及封顶规则。",
+          "location": "康王北路978号荔康大厦停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": "08:00",
+              "time_end": "20:00",
+              "price": 8,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "日间收费",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": "20:00",
+              "time_end": "08:00",
+              "price": 8,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "夜间收费",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 68,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "24小时最高限价",
+              "confidence": "medium"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "medium",
+          "conflict_flag": false,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": [
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T145803884Z-广州 陈家祠 停车攻略-note-02-64105d630000000027029f15.json",
+              "source_url": "https://www.xiaohongshu.com/explore/64105d630000000027029f15?xsec_token=ABM0rx3BUbI9WgWZHMXC9ixdQ0rpOGgJKas2-lOmZ0zMI=&xsec_source=pc_feed",
+              "source_title": "陈家祠一带停车攻略！ - 小红书",
+              "captured_at": "2026-09-13T14:58:29.2403928Z"
+            }
+          ]
+        },
+        {
+          "name": "荔湾体育馆停车场",
+          "fee_detail": "日间（07:30-21:30）3小时内5元/小时，超过3小时10元/小时；夜间（21:30-次日07:30）2元/小时，夜间最高10元，24小时最高45元。",
+          "guide_text": "露天停车场，步行到陈家祠约3分钟；车位数量有限，满位时按出一辆进一辆，等位时间曾较短。",
+          "location": "广州市荔湾区荔湾路54号荔湾体育馆停车场",
+          "fee_rules": [
+            {
+              "rule_type": "first",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": "07:30",
+              "time_end": "21:30",
+              "price": 5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "日间前3小时",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": "07:30",
+              "time_end": "21:30",
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "日间超过3小时",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "night",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": "21:30",
+              "time_end": "07:30",
+              "price": 2,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "夜间收费",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 45,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "24小时最高限价",
+              "confidence": "medium"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "medium",
+          "conflict_flag": false,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": [
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T145803884Z-广州 陈家祠 停车攻略-note-02-64105d630000000027029f15.json",
+              "source_url": "https://www.xiaohongshu.com/explore/64105d630000000027029f15?xsec_token=ABM0rx3BUbI9WgWZHMXC9ixdQ0rpOGgJKas2-lOmZ0zMI=&xsec_source=pc_feed",
+              "source_title": "陈家祠一带停车攻略！ - 小红书",
+              "captured_at": "2026-09-13T14:58:29.2403928Z"
+            },
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T145803884Z-广州 陈家祠 停车攻略-note-10-6a92bebb000000001f01e08f.json",
+              "source_url": "https://www.xiaohongshu.com/explore/6a92bebb000000001f01e08f?xsec_token=ABsuVzJnfXcvNfJvzVI_mUeRezvez56jk_pP4PRhMmp5Q=&xsec_source=pc_feed",
+              "source_title": "大概是陈家祠、永庆坊附近最便宜的停车场了 - 小红书",
+              "captured_at": "2026-09-13T15:00:40.8505137Z"
+            }
+          ]
+        },
+        {
+          "name": "1906科技园停车场",
+          "fee_detail": "10元/小时，24小时最高限价100元。",
+          "guide_text": "位于中山七路333号科技园内实验厂房旁，适合需要在陈家祠周边长时间停留的情况。",
+          "location": "荔湾区中山七路333号1906科技园",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 100,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "24小时最高限价",
+              "confidence": "medium"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "medium",
+          "conflict_flag": false,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": [
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T145803884Z-广州 陈家祠 停车攻略-note-02-64105d630000000027029f15.json",
+              "source_url": "https://www.xiaohongshu.com/explore/64105d630000000027029f15?xsec_token=ABM0rx3BUbI9WgWZHMXC9ixdQ0rpOGgJKas2-lOmZ0zMI=&xsec_source=pc_feed",
+              "source_title": "陈家祠一带停车攻略！ - 小红书",
+              "captured_at": "2026-09-13T14:58:29.2403928Z"
+            }
+          ]
+        },
+        {
+          "name": "强俊停车场",
+          "fee_detail": "12小时限价20元，24小时限价40元。",
+          "guide_text": "位于中山七路锦龙北45号，适合按半天或全天停放；进场后确认限价对应的计费时段。",
+          "location": "广州市荔湾区中山七路锦龙北45号强俊停车场",
+          "fee_rules": [
+            {
+              "rule_type": "cap",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 20,
+              "unit": "time",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "12小时限价",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 40,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "24小时限价",
+              "confidence": "medium"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "medium",
+          "conflict_flag": false,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": [
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T145803884Z-广州 陈家祠 停车攻略-note-02-64105d630000000027029f15.json",
+              "source_url": "https://www.xiaohongshu.com/explore/64105d630000000027029f15?xsec_token=ABM0rx3BUbI9WgWZHMXC9ixdQ0rpOGgJKas2-lOmZ0zMI=&xsec_source=pc_feed",
+              "source_title": "陈家祠一带停车攻略！ - 小红书",
+              "captured_at": "2026-09-13T14:58:29.2403928Z"
+            }
+          ]
+        },
+        {
+          "name": "城光荟停车场",
+          "fee_detail": "16元/小时，128元封顶；购物每消费100元可减免1小时，最多减免3小时。",
+          "guide_text": "位于康王中路新光城市广场负一、负三、负四层，车库层数较多；停车优惠需要满足消费条件，离场前核对减免是否生效。",
+          "location": "康王中路600、658号新光城市广场城光荟停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 16,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 128,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "封顶",
+              "confidence": "medium"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "medium",
+          "conflict_flag": false,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "daily_cap": 128,
+          "source_records": [
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T145803884Z-广州 陈家祠 停车攻略-note-02-64105d630000000027029f15.json",
+              "source_url": "https://www.xiaohongshu.com/explore/64105d630000000027029f15?xsec_token=ABM0rx3BUbI9WgWZHMXC9ixdQ0rpOGgJKas2-lOmZ0zMI=&xsec_source=pc_feed",
+              "source_title": "陈家祠一带停车攻略！ - 小红书",
+              "captured_at": "2026-09-13T14:58:29.2403928Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "越秀公园",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市越秀区解放北路988号",
+      "district": "越秀区",
+      "summary": "越秀公园入口较多，东北门官方停车场距离步道较近，周末节假日要注意车位和入口排队。",
+      "area_tips": "越秀公园本轮确认了东北门官方停车场和中医学院站附近路边停车点。东北门停车场收费分日间、夜间并有全天封顶，停车后步行约2分钟即可到步道入口；外围路边车位价格较低但位置和管理不稳定，不适合作为唯一方案。",
+      "tags": [
+        "公园",
+        "亲子"
+      ],
+      "parkings": [
+        {
+          "name": "越秀公园东北门停车场",
+          "fee_detail": "日间（07:30-21:30）前3小时2.5元/30分钟，超过3小时5元/30分钟；夜间（21:30-次日07:30）1元/30分钟，夜间最高10元；24小时封顶45元。",
+          "guide_text": "导航“越秀公园东北门停车场”或绿岛餐厅方向，从解放北路西胜街一侧进入；停车后步行约2分钟到东北门步道入口。周末和节假日车位较紧张，上午或下午较早到达更容易进场。",
+          "location": "越秀公园东北门停车场",
+          "fee_rules": [
+            {
+              "rule_type": "first",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": "07:30",
+              "time_end": "21:30",
+              "price": 2.5,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "priority": 50,
+              "description": "日间前3小时每30分钟",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": "07:30",
+              "time_end": "21:30",
+              "price": 5,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "priority": 50,
+              "description": "日间超过3小时每30分钟",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "night",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": "21:30",
+              "time_end": "07:30",
+              "price": 1,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "priority": 50,
+              "description": "夜间每30分钟",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 45,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "24小时封顶",
+              "confidence": "medium"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "medium",
+          "conflict_flag": false,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": [
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T150107652Z-广州 越秀公园 停车攻略-note-01-69f9ad91000000001a02d042.json",
+              "source_url": "https://www.xiaohongshu.com/explore/69f9ad91000000001a02d042?xsec_token=ABNw1jWZswcf1O9uBIqx5_4GANvUKdrl5uyWpafau4aB0=&xsec_source=pc_feed",
+              "source_title": "广州越秀公园停车｜别被坑！官方停车场太香了 - 小红书",
+              "captured_at": "2026-09-13T15:01:16.2076049Z"
+            },
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T150107652Z-广州 越秀公园 停车攻略-note-02-67174b500000000024019f3f.json",
+              "source_url": "https://www.xiaohongshu.com/explore/67174b500000000024019f3f?xsec_token=AB2vbIkzOPaTDe-13tHZsT6Cvyu9hPMwz7g0pVLDt-QJs=&xsec_source=pc_feed",
+              "source_title": "越秀公园宝藏停车🅿️ - 小红书",
+              "captured_at": "2026-09-13T15:01:32.7832259Z"
+            },
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T150107652Z-广州 越秀公园 停车攻略-note-04-65c7a4810000000011007a33.json",
+              "source_url": "https://www.xiaohongshu.com/explore/65c7a4810000000011007a33?xsec_token=ABJ2CSM--9CltIvvtsj21ZheKBL6fKAPS2W21r_QIicpQ=&xsec_source=pc_feed",
+              "source_title": "解锁广州越秀公园最佳停车位🅿️ 🚗少💰少 - 小红书",
+              "captured_at": "2026-09-13T15:02:05.5947862Z"
+            },
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T150107652Z-广州 越秀公园 停车攻略-note-05-67a0d4890000000018005d77.json",
+              "source_url": "https://www.xiaohongshu.com/explore/67a0d4890000000018005d77?xsec_token=ABgJ3AL432b8fG9ktQB95Sjwhx-nRP_77dv4zvYl6eIaM=&xsec_source=pc_feed",
+              "source_title": "广州越秀公园东北门停车场价格 - 小红书",
+              "captured_at": "2026-09-13T15:02:22.1134705Z"
+            },
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T150107652Z-广州 越秀公园 停车攻略-note-07-6794712f000000002902bad4.json",
+              "source_url": "https://www.xiaohongshu.com/explore/6794712f000000002902bad4?xsec_token=ABPxIxoCtyIBD0i_4vYgxTCGlyNO1qbff-pLtvI8m2Buo=&xsec_source=pc_feed",
+              "source_title": "越秀公园花灯|游园攻略➕停车🅿️秘笈 - 小红书",
+              "captured_at": "2026-09-13T15:02:54.9043097Z"
+            },
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T150107652Z-广州 越秀公园 停车攻略-note-10-67adcad00000000018011286.json",
+              "source_url": "https://www.xiaohongshu.com/explore/67adcad00000000018011286?xsec_token=ABUDSK_6MYBx-6xEj10YG6-zxwVHhuV-hv83NljRwdiWc=&xsec_source=pc_feed",
+              "source_title": "越秀公园东北门停车场 - 小红书",
+              "captured_at": "2026-09-13T15:03:44.1455029Z"
+            }
+          ]
+        },
+        {
+          "name": "中医学院站附近路边停车位",
+          "fee_detail": "5元/小时，12小时封顶40元。",
+          "guide_text": "位于中医学院站附近居民区胡同一带，车行到越秀公园约10分钟；露天车位相对分散，步行或换乘公交前要确认现场是否允许停放。",
+          "location": "中医学院站附近居民区胡同路边停车位",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 40,
+              "unit": "time",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "12小时封顶",
+              "confidence": "medium"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "low",
+          "conflict_flag": false,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": []
+        }
+      ]
+    },
+    {
+      "name": "花城广场",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市天河区珠江东路花城广场",
+      "district": "天河区",
+      "summary": "花城广场地下车库分区较多，P8至P13更适合连接博物馆、海心沙和广州塔，预约与现场收费可能不同。",
+      "area_tips": "花城广场本轮整理了花城汇P13、都荟华庭和侨鑫国际等停车选择。P8至P13方向通常更方便到达花城广场及海心沙，部分车库有电梯或楼梯直达地面；工作日和活动时段核心车库可能排队，预约价格及优惠使用前要确认入场规则。",
+      "tags": [
+        "城市地标",
+        "花城广场"
+      ],
+      "parkings": [
+        {
+          "name": "花城汇P13停车场",
+          "fee_detail": "现场收费约7.5元/小时，预约价格6.8元/小时且无阶梯收费；不同活动期间规则可能调整，现场以当日公示为准。",
+          "guide_text": "P13位于花城汇靠近广州塔和海心沙的一侧，P8、P11、P13有电梯通往花城广场地面；步行到海心沙约5至10分钟。预约通常需要进场前完成，预约后按实际停车规则结算。",
+          "location": "花城汇P13停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 7.5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "现场基础收费",
+              "confidence": "low"
+            },
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 6.8,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "预约价格，无阶梯收费",
+              "confidence": "low"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "low",
+          "conflict_flag": true,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": []
+        },
+        {
+          "name": "都荟华庭停车场",
+          "fee_detail": "预约后约6.4元/小时，12小时封顶32元；预约优惠和现场收费可能不同，入场前确认当日规则。",
+          "guide_text": "距离花城广场步行约10至15分钟，约800米；活动或灯光节期间可作为外围备选，散场时相对容易避开核心车库排队。",
+          "location": "都荟华庭停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 6.4,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "预约价格",
+              "confidence": "low"
+            },
+            {
+              "rule_type": "cap",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 32,
+              "unit": "time",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "12小时封顶",
+              "confidence": "low"
+            }
+          ],
+          "free_minutes": 0,
+          "confidence": "low",
+          "conflict_flag": true,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": [
+            {
+              "raw_file": "server/xhs-raw/selected-batch2-20260913/20260913T150410800Z-广州 花城广场 停车攻略-note-07-691838ea00000000050332c1.json",
+              "source_url": "https://www.xiaohongshu.com/explore/691838ea00000000050332c1?xsec_token=ABm7-FFhQN1A-cZoYjLJY3VVgMsMwwxFhtj8ulHdd70Uk=&xsec_source=pc_feed",
+              "source_title": "2025年广州国际灯光节停车省钱攻略 - 小红书",
+              "captured_at": "2026-09-13T15:05:58.3659262Z"
+            }
+          ]
+        },
+        {
+          "name": "侨鑫国际停车场",
+          "fee_detail": "消费满100元可减免约4小时停车；就诊凭票有再减免1小时的反馈，基础收费未确认，现场以公示为准。",
+          "guide_text": "靠近花城汇中部和妇女儿童医疗中心一带，车位相对宽一些；优惠需要满足消费或就诊条件，离场前确认减免是否已计入。",
+          "location": "侨鑫国际停车场",
+          "fee_rules": [],
+          "free_minutes": 0,
+          "confidence": "low",
+          "conflict_flag": true,
+          "navigation_available": false,
+          "coordinate_status": "待补充",
+          "source": "小红书公开图文整理",
+          "source_records": []
+        }
+      ]
+    }
+  ]
+}

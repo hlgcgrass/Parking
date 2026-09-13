@@ -7,7 +7,36 @@ const PLACE_IMAGES = require('../../utils/place-images.js');
 const app = getApp();
 
 const HOURS_OPTIONS = [1, 2, 3, 4, 8, 24];
-const splitTipLines = text => String(text || '').split(/\r?\n|\\n/);
+function feeUnit(rule) {
+  if (rule.unit === 'minute') return rule.unit_minutes ? `${rule.unit_minutes}分钟` : '分钟';
+  if (rule.unit === 'day') return '天';
+  if (rule.unit === 'time') return '次';
+  return '小时';
+}
+
+function formatFeeRule(rule) {
+  const description = String(rule.description || '').trim();
+  const price = Number(rule.price);
+  if (!Number.isFinite(price)) return description;
+  const amount = price === 0 ? '免费' : `${price}元/${feeUnit(rule)}`;
+  return description ? `${description}：${amount}` : amount;
+}
+
+const feeLines = (rules, summary) => {
+  const detail = String(summary || '').trim();
+  if (detail && !/^(?:null|undefined)$/i.test(detail)) return [detail];
+  return (Array.isArray(rules) ? rules : [])
+    .map(formatFeeRule)
+    .filter(Boolean)
+    .filter((line, index, list) => list.indexOf(line) === index);
+};
+const guideLines = text => String(text || '')
+  .split(/\r?\n|\\n/)
+  .flatMap(line => line.split(/(?=\d+[、.)])/))
+  .map(line => line.trim())
+  .filter(Boolean)
+  .filter(line => !/^\d+[、.)]?\s*(收费|价格)\s*[:：]/.test(line))
+  .filter(line => !/^(收费|价格)\s*[:：]/.test(line));
 
 Page({
   data: {
@@ -109,13 +138,21 @@ Page({
           throw new Error('详情数据格式异常，请重新编译后重试');
         }
         wx.setNavigationBarTitle({ title: place.name });
-        const parkings = place.parkings.map(p => ({
-          ...p,
-          _tipLines: splitTipLines(p.tips),
-          _open: false,
-          _hours: 3,
-          _fee: calcFee(p.fee_rules, 3 * 60)
-        }));
+        const parkings = place.parkings.map(p => {
+          const feeRules = Array.isArray(p.fee_rules) ? p.fee_rules : [];
+          return {
+            ...p,
+            fee_rules: feeRules.map(rule => ({
+              ...rule,
+              _display: formatFeeRule(rule)
+            })),
+            _feeLines: feeLines(feeRules, p.fee_summary),
+            _guideLines: guideLines(p.tips),
+            _open: false,
+            _hours: 3,
+            _fee: calcFee(feeRules, 3 * 60)
+          };
+        });
         this.prepareImagePreview(this.data.id, place);
         this.setData({ place: { ...place, parkings }, errorText: '' });
       })

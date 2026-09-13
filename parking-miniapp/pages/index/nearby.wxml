@@ -38,9 +38,13 @@
   <view class="card-list mt-md">
     <view
       wx:for="{{nearbyList}}"
+      wx:for-index="itemIndex"
       wx:key="id"
       class="card card--tap"
       data-id="{{item.id}}"
+      data-place-id="{{item.id}}"
+      data-index="{{itemIndex}}"
+      data-name="{{item.name}}"
       bindtap="goDetail"
     >
       <view class="between">

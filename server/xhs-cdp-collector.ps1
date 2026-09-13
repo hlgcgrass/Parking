@@ -175,6 +175,73 @@ function Click-PageText {
   Invoke-Javascript -Socket $Socket -CommandId $CommandId -Expression $script
 }
 
+function Click-NoteTypeOption {
+  param(
+    [System.Net.WebSockets.ClientWebSocket]$Socket,
+    [ref]$CommandId,
+    [string]$Text
+  )
+
+  $safeText = $Text.Replace('\\', '\\\\').Replace("'", "\\'")
+  $script = @'
+(() => {
+  const wanted = '__TEXT__';
+  const visible = el => {
+    const s = getComputedStyle(el);
+    const r = el.getBoundingClientRect();
+    return s.display !== 'none' && s.visibility !== 'hidden' && r.width > 0 && r.height > 0;
+  };
+  const inNoteTypeSection = el => {
+    let parent = el;
+    for (let i = 0; i < 20 && parent; i++, parent = parent.parentElement) {
+      const text = (parent.innerText || '').replace(/\s+/g, ' ').trim();
+      if (text.includes('笔记类型') && text.includes('图文') && text.includes('视频')) return true;
+    }
+    return false;
+  };
+  const nodes = Array.from(document.querySelectorAll('button,[role="button"],a,span,div'))
+    .filter(el => visible(el) && (el.innerText || '').trim() === wanted && inNoteTypeSection(el));
+  const node = nodes.sort((a, b) => (a.innerText || '').length - (b.innerText || '').length)[0];
+  if (!node) return false;
+  node.click();
+  return true;
+})()
+'@
+  $script = $script.Replace('__TEXT__', $safeText)
+  Invoke-Javascript -Socket $Socket -CommandId $CommandId -Expression $script
+}
+
+function Test-NoteTypeOptionVisible {
+  param(
+    [System.Net.WebSockets.ClientWebSocket]$Socket,
+    [ref]$CommandId,
+    [string]$Text
+  )
+
+  $safeText = $Text.Replace('\\', '\\\\').Replace("'", "\\'")
+  $script = @'
+(() => {
+  const wanted = '__TEXT__';
+  const visible = el => {
+    const s = getComputedStyle(el);
+    const r = el.getBoundingClientRect();
+    return s.display !== 'none' && s.visibility !== 'hidden' && r.width > 0 && r.height > 0;
+  };
+  return Array.from(document.querySelectorAll('button,[role="button"],a,span,div')).some(el => {
+    if (!visible(el) || (el.innerText || '').trim() !== wanted) return false;
+    let parent = el;
+    for (let i = 0; i < 20 && parent; i++, parent = parent.parentElement) {
+      const text = (parent.innerText || '').replace(/\s+/g, ' ').trim();
+      if (text.includes('笔记类型') && text.includes('图文') && text.includes('视频')) return true;
+    }
+    return false;
+  });
+})()
+'@
+  $script = $script.Replace('__TEXT__', $safeText)
+  [bool](Invoke-Javascript -Socket $Socket -CommandId $CommandId -Expression $script)
+}
+
 function Get-PageTarget {
   param([int]$Port)
 
@@ -240,7 +307,9 @@ $socket.ConnectAsync([Uri]$target.webSocketDebuggerUrl, [Threading.CancellationT
 $commandId = 0
 $captures = @()
 $filterLabel = [string]::Concat([char]0x7b5b, [char]0x9009) # 筛选
+$noteTypeLabel = [string]::Concat([char]0x56fe, [char]0x6587) # 图文
 $mostCollectedLabel = [string]::Concat([char]0x6700, [char]0x591a, [char]0x6536, [char]0x85cf) # 最多收藏
+$noteTypeUnavailableLabel = [string]::Concat([char]0x672a, [char]0x80fd, [char]0x5e94, [char]0x7528, [char]0x56fe, [char]0x6587, [char]0x7b5b, [char]0x9009) # 未能应用图文筛选
 $sortUnavailableLabel = [string]::Concat([char]0x672a, [char]0x80fd, [char]0x5e94, [char]0x7528, [char]0x6700, [char]0x591a, [char]0x6536, [char]0x85cf, [char]0x7b5b, [char]0x9009) # 未能应用最多收藏筛选
 
 try {
@@ -266,9 +335,14 @@ try {
       continue
     }
 
+    $noteTypeApplied = $false
     $sortApplied = $false
     if (Click-PageText -Socket $socket -CommandId ([ref]$commandId) -Text $filterLabel) {
       Start-Sleep -Milliseconds 1000
+      if (Test-NoteTypeOptionVisible -Socket $socket -CommandId ([ref]$commandId) -Text $noteTypeLabel) {
+        $noteTypeApplied = [bool](Click-NoteTypeOption -Socket $socket -CommandId ([ref]$commandId) -Text $noteTypeLabel)
+        Start-Sleep -Seconds 1
+      }
       $sortMenuExpression = @'
 (() => Array.from(document.querySelectorAll('button,[role="button"],a,span,div'))
   .some(el => {
@@ -281,8 +355,14 @@ try {
       }
       Start-Sleep -Seconds $WaitSeconds
     }
+    $noteTypeMode = $noteTypeUnavailableLabel
+    if ($noteTypeApplied) { $noteTypeMode = $noteTypeLabel }
     $sortMode = $sortUnavailableLabel
     if ($sortApplied) { $sortMode = $mostCollectedLabel }
+
+    if (-not $noteTypeApplied) {
+      Write-Warning ("[$keyword] 图文筛选未生效，保存搜索页状态但不打开结果笔记，避免混入视频内容。")
+    }
 
     $noteLinksExpression = @'
 (() => Array.from(document.querySelectorAll('a[href*="/search_result/"]')).length > 0)()
@@ -303,6 +383,7 @@ try {
       keyword = $keyword
       url = $snapshot.url
       title = $snapshot.title
+      note_type_mode = $noteTypeMode
       sort_mode = $sortMode
       blocked_or_incomplete = $blocked
       visible_text = $snapshot.text
@@ -328,7 +409,7 @@ try {
     $notes = @()
     $noteLinks = @()
     $seenNoteCards = @{}
-    foreach ($candidate in @($snapshot.links)) {
+    if ($noteTypeApplied) { foreach ($candidate in @($snapshot.links)) {
       # 搜索结果页的 search_result 链接带有 xsec_token，优先于裸 explore 链接。
       if ($candidate.href -notmatch '/search_result/[0-9a-z]+' -or -not $candidate.cardText) { continue }
       $cardKey = [string]$candidate.cardText
@@ -337,7 +418,7 @@ try {
         $noteLinks += $candidate
       }
       if ($noteLinks.Count -ge [Math]::Max(0, $OpenNotes)) { break }
-    }
+    } }
 
     $noteRank = 0
     foreach ($noteLink in $noteLinks) {
@@ -361,6 +442,7 @@ try {
           captured_at = (Get-Date).ToUniversalTime().ToString('o')
           keyword = $keyword
           rank = $noteRank
+          note_type_mode = $noteTypeMode
           source_card = $noteLink.cardText
           requested_url = $noteLink.href
           note_url = $incompleteSnapshot.url
@@ -382,6 +464,7 @@ try {
         captured_at = (Get-Date).ToUniversalTime().ToString('o')
         keyword = $keyword
         rank = $noteRank
+        note_type_mode = $noteTypeMode
         source_card = $noteLink.cardText
         requested_url = $noteLink.href
         note_url = $noteSnapshot.url
@@ -412,6 +495,7 @@ try {
       captured_at = (Get-Date).ToUniversalTime().ToString('o')
       url = $snapshot.url
       title = $snapshot.title
+      note_type_mode = $noteTypeMode
       sort_mode = $sortMode
       blocked_or_incomplete = $blocked
       visible_text = $snapshot.text

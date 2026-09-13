@@ -1,0 +1,15 @@
+{
+  "envId": "cloud1-d1guhoh9g9abdbb63",
+  "functionRoot": "parking-miniapp/cloudfunctions",
+  "functions": [
+    {
+      "name": "parking",
+      "handler": "index.main",
+      "timeout": 60,
+      "memorySize": 256,
+      "envVariables": {
+        "ADMIN_OPENIDS": "oYn-A4tB2OEZTEY8iZU1LvUZ83L4"
+      }
+    }
+  ]
+}

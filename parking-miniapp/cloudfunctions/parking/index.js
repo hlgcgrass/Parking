@@ -24,6 +24,7 @@ cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV });
 const db = cloud.database();
 const _ = db.command;
 const BUNDLED_DATA = require('./data.json');
+const BATCH2_DATA = require('./batch2-import.json');
 const PLACE_IMAGES = require('./place-images.js');
 
 // ---------- 集合名 ----------
@@ -57,6 +58,7 @@ async function loadStatic() {
   }
   if (loadPromise) return loadPromise;
   loadPromise = (async () => {
+    try { await ensureBatch2Append(); } catch (error) { console.error('[batch2] append failed:', error.message || error); }
     const metaRes = await withTimeout(safe(() => db.collection(C_META).limit(1).get(), { data: [] }), 700, { data: [] });
     const [placesRes, parkingsRes, tipsRes] = await Promise.all([
       withTimeout(safe(() => db.collection(C_PLACE).limit(1000).get(), { data: [] }), 700, { data: [] }),
@@ -79,6 +81,7 @@ async function loadStatic() {
     );
     const replaceBundle = Boolean(
       BUNDLED_DATA.meta && BUNDLED_DATA.meta.replace_static_data && bundleDatasetId &&
+      !Boolean(metaRes.data && metaRes.data[0] && metaRes.data[0].admin_managed) &&
       (dbDatasetId !== bundleDatasetId || incompleteSameDataset)
     );
     // 重灌包含较多串行写入，不能阻塞当前读请求；本次先使用随包的完整数据，
@@ -87,7 +90,11 @@ async function loadStatic() {
 
     // 云数据库完成迁移后优先使用数据库；若首次部署还没导入静态集合，
     // 直接使用随云函数部署的数据包，保证首页和详情页都能正常打开。
-    const useBundle = replaceBundle || !metaRes.data || !metaRes.data.length || !dbPlaces.length || !dbParkings.length;
+    const databaseManaged = Boolean(metaRes.data && metaRes.data[0] && metaRes.data[0].admin_managed);
+    const useBundle = replaceBundle || (
+      !databaseManaged &&
+      (!metaRes.data || !metaRes.data.length || !dbPlaces.length || !dbParkings.length)
+    );
     // 数据库为空时，后台自动灌入随包 data.json（幂等，下次请求即走数据库）
     if (useBundle) selfSeed();
     const bundleMeta = {
@@ -137,18 +144,19 @@ async function loadStatic() {
 }
 
 // 管理后台改库后调用，使静态缓存失效
-async function bumpVersion() {
+async function bumpVersion(adminManaged = true) {
   const v = Date.now();
   const exist = await safe(() => db.collection(C_META).limit(1).get(), { data: [] });
   if (exist.data && exist.data.length) {
     await db.collection(C_META).doc(exist.data[0]._id).update({
-      data: { version: v, updated_at: new Date().toISOString() }
+      data: { version: v, updated_at: new Date().toISOString(), admin_managed: adminManaged }
     });
   } else {
     await db.collection(C_META).add({
-      data: { version: v, updated_at: new Date().toISOString(), cities: [], categories: [], exported_at: null }
+      data: { version: v, updated_at: new Date().toISOString(), admin_managed: adminManaged, cities: [], categories: [], exported_at: null }
     });
   }
+  cache.loadedAt = 0;
   cache.version = v; // 立即本地失效
 }
 
@@ -169,6 +177,7 @@ async function selfSeed(force = false) {
       parkings: bundledParkings,
       tips: bundledTips,
       fee_rules: (B.meta && B.meta.fee_rules) || 0,
+      admin_managed: false,
       updated_at: nowISO(), version: Date.now()
     };
     const mres = await safe(() => db.collection(C_META).limit(1).get(), { data: [] });
@@ -681,6 +690,491 @@ async function adminDelete(openid, collection, _id) {
   return ok({ done: true });
 }
 
+// ---------- 批量清理 / 新攻略导入 ----------
+const DELETE_PLACES_CONFIRM = 'DELETE_SELECTED_PLACES';
+const IMPORT_GUIDES_CONFIRM = 'IMPORT_GUIDES';
+
+function textValue(value) {
+  return String(value == null ? '' : value).trim();
+}
+
+function numberOrNull(value) {
+  if (value === '' || value == null) return null;
+  const n = Number(value);
+  return Number.isFinite(n) ? n : null;
+}
+
+function stringArray(value) {
+  if (!Array.isArray(value)) return [];
+  return value.map(textValue).filter(Boolean);
+}
+
+async function allDocs(collection, limit = 1000) {
+  const result = await db.collection(collection).limit(limit).get();
+  return result.data || [];
+}
+
+async function removeByFieldValues(collection, field, values) {
+  const variants = new Set(values.flatMap(value =>
+    typeof value === 'number' ? [value, String(value)] : [value]
+  ));
+  const rows = (await allDocs(collection)).filter(row => variants.has(row[field]));
+  return removeRows(collection, rows);
+}
+
+async function removeRows(collection, rows) {
+  let removed = 0;
+  const chunkSize = 20;
+  for (let i = 0; i < rows.length; i += chunkSize) {
+    const chunk = rows.slice(i, i + chunkSize);
+    await Promise.all(chunk.map(async row => {
+      await db.collection(collection).doc(row._id).remove();
+      removed++;
+    }));
+  }
+  return removed;
+}
+
+async function refreshMetaStats() {
+  const [places, parkings, tips, feeRules] = await Promise.all([
+    db.collection(C_PLACE).where({}).count(),
+    db.collection(C_PARKING).where({}).count(),
+    db.collection(C_TIP).where({}).count(),
+    // fee_rules 嵌在 p_parkings 文档中，按导入规则数量汇总。
+    allDocs(C_PARKING, 2000).then(rows => rows.reduce((n, row) => n + (Array.isArray(row.fee_rules) ? row.fee_rules.length : 0), 0))
+  ]);
+  const countData = {
+    places: places.total || 0,
+    parkings: parkings.total || 0,
+    tips: tips.total || 0,
+    fee_rules: feeRules,
+    updated_at: nowISO(),
+    version: Date.now(),
+    admin_managed: true
+  };
+  const exist = await db.collection(C_META).limit(1).get();
+  if (exist.data && exist.data.length) {
+    await db.collection(C_META).doc(exist.data[0]._id).update({ data: countData });
+  } else {
+    await db.collection(C_META).add({
+      data: {
+        ...countData,
+        cities: BUNDLED_DATA.cities || [],
+        categories: BUNDLED_DATA.categories || [],
+        exported_at: null,
+        dataset_id: 'admin-managed'
+      }
+    });
+  }
+  cache.loadedAt = 0;
+  cache.version = countData.version;
+  cache.source = 'database';
+  return countData;
+}
+
+// 一次性追加本轮整理数据：只新增，不删除、不覆盖现有地点和车场。
+// 通过 p_meta.batch2_import_id 保证重复冷启动不会重复写入。
+let batch2AppendPromise = null;
+async function ensureBatch2Append() {
+  if (batch2AppendPromise) return batch2AppendPromise;
+  batch2AppendPromise = (async () => {
+    const batchId = 'xhs-batch2-20260913-v1';
+    const metaRows = await allDocs(C_META, 10);
+    const meta = metaRows[0] || {};
+    if (meta.batch2_import_id === batchId) {
+      // 兼容本轮首次追加时遗漏 min_price_hour 的旧记录，修复后不重复新增。
+      const existingPlaces = await allDocs(C_PLACE);
+      const existingParkings = await allDocs(C_PARKING, 2000);
+      const placeById = new Map(existingPlaces.map(row => [Number(row.id), row]));
+      const placeMinPrices = new Map();
+      let repairedParkings = 0;
+      for (const row of existingParkings) {
+        const rules = Array.isArray(row.fee_rules) ? row.fee_rules : [];
+        const prices = rules
+          .filter(rule => Number(rule?.price) > 0 && ['first', 'normal'].includes(rule?.rule_type))
+          .map(rule => rule.unit === 'minute'
+            ? Number(rule.price) * 60 / (Number(rule.unit_minutes) || 30)
+            : rule.unit === 'hour' ? Number(rule.price) : null)
+          .filter(Number.isFinite);
+        const minPrice = prices.length ? Math.min(...prices) : null;
+        if (row.source === '小红书公开图文整理' && row.min_price_hour == null && minPrice != null) {
+          await db.collection(C_PARKING).doc(row._id).update({ data: { min_price_hour: minPrice, updated_at: nowISO() } });
+          repairedParkings++;
+        }
+        if (minPrice != null) {
+          const placeId = Number(row.place_id);
+          const old = placeMinPrices.get(placeId);
+          placeMinPrices.set(placeId, old == null ? minPrice : Math.min(old, minPrice));
+        }
+      }
+      for (const [placeId, minPrice] of placeMinPrices) {
+        const place = placeById.get(placeId);
+        if (place && place.source !== '小红书公开图文整理' && place.min_price != null) continue;
+        if (place && place.min_price !== minPrice) {
+          await db.collection(C_PLACE).doc(place._id).update({ data: { min_price: minPrice, updated_at: nowISO() } });
+        }
+      }
+      return { imported: false, reason: 'already_imported', repairedParkings };
+    }
+
+    const existingPlaces = await allDocs(C_PLACE);
+    const existingParkings = await allDocs(C_PARKING, 2000);
+    const existingNames = new Set(existingPlaces.map(row => textValue(row.name)));
+    const usedPlaceIds = new Set(existingPlaces.map(row => Number(row.id)).filter(Number.isInteger));
+    const usedParkingIds = new Set(existingParkings.map(row => Number(row.id)).filter(Number.isInteger));
+    let nextPlaceId = Math.max(0, ...usedPlaceIds) + 1;
+    let nextParkingId = Math.max(0, ...usedParkingIds) + 1;
+    const now = nowISO();
+    let importedPlaces = 0;
+    let importedParkings = 0;
+    let importedTips = 0;
+
+    for (const input of BATCH2_DATA.places || []) {
+      if (existingNames.has(textValue(input.name))) continue;
+      while (usedPlaceIds.has(nextPlaceId)) nextPlaceId++;
+      const placeId = nextPlaceId++;
+      usedPlaceIds.add(placeId);
+      const rows = Array.isArray(input.parkings) ? input.parkings : [];
+      const placeDoc = {
+        id: placeId, city_code: textValue(input.city_code) || '440100',
+        name: textValue(input.name), category: textValue(input.category) || '景点',
+        address: textValue(input.address) || null, district: textValue(input.district) || null,
+        lng: numberOrNull(input.lng), lat: numberOrNull(input.lat),
+        coordinate_status: textValue(input.coordinate_status) || '已核验',
+        navigation_available: Boolean(input.navigation_available),
+        coordinate_source: textValue(input.coordinate_source) || '腾讯位置服务 POI，名称与地址复核',
+        summary: textValue(input.summary) || null, area_tips: textValue(input.area_tips) || null,
+        tags: stringArray(input.tags), search_text: [input.name, input.address, ...(input.tags || [])].filter(Boolean).join(' '),
+        heat: numberOrNull(input.heat) ?? 50, view_count: 0, parking_count: rows.length,
+        min_price: (() => {
+          const prices = rows.flatMap(inputParking => (inputParking.fee_rules || [])
+            .filter(rule => Number(rule?.price) > 0 && ['first', 'normal'].includes(rule?.rule_type))
+            .map(rule => rule.unit === 'minute'
+              ? Number(rule.price) * 60 / (Number(rule.unit_minutes) || 30)
+              : rule.unit === 'hour' ? Number(rule.price) : null))
+            .filter(Number.isFinite);
+          return prices.length ? Math.min(...prices) : null;
+        })(),
+        status: 1, created_at: now, updated_at: now
+      };
+      await db.collection(C_PLACE).add({ data: placeDoc });
+      importedPlaces++;
+
+      for (const inputParking of rows) {
+        while (usedParkingIds.has(nextParkingId)) nextParkingId++;
+        const parkingId = nextParkingId++;
+        usedParkingIds.add(parkingId);
+        const parkingDoc = {
+          id: parkingId, place_id: placeId, city_code: placeDoc.city_code,
+          name: textValue(inputParking.name), address: textValue(inputParking.location) || null,
+          type: textValue(inputParking.type) || null, total_spots: numberOrNull(inputParking.total_spots),
+          lng: numberOrNull(inputParking.lng), lat: numberOrNull(inputParking.lat),
+          coordinate_status: textValue(inputParking.coordinate_status) || '已核验',
+          navigation_available: Boolean(inputParking.navigation_available),
+          coordinate_source: textValue(inputParking.coordinate_source) || '腾讯位置服务 POI，名称与地址复核',
+          free_minutes: numberOrNull(inputParking.free_minutes) ?? 0,
+          daily_cap: numberOrNull(inputParking.daily_cap), night_flat: numberOrNull(inputParking.night_flat),
+          open_hours: textValue(inputParking.open_hours) || null, payment: Array.isArray(inputParking.payment) ? inputParking.payment : [],
+          min_price_hour: numberOrNull(inputParking.min_price_hour) ?? (() => {
+            const prices = (inputParking.fee_rules || [])
+              .filter(rule => Number(rule?.price) > 0 && ['first', 'normal'].includes(rule?.rule_type))
+              .map(rule => rule.unit === 'minute'
+                ? Number(rule.price) * 60 / (Number(rule.unit_minutes) || 30)
+                : rule.unit === 'hour' ? Number(rule.price) : null)
+              .filter(Number.isFinite);
+            return prices.length ? Math.min(...prices) : null;
+          })(),
+          tips: textValue(inputParking.guide_text), fee_summary: textValue(inputParking.fee_detail),
+          source: '小红书公开图文整理', confidence: textValue(inputParking.confidence) || 'medium',
+          conflict_flag: Boolean(inputParking.conflict_flag), fee_rules: Array.isArray(inputParking.fee_rules) ? inputParking.fee_rules : [],
+          like_count: 0, status: 1, verified_at: now, created_at: now, updated_at: now
+        };
+        await db.collection(C_PARKING).add({ data: parkingDoc });
+        importedParkings++;
+      }
+      if (placeDoc.area_tips) {
+        await db.collection(C_TIP).add({ data: { place_id: placeId, category: '攻略', content: placeDoc.area_tips, source: '管理员整理', status: 'ok', created_at: now, updated_at: now } });
+        importedTips++;
+      }
+    }
+
+    const refreshedPlaces = await allDocs(C_PLACE);
+    const refreshedParkings = await allDocs(C_PARKING, 2000);
+    const refreshedTips = await allDocs(C_TIP, 2000);
+    const nextMeta = {
+      ...meta, batch2_import_id: batchId, batch2_imported_at: now,
+      places: refreshedPlaces.length, parkings: refreshedParkings.length, tips: refreshedTips.length,
+      fee_rules: refreshedParkings.reduce((n, row) => n + (Array.isArray(row.fee_rules) ? row.fee_rules.length : 0), 0),
+      admin_managed: true, updated_at: now, version: Date.now()
+    };
+    if (metaRows[0]?._id) await db.collection(C_META).doc(metaRows[0]._id).update({ data: nextMeta });
+    else await db.collection(C_META).add({ data: nextMeta });
+    return { imported: true, places: importedPlaces, parkings: importedParkings, tips: importedTips };
+  })().finally(() => { batch2AppendPromise = null; });
+  return batch2AppendPromise;
+}
+
+async function resolvePlaceSelection(data) {
+  const requestedIds = Array.isArray(data.place_ids)
+    ? data.place_ids.map(Number).filter(id => Number.isInteger(id) && id > 0)
+    : [];
+  const requestedNames = Array.isArray(data.place_names)
+    ? data.place_names.map(textValue).filter(Boolean)
+    : [];
+  if (!requestedIds.length && !requestedNames.length) return fail('至少提供一个 place_ids 或 place_names');
+  if (requestedIds.length > 100 || requestedNames.length > 100) return fail('单次最多处理 100 个地点');
+
+  const rows = await allDocs(C_PLACE);
+  const idSet = new Set(requestedIds);
+  const nameSet = new Set(requestedNames);
+  const matched = rows.filter(row => idSet.has(Number(row.id)) || nameSet.has(textValue(row.name)));
+  const matchedIds = new Set(matched.map(row => Number(row.id)));
+  const matchedNames = new Set(matched.map(row => textValue(row.name)));
+  const missingIds = requestedIds.filter(id => !matchedIds.has(id));
+  const missingNames = requestedNames.filter(name => !matchedNames.has(name));
+  return {
+    requestedIds, requestedNames, matched, missingIds, missingNames,
+    parkingRows: (await allDocs(C_PARKING)).filter(row => matchedIds.has(Number(row.place_id))),
+    tipRows: (await allDocs(C_TIP)).filter(row => matchedIds.has(Number(row.place_id)))
+  };
+}
+
+async function adminDeletePlaces(openid, data) {
+  if (!isAdmin(openid)) return fail('无权限');
+  const selection = await resolvePlaceSelection(data);
+  if (selection.code === -1) return selection;
+
+  const parkingIds = selection.parkingRows.map(row => Number(row.id)).filter(Number.isInteger);
+  const preview = {
+    dry_run: true,
+    selected_places: selection.matched.map(row => ({ id: row.id, name: row.name, _id: row._id })),
+    missing_place_ids: selection.missingIds,
+    missing_place_names: selection.missingNames,
+    counts: {
+      places: selection.matched.length,
+      parkings: selection.parkingRows.length,
+      tips: selection.tipRows.length
+    },
+    confirmation: DELETE_PLACES_CONFIRM
+  };
+  if (data.dry_run !== false) return ok(preview);
+  if (data.confirm !== DELETE_PLACES_CONFIRM) return fail(`真实删除必须同时传 confirm: ${DELETE_PLACES_CONFIRM}`);
+  if (selection.missingIds.length || selection.missingNames.length) {
+    return fail('存在未匹配的地点，已拒绝部分删除；请先根据预览修正选择条件');
+  }
+
+  const deletedFavorites = await removeByFieldValues(C_FAV, 'parking_id', parkingIds);
+  const deletedLikes = await removeByFieldValues(C_LIKE, 'parking_id', parkingIds);
+  const deletedTips = await removeRows(C_TIP, selection.tipRows);
+  const deletedParkings = await removeRows(C_PARKING, selection.parkingRows);
+  const deletedPlaces = await removeRows(C_PLACE, selection.matched);
+  const meta = await refreshMetaStats();
+  return ok({
+    dry_run: false,
+    deleted: {
+      places: deletedPlaces, parkings: deletedParkings, tips: deletedTips,
+      favorites: deletedFavorites, likes: deletedLikes
+    },
+    selected_places: selection.matched.map(row => ({ id: row.id, name: row.name })),
+    meta
+  });
+}
+
+function normalizeImportedFeeRules(value, pathLabel) {
+  if (value == null) return [];
+  if (!Array.isArray(value)) throw new Error(`${pathLabel}.fee_rules 必须是数组`);
+  return value.map((rule, index) => {
+    const price = numberOrNull(rule && rule.price);
+    if (price == null || price < 0) throw new Error(`${pathLabel}.fee_rules[${index}].price 无效`);
+    const unit = textValue(rule && rule.unit) || 'hour';
+    const ruleType = textValue(rule && rule.rule_type) || 'normal';
+    if (!['free', 'first', 'normal', 'cap', 'night'].includes(ruleType)) {
+      throw new Error(`${pathLabel}.fee_rules[${index}].rule_type 无效`);
+    }
+    return {
+      rule_type: ruleType,
+      start_minute: numberOrNull(rule && rule.start_minute),
+      end_minute: numberOrNull(rule && rule.end_minute),
+      time_start: textValue(rule && rule.time_start) || null,
+      time_end: textValue(rule && rule.time_end) || null,
+      price,
+      unit,
+      unit_minutes: numberOrNull(rule && rule.unit_minutes),
+      priority: numberOrNull(rule && rule.priority) ?? 50,
+      description: textValue(rule && rule.description),
+      confidence: textValue(rule && rule.confidence) || 'medium'
+    };
+  });
+}
+
+function importedMinPriceHour(rules) {
+  const prices = rules
+    .filter(rule => rule.price > 0 && (rule.rule_type === 'first' || rule.rule_type === 'normal'))
+    .map(rule => rule.unit === 'minute'
+      ? (rule.price * 60) / (rule.unit_minutes || 30)
+      : rule.price);
+  return prices.length ? Math.min(...prices) : null;
+}
+
+function normalizeImportedTips(value) {
+  if (typeof value === 'string' && value.trim()) {
+    return [{ category: '攻略', content: value.trim(), source: '管理员整理' }];
+  }
+  if (!Array.isArray(value)) return [];
+  return value.map(tip => ({
+    category: textValue(tip.category) || '攻略',
+    content: textValue(tip.content),
+    source: textValue(tip.source) || '管理员整理'
+  })).filter(tip => tip.content);
+}
+
+async function adminImportGuides(openid, data) {
+  if (!isAdmin(openid)) return fail('无权限');
+  const inputPlaces = Array.isArray(data.places) ? data.places : [];
+  if (!inputPlaces.length) return fail('places 必须是非空数组');
+  if (inputPlaces.length > 50) return fail('单次最多导入 50 个地点');
+
+  const existingPlaces = await allDocs(C_PLACE);
+  const existingParkings = await allDocs(C_PARKING);
+  const usedPlaceIds = new Set(existingPlaces.map(row => Number(row.id)).filter(Number.isInteger));
+  const usedParkingIds = new Set(existingParkings.map(row => Number(row.id)).filter(Number.isInteger));
+  const existingPlaceNames = new Set(existingPlaces.map(row => textValue(row.name)));
+  const plannedPlaceNames = new Set();
+  const plannedParkingNames = new Set();
+  let nextPlaceId = Math.max(0, ...usedPlaceIds) + 1;
+  let nextParkingId = Math.max(0, ...usedParkingIds) + 1;
+  const plans = [];
+
+  for (let i = 0; i < inputPlaces.length; i++) {
+    const input = inputPlaces[i] || {};
+    const placeLabel = `places[${i}]`;
+    const name = textValue(input.name || input['地点名称']);
+    if (!name) return fail(`${placeLabel}.name 不能为空`);
+    const explicitId = input.id == null ? null : Number(input.id);
+    const placeId = explicitId == null ? (() => {
+      while (usedPlaceIds.has(nextPlaceId)) nextPlaceId++;
+      const allocated = nextPlaceId++;
+      usedPlaceIds.add(allocated);
+      return allocated;
+    })() : explicitId;
+    if (!Number.isInteger(placeId) || placeId <= 0) return fail(`${placeLabel}.id 无效`);
+    if (explicitId && (usedPlaceIds.has(placeId) || plans.some(plan => plan.place.id === placeId))) return fail(`${placeLabel}.id 已存在或重复：${placeId}`);
+    if (explicitId) usedPlaceIds.add(placeId);
+    if (existingPlaceNames.has(name) || plannedPlaceNames.has(name)) return fail(`${placeLabel}.name 已存在或重复：${name}`);
+    plannedPlaceNames.add(name);
+
+    const inputParkings = Array.isArray(input.parkings) ? input.parkings : [];
+    if (!inputParkings.length) return fail(`${placeLabel}.parkings 必须是非空数组`);
+    if (inputParkings.length > 100) return fail(`${placeLabel}.parkings 单地点最多 100 个`);
+    const localParkingNames = new Set();
+    const parkings = [];
+    for (let j = 0; j < inputParkings.length; j++) {
+      const pk = inputParkings[j] || {};
+      const pkLabel = `${placeLabel}.parkings[${j}]`;
+      const parkingName = textValue(pk.name || pk['停车场名称']);
+      const feeDetail = textValue(pk.fee_detail || pk.fee_summary || pk['收费明细']);
+      const guideText = textValue(pk.guide_text || pk.tips || pk['攻略正文']);
+      if (!parkingName) return fail(`${pkLabel}.name 不能为空`);
+      if (!feeDetail && !Array.isArray(pk.fee_rules)) return fail(`${pkLabel} 必须提供 fee_detail 或 fee_rules`);
+      if (localParkingNames.has(parkingName)) return fail(`${pkLabel}.name 在同一地点内重复：${parkingName}`);
+      localParkingNames.add(parkingName);
+      const explicitParkingId = pk.id == null ? null : Number(pk.id);
+      const parkingId = explicitParkingId == null ? (() => {
+        while (usedParkingIds.has(nextParkingId)) nextParkingId++;
+        const allocated = nextParkingId++;
+        usedParkingIds.add(allocated);
+        return allocated;
+      })() : explicitParkingId;
+      if (!Number.isInteger(parkingId) || parkingId <= 0) return fail(`${pkLabel}.id 无效`);
+      if (explicitParkingId && (usedParkingIds.has(parkingId) || parkings.some(row => row.id === parkingId))) return fail(`${pkLabel}.id 已存在或重复：${parkingId}`);
+      if (explicitParkingId) usedParkingIds.add(parkingId);
+      const feeRules = normalizeImportedFeeRules(pk.fee_rules, pkLabel);
+      const lng = numberOrNull(pk.lng);
+      const lat = numberOrNull(pk.lat);
+      const location = textValue(pk.address || pk.location || pk['停车场定位']);
+      parkings.push({
+        id: parkingId,
+        place_id: placeId,
+        city_code: textValue(pk.city_code || input.city_code || data.city_code) || '440100',
+        name: parkingName,
+        address: location || null,
+        type: textValue(pk.type) || null,
+        total_spots: numberOrNull(pk.total_spots),
+        lng, lat,
+        free_minutes: numberOrNull(pk.free_minutes) ?? 0,
+        daily_cap: numberOrNull(pk.daily_cap),
+        night_flat: numberOrNull(pk.night_flat),
+        open_hours: textValue(pk.open_hours) || null,
+        payment: Array.isArray(pk.payment) ? pk.payment : [],
+        min_price_hour: numberOrNull(pk.min_price_hour) ?? importedMinPriceHour(feeRules),
+        tips: guideText || null,
+        fee_summary: feeDetail || null,
+        source: textValue(pk.source) || '管理员整理',
+        confidence: textValue(pk.confidence) || 'medium',
+        verified_at: textValue(pk.verified_at) || nowISO().slice(0, 10),
+        status: pk.status == null ? 1 : Number(pk.status),
+        conflict_flag: Boolean(pk.conflict_flag),
+        fee_rules: feeRules,
+        coordinate_status: textValue(pk.coordinate_status) || (lng != null && lat != null ? '待核验' : '待补充'),
+        navigation_available: pk.navigation_available == null ? Boolean(location) : Boolean(pk.navigation_available),
+        like_count: 0
+      });
+    }
+    const tags = stringArray(input.tags);
+    const placeAddress = textValue(input.address || input.location);
+    const placeSummary = textValue(input.summary || input.area_tips);
+    plans.push({
+      place: {
+        id: placeId,
+        city_code: textValue(input.city_code || data.city_code) || '440100',
+        name,
+        category: textValue(input.category) || '景点',
+        address: placeAddress || null,
+        district: textValue(input.district) || null,
+        lng: numberOrNull(input.lng),
+        lat: numberOrNull(input.lat),
+        heat: numberOrNull(input.heat) ?? 50,
+        summary: placeSummary || null,
+        tags,
+        area_tips: textValue(input.area_tips) || null,
+        search_text: [name, placeAddress, tags.join(' ')].filter(Boolean).join(' '),
+        parking_count: parkings.length,
+        min_price: parkings.map(row => row.min_price_hour).filter(v => v != null).sort((a, b) => a - b)[0] ?? null,
+        status: input.status == null ? 1 : Number(input.status)
+      },
+      parkings,
+      tips: normalizeImportedTips(input.tips)
+    });
+  }
+
+  const preview = {
+    dry_run: true,
+    places: plans.map(plan => ({ id: plan.place.id, name: plan.place.name, parkings: plan.parkings.length, tips: plan.tips.length })),
+    counts: {
+      places: plans.length,
+      parkings: plans.reduce((n, plan) => n + plan.parkings.length, 0),
+      tips: plans.reduce((n, plan) => n + plan.tips.length, 0),
+      fee_rules: plans.reduce((n, plan) => n + plan.parkings.reduce((m, pk) => m + pk.fee_rules.length, 0), 0)
+    },
+    confirmation: IMPORT_GUIDES_CONFIRM
+  };
+  if (data.dry_run !== false) return ok(preview);
+  if (data.confirm !== IMPORT_GUIDES_CONFIRM) return fail(`真实导入必须同时传 confirm: ${IMPORT_GUIDES_CONFIRM}`);
+
+  const now = nowISO();
+  for (const plan of plans) {
+    await db.collection(C_PLACE).add({ data: { ...plan.place, created_at: now, updated_at: now } });
+    for (const parking of plan.parkings) {
+      await db.collection(C_PARKING).add({ data: { ...parking, created_at: now, updated_at: now } });
+    }
+    for (const tip of plan.tips) {
+      await db.collection(C_TIP).add({ data: { ...tip, place_id: plan.place.id, status: 'ok', created_at: now, updated_at: now } });
+    }
+  }
+  const meta = await refreshMetaStats();
+  return ok({ dry_run: false, imported: preview.counts, places: preview.places, meta });
+}
+
 // ---------- 入口 ----------
 exports.main = async (event = {}, context) => {
   const wxCtx = cloud.getWXContext();
@@ -837,6 +1331,7 @@ exports.main = async (event = {}, context) => {
           cities: src.cities || [], categories: src.categories || [],
           exported_at: (src.meta && src.meta.exported_at) || null,
           fee_rules: (src.meta && src.meta.fee_rules) || 0,
+          admin_managed: false,
           updated_at: nowISO(), version: Date.now()
         };
         const mres = await safe(() => db.collection(C_META).limit(1).get(), { data: [] });
@@ -865,7 +1360,7 @@ exports.main = async (event = {}, context) => {
         await batchRemoveAll(C_TIP);
         await batchAdd(C_TIP, tips);
 
-        await bumpVersion();
+        await bumpVersion(false);
         return ok({ places: (src.places || []).length, parkings: parkings.length, tips: tips.length });
       }
 
@@ -882,6 +1377,10 @@ exports.main = async (event = {}, context) => {
         return adminDelete(openid, C_PARKING, event._id);
       case 'admin-delete-tip':
         return adminDelete(openid, C_TIP, event._id);
+      case 'admin-delete-places':
+        return adminDeletePlaces(openid, event.data || {});
+      case 'admin-import-guides':
+        return adminImportGuides(openid, event.data || {});
 
       // ===== 运维：初始化数据库集合 =====
       case 'init': {

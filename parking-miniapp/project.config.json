@@ -8,10 +8,22 @@
   "libVersion": "latest",
   "packOptions": {
     "ignore": [
-      { "type": "folder", "value": "cloudfunctions" },
-      { "type": "folder", "value": "node_modules" },
-      { "type": "file", "value": "package.json" },
-      { "type": "file", "value": "package-lock.json" }
+      {
+        "value": "cloudfunctions",
+        "type": "folder"
+      },
+      {
+        "value": "node_modules",
+        "type": "folder"
+      },
+      {
+        "value": "package.json",
+        "type": "file"
+      },
+      {
+        "value": "package-lock.json",
+        "type": "file"
+      }
     ],
     "include": []
   },
@@ -49,7 +61,9 @@
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
-    }
+    },
+    "swc": false,
+    "disableSWC": true
   },
   "condition": {},
   "simulatorPluginLibVersion": {},

@@ -28,12 +28,12 @@
 
   <block wx:if="{{place}}">
     <!-- 区域攻略 -->
-    <view class="pad" wx:if="{{place.area_tips}}">
+    <view class="pad" wx:if="{{place.area_tips || place.summary}}">
     <view class="tipbar mt-md">
       <view class="tipbar__dot"></view>
       <view class="grow">
         <view class="fs-caption tp">停车攻略</view>
-        <view class="tipbar__text mt-sm">{{place.area_tips}}</view>
+        <view class="tipbar__text mt-sm">{{place.area_tips || place.summary}}</view>
       </view>
     </view>
     </view>
@@ -58,8 +58,11 @@
                 <t-icon name="location-parking-place-filled" size="34rpx" />
               </view>
             </view>
-            <view class="fs-caption t3 mt-sm">
-              {{item.type}}<text wx:if="{{item.scale}}"> · {{item.scale}}</text>
+            <view class="parking-fee-summary mt-sm">
+              <view wx:if="{{item._feeLines.length}}" class="parking-fee-summary__body">
+                <view wx:for="{{item._feeLines}}" wx:for-item="feeLine" wx:key="index">{{feeLine}}</view>
+              </view>
+              <text wx:else class="parking-fee-summary__empty">收费规则待补充</text>
             </view>
           </view>
 
@@ -78,13 +81,14 @@
           <text wx:if="{{item.walk_minutes}}" class="fs-caption t3" style="margin-left:16rpx">步行 {{item.walk_minutes}} 分钟</text>
         </view>
 
-        <view wx:if="{{item.tips}}" class="fs-caption t2 mt-md park-tip">
-          <view wx:for="{{item._tipLines}}" wx:for-item="line" wx:key="index">{{line}}</view>
+        <view wx:if="{{item._guideLines.length}}" class="fs-caption t2 mt-md park-tip">
+          <view wx:for="{{item._guideLines}}" wx:for-item="line" wx:key="index">{{line}}</view>
         </view>
+        <view wx:else class="fs-caption t4 mt-md park-tip park-tip--empty">暂无内容</view>
 
         <view class="card__bottom mt-md">
           <view class="fee-toggle row">
-            <text class="fs-caption tp">{{item._open ? '收起收费明细' : '查看收费明细'}}</text>
+            <text class="fs-caption tp">{{item._open ? '收起完整收费规则' : '查看完整收费规则'}}</text>
             <view class="arrow {{item._open ? 'arrow--up' : ''}}"></view>
           </view>
 
@@ -102,15 +106,14 @@
         </view>
       </view>
 
-      <!-- 展开：收费明细 + 试算 -->
+      <!-- 展开：完整收费规则 + 试算 -->
       <view wx:if="{{item._open}}">
         <view class="divider mt-md"></view>
 
         <view class="mt-md" wx:if="{{item.fee_rules.length}}">
-          <view class="fs-caption t3">收费明细</view>
+          <view class="fs-caption t3">完整收费规则</view>
           <view class="fee-row" wx:for="{{item.fee_rules}}" wx:for-item="r" wx:key="index">
-            <text class="fs-caption t2 grow">{{r.description}}</text>
-            <text class="fs-caption price">¥{{r.price}}</text>
+            <text class="fs-caption t2 grow">{{r._display || r.description}}</text>
           </view>
         </view>
         <view wx:else class="fs-caption t4 mt-md">暂无结构化收费规则，欢迎拍照补充</view>

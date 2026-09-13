@@ -21,13 +21,13 @@ try {
   ci = require('miniprogram-ci');
 }
 
-const APPID = 'wx74cf1625553c595b';
-const ENV_ID = 'cloud1-d1guhoh9g9abdbb63';
-const FUNC_NAME = 'parking';
+const APPID = process.env.PARKING_APPID || 'wx74cf1625553c595b';
+const ENV_ID = process.env.PARKING_CLOUD_ENV || 'cloud1-d1guhoh9g9abdbb63';
+const FUNC_NAME = process.env.PARKING_CLOUD_FUNCTION || 'parking';
 
 const PROJECT_PATH = path.join(__dirname, '..', 'parking-miniapp');
 const FUNC_PATH = path.join(PROJECT_PATH, 'cloudfunctions', FUNC_NAME);
-const KEY_DIR = path.join(__dirname, 'keys');
+const KEY_DIR = path.resolve(process.env.PARKING_UPLOAD_KEY_DIR || path.join(__dirname, 'keys'));
 
 function findKey() {
   if (!fs.existsSync(KEY_DIR)) return null;

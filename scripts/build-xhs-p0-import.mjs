@@ -107,6 +107,26 @@ function warningSentences(text) {
   return splitSentences(text).map(cleanClause).filter(s => /排队|堵|拥堵|路窄|入口窄|限高|抄牌|贴条|满位|车位紧张|不让停|交通管制|早到|高峰|位置少|车位少|难停|排长队/.test(s) && !isNoise(s)).map(s => focus(s, ['排队', '堵', '拥堵', '路窄', '限高', '抄牌', '贴条', '满位', '车位紧张', '不让停', '交通管制', '高峰', '难停'], 150));
 }
 
+function placeParkingSummary(parkingRows) {
+  if (!parkingRows.length) return '本轮未提取到可确认的停车信息。';
+  const routes = [];
+  const warnings = [];
+  for (const parking of parkingRows) {
+    for (const line of String(parking.tips || '').split(/\r?\n/)) {
+      const value = cleanClause(line).replace(/^\d+[、.)]\s*/, '').trim();
+      if (!value || isNoise(value) || /[?？]|(?:吗|呢|吧)[。.!！]*$/.test(value)) continue;
+      if (/^路线[:：]/.test(value)) routes.push(value.replace(/^路线[:：]\s*/, ''));
+      if (/^注意[:：]/.test(value)) warnings.push(value.replace(/^注意[:：]\s*/, ''));
+    }
+  }
+  const parts = [`该地点已整理${parkingRows.length}个停车点`];
+  const routeText = unique(routes).slice(0, 4).join('；');
+  const warningText = unique(warnings).slice(0, 4).join('；');
+  if (routeText) parts.push(`步行与入口：${routeText}`);
+  if (warningText) parts.push(`停车注意：${warningText}`);
+  return parts.join('。');
+}
+
 function sanitizeComment(s) {
   let x = s.replace(/^评论：/, '').replace(/\s+/g, ' ').trim();
   if (x.includes('作者')) x = x.slice(x.indexOf('作者') + 2);
@@ -292,15 +312,10 @@ for (const p of candidate.places) {
     sourceRecords.push(...group.source_records);
   }
   if (parkingRows.length) parkingsByPlace[placeId] = parkingRows;
-  const areaParts = [];
-  if (parkingRows.length) areaParts.push(`已整理${parkingRows.length}个有明确收费信息的停车点`);
-  const route = unique(allRoutes).slice(0, 2).join('；');
-  const warning = unique(allWarnings).slice(0, 3).join('；');
-  if (route) areaParts.push(`路线提示：${route}`);
-  if (warning) areaParts.push(`注意：${warning}`);
+  const areaTips = placeParkingSummary(parkingRows);
   const base = legacyPlace || { id: placeId, name: p.place, category: '景点', address: null, lng: null, lat: null, heat: 50, summary: '', tags: [], search_text: '' };
-  places.push({ ...base, id: placeId, name: base.name || p.place, parking_count: parkingRows.length, area_tips: areaParts.join('。'), updated_at: new Date().toISOString() });
-  tipsByPlace[placeId] = [{ category: '攻略', content: areaParts.join('。') || '本轮前10条笔记未提取到可确认的停车收费信息。', source: '编辑整理（公开信息）' }];
+  places.push({ ...base, id: placeId, name: base.name || p.place, parking_count: parkingRows.length, area_tips: areaTips, updated_at: new Date().toISOString() });
+  tipsByPlace[placeId] = [{ category: '攻略', content: areaTips || '本轮笔记未提取到可确认的停车信息。', source: '编辑整理（公开信息）' }];
 }
 
 const meta = { city: '广州', city_code: '440100', exported_at: new Date().toISOString(), places: places.length, parkings: Object.values(parkingsByPlace).reduce((n, a) => n + a.length, 0), fee_rules: Object.values(parkingsByPlace).flat().reduce((n, p) => n + p.fee_rules.length, 0), source: '小红书最多收藏排序前10条笔记的保守整理' };

@@ -6,6 +6,7 @@
 parking-miniapp/project.private.config.json
 .xhs-edge-profile/
 server/xhs-captures.json
+server/keys/*.key
 
 # Local runtime data and SQLite temporary files
 deploy/store.json
@@ -27,3 +28,8 @@ _installers/
 *.swp
 Thumbs.db
 .DS_Store
+
+# Local CLI caches and one-off migration artifacts
+.npm-cache/
+.tmp-cloudbase-cli/
+.tmp-parking-migration-qr.txt

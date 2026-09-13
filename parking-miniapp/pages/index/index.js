@@ -41,6 +41,16 @@ Page({
     this.refreshProfile();
   },
 
+  onPullDownRefresh() {
+    const tasks = [this.loadCategories(), this.loadPlaces(), this.loadStats()];
+    const loc = app.globalData.location;
+    if (this.data.activeTab === 1 && loc) tasks.push(this.loadNearby(loc));
+
+    Promise.all(tasks)
+      .then(() => wx.stopPullDownRefresh())
+      .catch(() => wx.stopPullDownRefresh());
+  },
+
   onShow() {
     const index = Number(app.globalData.tabBar.current) || 0;
     if (this.data.activeTab !== index) this.setData({ activeTab: index });
@@ -122,7 +132,7 @@ Page({
   },
 
   loadCategories() {
-    api.getCategories()
+    return api.getCategories()
       .then(list => this.setData({ categories: ['全部'].concat(list.map(x => x.name)) }))
       .catch(() => {});
   },
@@ -130,7 +140,7 @@ Page({
   loadPlaces() {
     this.setData({ guideLoading: true });
     const loc = app.globalData.location;
-    api.getPlaces({
+    return api.getPlaces({
       cityCode: DEFAULT_CITY.code,
       category: this.data.category,
       size: 50,
@@ -170,7 +180,7 @@ Page({
     this._nearbyRequestId = requestId;
     this.setData({ nearbyLoading: true });
     wx.showLoading({ title: '查找中', mask: true });
-    api.nearby(loc.lat, loc.lng, 3000, 20)
+    return api.nearby(loc.lat, loc.lng, 3000, 20)
       .then(res => {
         if (requestId !== this._nearbyRequestId) return;
         const list = (res.list || []).map(x => ({
@@ -276,10 +286,21 @@ Page({
   },
 
   goDetail(e) {
-    this.goDetailById(e.currentTarget.dataset.id);
+    const dataset = (e && e.currentTarget && e.currentTarget.dataset) || {};
+    const index = Number(dataset.index);
+    const row = Number.isInteger(index) ? this.data.guideList[index] : null;
+    const id = dataset.placeId != null && dataset.placeId !== ''
+      ? dataset.placeId
+      : (dataset.id != null && dataset.id !== '' ? dataset.id : row && row.id);
+    this.goDetailById(id);
   },
 
   goDetailById(id) {
+    if (id == null || id === '' || id === 'undefined' || !Number.isFinite(Number(id))) {
+      wx.showToast({ title: '未获取到地点信息，请刷新首页', icon: 'none' });
+      return;
+    }
+    id = Number(id);
     if (!user.isLogin()) {
       this.setData({ loginPromptVisible: true, pendingDetailId: id });
       return;
@@ -322,7 +343,7 @@ Page({
   },
 
   loadStats() {
-    api.getStats()
+    return api.getStats()
       .then(stats => this.setData({
         stats: { ...stats, updated_text: stats.updated_at ? stats.updated_at.slice(0, 7) : '' }
       }))

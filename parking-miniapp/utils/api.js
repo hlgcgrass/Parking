@@ -135,7 +135,9 @@ module.exports = {
       const d = query.getDetailStatic(cache.getStatic(), id, lat, lng, sort, fav, like, cache.getPlaceImages());
       if (d) return Promise.resolve(d); // 命中本地；未找到才回退云（可能数据尚未同步）
     }
-    return call('place', `/api/places/${id}`, { lat, lng, userId, sort });
+    // 云开发调用不使用 HTTP 路径，必须把地点 id 放进云函数 event；
+    // HTTP 兜底仍保留原有的 /api/places/:id 路径。
+    return call('place', `/api/places/${id}`, { id, lat, lng, userId, sort });
   },
   search: (keyword, cityCode) => fromCacheOrCloud(
     () => ({ keyword: keyword || '', list: query.searchPlaces(cache.getStatic(), keyword, cityCode) }),
@@ -155,6 +157,9 @@ module.exports = {
   // 管理员图片接口：由后台/管理员工具显式调用，不在小程序启动时自动执行。
   adminAddPlaceImage: (data) => call('admin-add-place-image', '/api/admin/place-images', data, 'POST'),
   adminDeletePlaceImage: (data) => call('admin-delete-place-image', '/api/admin/place-images', data, 'DELETE'),
+  // 管理员批量清理 / 导入：默认 dry_run 预览，只有显式确认值才会真实写库。
+  adminDeletePlaces: (data) => cloudCall('admin-delete-places', data),
+  adminImportGuides: (data) => cloudCall('admin-import-guides', data),
   logSearch: (keyword, resultCount, cityId) =>
     call('search-log', '/api/search-log', { keyword, result_count: resultCount, city_id: cityId }, 'POST'),
 

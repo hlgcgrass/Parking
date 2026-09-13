@@ -1,0 +1,491 @@
+{
+  "places": [
+    {
+      "name": "北京路",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市越秀区北京路步行街",
+      "district": "越秀区",
+      "summary": "北京路周边停车选择较多，收费和步行距离差异明显，高峰期建议优先确认入口和余位。",
+      "area_tips": "北京路共整理5个停车点，步行距离约6至12分钟。天河城和荔湾路一侧入口较明确，但周末核心区域车流较大，可能需要排队或绕行；长时间停留可优先比较有封顶价的车场，优惠使用前要核对现场规则。",
+      "tags": ["商业街", "步行街"],
+      "parkings": [
+        {
+          "name": "北京路天河城地下停车场",
+          "fee_detail": "10元/小时；天河城会员每月可领取3小时停车优惠，超过优惠时长后按5元/30分钟计费。具体优惠以现场及会员规则为准。",
+          "guide_text": "距离北京路步行约6分钟，跟随商场指引进入地下车库即可；周末进出车流较大，建议预留找位和排队时间。",
+          "location": "北京路天河城地下停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 10, "unit": "hour", "description": "基础收费", "confidence": "medium"},
+            {"rule_type": "normal", "price": 5, "unit": "minute", "unit_minutes": 30, "description": "超过会员优惠时长后的收费", "confidence": "medium"}
+          ],
+          "daily_cap": null,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        },
+        {
+          "name": "越秀尚御大厦停车场",
+          "fee_detail": "白天6元/小时，24小时封顶30元。",
+          "guide_text": "距离北京路步行约8分钟，车库相对规整，适合作为商业街周边的备选停车点。",
+          "location": "越秀尚御大厦停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 6, "unit": "hour", "description": "白天收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 30, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 30,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        },
+        {
+          "name": "海日苑停车场",
+          "fee_detail": "8元/小时，24小时封顶45元。",
+          "guide_text": "距离北京路步行约10分钟，车位条件以现场为准；不想在核心商圈入口反复绕行时可作为备选。",
+          "location": "海日苑停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 8, "unit": "hour", "description": "基础收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 45, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 45,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        },
+        {
+          "name": "广州设计科工贸大厦停车场",
+          "fee_detail": "5元/小时，24小时封顶70元；有停车满30分钟减免约2小时的优惠说法，是否适用以现场公示为准。",
+          "guide_text": "距离北京路步行约12分钟，适合长时间停留；优惠条件可能受时段或活动限制，离场前建议核对计费结果。",
+          "location": "广州设计科工贸大厦停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 5, "unit": "hour", "description": "基础收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 70, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 70,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        },
+        {
+          "name": "荔湾路125号停车场",
+          "fee_detail": "白天5元/小时，夜间3元/小时；具体白天、夜间时段以现场收费牌为准。",
+          "guide_text": "距离北京路步行约6分钟，入口在荔湾路一侧；核心区域车流较多，错峰到达更容易进出。",
+          "location": "荔湾路125号停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 5, "unit": "hour", "description": "白天收费，时段以现场为准", "confidence": "low"},
+            {"rule_type": "night", "price": 3, "unit": "hour", "description": "夜间收费，时段以现场为准", "confidence": "low"}
+          ],
+          "daily_cap": null,
+          "night_flat": null,
+          "confidence": "low",
+          "conflict_flag": false
+        }
+      ]
+    },
+    {
+      "name": "沙面",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市荔湾区沙面岛",
+      "district": "荔湾区",
+      "summary": "沙面周边停车收费差异较大，立体车库和商场车库的入口位置、步行距离需要提前确认。",
+      "area_tips": "沙面共整理5个停车点，步行距离约5至12分钟。信义路入口相对好找，但白天临近高峰可能等位；立体车库适合短时停留，较大车型要先确认尺寸，商场车库离场时留意出入口方向。",
+      "tags": ["历史街区", "岛区"],
+      "parkings": [
+        {
+          "name": "信义路停车场",
+          "fee_detail": "08:00-20:00为5元/小时，白天封顶20元；20:00-次日08:00为10元/小时。近期有用户反馈封顶价可能调整，现场以当日收费公示为准。",
+          "guide_text": "距离沙面步行约5分钟，信义路入口相对好找；白天到访建议尽早到达，临近高峰时可能需要等待车位。",
+          "location": "沙面信义路停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 5, "unit": "hour", "time_start": "08:00", "time_end": "20:00", "description": "白天收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 20, "unit": "day", "time_start": "08:00", "time_end": "20:00", "description": "白天封顶，存在收费反馈差异", "confidence": "low"},
+            {"rule_type": "night", "price": 10, "unit": "hour", "time_start": "20:00", "time_end": "08:00", "description": "夜间收费", "confidence": "medium"}
+          ],
+          "daily_cap": 20,
+          "night_flat": null,
+          "confidence": "low",
+          "conflict_flag": true
+        },
+        {
+          "name": "沙面立体停车库",
+          "fee_detail": "5元/30分钟，24小时封顶80元。",
+          "guide_text": "立体车库距离沙面步行约7分钟，适合短时停留；机械设备车位需要按现场指引操作，较大车型建议先确认车位尺寸。",
+          "location": "沙面立体停车库",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 5, "unit": "minute", "unit_minutes": 30, "description": "每30分钟收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 80, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 80,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        },
+        {
+          "name": "粤剧艺术博物馆停车场",
+          "fee_detail": "前3小时2.5元/30分钟，超过3小时后5元/30分钟。",
+          "guide_text": "距离沙面步行约10分钟，车位和步行路线相对明确；适合把粤剧艺术博物馆、沙面安排在同一段行程时使用。",
+          "location": "粤剧艺术博物馆停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "first", "price": 2.5, "unit": "minute", "unit_minutes": 30, "description": "前3小时每30分钟收费", "confidence": "medium"},
+            {"rule_type": "normal", "price": 5, "unit": "minute", "unit_minutes": 30, "description": "超过3小时后每30分钟收费", "confidence": "medium"}
+          ],
+          "daily_cap": null,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        },
+        {
+          "name": "领展购物广场停车场",
+          "fee_detail": "09:00-20:00为5元/30分钟；20:00-次日09:00为2元/30分钟；24小时封顶80元。",
+          "guide_text": "商场车库到沙面步行约12分钟，入口跟随商场标识即可；晚间收费相对低一些，但离场时要留意商场出入口方向。",
+          "location": "领展购物广场停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 5, "unit": "minute", "unit_minutes": 30, "time_start": "09:00", "time_end": "20:00", "description": "白天每30分钟收费", "confidence": "medium"},
+            {"rule_type": "night", "price": 2, "unit": "minute", "unit_minutes": 30, "time_start": "20:00", "time_end": "09:00", "description": "夜间每30分钟收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 80, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 80,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        },
+        {
+          "name": "金声停车场",
+          "fee_detail": "收费约10-16元/小时，24小时封顶约45元；价格存在不同反馈，现场以收费公示为准。",
+          "guide_text": "距离沙面步行约8分钟，适合作为周边车库满位时的备选；收费差异较大，入场后建议先确认计费牌。",
+          "location": "金声停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [],
+          "daily_cap": null,
+          "night_flat": null,
+          "confidence": "low",
+          "conflict_flag": true
+        }
+      ]
+    },
+    {
+      "name": "广州塔",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市海珠区阅江西路222号",
+      "district": "海珠区",
+      "summary": "广州塔周边车位在活动和周末时段更紧张，优先选择能明确对应入口的车库。",
+      "area_tips": "广州塔共整理3个停车点，步行距离约10至15分钟。广州塔广场地下车库离目标较近，但周末、演出和大型活动时段车流集中，进出可能较慢；不介意多走一段路时，可提前规划外围车库路线。",
+      "tags": ["地标", "珠江边"],
+      "parkings": [
+        {
+          "name": "广州艺术博物院地上停车场",
+          "fee_detail": "有两种收费信息：一种为前3小时2.5元/30分钟，超过后5元/30分钟，21:30后1元/30分钟，24小时封顶45元；另一种为5元/小时，24小时封顶45元。收费存在差异，现场以当日公示为准。",
+          "guide_text": "距离广州塔步行约15分钟，适合不介意多走一段路的情况；周末和活动时段周边道路可能拥堵，建议提前规划进场路线。",
+          "location": "广州艺术博物院地上停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "first", "price": 2.5, "unit": "minute", "unit_minutes": 30, "description": "一种收费口径的前3小时收费", "confidence": "low"},
+            {"rule_type": "normal", "price": 5, "unit": "minute", "unit_minutes": 30, "description": "一种收费口径的超时收费", "confidence": "low"},
+            {"rule_type": "night", "price": 1, "unit": "minute", "unit_minutes": 30, "time_start": "21:30", "description": "一种收费口径的夜间收费", "confidence": "low"},
+            {"rule_type": "cap", "price": 45, "unit": "day", "description": "24小时封顶，两种口径均出现", "confidence": "low"}
+          ],
+          "daily_cap": 45,
+          "night_flat": null,
+          "confidence": "low",
+          "conflict_flag": true
+        },
+        {
+          "name": "海心沙停车场",
+          "fee_detail": "前3小时5元/小时，24小时封顶45元。",
+          "guide_text": "距离广州塔步行约10分钟，路线较直接；大型活动期间可能出现车辆集中进入，建议提前到场。",
+          "location": "海心沙停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "first", "price": 5, "unit": "hour", "description": "前3小时收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 45, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 45,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        },
+        {
+          "name": "广州塔广场地下停车场",
+          "fee_detail": "12元/小时，24小时封顶96元；会员、消费等优惠需满足对应条件，是否可用以现场规则为准。",
+          "guide_text": "距离广州塔较近，适合优先考虑到塔内或塔下活动的行程；核心区域周末车流较大，入场和离场可能较慢。",
+          "location": "广州塔广场地下停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 12, "unit": "hour", "description": "基础收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 96, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 96,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        }
+      ]
+    },
+    {
+      "name": "上下九",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市荔湾区上下九步行街",
+      "district": "荔湾区",
+      "summary": "上下九步行街周边道路较窄，建议优先选择有明确入口的车库，再步行进入街区。",
+      "area_tips": "上下九共整理2个停车点，步行距离约5至8分钟。恒宝广场入口较明确，周末车流集中时建议错峰进场；计划停留半天左右可提前确认龙贵停车场当天的开放时段。",
+      "tags": ["商业街", "步行街"],
+      "parkings": [
+        {
+          "name": "恒宝广场停车场",
+          "fee_detail": "10元/小时，24小时封顶80元；有停车3小时减免约18元的优惠说法，适用条件以现场规则为准。",
+          "guide_text": "距离上下九步行约5分钟，商场入口较明确；周末车流集中，建议避开高峰时段进场。",
+          "location": "恒宝广场停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 10, "unit": "hour", "description": "基础收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 80, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 80,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        },
+        {
+          "name": "龙贵停车场",
+          "fee_detail": "20元/天，不支持过夜；具体开放和计费时段以现场公示为准。",
+          "guide_text": "距离上下九步行约8分钟，适合计划停留半天左右的行程；离场前注意确认当天是否仍开放日间停车。",
+          "location": "龙贵停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 20, "unit": "day", "description": "日间停车收费，不支持过夜", "confidence": "low"}
+          ],
+          "daily_cap": 20,
+          "night_flat": null,
+          "confidence": "low",
+          "conflict_flag": false
+        }
+      ]
+    },
+    {
+      "name": "广东省博物馆",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市天河区珠江东路2号",
+      "district": "天河区",
+      "summary": "广东省博物馆周边建议优先确认与目标入口对应的停车场，周末和展览高峰期要预留进场时间。",
+      "area_tips": "广东省博物馆共整理2个停车点，分别对应东门和西门。东门停车点步行更近但周末和展览高峰期可能较快满位；从西门进入可考虑花城汇P13，按车库内的P13及西门标识步行更省路。",
+      "tags": ["博物馆", "花城广场"],
+      "parkings": [
+        {
+          "name": "广东省博物馆东门停车场",
+          "fee_detail": "前3小时5元/小时，超过3小时后10元/小时，24小时封顶45元。",
+          "guide_text": "靠近广东省博物馆东门，步行距离较短；周末参观高峰期可能较快满位，建议提前到场并按东门方向步行。",
+          "location": "广东省博物馆东门停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "first", "price": 5, "unit": "hour", "description": "前3小时收费", "confidence": "medium"},
+            {"rule_type": "normal", "price": 10, "unit": "hour", "description": "超过3小时后的收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 45, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 45,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        },
+        {
+          "name": "花城汇P13停车场",
+          "fee_detail": "7.5元/小时，24小时封顶67.5元。",
+          "guide_text": "距离广东省博物馆西门步行约100米，适合从西门进入；车库较大，按P13和西门方向标识步行可减少绕路。",
+          "location": "花城汇P13停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 7.5, "unit": "hour", "description": "基础收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 67.5, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 67.5,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        }
+      ]
+    },
+    {
+      "name": "广州动物园",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市越秀区先烈中路120号",
+      "district": "越秀区",
+      "summary": "广州动物园周边车位在周末和节假日较紧张，北门、东门方向停车点的步行路线不同。",
+      "area_tips": "广州动物园共整理6个停车点，步行距离约8至15分钟。北门、东门方向的停车点对应不同入口，带儿童同行建议优先选择靠近目标入口的车场；周末和节假日车流集中，立体车库及路边车位还要留意车型、余位和排队情况。",
+      "tags": ["亲子", "动物园"],
+      "parkings": [
+        {
+          "name": "广州货运保信息技术有限公司旁停车场",
+          "fee_detail": "5元/小时；24小时封顶价有20-30元的不同反馈，现场以当日公示为准。",
+          "guide_text": "靠近动物园一侧入口，步行距离相对短；周末到访车流集中，可能需要排队，建议预留进场时间。",
+          "location": "广州货运保信息技术有限公司旁停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 5, "unit": "hour", "description": "基础收费", "confidence": "medium"}
+          ],
+          "daily_cap": null,
+          "night_flat": null,
+          "confidence": "low",
+          "conflict_flag": true
+        },
+        {
+          "name": "东华地面停车场",
+          "fee_detail": "8元/小时，24小时封顶48元；有充电或洗车后减免约2小时的优惠说法，适用条件以现场规则为准。",
+          "guide_text": "到动物园步行约8分钟，地面车位进出相对直观；如使用优惠，离场前建议确认减免是否已计入。",
+          "location": "东华地面停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 8, "unit": "hour", "description": "基础收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 48, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 48,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        },
+        {
+          "name": "广州动物园北门立体停车场",
+          "fee_detail": "前3小时7元/小时，超过3小时后12元/小时，24小时封顶60元。",
+          "guide_text": "靠近动物园北门，适合从北门入园；立体车库对车辆尺寸有要求，较大车型入场前建议留意现场提示。",
+          "location": "广州动物园北门立体停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "first", "price": 7, "unit": "hour", "description": "前3小时收费", "confidence": "medium"},
+            {"rule_type": "normal", "price": 12, "unit": "hour", "description": "超过3小时后的收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 60, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 60,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        },
+        {
+          "name": "东山海德公馆停车场",
+          "fee_detail": "10元/小时，24小时封顶50元。",
+          "guide_text": "距离动物园步行约10分钟，适合北门车位紧张时备选；周末建议提前规划步行路线。",
+          "location": "东山海德公馆停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 10, "unit": "hour", "description": "基础收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 50, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 50,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        },
+        {
+          "name": "碧云商务中心停车场",
+          "fee_detail": "10元/小时，24小时封顶80元。",
+          "guide_text": "距离动物园步行约12分钟，车库可作为周边满位时的备选；带儿童同行时建议优先选择更靠近目标入口的车场。",
+          "location": "碧云商务中心停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 10, "unit": "hour", "description": "基础收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 80, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 80,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        },
+        {
+          "name": "云鹤北街路边停车位",
+          "fee_detail": "6元/小时，24小时封顶20元；是否有空位受现场管理影响。",
+          "guide_text": "距离动物园步行约15分钟，路边车位数量有限，适合顺路看到空位时使用，不建议作为唯一停车方案。",
+          "location": "云鹤北街路边停车位",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "fee_rules": [
+            {"rule_type": "normal", "price": 6, "unit": "hour", "description": "基础收费", "confidence": "medium"},
+            {"rule_type": "cap", "price": 20, "unit": "day", "description": "24小时封顶", "confidence": "medium"}
+          ],
+          "daily_cap": 20,
+          "night_flat": null,
+          "confidence": "medium",
+          "conflict_flag": false
+        }
+      ]
+    }
+  ]
+}

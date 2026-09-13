@@ -1,0 +1,232 @@
+[
+  {
+    "level": "地点",
+    "place": "白云山",
+    "name": "白云山",
+    "poi": "白云山",
+    "address": "广东省广州市白云区",
+    "score": 77,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "白云山",
+    "name": "广州白云国际会议中心国际会堂停车场",
+    "poi": "广州白云国际会议中心国际会堂停车场-出入口",
+    "address": "广东省广州市白云区云城东路辅路与齐富路交叉口正南方向195米左右",
+    "score": 102,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "白云山",
+    "name": "白云山西门停车场",
+    "poi": "",
+    "address": "",
+    "score": 0,
+    "entrance": false,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "白云山",
+    "name": "益友（广园东）汽配城停车场",
+    "poi": "益友(广园东)汽配城地上停车场",
+    "address": "广东省广州市越秀区广园东路1540号益友(广园东)汽配城",
+    "score": 78,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "白云山",
+    "name": "益友（国际）汽配用品展贸中心停车场",
+    "poi": "益友(国际)汽配用品展贸中心停车场-出入口",
+    "address": "广东省广州市越秀区益友(国际)汽配用品展贸中心停车场",
+    "score": 96,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "白云山",
+    "name": "白云双燕机器人停车场",
+    "poi": "白云双燕机器人地上停车场",
+    "address": "广东省广州市越秀区云泉路163号白云双燕机器人",
+    "score": 84,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "白云山",
+    "name": "白云双燕机器人停车场（金溪小卖部）",
+    "poi": "",
+    "address": "",
+    "score": 0,
+    "entrance": false,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "白云山",
+    "name": "云山天地商场停车场",
+    "poi": "停车场出入口",
+    "address": "广东省广州市天河区天河路228号正佳广场-1F",
+    "score": 54,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "地点",
+    "place": "陈家祠",
+    "name": "陈家祠",
+    "poi": "陈家祠",
+    "address": "广东省广州市荔湾区",
+    "score": 81,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "陈家祠",
+    "name": "五行科技创意园停车场",
+    "poi": "五行科技创意园内部地面停车场",
+    "address": "广东省广州市荔湾区陈家祠道48号",
+    "score": 88,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "陈家祠",
+    "name": "康王阁停车场",
+    "poi": "康王阁停车场-出入口",
+    "address": "广东省广州市荔湾区康王北路与芦荻街交叉口东南方向84米左右",
+    "score": 90,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "陈家祠",
+    "name": "荔康大厦停车场",
+    "poi": "荔康大厦地下停车场",
+    "address": "广东省广州市荔湾区康王北路978号荔康大厦",
+    "score": 76,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "陈家祠",
+    "name": "荔湾体育馆停车场",
+    "poi": "荔湾体育馆停车场-出入口",
+    "address": "广东省广州市荔湾区荔湾路54号荔湾体育馆停车场",
+    "score": 98,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "陈家祠",
+    "name": "1906科技园停车场",
+    "poi": "1906科技园扬韬广场2号立体停车场",
+    "address": "广东省广州市荔湾区世和街18号(陈家祠地铁站A口步行280米)",
+    "score": 88,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "陈家祠",
+    "name": "强俊停车场",
+    "poi": "强俊停车场-出入口",
+    "address": "广东省广州市荔湾区",
+    "score": 86,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "陈家祠",
+    "name": "城光荟停车场",
+    "poi": "城光荟停车场",
+    "address": "广东省广州市荔湾区康王中路666号城光荟",
+    "score": 90,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "地点",
+    "place": "越秀公园",
+    "name": "越秀公园",
+    "poi": "越秀公园-越秀山",
+    "address": "广东省广州市越秀区解放北路988号越秀公园内",
+    "score": 64,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "越秀公园",
+    "name": "越秀公园东北门停车场",
+    "poi": "越秀公园东北门",
+    "address": "广东省广州市越秀区解放北路988号越秀公园",
+    "score": 106,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "越秀公园",
+    "name": "中医学院站附近路边停车位",
+    "poi": "",
+    "address": "",
+    "score": 0,
+    "entrance": false,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "花城广场",
+    "name": "花城广场",
+    "poi": "花城广场",
+    "address": "广东省广州市天河区珠江新城CBD中心区",
+    "score": 84,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "花城广场",
+    "name": "花城汇P13停车场",
+    "poi": "花城汇P13地下停车场",
+    "address": "广东省广州市天河区花城汇(大剧院地铁站B口步行240米)",
+    "score": 84,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "花城广场",
+    "name": "都荟华庭停车场",
+    "poi": "珠江都荟华庭地下停车场",
+    "address": "广东省广州市天河区华利路25号(珠江新城,美国领事馆)",
+    "score": 76,
+    "entrance": false,
+    "status": "待核验"
+  },
+  {
+    "level": "停车场",
+    "place": "花城广场",
+    "name": "侨鑫国际停车场",
+    "poi": "侨鑫国际地下停车场-出入口",
+    "address": "广东省广州市天河区金穗路62号珠江新城金穗3楼侨鑫国际金融中心商场停车场B1",
+    "score": 76,
+    "entrance": false,
+    "status": "待核验"
+  }
+]

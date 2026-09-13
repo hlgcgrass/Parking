@@ -255,6 +255,51 @@ function check(name, cond, extra) {
   r = await main({ action: 'admin-delete-place-image', data: { place_id: 1 } });
   check('非管理员不能删除图片', r.code === -1 && r.message === '无权限', r);
 
+  console.log('\n=== 11. 批量删除 / 新攻略导入接口 ===');
+  mockSdk.getWXContext = () => ({ OPENID: 'test_openid_001' });
+  const deletePreview = await main({ action: 'places', size: 100 });
+  const deleteTargetId = deletePreview.data.list.find(place => place.id !== 1).id;
+  r = await main({ action: 'admin-delete-places', data: { place_ids: [deleteTargetId] } });
+  check('批量删除默认只预览', r.code === 0 && r.data.dry_run === true && r.data.counts.places === 1, r);
+  r = await main({ action: 'stats' });
+  check('删除预览不改变地点数量', r.code === 0 && r.data.places === bundled.places.length, r.data);
+  r = await main({ action: 'admin-delete-places', data: { place_ids: [deleteTargetId], dry_run: false } });
+  check('批量删除缺少确认值会拒绝', r.code === -1, r);
+  r = await main({
+    action: 'admin-delete-places',
+    data: { place_ids: [deleteTargetId], dry_run: false, confirm: 'DELETE_SELECTED_PLACES' }
+  });
+  check('批量删除成功', r.code === 0 && r.data.deleted.places === 1 && r.data.deleted.parkings > 0, r);
+  r = await main({ action: 'stats' });
+  check('批量删除后地点数量减少', r.code === 0 && r.data.places === bundled.places.length - 1, r.data);
+
+  const newGuide = {
+    places: [{
+      name: '接口测试地点', category: '景点', city_code: '440100',
+      parkings: [{
+        name: '接口测试停车场',
+        fee_detail: '5元/小时',
+        guide_text: '测试攻略正文',
+        location: '导航接口测试停车场',
+        fee_rules: [{ rule_type: 'normal', price: 5, unit: 'hour', unit_minutes: 60, description: '常规收费' }]
+      }]
+    }]
+  };
+  r = await main({ action: 'admin-import-guides', data: newGuide });
+  check('批量导入默认只预览', r.code === 0 && r.data.dry_run === true && r.data.counts.parkings === 1, r);
+  r = await main({ action: 'admin-import-guides', data: { ...newGuide, dry_run: false } });
+  check('批量导入缺少确认值会拒绝', r.code === -1, r);
+  r = await main({ action: 'admin-import-guides', data: { ...newGuide, dry_run: false, confirm: 'IMPORT_GUIDES' } });
+  check('批量导入成功并自动分配 ID', r.code === 0 && r.data.imported.places === 1 && r.data.places[0].id > 0, r);
+  r = await main({ action: 'stats' });
+  check('批量导入后地点数量恢复', r.code === 0 && r.data.places === bundled.places.length, r.data);
+
+  mockSdk.getWXContext = () => ({ OPENID: 'not_admin' });
+  r = await main({ action: 'admin-delete-places', data: { place_ids: [1] } });
+  check('非管理员不能批量删除', r.code === -1 && r.message === '无权限', r);
+  r = await main({ action: 'admin-import-guides', data: newGuide });
+  check('非管理员不能批量导入', r.code === -1 && r.message === '无权限', r);
+
   console.log(`\n========== 测试结束：通过 ${pass} / 失败 ${failed} ==========\n`);
   process.exit(failed ? 1 : 0);
 })();

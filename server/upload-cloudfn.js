@@ -12,13 +12,27 @@ const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
-const IDE_DIR = 'C:\\Program Files (x86)\\Tencent\\微信web开发者工具';
+const ROOT = path.resolve(__dirname, '..');
+
+function resolveIdeDir() {
+  const configured = (process.env.WECHAT_IDE_DIR || '').trim();
+  if (configured) return path.resolve(configured);
+
+  const candidates = [
+    process.env['ProgramFiles(x86)'] && path.join(process.env['ProgramFiles(x86)'], 'Tencent', '微信web开发者工具'),
+    process.env.ProgramFiles && path.join(process.env.ProgramFiles, 'Tencent', '微信web开发者工具')
+  ].filter(Boolean);
+
+  return candidates.find((dir) => fs.existsSync(path.join(dir, 'cli.bat'))) || candidates[0] || '';
+}
+
+const IDE_DIR = resolveIdeDir();
 const CLI_BAT = path.join(IDE_DIR, 'cli.bat');
-const NODE_EXE = process.execPath;
-const PROJ = 'I:\\ChatGPT\\Parking\\parking-miniapp';
-const ENV_ID = 'cloud1-d1guhoh9g9abdbb63';
-const PORT = '9420';
-const FN_NAME = 'parking';
+const NODE_EXE = process.env.PARKING_NODE_EXE || process.execPath;
+const PROJ = path.resolve(process.env.PARKING_PROJECT || path.join(ROOT, 'parking-miniapp'));
+const ENV_ID = process.env.PARKING_CLOUD_ENV || 'cloud1-d1guhoh9g9abdbb63';
+const PORT = process.env.PARKING_IDE_PORT || '9420';
+const FN_NAME = process.env.PARKING_CLOUD_FUNCTION || 'parking';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -37,7 +51,15 @@ function run(cmd, args, { timeoutMs = 120000, input } = {}) {
     // Node 22 安全限制：不允许直接 spawn .bat/.cmd，必须经 cmd.exe /c 中转
     const isScript = /\.(bat|cmd)$/i.test(cmd);
     const spawnCmd = isScript ? 'cmd.exe' : cmd;
-    const spawnArgs = isScript ? ['/d', '/c', cmd, ...args] : args;
+    // /c 后使用完整命令行，显式给脚本路径和含空格的参数加引号。
+    // 否则 D:\Program Files\... 会被 cmd 截断为 D:\Program。
+    const quoteCmdArg = (value) => {
+      const text = String(value);
+      return /[\s"]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
+    };
+    const spawnArgs = isScript
+      ? ['/d', '/c', [cmd, ...args].map(quoteCmdArg).join(' ')]
+      : args;
     const child = spawn(spawnCmd, spawnArgs, {
       cwd: IDE_DIR,
       env: process.env,
@@ -73,13 +95,13 @@ async function main() {
 
   if (!fs.existsSync(CLI_BAT)) {
     console.log(`\n[×] 未找到开发者工具 CLI：${CLI_BAT}`);
-    console.log('    请确认微信开发者工具已安装在默认位置。');
+    console.log('    请确认微信开发者工具已安装，或设置环境变量 WECHAT_IDE_DIR。');
     return 1;
   }
 
   // 1. 开服务端口（IDE 未运行时才生效）
-  console.log('\n[1/3] 开启 IDE 命令行服务端口(9420)...');
-  await run(NODE_EXE, ['I:\\ChatGPT\\Parking\\server\\enable-ide-cli.js']);
+  console.log(`\n[1/3] 开启 IDE 命令行服务端口(${PORT})...`);
+  await run(NODE_EXE, [path.join(__dirname, 'enable-ide-cli.js')]);
 
   // 2. 打开项目（IDE 没开会自动启动，等待其加载）
   console.log('\n[2/3] 打开项目（IDE 未启动会自动拉起，首次加载需等待）...');

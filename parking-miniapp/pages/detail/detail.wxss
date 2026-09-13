@@ -40,6 +40,20 @@
   padding: 16rpx 20rpx;
   line-height: 1.6;
 }
+.park-tip--empty { color: var(--text-4); }
+
+.parking-fee-summary {
+  color: var(--text-2);
+  font-size: 24rpx;
+  line-height: 1.55;
+}
+.parking-fee-summary__body {
+  color: var(--text-2);
+}
+.parking-fee-summary__empty {
+  display: block;
+  color: var(--text-4);
+}
 
 .parking-location {
   width: 52rpx;
