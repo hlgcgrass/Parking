@@ -308,9 +308,9 @@ $commandId = 0
 $captures = @()
 $filterLabel = [string]::Concat([char]0x7b5b, [char]0x9009) # 筛选
 $noteTypeLabel = [string]::Concat([char]0x56fe, [char]0x6587) # 图文
-$mostCollectedLabel = [string]::Concat([char]0x6700, [char]0x591a, [char]0x6536, [char]0x85cf) # 最多收藏
+$mostLikedLabel = [string]::Concat([char]0x6700, [char]0x591a, [char]0x70b9, [char]0x8d5e) # 最多点赞
 $noteTypeUnavailableLabel = [string]::Concat([char]0x672a, [char]0x80fd, [char]0x5e94, [char]0x7528, [char]0x56fe, [char]0x6587, [char]0x7b5b, [char]0x9009) # 未能应用图文筛选
-$sortUnavailableLabel = [string]::Concat([char]0x672a, [char]0x80fd, [char]0x5e94, [char]0x7528, [char]0x6700, [char]0x591a, [char]0x6536, [char]0x85cf, [char]0x7b5b, [char]0x9009) # 未能应用最多收藏筛选
+$sortUnavailableLabel = [string]::Concat([char]0x672a, [char]0x80fd, [char]0x5e94, [char]0x7528, [char]0x6700, [char]0x591a, [char]0x70b9, [char]0x8d5e, [char]0x7b5b, [char]0x9009) # 未能应用最多点赞筛选
 
 try {
   foreach ($keyword in $Query) {
@@ -343,15 +343,9 @@ try {
         $noteTypeApplied = [bool](Click-NoteTypeOption -Socket $socket -CommandId ([ref]$commandId) -Text $noteTypeLabel)
         Start-Sleep -Seconds 1
       }
-      $sortMenuExpression = @'
-(() => Array.from(document.querySelectorAll('button,[role="button"],a,span,div'))
-  .some(el => {
-    const s = getComputedStyle(el); const r = el.getBoundingClientRect();
-    return s.display !== 'none' && s.visibility !== 'hidden' && r.width > 0 && r.height > 0 && (el.innerText || '').trim() === '最多收藏';
-  }))()
-'@
+      $sortMenuExpression = "(() => Array.from(document.querySelectorAll('button,[role=button],a,span,div')).some(el => { const s = getComputedStyle(el); const r = el.getBoundingClientRect(); return s.display !== 'none' && s.visibility !== 'hidden' && r.width > 0 && r.height > 0 && (el.innerText || '').trim() === '最多点赞'; }))()"
       if (Wait-PageCondition -Socket $socket -CommandId ([ref]$commandId) -Expression $sortMenuExpression -TimeoutSeconds 10) {
-        $sortApplied = [bool](Click-PageText -Socket $socket -CommandId ([ref]$commandId) -Text $mostCollectedLabel)
+        $sortApplied = [bool](Click-PageText -Socket $socket -CommandId ([ref]$commandId) -Text $mostLikedLabel)
       }
       Start-Sleep -Seconds $WaitSeconds
     }

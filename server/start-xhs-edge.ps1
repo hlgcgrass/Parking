@@ -7,6 +7,7 @@ param([int]$DebugPort = 9222)
 
 $ErrorActionPreference = 'Stop'
 $edgeCandidates = @(
+  (Join-Path ${env:ProgramFiles(x86)} 'Microsoft\Edge\Application\152.0.4191.53\msedge.exe'),
   (Join-Path ${env:ProgramFiles(x86)} 'Microsoft\Edge\Application\msedge.exe'),
   (Join-Path $env:ProgramFiles 'Microsoft\Edge\Application\msedge.exe')
 )
@@ -19,8 +20,14 @@ $arguments = @(
   "--remote-debugging-port=$DebugPort",
   "--user-data-dir=$profile",
   '--new-window',
-  'https://www.xiaohongshu.com'
+  '--no-first-run',
+  '--no-default-browser-check',
+  '--disable-gpu',
+  '--disable-software-rasterizer',
+  '--disable-extensions',
+  '--disable-features=UseSkiaRenderer',
+  'about:blank'
 )
 Start-Process -FilePath $edge -ArgumentList $arguments
-Write-Host "Started debug Edge on port: $DebugPort"
-Write-Host 'Sign in to Xiaohongshu in the new window, then run xhs-cdp-collector.ps1.'
+Write-Host "Started debug Edge $($edge | Split-Path -Parent | Split-Path -Leaf) on port: $DebugPort"
+Write-Host 'Open https://www.xiaohongshu.com in the new window and sign in manually, then run xhs-cdp-collector.ps1.'

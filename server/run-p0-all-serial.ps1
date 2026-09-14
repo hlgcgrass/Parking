@@ -31,7 +31,7 @@ for ($i = 0; $i -lt $places.Count; $i++) {
   if (Test-Path -LiteralPath $outputPath) {
     try {
       $existing = Get-Content -Raw -LiteralPath $outputPath | ConvertFrom-Json
-      if ($existing.sort_mode -eq '最多收藏' -and -not $existing.blocked_or_incomplete -and @($existing.notes).Count -ge 10) {
+      if ($existing.sort_mode -eq '最多点赞' -and -not $existing.blocked_or_incomplete -and @($existing.notes).Count -ge 10) {
         $index += [ordered]@{ place = $place; query = $query; status = 'already_captured'; file = $outputPath }
         Write-Host ("[{0:D2}/{1}] 已存在完整抓取结果，跳过：{2}" -f ($i + 1), $places.Count, $place)
         continue
@@ -48,7 +48,7 @@ for ($i = 0; $i -lt $places.Count; $i++) {
       try {
         & $collector -Query $query -WaitSeconds 8 -PageReadyTimeoutSeconds 60 -OpenNotes 10 -OutputPath $outputPath
         $check = Get-Content -Raw -LiteralPath $outputPath | ConvertFrom-Json
-        if ($check.sort_mode -ne '最多收藏' -or $check.blocked_or_incomplete -or @($check.notes).Count -lt 10) {
+        if ($check.sort_mode -ne '最多点赞' -or $check.blocked_or_incomplete -or @($check.notes).Count -lt 10) {
           throw ("结果不完整：sort_mode={0}; notes={1}; blocked={2}" -f $check.sort_mode, @($check.notes).Count, $check.blocked_or_incomplete)
         }
         $captured = $true

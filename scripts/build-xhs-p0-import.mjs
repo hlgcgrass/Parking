@@ -2,9 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve(process.cwd());
-const candidatePath = path.join(root, 'server', 'xhs-p0-candidates-41.json');
+const candidatePath = path.resolve(process.env.XHS_CANDIDATE_PATH || path.join(root, 'server', 'xhs-p0-candidates-41.json'));
 const legacyPath = path.join(root, 'parking-miniapp', 'cloudfunctions', 'parking', 'data.json');
-const outputPath = path.join(root, 'server', 'xhs-p0-import-41.json');
+const outputPath = path.resolve(process.env.XHS_OUTPUT_PATH || path.join(root, 'server', 'xhs-p0-import-41.json'));
 
 const candidate = JSON.parse(fs.readFileSync(candidatePath, 'utf8'));
 const legacy = JSON.parse(fs.readFileSync(legacyPath, 'utf8'));
@@ -281,7 +281,7 @@ for (const p of candidate.places) {
       group.warnings.push(...warnings, ...commentRows);
       group.payments.push(actualPaymentText(fees));
       group.noteCount++;
-      group.source_records.push({ source_type: 'xiaohongshu', source_url: note.url, source_title: note.title, source_author: note.author || null, source_published_at: note.published_at || null, rank: note.rank });
+      group.source_records.push({ source_type: 'xiaohongshu', source_url: note.url, source_title: note.title, source_author: note.author || null, source_published_at: note.published_at || null, rank: note.rank, raw_file: note.raw_file || null });
       parkingGroups.set(name, group);
     }
   }

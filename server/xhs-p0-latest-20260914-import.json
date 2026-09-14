@@ -1,0 +1,1650 @@
+{
+  "places": [
+    {
+      "id": 24,
+      "name": "广州图书馆",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市天河区珠江东路4号",
+      "district": "天河区",
+      "summary": "珠江新城地标图书馆，免费开放，市民阅读空间。",
+      "area_tips": "广州图书馆周边停车收费和车位限制差异明显，机械车位需确认车辆尺寸；花城汇P13可作为海心沙方向的外围备选。",
+      "tags": [
+        "免费",
+        "图书馆",
+        "地铁APM大剧院/花城大道"
+      ],
+      "lng": 113.324,
+      "lat": 23.119,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "广州图书馆停车场",
+          "fee_detail": "5元/小时（前3小时）；其余时段收费以现场公示为准。",
+          "guide_text": "停车后从广州图书馆东门或西门进入；机械车位对车宽有限制，车宽接近1.95米时应先确认是否能安排普通车位。",
+          "location": "广州图书馆停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "前3小时基础收费",
+              "confidence": "low"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 5
+        },
+        {
+          "name": "花城汇P13区停车场",
+          "fee_detail": "现场收费约7.5元/小时；预约价格约6.8元/小时且无阶梯收费，规则可能随活动调整。",
+          "guide_text": "P13靠近广州塔和海心沙方向，P8、P11、P13均可通过电梯到花城广场地面；步行到海心沙约5至10分钟，预约后按当日规则结算。",
+          "location": "花城汇P13区停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 7.5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "现场基础收费",
+              "confidence": "low"
+            },
+            {
+              "rule_type": "normal",
+              "price": 6.8,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "预约价格",
+              "confidence": "low"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": true,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 6.8
+        }
+      ],
+      "min_price": 5,
+      "min_price_display": "¥5/h起"
+    },
+    {
+      "id": 21,
+      "name": "海心沙",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市天河区珠江新城临江大道海心沙",
+      "district": "天河区",
+      "summary": "珠江中洲岛公园，亚运会开幕式场地，看广州塔与珠江新城夜景佳。",
+      "area_tips": "海心沙核心区域活动日车位和道路管控变化明显，海心沙亚运公园距离广州塔步行约8至10分钟，外围车库适合做兜底。",
+      "tags": [
+        "亚运公园",
+        "花城广场",
+        "灯光秀",
+        "APM海心沙"
+      ],
+      "lng": 113.325,
+      "lat": 23.115,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "海心沙亚运公园停车场",
+          "fee_detail": "5元/小时，24小时封顶25元。",
+          "guide_text": "停车后步行到广州塔约8至10分钟；车位相对不易满，场内有充电桩。活动日仍应预留入场时间。",
+          "location": "海心沙亚运公园停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "price": 25,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "24小时封顶",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "daily_cap": 25,
+          "min_price_hour": 5
+        },
+        {
+          "name": "珠江帝景北门停车场",
+          "fee_detail": "10元/小时，24小时封顶60元。",
+          "guide_text": "作为广州塔方向的兜底停车点，停车后步行约3至5分钟到广州塔一带；大型活动期间先确认是否有交通管控。",
+          "location": "珠江帝景北门停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "price": 60,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "24小时封顶",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "daily_cap": 60,
+          "min_price_hour": 10
+        }
+      ],
+      "min_price": 5,
+      "min_price_display": "¥5/h起"
+    },
+    {
+      "id": 39,
+      "name": "海珠湖",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市海珠区新滘中路（海珠国家湿地公园）",
+      "district": "海珠区",
+      "summary": "海珠国家湿地公园核心湖，城市绿心。",
+      "area_tips": "海珠湖公园停车位有限，周末建议早到；坚真花园和东风经济联合社工会联合会停车场距离约0.77公里，可作为外围备选。",
+      "tags": [
+        "湿地公园",
+        "免费/收费区",
+        "地铁3号线大塘",
+        "亲子"
+      ],
+      "lng": 113.33,
+      "lat": 23.07,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "海珠湖公园停车场",
+          "fee_detail": "约2.5元/30分钟；具体收费以入口公示为准。",
+          "guide_text": "北广场/北门方向可直接进入公园停车场；周末车位较紧张，建议早点到或改乘地铁大塘站。",
+          "location": "海珠湖公园停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 2.5,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "priority": 50,
+              "description": "每30分钟收费",
+              "confidence": "low"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 5
+        },
+        {
+          "name": "坚真花园停车场",
+          "fee_detail": "30分钟内免费，24小时封顶15元。",
+          "guide_text": "距离海珠湖约0.77公里，步行约8至10分钟；可作为公园停车位不足时的备选。",
+          "location": "坚真花园停车场",
+          "fee_rules": [
+            {
+              "rule_type": "free",
+              "price": 0,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "priority": 50,
+              "description": "30分钟内免费",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "price": 15,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "24小时封顶",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "daily_cap": 15,
+          "min_price_hour": null
+        },
+        {
+          "name": "东风经济联合社工会联合会停车场",
+          "fee_detail": "15分钟内免费，5元/小时，24小时封顶30元。",
+          "guide_text": "距离海珠湖约0.77公里，步行约8至10分钟；入场后按现场指引停车。",
+          "location": "东风经济联合社工会联合会停车场",
+          "fee_rules": [
+            {
+              "rule_type": "free",
+              "price": 0,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "priority": 50,
+              "description": "15分钟内免费",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "normal",
+              "price": 5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "price": 30,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "24小时封顶",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "daily_cap": 30,
+          "min_price_hour": 5
+        }
+      ],
+      "min_price": 5,
+      "min_price_display": "¥5/h"
+    },
+    {
+      "id": 33,
+      "name": "华南植物园",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市天河区天源路1190号",
+      "district": "天河区",
+      "summary": "中科院国家植物园，华南最大植物科研与观赏基地。",
+      "area_tips": "正门停车场靠近地铁和园区入口但周末较早满位，西门车位相对宽松，入园前按现场指引选择入口。",
+      "tags": [
+        "国家植物园",
+        "亲子",
+        "地铁6号线植物园",
+        "收费"
+      ],
+      "lng": 113.36,
+      "lat": 23.19,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "华南植物园正门停车场",
+          "fee_detail": "2.5元/30分钟（3小时内）；其他时段以现场公示为准。",
+          "guide_text": "导航华南植物园正门，地铁植物园站A口步行约5分钟；周末10点后正门车位可能紧张，可按工作人员指引转西门。",
+          "location": "华南植物园正门停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 2.5,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "priority": 50,
+              "description": "3小时内每30分钟收费",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 5
+        },
+        {
+          "name": "华南植物园西门停车场",
+          "fee_detail": "收费以现场公示为准。",
+          "guide_text": "正门无位时可改走西门，车位相对充足；从西门入园后按园区指引游览。",
+          "location": "华南植物园西门停车场",
+          "fee_rules": [],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": null
+        }
+      ],
+      "min_price": 5,
+      "min_price_display": "¥5/h"
+    },
+    {
+      "id": 34,
+      "name": "黄埔军校",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市黄埔区长洲岛金洲北路",
+      "district": "黄埔区",
+      "summary": "中国近代著名军事院校旧址，长洲岛历史文化地标。",
+      "area_tips": "黄埔军校和长洲岛景点分散，停车后以步行和接驳为主；节假日先确认道路管控及停车场开放状态。",
+      "tags": [
+        "近代史",
+        "免费",
+        "长洲岛",
+        "地铁7号线深井"
+      ],
+      "lng": 113.45,
+      "lat": 23.08,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "黄埔军校旧址纪念馆配套地上停车场",
+          "fee_detail": "收费约8至10元/小时，具体以现场公示为准。",
+          "guide_text": "导航黄埔军校旧址纪念馆配套地上停车场；长洲岛景点之间步行或短途接驳，周末先确认是否有交通管控。",
+          "location": "黄埔军校旧址纪念馆配套地上停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "参考小时收费",
+              "confidence": "low"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 10
+        },
+        {
+          "name": "长洲岛地上停车场-出入口",
+          "fee_detail": "收费约8至10元/小时，具体以现场公示为准。",
+          "guide_text": "适合长洲岛廊桥及周边景点；导航时使用“长洲岛地上停车场-出入口”，节假日道路可能拥堵。",
+          "location": "长洲岛地上停车场-出入口",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "参考小时收费",
+              "confidence": "low"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 10
+        }
+      ],
+      "min_price": 10,
+      "min_price_display": "¥10/h"
+    },
+    {
+      "id": 37,
+      "name": "莲花山",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市番禺区石楼镇莲花山",
+      "district": "番禺区",
+      "summary": "番禺东部风景名胜区，古采石场遗迹与观音像。",
+      "area_tips": "莲花山旅游区有多个停车点，西门距离核心游览区较近；节假日入口道路可能排队，进场后按园区指引分流。",
+      "tags": [
+        "AAAA",
+        "古采石场",
+        "望海观音",
+        "地铁4号线石碁"
+      ],
+      "lng": 113.48,
+      "lat": 22.97,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "莲花山旅游区西门停车场",
+          "fee_detail": "3小时内3元/小时；其他时段以现场公示为准。",
+          "guide_text": "导航莲花山旅游区西门，入口最近；景区内有多个停车点，进场后按指引前往P1、P2或P7，节假日入口道路可能排队。",
+          "location": "莲花山旅游区西门停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 3,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "3小时内基础收费",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 3
+        }
+      ],
+      "min_price": 3,
+      "min_price_display": "¥3/h"
+    },
+    {
+      "id": 114,
+      "name": "南越王博物院",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市越秀区解放北路867号（王墓展区）",
+      "district": "越秀区",
+      "summary": "南越王博物院周边停车信息整理。",
+      "area_tips": "王墓展区位于老城区，停车选择少；越秀公园东北门停车场可作为同时游览越秀公园的外围方案，但步行距离较长。",
+      "tags": [],
+      "lng": 113.261015,
+      "lat": 23.137823,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "越秀公园东北门停车场",
+          "fee_detail": "日间前3小时5元/小时，超过3小时10元/小时；夜间1元/30分钟，夜间最高10元；24小时封顶45元。",
+          "guide_text": "停车后步行到南越王博物院王墓展区约20分钟，不是最近入口；适合同时游览越秀公园的情况，周末节假日提前确认余位。",
+          "location": "越秀公园东北门停车场",
+          "fee_rules": [
+            {
+              "rule_type": "first",
+              "price": 5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "日间前3小时",
+              "confidence": "medium",
+              "time_start": "07:30",
+              "time_end": "21:30"
+            },
+            {
+              "rule_type": "normal",
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "日间超过3小时",
+              "confidence": "medium",
+              "time_start": "07:30",
+              "time_end": "21:30"
+            },
+            {
+              "rule_type": "night",
+              "price": 1,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "priority": 50,
+              "description": "夜间每30分钟",
+              "confidence": "medium",
+              "time_start": "21:30",
+              "time_end": "07:30"
+            },
+            {
+              "rule_type": "cap",
+              "price": 45,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "24小时封顶",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "daily_cap": 45,
+          "min_price_hour": 5
+        }
+      ],
+      "min_price": 5,
+      "min_price_display": "¥5/h"
+    },
+    {
+      "id": 35,
+      "name": "沙湾古镇",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市番禺区沙湾街道",
+      "district": "番禺区",
+      "summary": "800年岭南古镇，广府文化与音乐之乡，免费开放街区。",
+      "area_tips": "沙湾古镇周末人流集中，西门和南门停车场均需留意入口排队及当日收费口径，建议错峰或提前到达。",
+      "tags": [
+        "历史文化名镇",
+        "免费街区",
+        "广府美食",
+        "留耕堂"
+      ],
+      "lng": 113.34,
+      "lat": 23.01,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "沙湾古镇西门停车场",
+          "fee_detail": "5元/小时；在同福酒家消费可减免3小时停车费，优惠以现场规则为准。",
+          "guide_text": "导航沙湾古镇西门，步行进入古镇；周末车位不多，入口可能排队，建议尽量提前到达。",
+          "location": "沙湾古镇西门停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 5
+        },
+        {
+          "name": "沙湾古镇南停车场",
+          "fee_detail": "约5元/小时；另有10元/天的收费口径，收费存在差异，现场以当日公示为准。",
+          "guide_text": "南门方向停车后步行进入古镇；适合长时间停留，但应在入场时确认按小时还是按天计费。",
+          "location": "沙湾古镇南停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "参考小时收费",
+              "confidence": "low"
+            },
+            {
+              "rule_type": "cap",
+              "price": 10,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "参考全天收费",
+              "confidence": "low"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": true,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 5
+        }
+      ],
+      "min_price": 5,
+      "min_price_display": "¥5/h"
+    },
+    {
+      "id": 28,
+      "name": "永庆坊/荔枝湾",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市荔湾区恩宁路/龙津西路",
+      "district": "荔湾区",
+      "summary": "西关风情历史文化街区，网红月亮桥、粤剧艺术博物馆所在地。",
+      "area_tips": "老城区道路狭窄、周末易堵，金声停车场和荔湾路125号停车场适合导航直达；住宅停车位需现场确认开放状态。",
+      "tags": [
+        "西关",
+        "骑楼",
+        "月亮桥",
+        "粤剧博物馆",
+        "地铁1号线长寿路"
+      ],
+      "lng": 113.248,
+      "lat": 23.12,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "永庆坊金声停车场",
+          "fee_detail": "约10元/小时，具体以现场公示为准。",
+          "guide_text": "导航永庆坊金声停车场，停车后步行进入恩宁路和永庆坊；老城区道路较窄，周末尽量错峰。",
+          "location": "永庆坊金声停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "参考小时收费",
+              "confidence": "low"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 10
+        },
+        {
+          "name": "广州市荔湾路125号停车场",
+          "fee_detail": "5元/小时；白天与夜间分时收费时，以入口公示为准。",
+          "guide_text": "停车场入口通道较窄，车位主要在内部和露天区域；停车后步行到彩虹桥地铁站约数分钟，再前往永庆坊。",
+          "location": "广州市荔湾路125号停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 5
+        },
+        {
+          "name": "昌华街居民住宅停车场",
+          "fee_detail": "10元/次；实际可停时长和开放状态以现场管理为准。",
+          "guide_text": "距离永庆坊步行约5分钟；住宅停车位受现场管理影响，进场前确认是否接待临时车辆。",
+          "location": "昌华街居民住宅停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 10,
+              "unit": "time",
+              "unit_minutes": null,
+              "priority": 50,
+              "description": "单次收费",
+              "confidence": "low"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": null
+        }
+      ],
+      "min_price": 5,
+      "min_price_display": "¥5/h起"
+    },
+    {
+      "id": 36,
+      "name": "余荫山房",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市番禺区南村镇北大街",
+      "district": "番禺区",
+      "summary": "广东四大名园之一，精巧清代私家园林。",
+      "area_tips": "余荫山房停车场就在景区门口，收费存在分时或封顶差异，周末建议早点到并以入口公示为准。",
+      "tags": [
+        "岭南四大名园",
+        "收费18元",
+        "地铁7号线板桥",
+        "古建摄影"
+      ],
+      "lng": 113.38,
+      "lat": 23.02,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "余荫山房停车场",
+          "fee_detail": "前3小时3元/小时，超过3小时6元/小时；另有全天10元封顶的记录，现场以公示为准。",
+          "guide_text": "导航余荫山房停车场，园区门口停车后直接入园；车位相对方便，周末建议早点到。",
+          "location": "余荫山房停车场",
+          "fee_rules": [
+            {
+              "rule_type": "first",
+              "price": 3,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "前3小时",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "normal",
+              "price": 6,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "超过3小时",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "price": 10,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "全天封顶",
+              "confidence": "low"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": true,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "daily_cap": 10,
+          "min_price_hour": 3
+        }
+      ],
+      "min_price": 3,
+      "min_price_display": "¥3/h"
+    },
+    {
+      "id": 32,
+      "name": "长隆旅游度假区",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市番禺区汉溪大道东299号",
+      "district": "番禺区",
+      "summary": "广州头部亲子度假区，含野生动物世界、欢乐世界、水上乐园等。",
+      "area_tips": "长隆自驾停车以园区P5等官方车场为主，旺季上午车位紧张；满位时按指引改停其他车场并乘免费摆渡车。",
+      "tags": [
+        "主题乐园",
+        "野生动物世界",
+        "欢乐世界",
+        "酒店停车"
+      ],
+      "lng": 113.32,
+      "lat": 23.01,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "长隆野生动物世界P5停车场",
+          "fee_detail": "前三小时每30分钟2元；超过3小时每30分钟4元；36元/天封顶。",
+          "guide_text": "P5靠近南门，停车位相对多；旺季和节假日上午车位紧张，满位时按园区指引改停其他停车场并乘免费摆渡车。",
+          "location": "长隆野生动物世界P5停车场",
+          "fee_rules": [
+            {
+              "rule_type": "first",
+              "price": 2,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "priority": 50,
+              "description": "前三小时每30分钟",
+              "confidence": "medium",
+              "end_minute": 180
+            },
+            {
+              "rule_type": "normal",
+              "price": 4,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "priority": 50,
+              "description": "超过3小时每30分钟",
+              "confidence": "medium",
+              "start_minute": 180
+            },
+            {
+              "rule_type": "cap",
+              "price": 36,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "每日封顶",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "daily_cap": 36,
+          "min_price_hour": 4
+        },
+        {
+          "name": "长隆野生动物世界P3停车场",
+          "fee_detail": "收费以现场公示为准；高峰时段可能满位。",
+          "guide_text": "P3靠近南门，但高峰时段可能先满；到场后按工作人员指引选择可用车场。",
+          "location": "长隆野生动物世界P3停车场",
+          "fee_rules": [],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": null
+        }
+      ],
+      "min_price": 4,
+      "min_price_display": "¥4/h"
+    },
+    {
+      "id": 30,
+      "name": "中山纪念堂",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市越秀区东风中路299号",
+      "district": "越秀区",
+      "summary": "纪念孙中山的宫殿式建筑，园区免费、主体10元。",
+      "area_tips": "中山纪念堂周边停车资源紧张，交易广场步行距离较短但收费可能调整；优先确认地下车库入口和现场公示。",
+      "tags": [
+        "免费园区",
+        "近代建筑",
+        "地铁2号线纪念堂",
+        "木棉"
+      ],
+      "lng": 113.27,
+      "lat": 23.133,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "广州交易广场地下停车场",
+          "fee_detail": "10元/小时；近期存在不同收费牌信息，现场以当日公示为准。",
+          "guide_text": "普通地下车库，步行到中山纪念堂约300米、不到10分钟；从交易广场电梯出站后按纪念堂地铁站方向过街。",
+          "location": "广州交易广场地下停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "low"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": true,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 10
+        },
+        {
+          "name": "颐德中心地下停车场",
+          "fee_detail": "收费以现场公示为准。",
+          "guide_text": "中山纪念堂周边车位紧张时可作为备选，停车后步行约15分钟；不建议把路边未划线位置作为稳定方案。",
+          "location": "颐德中心地下停车场",
+          "fee_rules": [],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": null
+        }
+      ],
+      "min_price": 10,
+      "min_price_display": "¥10/h"
+    },
+    {
+      "id": 49,
+      "name": "广东省妇幼保健院",
+      "category": "医院",
+      "city_code": "440100",
+      "address": "广州市番禺区南村镇兴南大道521号（番禺院区）",
+      "district": "番禺区",
+      "summary": "省级妇儿三甲，番禺院区为主要院区。",
+      "area_tips": "医院入口高峰容易排队，可先送人再停车；7号小镇创意园距离较近，但医院就诊优惠和普通临停收费需分别确认。",
+      "tags": [
+        "三甲妇幼",
+        "番禺",
+        "停车优惠",
+        "地铁7号线员岗"
+      ],
+      "lng": 113.37,
+      "lat": 22.99,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "广东省妇幼保健院番禺院区停车场",
+          "fee_detail": "就诊相关停车优惠以院方当日规则为准，普通临停收费未确认。",
+          "guide_text": "进入医院后可先送家人到保健楼，再按院内指引停车；保健楼与门诊楼不同，进场后注意看楼宇指引。",
+          "location": "广东省妇幼保健院番禺院区停车场",
+          "fee_rules": [],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": null
+        },
+        {
+          "name": "7号小镇创意园停车场",
+          "fee_detail": "6元/小时。",
+          "guide_text": "距离医院步行约100米，可避开医院入口排队；先导航到7号小镇创意园，停车后穿过园区步行到医院。",
+          "location": "7号小镇创意园停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 6,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 6
+        }
+      ],
+      "min_price": 6,
+      "min_price_display": "¥6/h"
+    },
+    {
+      "id": 43,
+      "name": "广东省人民医院",
+      "category": "医院",
+      "city_code": "440100",
+      "address": "广州市越秀区中山二路106号",
+      "district": "越秀区",
+      "summary": "以心血管闻名的三甲综合医院，东川院本部车位紧张。",
+      "area_tips": "省人民医院周边车位紧张，七橙酒店和青龙里小区均需确认临时车辆是否接待；就诊高峰建议提前到达。",
+      "tags": [
+        "三甲",
+        "心血管强",
+        "停车难",
+        "地铁1号线烈士陵园"
+      ],
+      "lng": 113.29,
+      "lat": 23.125,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "七橙酒店楼下停车场",
+          "fee_detail": "08:00-22:00为10元/小时；22:00-次日08:00为10元/次。",
+          "guide_text": "导航海谊大厦一带进入；距离医院较近，但车场条件有限、车位和入口管理可能变化，进场前确认是否接待临时车辆。",
+          "location": "海谊大厦七橙酒店楼下停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "日间收费",
+              "confidence": "medium",
+              "time_start": "08:00",
+              "time_end": "22:00"
+            },
+            {
+              "rule_type": "night",
+              "price": 10,
+              "unit": "time",
+              "unit_minutes": null,
+              "priority": 50,
+              "description": "夜间单次收费",
+              "confidence": "medium",
+              "time_start": "22:00",
+              "time_end": "08:00"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 10
+        },
+        {
+          "name": "青龙里小区停车场",
+          "fee_detail": "10元/小时；是否有位由现场门卫安排。",
+          "guide_text": "停车后步行到医院约3分钟；停车位有限，需确认小区是否接待临时车辆。",
+          "location": "广东省人民医院英东楼对面青龙里小区停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "参考小时收费",
+              "confidence": "low"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 10
+        }
+      ],
+      "min_price": 10,
+      "min_price_display": "¥10/h"
+    },
+    {
+      "id": 52,
+      "name": "广东省中医院",
+      "category": "医院",
+      "city_code": "440100",
+      "address": "广州市越秀区大德路111号（大德路总院）",
+      "district": "越秀区",
+      "summary": "全国顶尖中医院，大德路总院。",
+      "area_tips": "大德路总院院内车库较窄且可能排队，外围车场需核对步行距离和当日收费；不建议把未划线路边位置当作稳定方案。",
+      "tags": [
+        "三甲",
+        "中医",
+        "大德路",
+        "地铁6号线一德路"
+      ],
+      "lng": 113.255,
+      "lat": 23.12,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "广东省中医院大德路总院地下停车场",
+          "fee_detail": "收费未确认。",
+          "guide_text": "院内地下车库车位较窄，入口可能排队；停车时注意轮胎与立柱距离，车身尽量摆正后再倒入车位。",
+          "location": "广东省中医院大德路总院地下停车场",
+          "fee_rules": [],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": null
+        },
+        {
+          "name": "车海洋自助洗车入口露天停车场",
+          "fee_detail": "5元/小时，具体以现场收费为准。",
+          "guide_text": "位于医院附近，导航车海洋自助洗车入口；与医院步行距离需现场确认，不把该点作为院内车位替代。",
+          "location": "车海洋自助洗车入口露天停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "参考小时收费",
+              "confidence": "low"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 5
+        }
+      ],
+      "min_price": 5,
+      "min_price_display": "¥5/h"
+    },
+    {
+      "id": 51,
+      "name": "广州市第一人民医院",
+      "category": "医院",
+      "city_code": "440100",
+      "address": "广州市越秀区盘福路1号",
+      "district": "越秀区",
+      "summary": "越秀盘福路三甲综合医院，院内车位约320个。",
+      "area_tips": "医院周边老城区道路繁忙，院内车位和商业备选均需按现场指引；工作日上午尽量提前到达。",
+      "tags": [
+        "三甲",
+        "综合",
+        "盘福路",
+        "地铁2号线纪念堂"
+      ],
+      "lng": 113.265,
+      "lat": 23.13,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "广州市第一人民医院院内停车场",
+          "fee_detail": "收费以院方当日公示为准；早到更容易找到车位。",
+          "guide_text": "院内车位有限，工作日上午高峰后可能满位；进入前留意门岗和就诊车辆指引。",
+          "location": "广州市第一人民医院院内停车场",
+          "fee_rules": [],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": null
+        },
+        {
+          "name": "金通泰停车场",
+          "fee_detail": "收费以现场公示为准。",
+          "guide_text": "医院周边商业停车场备选，步行前往医院；老城区道路繁忙，建议提前规划进出路线。",
+          "location": "金通泰停车场",
+          "fee_rules": [],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": null
+        }
+      ],
+      "min_price": null,
+      "min_price_display": "价格待补充"
+    },
+    {
+      "id": 50,
+      "name": "广州市妇女儿童医疗中心（珠江新城院区）",
+      "category": "医院",
+      "city_code": "440100",
+      "address": "广州市天河区金穗路9号",
+      "district": "天河区",
+      "summary": "广州主要妇女儿童三甲医疗中心，珠江新城院区。",
+      "area_tips": "院内机械车位少且周边道路拥堵，市妇幼车场与中山眼科车场收费和步行便利度不同，车辆尺寸需提前确认。",
+      "tags": [
+        "三甲妇儿",
+        "珠江新城",
+        "停车难",
+        "地铁5号线猎德"
+      ],
+      "lng": 113.33,
+      "lat": 23.12,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "市妇幼停车场",
+          "fee_detail": "3小时内7.5元/小时，超过3小时15元/小时；24小时封顶67.5元。",
+          "guide_text": "院内车位少，基本为机械车位；周边道路容易拥堵，进场可能排队，车宽或车高不确定时先确认车位类型。",
+          "location": "广州市妇女儿童医疗中心珠江新城院区停车场",
+          "fee_rules": [
+            {
+              "rule_type": "first",
+              "price": 7.5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "前3小时",
+              "confidence": "medium",
+              "end_minute": 180
+            },
+            {
+              "rule_type": "normal",
+              "price": 15,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "超过3小时",
+              "confidence": "medium"
+            },
+            {
+              "rule_type": "cap",
+              "price": 67.5,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "24小时封顶",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "daily_cap": 67.5,
+          "min_price_hour": 7.5
+        },
+        {
+          "name": "中山眼科停车场",
+          "fee_detail": "3小时内5元/小时；超过3小时10元/小时。",
+          "guide_text": "距离妇女儿童医疗中心较近，但工作时间车位紧张、周边道路拥堵；停车后按人行路线前往医院。",
+          "location": "中山大学附属眼科医院珠江新城院区停车场",
+          "fee_rules": [
+            {
+              "rule_type": "first",
+              "price": 5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "前3小时",
+              "confidence": "medium",
+              "end_minute": 180
+            },
+            {
+              "rule_type": "normal",
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "超过3小时",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 5
+        }
+      ],
+      "min_price": 5,
+      "min_price_display": "¥5/h起"
+    },
+    {
+      "id": 46,
+      "name": "广州医科大学附属第一医院",
+      "category": "医院",
+      "city_code": "440100",
+      "address": "广州市越秀区沿江西路151号（总院）",
+      "district": "越秀区",
+      "summary": "以呼吸疾病闻名的三甲医院，总院位于沿江路。",
+      "area_tips": "总院位于沿江西路，周边停车资源紧张；入场时按总院门岗指引，避免使用其他城市或其他院区的停车信息。",
+      "tags": [
+        "三甲",
+        "呼吸科全国第一",
+        "沿江路",
+        "地铁2号线海珠广场"
+      ],
+      "lng": 113.255,
+      "lat": 23.11,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "广州医科大学附属第一医院总院停车场",
+          "fee_detail": "收费以院方当日公示为准。",
+          "guide_text": "总院位于沿江西路，周边停车资源紧张；到达后按门岗指引，避免把外部医院或其他城市的停车信息混入本院攻略。",
+          "location": "广州医科大学附属第一医院总院停车场",
+          "fee_rules": [],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": null
+        }
+      ],
+      "min_price": null,
+      "min_price_display": "价格待补充"
+    },
+    {
+      "id": 38,
+      "name": "大夫山森林公园",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市番禺区沙头街道禺山西路",
+      "district": "番禺区",
+      "summary": "番禺“氧吧”免费森林公园，骑行露营胜地。",
+      "area_tips": "大夫山南北门均有停车选择，周末南门和北门入口车位变化明显；根据游览路线选择入口并尽量早到。",
+      "tags": [
+        "免费公园",
+        "骑行",
+        "落羽杉",
+        "露营"
+      ],
+      "lng": 113.35,
+      "lat": 23,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "大夫山森林公园南门停车场",
+          "fee_detail": "收费标准以现场公示为准；本轮笔记确认南门为主要自驾入口。",
+          "guide_text": "导航大夫山森林公园南门；南门靠近聚秀湖路线，周末车位紧张，建议尽量早到。",
+          "location": "大夫山森林公园南门停车场",
+          "fee_rules": [],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": null
+        },
+        {
+          "name": "大夫山森林公园北门停车场",
+          "fee_detail": "24小时封顶30元。",
+          "guide_text": "北门适合从钟村方向进入；停车后按园区指引步行或租车，周末入场高峰提前规划。",
+          "location": "大夫山森林公园北门停车场",
+          "fee_rules": [
+            {
+              "rule_type": "cap",
+              "price": 30,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "24小时封顶",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "daily_cap": 30,
+          "min_price_hour": null
+        }
+      ],
+      "min_price": null,
+      "min_price_display": "价格待补充"
+    },
+    {
+      "id": 41,
+      "name": "二沙岛",
+      "category": "景点",
+      "city_code": "440100",
+      "address": "广州市越秀区二沙岛",
+      "district": "越秀区",
+      "summary": "珠江中低密度文化岛，广东美术馆、星海音乐厅所在地。",
+      "area_tips": "二沙岛停车位有限，体育公园车场距离景点较近但容量有限；文立方和宏城公园可作付费备选，活动日先确认开放情况。",
+      "tags": [
+        "江心岛",
+        "免费",
+        "艺术馆",
+        "跑步",
+        "星海音乐厅"
+      ],
+      "lng": 113.31,
+      "lat": 23.115,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "待地图POI复核",
+      "coordinate_verified_at": null,
+      "parkings": [
+        {
+          "name": "二沙岛体育公园停车场",
+          "fee_detail": "3小时内2.5元/30分钟，超过3小时5元/30分钟，45元/天封顶。",
+          "guide_text": "停车后步行到宏城公园和二沙岛艺术公园较近；车位不多，工作日白天不要把受限时段的路边车位当作稳定方案。",
+          "location": "二沙岛体育公园停车场",
+          "fee_rules": [
+            {
+              "rule_type": "first",
+              "price": 2.5,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "priority": 50,
+              "description": "3小时内每30分钟",
+              "confidence": "medium",
+              "end_minute": 180
+            },
+            {
+              "rule_type": "normal",
+              "price": 5,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "priority": 50,
+              "description": "超过3小时每30分钟",
+              "confidence": "medium",
+              "start_minute": 180
+            },
+            {
+              "rule_type": "cap",
+              "price": 45,
+              "unit": "day",
+              "unit_minutes": null,
+              "priority": 100,
+              "description": "每日封顶",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "daily_cap": 45,
+          "min_price_hour": 5
+        },
+        {
+          "name": "文立方商场停车场",
+          "fee_detail": "10元/小时。",
+          "guide_text": "距离二沙岛艺术公园步行约5分钟；商场车库作为较稳定的付费备选，入场后按商场指引出入。",
+          "location": "文立方商场停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 10,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "medium"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "medium",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 10
+        },
+        {
+          "name": "宏城公园停车场",
+          "fee_detail": "5元/小时。",
+          "guide_text": "距离宏城公园步行约8分钟；周末和活动日车位可能变化，建议到场后确认是否开放。",
+          "location": "宏城公园停车场",
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "priority": 50,
+              "description": "基础收费",
+              "confidence": "low"
+            }
+          ],
+          "type": "停车场",
+          "free_minutes": 0,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "source": "小红书公开图文整理",
+          "min_price_hour": 5
+        }
+      ],
+      "min_price": 5,
+      "min_price_display": "¥5/h起"
+    }
+  ]
+}

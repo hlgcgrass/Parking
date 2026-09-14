@@ -1,7 +1,7 @@
 const api = require('../../utils/api.js');
 const user = require('../../utils/user.js');
 const detailEntry = require('../../utils/detail-entry.js');
-const { calcFee } = require('../../utils/fee.js');
+const { calcFee, displayPrice } = require('../../utils/fee.js');
 const cache = require('../../utils/cache.js');
 const PLACE_IMAGES = require('../../utils/place-images.js');
 const app = getApp();
@@ -140,6 +140,7 @@ Page({
         wx.setNavigationBarTitle({ title: place.name });
         const parkings = place.parkings.map(p => {
           const feeRules = Array.isArray(p.fee_rules) ? p.fee_rules : [];
+          const price = displayPrice(feeRules, p.min_price_hour);
           return {
             ...p,
             fee_rules: feeRules.map(rule => ({
@@ -148,9 +149,13 @@ Page({
             })),
             _feeLines: feeLines(feeRules, p.fee_summary),
             _guideLines: guideLines(p.tips),
+            _hasPrice: !!price,
+            _priceValue: price ? price.value : '',
+            _priceUnit: price ? price.unit : '',
+            _canCalculate: !!(price && price.canCalculate),
             _open: false,
             _hours: 3,
-            _fee: calcFee(feeRules, 3 * 60)
+            _fee: price && price.canCalculate ? calcFee(feeRules, 3 * 60) : null
           };
         });
         this.prepareImagePreview(this.data.id, place);
@@ -176,7 +181,9 @@ Page({
 
   setHours(e) {
     const { index, hours } = e.currentTarget.dataset;
-    const rules = this.data.place.parkings[index].fee_rules;
+    const parking = this.data.place.parkings[index];
+    if (!parking._canCalculate) return;
+    const rules = parking.fee_rules;
     const fee = calcFee(rules, Number(hours) * 60);
     this.setData({
       [`place.parkings[${index}]._hours`]: Number(hours),

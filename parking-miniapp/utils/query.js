@@ -27,6 +27,7 @@ const CONF_TEXT = {
   low: '信息未核实，以现场为准'
 };
 const PLACE_IMAGES = require('./place-images.js');
+const { placeDisplayPrice } = require('./fee.js');
 
 // 构建索引（parkingsByPlace / parkingById / tipsByPlace），结果缓存到 s._maps 避免重复计算
 function ensureMaps(s) {
@@ -72,6 +73,7 @@ function fuzzyIncludes(text, keyword) {
 }
 
 function buildList(s, { cityCode, category, keyword, page = 1, size = 20, lat, lng, sort = 'heat' }) {
+  const maps = ensureMaps(s);
   let list = (s.places || []).filter(p => {
     if (cityCode && String(p.city_code || '440100') !== String(cityCode)) return false;
     if (category && category !== '全部' && p.category !== category) return false;
@@ -89,7 +91,14 @@ function buildList(s, { cityCode, category, keyword, page = 1, size = 20, lat, l
   const sizeN = Math.min(size || 20, 50);
   const offset = (Math.max(1, page || 1) - 1) * sizeN;
   return list.slice(offset, offset + sizeN).map(p => {
-    const out = Object.assign({}, p);
+    const price = placeDisplayPrice(maps.parkingsByPlace[p.id], p.min_price);
+    const out = Object.assign({}, p, {
+      parking_count: p.parking_count ?? (maps.parkingsByPlace[p.id] || []).length,
+      _hasPrice: !!price,
+      _priceValue: price ? price.value : '',
+      _priceUnit: price ? price.unit : '',
+      _priceSuffix: price ? price.suffix : ''
+    });
     if (lat != null && lng != null && p.lat != null && p.lng != null) out.distance_m = haversine(lat, lng, p.lat, p.lng);
     return out;
   });
@@ -97,6 +106,7 @@ function buildList(s, { cityCode, category, keyword, page = 1, size = 20, lat, l
 
 function searchPlaces(s, keyword, cityCode, limit = 20) {
   if (!keyword) return [];
+  const maps = ensureMaps(s);
   const kw = String(keyword).toLowerCase();
   return (s.places || [])
     .filter(p => {
@@ -105,10 +115,18 @@ function searchPlaces(s, keyword, cityCode, limit = 20) {
       return fuzzyIncludes(hay, kw);
     })
     .map(p => {
+      const price = placeDisplayPrice(maps.parkingsByPlace[p.id], p.min_price);
       const name = (p.name || '').toLowerCase();
       let rank = 2;
       if (name === kw) rank = 0; else if (name.startsWith(kw)) rank = 1;
-      return Object.assign({}, p, { _rank: rank });
+      return Object.assign({}, p, {
+        parking_count: p.parking_count ?? (maps.parkingsByPlace[p.id] || []).length,
+        _rank: rank,
+        _hasPrice: !!price,
+        _priceValue: price ? price.value : '',
+        _priceUnit: price ? price.unit : '',
+        _priceSuffix: price ? price.suffix : ''
+      });
     })
     .sort((a, b) => a._rank - b._rank || (b.heat || 0) - (a.heat || 0))
     .slice(0, Math.min(limit || 20, 50))
@@ -125,9 +143,12 @@ function nearbyPlaces(s, lat, lng, radius = 3000, limit = 20) {
     .slice(0, Math.min(limit || 20, 50))
     .map(p => {
       const top = (maps.parkingsByPlace[p.id] || [])[0];
+      const price = placeDisplayPrice(maps.parkingsByPlace[p.id], p.min_price);
       return {
         id: p.id, name: p.name, category: p.category, address: p.address, district: p.district,
-        lng: p.lng, lat: p.lat, parking_count: p.parking_count, min_price: p.min_price,
+        lng: p.lng, lat: p.lat, parking_count: p.parking_count ?? (maps.parkingsByPlace[p.id] || []).length, min_price: p.min_price,
+        _hasPrice: !!price, _priceValue: price ? price.value : '', _priceUnit: price ? price.unit : '',
+        _priceSuffix: price ? price.suffix : '',
         top_parking: top ? top.name : null, distance_m: p.distance_m
       };
     });

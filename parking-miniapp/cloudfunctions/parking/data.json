@@ -61,7 +61,8 @@
       "district": "白云区/越秀区",
       "city_code": "440100",
       "parking_count": 3,
-      "min_price": 1.5
+      "min_price": 6,
+      "min_price_display": "¥6/h起"
     },
     {
       "id": 26,
@@ -85,7 +86,8 @@
       "district": "荔湾区",
       "city_code": "440100",
       "parking_count": 2,
-      "min_price": 8
+      "min_price": 8,
+      "min_price_display": "¥8/h起"
     },
     {
       "id": 38,
@@ -109,7 +111,8 @@
       "district": "番禺区",
       "city_code": "440100",
       "parking_count": 2,
-      "min_price": 5
+      "min_price": 5,
+      "min_price_display": "¥5/h"
     },
     {
       "id": 41,
@@ -134,7 +137,8 @@
       "district": "越秀区",
       "city_code": "440100",
       "parking_count": 4,
-      "min_price": 8
+      "min_price": 5,
+      "min_price_display": "¥5/h起"
     },
     {
       "id": 23,
@@ -158,7 +162,8 @@
       "district": "天河区",
       "city_code": "440100",
       "parking_count": 2,
-      "min_price": 2
+      "min_price": 2,
+      "min_price_display": "¥2/h"
     },
     {
       "id": 40,
@@ -182,7 +187,8 @@
       "district": "越秀区",
       "city_code": "440100",
       "parking_count": 3,
-      "min_price": 5
+      "min_price": 5,
+      "min_price_display": "¥5/h起"
     },
     {
       "id": 20,
@@ -206,7 +212,8 @@
       "district": "海珠区",
       "city_code": "440100",
       "parking_count": 3,
-      "min_price": 5
+      "min_price": 5,
+      "min_price_display": "¥5/h"
     },
     {
       "id": 24,
@@ -229,7 +236,8 @@
       "district": "天河区",
       "city_code": "440100",
       "parking_count": 4,
-      "min_price": 4
+      "min_price": 5,
+      "min_price_display": "¥5/h起"
     },
     {
       "id": 21,
@@ -253,7 +261,8 @@
       "district": "天河区",
       "city_code": "440100",
       "parking_count": 3,
-      "min_price": 2
+      "min_price": 5,
+      "min_price_display": "¥5/h"
     },
     {
       "id": 39,
@@ -277,7 +286,8 @@
       "district": "海珠区",
       "city_code": "440100",
       "parking_count": 3,
-      "min_price": 10
+      "min_price": 10,
+      "min_price_display": "¥10/h"
     },
     {
       "id": 22,
@@ -301,7 +311,8 @@
       "district": "天河区",
       "city_code": "440100",
       "parking_count": 1,
-      "min_price": 2
+      "min_price": 2,
+      "min_price_display": "¥2/h"
     },
     {
       "id": 33,
@@ -325,7 +336,8 @@
       "district": "天河区",
       "city_code": "440100",
       "parking_count": 4,
-      "min_price": 2.5
+      "min_price": 2.5,
+      "min_price_display": "¥2.5/h起"
     },
     {
       "id": 34,
@@ -349,7 +361,8 @@
       "district": "黄埔区",
       "city_code": "440100",
       "parking_count": 5,
-      "min_price": 10
+      "min_price": 10,
+      "min_price_display": "¥10/h"
     },
     {
       "id": 37,
@@ -373,7 +386,8 @@
       "district": "番禺区",
       "city_code": "440100",
       "parking_count": 1,
-      "min_price": 10
+      "min_price": 3,
+      "min_price_display": "¥3/h"
     },
     {
       "id": 114,
@@ -412,7 +426,8 @@
       "district": "荔湾区",
       "city_code": "440100",
       "parking_count": 3,
-      "min_price": 4
+      "min_price": 10,
+      "min_price_display": "¥10/h起"
     },
     {
       "id": 35,
@@ -436,7 +451,8 @@
       "district": "番禺区",
       "city_code": "440100",
       "parking_count": 1,
-      "min_price": 10
+      "min_price": 10,
+      "min_price_display": "¥10/h"
     },
     {
       "id": 28,
@@ -461,7 +477,8 @@
       "district": "荔湾区",
       "city_code": "440100",
       "parking_count": 2,
-      "min_price": 5
+      "min_price": 5,
+      "min_price_display": "¥5/h"
     },
     {
       "id": 36,
@@ -485,7 +502,8 @@
       "district": "番禺区",
       "city_code": "440100",
       "parking_count": 2,
-      "min_price": 5
+      "min_price": 3,
+      "min_price_display": "¥3/h"
     },
     {
       "id": 29,
@@ -509,7 +527,8 @@
       "district": "越秀区",
       "city_code": "440100",
       "parking_count": 7,
-      "min_price": 2
+      "min_price": 15,
+      "min_price_display": "¥15/h起"
     },
     {
       "id": 32,
@@ -533,7 +552,8 @@
       "district": "番禺区",
       "city_code": "440100",
       "parking_count": 0,
-      "min_price": 1
+      "min_price": 1,
+      "min_price_display": "¥1/h"
     },
     {
       "id": 30,
@@ -557,7 +577,8 @@
       "district": "越秀区",
       "city_code": "440100",
       "parking_count": 0,
-      "min_price": 8
+      "min_price": 8,
+      "min_price_display": "¥8/h"
     },
     {
       "id": 49,
@@ -581,7 +602,8 @@
       "district": "番禺区",
       "city_code": "440100",
       "parking_count": 2,
-      "min_price": 1
+      "min_price": 6,
+      "min_price_display": "¥6/h"
     },
     {
       "id": 43,
@@ -605,7 +627,8 @@
       "district": "越秀区",
       "city_code": "440100",
       "parking_count": 6,
-      "min_price": 1
+      "min_price": 10,
+      "min_price_display": "¥10/h"
     },
     {
       "id": 52,
@@ -629,7 +652,8 @@
       "district": "越秀区",
       "city_code": "440100",
       "parking_count": 1,
-      "min_price": 2.5
+      "min_price": 2,
+      "min_price_display": "¥2/h"
     },
     {
       "id": 51,
@@ -653,7 +677,8 @@
       "district": "越秀区",
       "city_code": "440100",
       "parking_count": 5,
-      "min_price": 2
+      "min_price": 4,
+      "min_price_display": "¥4/h起"
     },
     {
       "id": 50,
@@ -677,7 +702,8 @@
       "district": "天河区",
       "city_code": "440100",
       "parking_count": 7,
-      "min_price": 2
+      "min_price": 5,
+      "min_price_display": "¥5/h起"
     },
     {
       "id": 46,
@@ -701,7 +727,8 @@
       "district": "越秀区",
       "city_code": "440100",
       "parking_count": 5,
-      "min_price": 1
+      "min_price": 4,
+      "min_price_display": "¥4/h起"
     },
     {
       "id": 54,
@@ -725,7 +752,8 @@
       "district": "白云区",
       "city_code": "440100",
       "parking_count": 6,
-      "min_price": 2
+      "min_price": 16,
+      "min_price_display": "¥16/h"
     },
     {
       "id": 45,
@@ -749,7 +777,8 @@
       "district": "白云区",
       "city_code": "440100",
       "parking_count": 2,
-      "min_price": 2
+      "min_price": 8,
+      "min_price_display": "¥8/h"
     },
     {
       "id": 48,
@@ -773,7 +802,8 @@
       "district": "天河区",
       "city_code": "440100",
       "parking_count": 1,
-      "min_price": 2.5
+      "min_price": 6,
+      "min_price_display": "¥6/h"
     },
     {
       "id": 44,
@@ -797,7 +827,8 @@
       "district": "天河区",
       "city_code": "440100",
       "parking_count": 6,
-      "min_price": 2
+      "min_price": 4,
+      "min_price_display": "¥4/h起"
     },
     {
       "id": 42,
@@ -821,7 +852,8 @@
       "district": "越秀区",
       "city_code": "440100",
       "parking_count": 5,
-      "min_price": 1
+      "min_price": 30,
+      "min_price_display": "¥30/h"
     },
     {
       "id": 47,
@@ -845,7 +877,8 @@
       "district": "越秀区",
       "city_code": "440100",
       "parking_count": 3,
-      "min_price": 10
+      "min_price": 3,
+      "min_price_display": "¥3/h起"
     },
     {
       "id": 53,
@@ -869,7 +902,8 @@
       "district": "越秀区",
       "city_code": "440100",
       "parking_count": 4,
-      "min_price": 8
+      "min_price": 5,
+      "min_price_display": "¥5/h"
     },
     {
       "id": 1,
@@ -893,7 +927,8 @@
       "district": "越秀区",
       "city_code": "440100",
       "parking_count": 1,
-      "min_price": 2
+      "min_price": 2,
+      "min_price_display": "¥2/h"
     },
     {
       "id": 7,
@@ -917,7 +952,8 @@
       "district": "天河区",
       "city_code": "440100",
       "parking_count": 2,
-      "min_price": 16
+      "min_price": 20,
+      "min_price_display": "¥20/h"
     },
     {
       "id": 8,
@@ -941,7 +977,8 @@
       "district": "天河区",
       "city_code": "440100",
       "parking_count": 7,
-      "min_price": 2.5
+      "min_price": 5,
+      "min_price_display": "¥5/h起"
     },
     {
       "id": 9,
@@ -965,7 +1002,8 @@
       "district": "荔湾区",
       "city_code": "440100",
       "parking_count": 4,
-      "min_price": 2
+      "min_price": 2,
+      "min_price_display": "¥2/h"
     },
     {
       "id": 15,
@@ -988,7 +1026,8 @@
       "district": "番禺区",
       "city_code": "440100",
       "parking_count": 0,
-      "min_price": 2.5
+      "min_price": 2.5,
+      "min_price_display": "¥2.5/h"
     },
     {
       "id": 10,
@@ -1012,7 +1051,8 @@
       "district": "海珠区",
       "city_code": "440100",
       "parking_count": 0,
-      "min_price": 2.5
+      "min_price": 2.5,
+      "min_price_display": "¥2.5/h"
     }
   ],
   "parkingsByPlace": {
@@ -1072,7 +1112,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 20,
         "tips": "1、收费：体育中心关了之后附近都是15-20元一个小时的室内停车场；终于发现一个可以天天4元1小时的停车场",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -1197,7 +1237,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 16,
         "tips": "1、收费：4💰/小时（10💰封顶）；附近很多停车场基本都要16💰/小时\n2、注意：气冲冲打酱油的星星 注册天河城公众号会员一个月可以免费停3h；超过3h按一个钟 块这样收费吗 5 乔治与杰森 正佳广场一个半钟收 - 5 琪乐融融Kila 没购物可以免停三个小时吗 XIEZIDAN",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -1252,7 +1292,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 16,
         "tips": "1、收费：附近很多停车场基本都要16💰/小时\n2、路线：就可以走过去天河城、天环广场、正佳广场、广州购书中心、万菱汇等\n3、注意：可能要排队等很久。；气冲冲打酱油的星星 注册天河城公众号会员一个月可以免费停3h；超过3h按一个钟 块这样收费吗 5 乔治与杰森 正佳广场一个半钟收 - 5 琪乐融融Kila 没购物可以免停三个小时吗 XIEZIDAN",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -1290,7 +1330,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 5,
         "tips": "1、收费：最便宜5💰/小时 停车收费不分3小时内外；节假日及周末会员凭500积分可兑换1小时免费停车时长\n2、路线：就可以走过去天河城、天环广场、正佳广场、广州购书中心、万菱汇等；但停车场入口不太好找；而且外面天河南一路、天河南步行街；天环广场标准：08:00-22:00 4元/15分钟\n3、注意：可能要排队等很久。；气冲冲打酱油的星星 注册天河城公众号会员一个月可以免费停3h；超过3h按一个钟 块这样收费吗 5 乔治与杰森 正佳广场一个半钟收 - 5 琪乐融融Kila 没购物可以免停三个小时吗 XIEZIDAN",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -1400,7 +1440,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 32,
         "tips": "1、收费：40块 → 打完折只要32块；） 一定记得选这个选项才能享受32元封顶价哦；32块解决打工一天停车费\n2、路线：） 但是呢需要入口预约📅下（试过几次；入口扫码预约即可。",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -1762,7 +1802,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 5,
         "tips": "1、收费：海心沙亚运公园停车场 收费：5元/小时",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -1800,7 +1840,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 5,
         "tips": "1、收费：海心沙亚运公园停车场 收费：5元/小时；24h封顶25元\n2、路线：可以给理想L6补电 停好后步行8‑10分钟到广州塔；\n3、注意：不容易满位 有快充桩",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -1855,7 +1895,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 5,
         "tips": "1、收费：海心沙亚运公园停车场 收费：5元/小时；24h封顶25元；也可以坐1站APM无人驾驶地铁直达广州塔站 兜底备选：珠江帝景北门停车场 10元/小时；封顶60元\n2、路线：可以给理想L6补电 停好后步行8‑10分钟到广州塔；；步行3‑5分钟到广州塔\n3、注意：不容易满位 有快充桩",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -2141,7 +2181,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 15,
         "tips": "1、收费：图书馆停车免费；六小时收费 15元还可以\n2、注意：车位紧张很多人蹲守；路边很多暂停无抄牌 🌿环境 舒服安静；有个面包店老粤家很好吃     排队进场嘛？；排队进场嘛？",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -2175,7 +2215,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 5,
         "tips": "1、收费：在地铁APM大剧院B出口 自驾：广州图书馆停车场 （ 5元/小时(前3小时)；平时：9:00-21:00 （周三不开馆哦） 节假日： 9:00-16:00（ 官网为准 ） 如何办证： 本地：身份证/社保卡 外地：居住证/住房合同 可以免费借40本\n2、路线：公交：在地铁APM大剧院B出口 自驾：广州图书馆停车场 （ 5元/小时(前3小时)；👍 用广图APP可以预约借书 看书+自修 负一层自习室（插座和USB 都有） 每层都有学习区 中途离馆可以留座牌（只能保留30分钟）",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -2257,7 +2297,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 6,
         "tips": "1、收费：深夜凌晨6💰/h（消费可抵2h免费）\n2、注意：排队都排到大路口",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -2295,7 +2335,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 10,
         "tips": "1、收费：（门口有二维码扫码买票很方便） 💡 小提醒 这里停车费价格是10元一小时\n2、路线：比景区停车场好停太多 • 步行到云台花园仅5-8分钟；入口右侧的露天区域直接停。",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -2331,7 +2371,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 10,
         "tips": "1、收费：亲测娃全程专注不摸鱼～​ 📅午后黄金 4 小时行程​ ⏰13:00 - 13:30 抵达陈家祠 & 停车贴士​ 自驾直接导航 “陈家祠停车场”（10 元 / 小时）",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -2369,7 +2409,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 8,
         "tips": "1、收费：停在 “荔枝湾涌停车场”（8 元 / 小时）\n2、路线：仪式感拉满～ 记得买些手办茶叶回去体验哦​ ⏰15:30 - 16:00 转场永庆坊 & 快速补给​ 从陈家祠自驾约 20 分钟到永庆坊；步行 3 分钟到 “开记甜品” 买双皮奶；​ 16:30 - 17:00 压轴粤剧表演​ 赶上 16:30 的少儿友好场（15 分钟精华版）",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -2409,7 +2449,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 10,
         "tips": "1、收费：每小时收费10元\n2、路线：过天桥步行5分钟直达；；步行110米即到。",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -2489,7 +2529,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 30,
         "tips": "1、收费：30元 经济划算 #永庆坊 #停车攻略 04-16\n2、路线：第三场您再查查 我这个角度是从仁信双皮奶店铺斜对面的后面上楼走到的；还有凳子坐 3、沙面离永庆坊步行约800m远；很容易很容易 可以步行导航🧭：经过第十匍街（见到陶陶居\n3、注意：还有个免费停的呢；不给停 哈哈 停西塱地铁站",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -2679,7 +2719,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 15,
         "tips": "1、收费：12小时的封顶收费很划算；90km 💰10分钟内停车免费；12小时收费15元；封顶30元\n2、路线：国龙大厦地下停车场 📍离越秀公园0.71km 💰15分钟内停车不花钱；下塘西小区停车场 📍距离公园0.90km 💰10分钟内停车免费",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -2734,7 +2774,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 15,
         "tips": "1、收费：77km 💰同样10分钟内免费；12小时收费15元；封顶30元\n2、路线：中国电信（广州无线网络运营中心）停车场 📍距越秀公园0.77km 💰同样10分钟内免费",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -2781,7 +2821,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 45,
         "tips": "1、收费：45元\n2、路线：要么绕来绕去找不到入口\n3、注意：⚠️避坑&实用Tips 1️⃣ 周末/节假日车位紧张",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -2819,7 +2859,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 45,
         "tips": "1、收费：45元\n2、路线：要么绕来绕去找不到入口；步行2分钟就到越秀山步道入口\n3、注意：⚠️避坑&实用Tips 1️⃣ 周末/节假日车位紧张；不用排队！",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -2910,7 +2950,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 2.5,
         "tips": "1、收费：24:00 点前 2.5 元/小时；封顶只要；封顶只要 7.5 元；封顶 15 元；12 小时内 3 元/小时；15 元封顶；24 小时内 21 元封顶\n2、注意：块 麻针封喉²¹⁰⁶ 植物园西门停车场前3小时5元/小时；停车4小时收费 元",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -3017,7 +3057,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 3,
         "tips": "1、收费：封顶 15 元；12 小时内 3 元/小时；15 元封顶；24 小时内 21 元封顶；12 小时内 4 元/小时；16 元封顶；24 小时内 24 元封顶\n2、注意：块 麻针封喉²¹⁰⁶ 植物园西门停车场前3小时5元/小时；停车4小时收费 元",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -3211,7 +3251,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 10,
         "tips": "1、收费：停车攻略(参考我百度地图的图片标识两处哈) -黄埔军校：导航「黄埔军校旧址纪念馆 - 配套地上停车场」 -长洲岛廊桥：搜「长洲岛地上停车场 - 出入口」 💰停车费参考价 8-10 元 / 小时\n2、路线：7-8 分钟 比较稳不太会晕船。；新能源电车也能上哦～不会托底的 🅿️停车攻略(参考我百度地图的图片标识两处哈) -黄埔军校：导航「黄埔军校旧址纪念馆 - 配套地上停车场」 -长洲岛廊桥：搜「长洲岛地上停车场 - 出入口」 💰停车费参考价 8-10 元 / 小时",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -3249,7 +3289,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 10,
         "tips": "1、收费：停车攻略(参考我百度地图的图片标识两处哈) -黄埔军校：导航「黄埔军校旧址纪念馆 - 配套地上停车场」 -长洲岛廊桥：搜「长洲岛地上停车场 - 出入口」 💰停车费参考价 8-10 元 / 小时\n2、路线：7-8 分钟 比较稳不太会晕船。；新能源电车也能上哦～不会托底的 🅿️停车攻略(参考我百度地图的图片标识两处哈) -黄埔军校：导航「黄埔军校旧址纪念馆 - 配套地上停车场」 -长洲岛廊桥：搜「长洲岛地上停车场 - 出入口」 💰停车费参考价 8-10 元 / 小时",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -3287,7 +3327,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 10,
         "tips": "1、收费：搜「长洲岛地上停车场 - 出入口」 💰停车费参考价 8-10 元 / 小时\n2、路线：场」 -长洲岛廊桥：搜「长洲岛地上停车场 - 出入口」 💰停车费参考价 8-10 元 / 小时\n3、注意：如果节假日太堵就不建议了哈。",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -3321,7 +3361,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 10,
         "tips": "1、收费：长洲岛都市农业公园 停车10元/8小时 但在园内消费可免停车费 🟨柴声窑烤 来这个营地的目的就是体验窑烤pizza 这是周末限定活动",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -3363,7 +3403,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 10,
         "tips": "1、收费：长洲岛游客服务中心 ✅ 停车费：10元/小时 ✅ 车位相对充足\n2、路线：几分钟就到长洲岛 💰费用：小车15元/辆 班次很密\n3、注意：避免排队 🅿️ 停车攻略 长洲游客中心停车场 下船后直接开去：长洲岛游客服务中心 ✅ 停车费：10元/小时 ✅ 车位相对充足",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -3439,7 +3479,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 3,
         "tips": "1、收费：官方停车场3元/小时\n2、路线：或打车5分钟 🚗自驾导航“余荫山房停车场” 🅿停车费：官方停车场3元/小时",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -3521,7 +3561,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 3,
         "tips": "1、收费：2m以下/65岁以上免票 学生/老人27元） ⏰开放：7:00-17:00（17:00停止入园） 游玩时长：𝟯𝒉 🚗 自驾&停车（带娃必看） • 导航：「莲花山旅游区西门」（离景点最近） • 停车费：3小时内3元/小时\n2、注意：需要收费吗？",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -3790,7 +3830,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 5,
         "tips": "1、收费：广州钢瓶五金制品厂停车场（也可导航更精准：广州货运保信息技术有限公司）5元/小时\n2、路线：充满20分钟可免停2小时） 停车后导航步行：广州动物园-南门（几百米",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -3866,7 +3906,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 10,
         "tips": "1、收费：东山海德公馆停车场 10元/小时 白天封顶50元（优选；碧云商务中心停车场 10元/小时；封顶80元（车位更多）以前都停这个\n2、路线：离动物园门口步行5分钟） 📍碧云商务中心停车场 10元/小时",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -3974,7 +4014,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 10,
         "tips": "1、收费：- 文立方商场停车场（步行5分钟）：💰10元/小时\n2、路线：步行5分钟。；🔹 周边推荐： - 文立方商场停车场（步行5分钟）：💰10元/小时；宏城公园停车场（步行8分钟）：",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -4008,7 +4048,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 5,
         "tips": "1、收费：- 文立方商场停车场（步行5分钟）：💰10元/小时；💰5元/小时\n2、路线：🔹 周边推荐： - 文立方商场停车场（步行5分钟）：💰10元/小时；宏城公园停车场（步行8分钟）：💰5元/小时",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -4255,7 +4295,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 30,
         "tips": "1、收费：- 中华广场停车场（步行约15分钟） - 省人民医院东病区地面停车场（步行约10分钟） 血泪经验总结 🚨 千万别找代停车：门口要价30元的带路人\n2、路线：稍远但可靠的选择： - 中华广场停车场（步行约15分钟） - 省人民医院东病区地面停车场（步行约10分钟） 血泪经验总结 🚨 千万别找代停车：门口要价30元的带路人；东山口站C出口或烈士陵园站C出口步行即到\n3、注意：备用方案（主区域满位时） 若上述车位已满；温馨提示：工作日早晚高峰有限行；越秀区菜园北街 谁动了我的甜甜圈🍩 怎么收费？",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -4498,7 +4538,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 10,
         "tips": "1、收费：就非常顺利地进门有车位 一进闸就有保安大叔过来指挥停车 问了停车费10元/小时（也是很低了）💸 停好车原路走出 去到医院也就3分钟 超方便 应该算最近省医的一个\n2、路线：车位 一进闸就有保安大叔过来指挥停车 问了停车费10元/小时（也是很低了）💸 停好车原路走出 去到医院也就3分钟 超方便 应该算最近省医的一个停车场了吧 保安大叔说平时挺多去医院的在这停车\n3、注意：停车费就有叫比喔我 1 momo 太太太小了",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -4534,7 +4574,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 4,
         "tips": "1、收费：💰4元/15分钟；每场电影每台车免费停车3小时（开映前凭未撕票根的完整电影票登记领取） ③中山三院看病在医院门口保安处扫码领取3小时半价停车优惠券\n2、路线：1⃣️天娱广场停车场： 💰4元/15分钟\n3、注意：现在不知道还有没有 小",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -4572,7 +4612,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 1000,
         "tips": "1、收费：每场电影每台车免费停车3小时（开映前凭未撕票根的完整电影票登记领取） ③中山三院看病在医院门口保安处扫码领取3小时半价停车优惠券；💰8元/30分钟；满1000元免费停4小时；满2000元免费停5小时\n2、路线：每场电影每台车免费停车3小时（开映前凭未撕票根的完整电影票登记领取） ③中山三院看病在医院门口保安处扫码领取3小时半价停车优惠券 2⃣️摩登百货停车场：💰8元/30分钟\n3、注意：现在不知道还有没有 小",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -4636,7 +4676,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 1000,
         "tips": "1、收费：💰8元/30分钟；满1000元免费停4小时；满2000元免费停5小时；💰08:00-22:00 16元/小时 22：00-次日08:00 4元/小时\n2、路线：保安处扫码领取3小时半价停车优惠券 2⃣️摩登百货停车场：💰8元/30分钟；步行至中山三院约200米。\n3、注意：现在不知道还有没有 小",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -4713,7 +4753,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 1000,
         "tips": "1、收费：满1000元免费停4小时；满2000元免费停5小时；💰08:00-22:00 16元/小时 22：00-次日08:00 4元/小时；💰08:00-20:00 6元/30分钟 12小时封顶72元；12元封顶\n2、路线：步行至中山三院约200米。；4⃣️百脑汇科技大厦停车场：💰08:00-20:00 6元/30分钟 12小时封顶72元；；20：00-次日08:00 2元/30分钟\n3、注意：现在不知道还有没有 小",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -4803,7 +4843,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 4,
         "tips": "1、收费：💰08:00-20:00 6元/30分钟 12小时封顶72元；12元封顶；4元/15分钟\n2、路线：4⃣️百脑汇科技大厦停车场：💰08:00-20:00 6元/30分钟 12小时封顶72元；；20：00-次日08:00 2元/30分钟；步行至中山三院约200米。；5⃣️尚品天河停车场：4元/15分钟\n3、注意：现在不知道还有没有 小",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -4871,7 +4911,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 4,
         "tips": "1、收费：分钟 12小时封顶72元；12元封顶；4元/15分钟；8元/30分钟 #岗顶#岗顶停车 #中山三院 #中山三院停车 #广州中山大学附属第三医院 #天\n2、路线：分钟 12小时封顶72元；；20：00-次日08:00 2元/30分钟；步行至中山三院约200米。；5⃣️尚品天河停车场：4元/15分钟\n3、注意：现在不知道还有没有 小",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -4946,7 +4986,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 8,
         "tips": "1、收费：停车的“省钱技巧” 医院停车场8元/小时；停满4小时要32元——可以停到医院对面的“广百百货停车场”\n2、路线：0分钟；10分钟就能拿到（限常规药品）。；步行到门诊楼只要3分钟。\n3、注意：👉 你在南方医院遇到过什么“排队坑”？",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -5063,7 +5103,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 16,
         "tips": "1、收费：收费💰（日间）08：00-19：00 6元/半小时；周边停车基本16元/小时\n2、路线：步行到医院300米左右。",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -5114,7 +5154,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 16,
         "tips": "1、收费：周边停车基本16元/小时；💰08：00-21：00 8元/半小时\n2、路线：步行到医院300米左右。；步行到医院180米。",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -5165,7 +5205,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 4,
         "tips": "1、收费：💰临时停车08：00-22：00 4元/每15分钟；💰08：00-20：00 16元/小时\n2、路线：4⃣️爱群荟景湾地下停车场（图6）：💰临时停车08：00-22：00 4元/每15分钟；22：00-此日08：00 1元/15分钟；步行到医院280米。；步行到医院350米.",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -5320,7 +5360,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 26,
         "tips": "1、收费：停车场白天16元一小时；白天封顶128元；相比起路边26元一小时的停车费\n2、路线：停好车走路过去医院也是8分钟\n3、注意：但是有个好处就是不用排队等取车（民间金融大厦停车场人多的时候取车要半小时；我为了省停车费",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -5384,7 +5424,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 5,
         "tips": "1、收费：5元/小时；不超过15分钟免费；不满15分钟免费\n2、路线：不超过15分钟免费。；不满15分钟免费。",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -5422,7 +5462,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 3,
         "tips": "1、收费：不超过15分钟免费；5元/小时；不满15分钟免费；3元/15分钟；1小时内2元/半小时\n2、路线：不超过15分钟免费。；不满15分钟免费。；4️⃣好信广场地下停车场：3元/15分钟",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -5492,7 +5532,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 6,
         "tips": "1、收费：往前走一点到员村地铁站门口前面这个停车场6块一小时\n2、注意：3块半小时 05-13 堵住 孤独的行者 这里到处都不好停车；堵住 孤独的行者 这里到处都不好停车",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -5566,7 +5606,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 6,
         "tips": "1、收费：步行100米左右穿越一个停车场就能到医院了 🤞 🔺7号小镇创意园停车场收费6元/小时 🔺7号小镇创意园和员岗村很多吃的\n2、路线：直接导航至7号小镇创意园 2.在7号小镇创意园停车场停好车 3.步行100米左右穿越一个停车场就能到医院了 🤞 🔺7号小镇创意园停车场收费6元/小时 🔺7号小镇创意园和员岗村很多吃的\n3、注意：🚲🛵🏍️🚗🚙🚕🚜🚛🚛🚛 高峰期永远在排队进医院停车场 几乎失去了所有的力气和手段 自己摸索了一个迂回的停车攻略 ☝️ 1.往前开不要拐进医院停车场；又不用交停车费 小；附上7号小镇停车场收费标准。",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -5610,7 +5650,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 7.5,
         "tips": "1、收费：3h内7.5元/h；24小时封顶；24小时封顶67.5元\n2、注意：3h后15元/h ❌缺点：周边道路非常堵车❗️ 车位少每次都要排队很久❗️ 基本都是机械车位；朋友 如果是去儿童医院那还是停隔壁眼科医院更方便吧5元/小时不贵走过去也近；停车费一天就封顶了；广州停车费比深圳贵多了！",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -5657,7 +5697,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 5,
         "tips": "1、收费：3h内7.5元/h；3h内5元/h\n2、注意：3h后15元/h ❌缺点：周边道路非常堵车❗️ 车位少每次都要排队很久❗️ 基本都是机械车位；3h后10元/h ❌缺点: 靠近妇幼的道路也是非常拥堵❗️ 工作时间车位还是比较紧张❗️ 真的要吐槽这里电梯每次都要等很久❗️ 但是但是！；朋友 如果是去儿童医院那还是停隔壁眼科医院更方便吧5元/小时不贵走过去也近；停车费一天就封顶了；广州停车费比深圳贵多了！",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -5712,7 +5752,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 12,
         "tips": "1、收费：12元/h 🆓免费： 真免费；注册会员后每月可免费领取3小时停车券（2台手机就是6个小时） 任意消费可获得一小时停车券 周末停车首次进场免费停两小时 消费积分可以再兑换停车券 🔺注意:每天减免3小时封顶❗\n2、路线：步行路线有两条；步行路线是一样的） 但是但是！\n3、注意：朋友 如果是去儿童医院那还是停隔壁眼科医院更方便吧5元/小时不贵走过去也近；停车费一天就封顶了；广州停车费比深圳贵多了！",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -5952,7 +5992,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 16,
         "tips": "1、收费：收费💰（日间）08：00-19：00 6元/半小时；周边停车基本16元/小时\n2、路线：步行到医院300米左右。",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -6003,7 +6043,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 16,
         "tips": "1、收费：周边停车基本16元/小时；💰08：00-21：00 8元/半小时\n2、路线：步行到医院300米左右。；步行到医院180米。",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -6058,7 +6098,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 4,
         "tips": "1、收费：💰临时停车08：00-22：00 4元/每15分钟；💰08：00-20：00 16元/小时\n2、路线：4⃣️爱群荟景湾地下停车场（图6）：💰临时停车08：00-22：00 4元/每15分钟；22：00-此日08：00 1元/15分钟；步行到医院280米。；步行到医院350米.",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -6213,7 +6253,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 2,
         "tips": "1、收费：泺文路地下停车场 2元/小时 ⭐不想排队的可以直接去对面的“泺文路地下停车场”；🚘东院区 2元/小时 新建了停车楼；东西院区有免费的摆渡车\n2、路线：会导致入口处有车辆排队。；一般等10-20分钟。；需要过红绿灯开200米到朝山街路口掉头）。；应该是40分钟一班\n3、注意：会导致入口处有车辆排队。；泺文路地下停车场 2元/小时 ⭐不想排队的可以直接去对面的“泺文路地下停车场”；过了停车高峰期可以再开到医院车库。；排队进北门停车场；；排队到文化西路的齐鲁医院那边去了；排队进北门停车场",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -6338,7 +6378,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 5,
         "tips": "1、收费：128元封顶；夜间5元/小时 车位充足；订房入住免费停；⃣ 全天看诊（早8～晚5） 🌟 华乐大厦地下停车场（步行11分钟） 日间（8-22点）封顶仅64元\n2、路线：馆（步行6分钟） 16元/小时；） 2️⃣ 全天看诊（早8～晚5） 🌟 华乐大厦地下停车场（步行11分钟） 日间（8-22点）封顶仅64元\n3、注意：但车位紧张；上午8-10点最堵",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -6406,7 +6446,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 5,
         "tips": "1、收费：越禧府地下停车场（步行5分钟） 16元/小时；128元封顶 位置多；128元封顶；夜间5元/小时 车位充足；订房入住免费停\n2、路线：点 所有外部停车场步行都要过天桥；闭眼选 1️⃣ 半天复查（≤4小时） ✔️ 越禧府地下停车场（步行5分钟） 16元/小时；✔️ 华泰宾馆（步行6分钟） 16元/小时",
         "source": "编辑整理（公开信息）",
         "confidence": "low",
@@ -6599,7 +6639,7 @@
         "night_flat": null,
         "open_hours": null,
         "payment": [],
-        "min_price_hour": null,
+        "min_price_hour": 16,
         "tips": "1、收费：15分钟免费；小区共享车位、区政府周边夜间免费泊位 ● 广医附一院 沿江院区院内16元/小时\n2、路线：番禺何贤纪念医院 院内收费：15分钟免费",
         "source": "编辑整理（公开信息）",
         "confidence": "low",

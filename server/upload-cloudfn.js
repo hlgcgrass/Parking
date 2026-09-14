@@ -63,7 +63,10 @@ function run(cmd, args, { timeoutMs = 120000, input } = {}) {
     const child = spawn(spawnCmd, spawnArgs, {
       cwd: IDE_DIR,
       env: process.env,
-      windowsHide: true
+      windowsHide: true,
+      // cmd.exe 接收的是完整命令行；关闭 Node 默认的 Windows 参数二次转义，
+      // 否则含中文目录的 cli.bat 路径会被传成带反斜杠的字面量。
+      windowsVerbatimArguments: isScript
     });
     let out = '';
     const timer = setTimeout(() => child.kill(), timeoutMs);

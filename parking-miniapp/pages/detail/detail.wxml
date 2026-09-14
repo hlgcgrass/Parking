@@ -67,9 +67,9 @@
           </view>
 
           <view class="col" style="align-items:flex-end;margin-left:24rpx">
-            <view wx:if="{{item.min_price_hour}}">
-              <text class="price price--md">¥{{item.min_price_hour}}</text>
-              <text class="price__unit">/h</text>
+            <view wx:if="{{item._hasPrice}}">
+              <text class="price price--md">¥{{item._priceValue}}</text>
+              <text wx:if="{{item._priceUnit}}" class="price__unit">/{{item._priceUnit}}</text>
             </view>
             <text wx:else class="fs-tag t4">价格待补充</text>
           </view>
@@ -119,7 +119,7 @@
         <view wx:else class="fs-caption t4 mt-md">暂无结构化收费规则，欢迎拍照补充</view>
 
         <!-- 费用试算 -->
-        <view class="calc mt-md" wx:if="{{item.fee_rules && item.fee_rules.length && item.min_price_hour}}">
+        <view class="calc mt-md" wx:if="{{item.fee_rules && item.fee_rules.length && item._canCalculate}}">
           <view class="fs-caption t3">停车费试算</view>
           <scroll-view scroll-x class="mt-sm" enable-flex>
             <view class="chips">

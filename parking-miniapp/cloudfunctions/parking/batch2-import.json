@@ -178,7 +178,8 @@
       "coordinate_verified_at": "2026-09-13T15:26:21.298Z",
       "entrance_verified": null,
       "parking_count": 4,
-      "min_price": 10
+      "min_price": 10,
+      "min_price_display": "¥10/h"
     },
     {
       "name": "陈家祠",
@@ -595,7 +596,8 @@
       "coordinate_verified_at": "2026-09-13T15:26:21.396Z",
       "entrance_verified": null,
       "parking_count": 7,
-      "min_price": 4
+      "min_price": 4,
+      "min_price_display": "¥4/h起"
     },
     {
       "name": "越秀公园",
@@ -727,7 +729,8 @@
       "coordinate_verified_at": "2026-09-13T15:26:21.396Z",
       "entrance_verified": null,
       "parking_count": 1,
-      "min_price": 5
+      "min_price": 5,
+      "min_price_display": "¥5/h"
     },
     {
       "name": "花城广场",
@@ -872,7 +875,8 @@
       "coordinate_verified_at": "2026-09-13T15:26:21.396Z",
       "entrance_verified": null,
       "parking_count": 3,
-      "min_price": 6.4
+      "min_price": 6.4,
+      "min_price_display": "¥6.4/h起"
     }
   ]
 }

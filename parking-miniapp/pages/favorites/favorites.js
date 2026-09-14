@@ -1,6 +1,7 @@
 const api = require('../../utils/api.js');
 const user = require('../../utils/user.js');
 const detailEntry = require('../../utils/detail-entry.js');
+const { displayPrice } = require('../../utils/fee.js');
 
 Page({
   data: {
@@ -21,7 +22,18 @@ Page({
   load() {
     this.setData({ loading: true });
     api.getFavorites(user.getUserId())
-      .then(r => this.setData({ list: r.list || [], loading: false }))
+      .then(r => {
+        const list = (r.list || []).map(item => {
+          const price = displayPrice(item.fee_rules, item.min_price_hour);
+          return {
+            ...item,
+            _hasPrice: !!price,
+            _priceValue: price ? price.value : '',
+            _priceUnit: price ? price.unit : ''
+          };
+        });
+        this.setData({ list, loading: false });
+      })
       .catch(() => {
         this.setData({ loading: false });
         wx.showToast({ title: '加载失败', icon: 'none' });

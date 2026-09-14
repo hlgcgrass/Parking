@@ -19,9 +19,9 @@
           <view class="fs-caption t3 mt-sm">{{item.place_name}} · {{item.type}}</view>
         </view>
         <view class="col" style="align-items:flex-end;margin-left:24rpx">
-          <view wx:if="{{item.min_price_hour}}">
-            <text class="price price--md">¥{{item.min_price_hour}}</text>
-            <text class="price__unit">/h</text>
+          <view wx:if="{{item._hasPrice}}">
+            <text class="price price--md">¥{{item._priceValue}}</text>
+            <text wx:if="{{item._priceUnit}}" class="price__unit">/{{item._priceUnit}}</text>
           </view>
           <text wx:else class="fs-tag t4">价格待补充</text>
         </view>

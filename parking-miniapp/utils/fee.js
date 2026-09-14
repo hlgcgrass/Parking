@@ -66,6 +66,90 @@ function fmt(n) {
 }
 
 /**
+ * 为停车场卡片提供可直接展示的价格。
+ * min_price_hour 只是便于排序的小时价，并不是所有车场都有这个字段；
+ * 例如“10 元/次”和“5 元/30 分钟”都应该优先按原收费单位展示。
+ */
+function displayPrice(rules, minPriceHour) {
+  const list = Array.isArray(rules) ? rules : [];
+  const priced = list.filter(rule => {
+    const price = Number(rule && rule.price);
+    return rule && Number.isFinite(price) && price >= 0 &&
+      (rule.rule_type === 'first' || rule.rule_type === 'normal' || rule.rule_type === 'night');
+  });
+  const paid = priced.filter(item => Number(item.price) > 0);
+  const rule = paid.find(item => item.rule_type === 'first') || paid[0] || priced[0];
+
+  if (rule) {
+    const price = Number(rule.price);
+    if (price === 0) {
+      return { hasPrice: true, value: '免费', unit: '', canCalculate: false };
+    }
+    if ((rule.unit === 'minute' || rule.unit === 'time') && Number(rule.unit_minutes) > 0) {
+      return {
+        hasPrice: true,
+        value: fmt(price),
+        unit: `${Number(rule.unit_minutes)}分钟`,
+        hourlyValue: fmt(price * 60 / Number(rule.unit_minutes)),
+        canCalculate: true
+      };
+    }
+    if (rule.unit === 'time') {
+      return { hasPrice: true, value: fmt(price), unit: '次', canCalculate: false };
+    }
+    if (rule.unit === 'day') {
+      return { hasPrice: true, value: fmt(price), unit: '天', canCalculate: false };
+    }
+    if (rule.unit === 'month') {
+      return { hasPrice: true, value: fmt(price), unit: '月', canCalculate: false };
+    }
+    return {
+      hasPrice: true,
+      value: fmt(price),
+      unit: '小时',
+      hourlyValue: fmt(price),
+      canCalculate: true
+    };
+  }
+
+  const hourly = minPriceHour == null || minPriceHour === '' ? null : Number(minPriceHour);
+  if (hourly != null && Number.isFinite(hourly) && hourly >= 0) {
+    return hourly === 0
+      ? { hasPrice: true, value: '免费', unit: '', canCalculate: false }
+      : { hasPrice: true, value: fmt(hourly), unit: '小时', hourlyValue: fmt(hourly), canCalculate: true };
+  }
+
+  const cap = list.find(item => item && item.rule_type === 'cap' && Number(item.price) >= 0);
+  if (cap) {
+    return { hasPrice: true, value: fmt(Number(cap.price)), unit: '封顶', canCalculate: false };
+  }
+  return null;
+}
+
+// 地点列表没有展开停车场明细，汇总所属停车场的最低小时价。
+function placeDisplayPrice(parkings, minPrice) {
+  const values = (Array.isArray(parkings) ? parkings : [])
+    .map(item => displayPrice(item && item.fee_rules, item && item.min_price_hour))
+    .map(item => item && item.hourlyValue)
+    .filter(value => value != null && Number.isFinite(Number(value)) && Number(value) >= 0)
+    .map(Number);
+  if (!values.length) {
+    const fallback = minPrice == null || minPrice === '' ? null : Number(minPrice);
+    return fallback != null && Number.isFinite(fallback) && fallback >= 0
+      ? { hasPrice: true, value: fmt(fallback), unit: 'h', suffix: '' }
+      : null;
+  }
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  return {
+    hasPrice: true,
+    value: fmt(min),
+    unit: 'h',
+    suffix: max > min ? '起' : ''
+  };
+}
+
+/**
  * 把 fee_rules 整理成一行人类可读的收费说明
  */
 function describeFee(rules) {
@@ -76,15 +160,21 @@ function describeFee(rules) {
 
   const parts = [];
   if (first) {
-    const unit = first.unit_minutes || 60;
-    parts.push(`${first.price} 元/${unit >= 60 ? unit / 60 + '小时' : unit + '分钟'}`);
+    const unit = first.unit === 'month' ? '月' : (() => {
+      const minutes = first.unit_minutes || 60;
+      return minutes >= 60 ? minutes / 60 + '小时' : minutes + '分钟';
+    })();
+    parts.push(`${first.price} 元/${unit}`);
   }
   if (normal) {
-    const unit = normal.unit_minutes || 60;
-    parts.push(`后续 ${normal.price} 元/${unit >= 60 ? unit / 60 + '小时' : unit + '分钟'}`);
+    const unit = normal.unit === 'month' ? '月' : (() => {
+      const minutes = normal.unit_minutes || 60;
+      return minutes >= 60 ? minutes / 60 + '小时' : minutes + '分钟';
+    })();
+    parts.push(`后续 ${normal.price} 元/${unit}`);
   }
   if (cap) parts.push(`封顶 ${fmt(cap.price)} 元`);
   return parts.length ? parts.join('，') : '收费规则待补充';
 }
 
-module.exports = { calcFee, describeFee };
+module.exports = { calcFee, describeFee, displayPrice, placeDisplayPrice };

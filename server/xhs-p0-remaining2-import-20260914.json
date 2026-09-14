@@ -1,0 +1,1111 @@
+{
+  "meta": {
+    "city": "广州",
+    "city_code": "440100",
+    "exported_at": "2026-09-14T06:05:02.872Z",
+    "places": 15,
+    "parkings": 11,
+    "fee_rules": 17,
+    "source": "小红书最多收藏排序前10条笔记的保守整理"
+  },
+  "cities": [
+    {
+      "id": 1,
+      "name": "广州",
+      "code": "440100",
+      "pinyin": "guangzhou",
+      "province": "广东省",
+      "lng": 113.2644,
+      "lat": 23.1291,
+      "hot_level": 5
+    }
+  ],
+  "categories": [
+    {
+      "name": "景点",
+      "count": 22
+    },
+    {
+      "name": "商圈",
+      "count": 19
+    },
+    {
+      "name": "医院",
+      "count": 13
+    }
+  ],
+  "places": [
+    {
+      "id": 54,
+      "name": "广州中医药大学第一附属医院",
+      "category": "医院",
+      "address": "广州市白云区机场路16号",
+      "lng": 113.27,
+      "lat": 23.16,
+      "heat": 80,
+      "summary": "白云机场路三甲中医院，院内车位较多。",
+      "tags": [
+        "三甲中医",
+        "机场路",
+        "停车优惠",
+        "地铁2号线三元里"
+      ],
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "search_text": "广州中医药大学第一附属医院 广州市白云区机场路16号 三甲中医 机场路 停车优惠 地铁2号线三元里",
+      "view_count": 0,
+      "updated_at": "2026-09-14T06:05:02.851Z",
+      "district": "白云区",
+      "city_code": "440100",
+      "parking_count": 0,
+      "min_price": 16,
+      "min_price_display": "¥16/h"
+    },
+    {
+      "id": 45,
+      "name": "南方医科大学南方医院",
+      "category": "医院",
+      "address": "广州市白云区广州大道北1838号",
+      "lng": 113.32,
+      "lat": 23.19,
+      "heat": 86,
+      "summary": "白云区大型三甲综合医院，院内车位相对充足。",
+      "tags": [
+        "三甲",
+        "综合",
+        "整形强",
+        "地铁3号线京溪南方医院"
+      ],
+      "area_tips": "该地点已整理1个停车点",
+      "search_text": "南方医科大学南方医院 广州市白云区广州大道北1838号 三甲 综合 整形强 地铁3号线京溪南方医院",
+      "view_count": 0,
+      "updated_at": "2026-09-14T06:05:02.854Z",
+      "district": "白云区",
+      "city_code": "440100",
+      "parking_count": 1,
+      "min_price": 8,
+      "min_price_display": "¥8/h"
+    },
+    {
+      "id": 48,
+      "name": "中山大学附属第六医院",
+      "category": "医院",
+      "address": "广州市天河区员村二横路26号",
+      "lng": 113.37,
+      "lat": 23.11,
+      "heat": 75,
+      "summary": "以胃肠肛肠专科闻名的天河员村三甲医院。",
+      "tags": [
+        "三甲",
+        "胃肠/肛肠强",
+        "员村",
+        "地铁5号线员村"
+      ],
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "search_text": "中山大学附属第六医院 广州市天河区员村二横路26号 三甲 胃肠/肛肠强 员村 地铁5号线员村",
+      "view_count": 0,
+      "updated_at": "2026-09-14T06:05:02.855Z",
+      "district": "天河区",
+      "city_code": "440100",
+      "parking_count": 0,
+      "min_price": 6,
+      "min_price_display": "¥6/h"
+    },
+    {
+      "id": 44,
+      "name": "中山大学附属第三医院",
+      "category": "医院",
+      "address": "广州市天河区天河路600号（天河院区）",
+      "lng": 113.338,
+      "lat": 23.14,
+      "heat": 85,
+      "summary": "天河岗顶三甲综合医院，院内车位紧张。",
+      "tags": [
+        "三甲",
+        "综合",
+        "岗顶",
+        "地铁3号线岗顶"
+      ],
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "search_text": "中山大学附属第三医院 广州市天河区天河路600号（天河院区） 三甲 综合 岗顶 地铁3号线岗顶",
+      "view_count": 0,
+      "updated_at": "2026-09-14T06:05:02.855Z",
+      "district": "天河区",
+      "city_code": "440100",
+      "parking_count": 0,
+      "min_price": 4,
+      "min_price_display": "¥4/h起"
+    },
+    {
+      "id": 42,
+      "name": "中山大学附属第一医院",
+      "category": "医院",
+      "address": "广州市越秀区中山二路58号",
+      "lng": 113.29,
+      "lat": 23.125,
+      "heat": 92,
+      "summary": "华南综合实力顶尖综合医院，停车位极度紧张。",
+      "tags": [
+        "三甲",
+        "综合",
+        "停车极难",
+        "地铁1号线烈士陵园"
+      ],
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "search_text": "中山大学附属第一医院 广州市越秀区中山二路58号 三甲 综合 停车极难 地铁1号线烈士陵园",
+      "view_count": 0,
+      "updated_at": "2026-09-14T06:05:02.858Z",
+      "district": "越秀区",
+      "city_code": "440100",
+      "parking_count": 0,
+      "min_price": 30,
+      "min_price_display": "¥30/h"
+    },
+    {
+      "id": 47,
+      "name": "中山大学孙逸仙纪念医院（中山二院）",
+      "category": "医院",
+      "address": "广州市越秀区沿江西路107号（北院区）",
+      "lng": 113.255,
+      "lat": 23.11,
+      "heat": 82,
+      "summary": "中国最古老西医院，北院区位于沿江西路。",
+      "tags": [
+        "三甲",
+        "综合",
+        "老院区",
+        "地铁2号线海珠广场"
+      ],
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "search_text": "中山大学孙逸仙纪念医院（中山二院） 广州市越秀区沿江西路107号（北院区） 三甲 综合 老院区 地铁2号线海珠广场",
+      "view_count": 0,
+      "updated_at": "2026-09-14T06:05:02.858Z",
+      "district": "越秀区",
+      "city_code": "440100",
+      "parking_count": 0,
+      "min_price": 3,
+      "min_price_display": "¥3/h起"
+    },
+    {
+      "id": 53,
+      "name": "中山大学肿瘤防治中心",
+      "category": "医院",
+      "address": "广州市越秀区东风东路651号（越秀院区）",
+      "lng": 113.3,
+      "lat": 23.135,
+      "heat": 84,
+      "summary": "华南肿瘤防治龙头，越秀老城区院区车位极度紧张。",
+      "tags": [
+        "三甲专科",
+        "肿瘤",
+        "停车极难",
+        "地铁5/6号线区庄"
+      ],
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "search_text": "中山大学肿瘤防治中心 广州市越秀区东风东路651号（越秀院区） 三甲专科 肿瘤 停车极难 地铁5/6号线区庄",
+      "view_count": 0,
+      "updated_at": "2026-09-14T06:05:02.859Z",
+      "district": "越秀区",
+      "city_code": "440100",
+      "parking_count": 0,
+      "min_price": 5,
+      "min_price_display": "¥5/h"
+    },
+    {
+      "id": 7,
+      "name": "体育西路商圈",
+      "category": "商圈",
+      "address": "广州市天河区体育西路",
+      "lng": 113.326,
+      "lat": 23.133,
+      "heat": 80,
+      "summary": "天河CBD核心轴线，写字楼与商业密集，停车多为甲级写字楼定价。",
+      "tags": [
+        "天河CBD",
+        "地铁1/3号线",
+        "写字楼",
+        "美食"
+      ],
+      "area_tips": "该地点已整理5个停车点。步行与入口：1⃣️2⃣️、宏发大厦停车场（近万菱汇、天河南二路）：15分钟内免费；08:00-22:00 4元/15分钟；；22:00-次日08:00 4元/15分钟；1⃣️3⃣️、创展中心（近正佳广场、万菱汇、天河南二路）：15分钟内免费；汇、天河南二路）：15分钟内免费；1⃣️4⃣️、财富广场停车场（近广州酒家、体育中心、时尚天河）：08:00-22:00 4元/15分钟；22:00-次日08:00 1元/15分钟；️、财富广场停车场（近广州酒家、体育中心、时尚天河）：08:00-22:00 4元/15分钟；22:00-次日08:00 1元/15分钟；00 4元/15分钟；22:00-次日08:00 1元/15分钟；1⃣️6⃣️、佳兆业广场停车场：08:00-22:00 首15分钟免费；4元/15分钟。停车注意：1⃣️4⃣️、 堵的要死；；抄牌😂 1 🐦🐤🐣🐥🐔🐓 体育西附近的路边停车为什么是人工来的；堵的要死；1⃣️5⃣️、 堵的要死；；抄牌😂 1 🐦🐤🐣🐥🐔🐓 体育西附近的路边停车为什么是人工来的；堵的要死；1⃣️6⃣️、佳兆业广场停车场：08: 堵的要死；；抄牌😂 1 🐦🐤🐣🐥🐔🐓 体育西附近的路边停车为什么是人工来的；堵的要死；抄牌😂 1 🐦🐤🐣🐥🐔🐓 体育西附近的路边停车为什么是人工来的；堵的要死",
+      "search_text": "体育西路商圈 广州市天河区体育西路 天河CBD 地铁1/3号线 写字楼 美食",
+      "view_count": 0,
+      "updated_at": "2026-09-14T06:05:02.862Z",
+      "district": "天河区",
+      "city_code": "440100",
+      "parking_count": 5,
+      "min_price": 20,
+      "min_price_display": "¥20/h"
+    },
+    {
+      "id": 50,
+      "name": "广州市妇女儿童医疗中心（珠江新城院区）",
+      "category": "医院",
+      "address": "广州市天河区金穗路9号",
+      "lng": 113.33,
+      "lat": 23.12,
+      "heat": 80,
+      "summary": "广州主要妇女儿童三甲医疗中心，珠江新城院区。",
+      "tags": [
+        "三甲妇儿",
+        "珠江新城",
+        "停车难",
+        "地铁5号线猎德"
+      ],
+      "area_tips": "该地点已整理1个停车点。停车注意：免去被抄牌的风险。；不给停了吗；没钱交停车费不要学别人买车；管制 1 橙子爱吃桃",
+      "search_text": "广州市妇女儿童医疗中心（珠江新城院区） 广州市天河区金穗路9号 三甲妇儿 珠江新城 停车难 地铁5号线猎德",
+      "view_count": 0,
+      "updated_at": "2026-09-14T06:05:02.863Z",
+      "district": "天河区",
+      "city_code": "440100",
+      "parking_count": 1,
+      "min_price": 5,
+      "min_price_display": "¥5/h起"
+    },
+    {
+      "id": 15,
+      "name": "番禺万博",
+      "category": "商圈",
+      "address": "广州市番禺区汉溪大道东万博商务区",
+      "lng": 113.36,
+      "lat": 23,
+      "heat": 85,
+      "summary": "番禺新兴商务商业中心，地下环路串联多 mall，停车友好且便宜。",
+      "tags": [
+        "番禺CBD",
+        "地铁7/18号线",
+        "天河城/四海城/万达"
+      ],
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "search_text": "番禺万博 广州市番禺区汉溪大道东万博商务区 番禺CBD 地铁7/18号线 天河城/四海城/万达",
+      "view_count": 0,
+      "updated_at": "2026-09-14T06:05:02.864Z",
+      "district": "番禺区",
+      "city_code": "440100",
+      "parking_count": 0,
+      "min_price": 2.5,
+      "min_price_display": "¥2.5/h"
+    },
+    {
+      "id": 10,
+      "name": "江南西",
+      "category": "商圈",
+      "address": "广州市海珠区江南西路",
+      "lng": 113.272,
+      "lat": 23.108,
+      "heat": 80,
+      "summary": "海珠区人气商圈，餐饮与小店密集，停车费整体偏低。",
+      "tags": [
+        "海珠",
+        "地铁2号线",
+        "美食",
+        "年轻人"
+      ],
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "search_text": "江南西 广州市海珠区江南西路 海珠 地铁2号线 美食 年轻人",
+      "view_count": 0,
+      "updated_at": "2026-09-14T06:05:02.866Z",
+      "district": "海珠区",
+      "city_code": "440100",
+      "parking_count": 0,
+      "min_price": 2.5,
+      "min_price_display": "¥2.5/h"
+    },
+    {
+      "id": 111,
+      "name": "黄埔大沙地",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 0,
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "updated_at": "2026-09-14T06:05:02.869Z"
+    },
+    {
+      "id": 112,
+      "name": "岗顶",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 1,
+      "area_tips": "该地点已整理1个停车点。步行与入口：只是把“半小时”拆成“15分钟”算而已啦🫢 刷到好几个帖子说涨价了 本天河打工人火速核实—— ❌不是涨价！；只是计费颗粒度变细了（半小时→15分钟） 总价一分没多收！；📍天河路299号·天河体育中心停车场 🕒新规速览（穗发改规字【2026】6号）： ✅前15分钟免费（老规矩没变） ✅白天7:30-21:30： 前3小时👉1.25元/15分钟（=5元/小时） 超3小时👉2.5元/15分钟（=10元/小时） ✅夜间21:30-次日7:30： 0.5元/15分钟；你停5分钟也收半小时钱 🔹现在按15分钟计费",
+      "updated_at": "2026-09-14T06:05:02.871Z"
+    },
+    {
+      "id": 113,
+      "name": "五羊新城",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 2,
+      "area_tips": "该地点已整理2个停车点。步行与入口：但费用便宜 2.APM时代国际停车场——6元/小时【图2】 停好车走路几分钟；但费用便宜 2.APM时代国际停车场——6元/小时【图2】 停好车走路几分钟就到壹马 天马 APM。停车注意：收费也是和牌子一样的费用 misscc 你好啊",
+      "updated_at": "2026-09-14T06:05:02.872Z"
+    },
+    {
+      "id": 114,
+      "name": "琶洲",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 1,
+      "area_tips": "该地点已整理1个停车点",
+      "updated_at": "2026-09-14T06:05:02.872Z"
+    }
+  ],
+  "parkingsByPlace": {
+    "7": [
+      {
+        "id": 1002,
+        "name": "宏发大厦停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：15分钟内免费\n2、路线：1⃣️2⃣️、宏发大厦停车场（近万菱汇、天河南二路）：15分钟内免费；08:00-22:00 4元/15分钟；；22:00-次日08:00 4元/15分钟；1⃣️3⃣️、创展中心（近正佳广场、万菱汇、天河南二路）：15分钟内免费\n3、注意：1⃣️4⃣️、 堵的要死；；抄牌😂 1 🐦🐤🐣🐥🐔🐓 体育西附近的路边停车为什么是人工来的；堵的要死",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6520e7cc000000001d017b0d?xsec_token=ABYDKI5LSY8SFHah611LsgkDQCjjwkFbz_CIPKh0yRwFw=&xsec_source=",
+            "source_title": "体育西周边停车攻略3⃣️（共三篇）",
+            "source_author": "体育西周边停车攻略3⃣️（共三篇） 广州停车攻略",
+            "source_published_at": "2023-10-29",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p0-remaining2-20260914/20260914T051911457Z-广州 体育西路 停车攻略-note-01-6520e7cc000000001d017b0d.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1003,
+        "name": "财富广场停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：15分钟内免费；、财富广场停车场（近广州酒家、体育中心、时尚天河）：08:00-22:00 4元/15分钟\n2、路线：汇、天河南二路）：15分钟内免费；1⃣️4⃣️、财富广场停车场（近广州酒家、体育中心、时尚天河）：08:00-22:00 4元/15分钟；22:00-次日08:00 1元/15分钟\n3、注意：1⃣️5⃣️、 堵的要死；；抄牌😂 1 🐦🐤🐣🐥🐔🐓 体育西附近的路边停车为什么是人工来的；堵的要死",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6520e7cc000000001d017b0d?xsec_token=ABYDKI5LSY8SFHah611LsgkDQCjjwkFbz_CIPKh0yRwFw=&xsec_source=",
+            "source_title": "体育西周边停车攻略3⃣️（共三篇）",
+            "source_author": "体育西周边停车攻略3⃣️（共三篇） 广州停车攻略",
+            "source_published_at": "2023-10-29",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p0-remaining2-20260914/20260914T051911457Z-广州 体育西路 停车攻略-note-01-6520e7cc000000001d017b0d.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 4,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "、财富广场停车场（近广州酒家、体育中心、时尚天河）：08:00-22:00 4元/15分钟",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1004,
+        "name": "丰兴广场停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：、财富广场停车场（近广州酒家、体育中心、时尚天河）：08:00-22:00 4元/15分钟；10元/小时\n2、路线：️、财富广场停车场（近广州酒家、体育中心、时尚天河）：08:00-22:00 4元/15分钟；22:00-次日08:00 1元/15分钟\n3、注意：1⃣️6⃣️、佳兆业广场停车场：08: 堵的要死；；抄牌😂 1 🐦🐤🐣🐥🐔🐓 体育西附近的路边停车为什么是人工来的；堵的要死",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6520e7cc000000001d017b0d?xsec_token=ABYDKI5LSY8SFHah611LsgkDQCjjwkFbz_CIPKh0yRwFw=&xsec_source=",
+            "source_title": "体育西周边停车攻略3⃣️（共三篇）",
+            "source_author": "体育西周边停车攻略3⃣️（共三篇） 广州停车攻略",
+            "source_published_at": "2023-10-29",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p0-remaining2-20260914/20260914T051911457Z-广州 体育西路 停车攻略-note-01-6520e7cc000000001d017b0d.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 4,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "、财富广场停车场（近广州酒家、体育中心、时尚天河）：08:00-22:00 4元/15分钟",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "10元/小时",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1005,
+        "name": "佳兆业广场停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：10元/小时；08:00-22:00 首15分钟免费；00-次日08:00 首30分钟免费\n2、路线：00 4元/15分钟；22:00-次日08:00 1元/15分钟；1⃣️6⃣️、佳兆业广场停车场：08:00-22:00 首15分钟免费；4元/15分钟\n3、注意：抄牌😂 1 🐦🐤🐣🐥🐔🐓 体育西附近的路边停车为什么是人工来的；堵的要死",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6520e7cc000000001d017b0d?xsec_token=ABYDKI5LSY8SFHah611LsgkDQCjjwkFbz_CIPKh0yRwFw=&xsec_source=",
+            "source_title": "体育西周边停车攻略3⃣️（共三篇）",
+            "source_author": "体育西周边停车攻略3⃣️（共三篇） 广州停车攻略",
+            "source_published_at": "2023-10-29",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p0-remaining2-20260914/20260914T051911457Z-广州 体育西路 停车攻略-note-01-6520e7cc000000001d017b0d.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "10元/小时",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1006,
+        "name": "天河路299号·天河体育中心停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：天河路299号·天河体育中心停车场 🕒新规速览（穗发改规字【2026】6号）： ✅前15分钟免费（老规矩没变） ✅白天7:30-21:30： 前3小时👉；天河路299号·天河体育中心停车场 🕒新规速览（穗发改规字【2026】6号）： ✅前15分钟免费（老规矩没变） ✅白天7:30-21:30： 前3小时👉1.25元/15分钟（=5元/小时） 超3小时👉；封顶10元 ✅24小时最高35元（和之前完全一致） 划重点✍\n2、路线：只是把“半小时”拆成“15分钟”算而已啦🫢 刷到好几个帖子说涨价了 本天河打工人火速核实—— ❌不是涨价！；只是计费颗粒度变细了（半小时→15分钟） 总价一分没多收！；📍天河路299号·天河体育中心停车场 🕒新规速览（穗发改规字【2026】6号）： ✅前15分钟免费（老规矩没变） ✅白天7:30-21:30： 前3小时👉1.25元/15分钟（=5元/小时） 超3小时👉2.5元/15分钟（=10元/小时） ✅夜间21:30-次日7:30： 0.5元/15分钟；你停5分钟也收半小时钱 🔹现在按15分钟计费",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": true,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a916cc50000000021025385?xsec_token=ABTaIeN5tFPWY1JW8noMPakO7rCnY8_VjMztnA2rTT8qE=&xsec_source=",
+            "source_title": "天河体育中心停车收费方式变了",
+            "source_author": "天河体育中心停车收费方式变了 广州托利斯",
+            "source_published_at": "08-28",
+            "rank": 7,
+            "raw_file": "server/xhs-raw/p0-remaining2-20260914/20260914T051911457Z-广州 体育西路 停车攻略-note-07-6a916cc50000000021025385.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 5,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "天河路299号·天河体育中心停车场 🕒新规速览（穗发改规字【2026】6号）： ✅前15分钟免费（老规矩没变） ✅白天7:30-21:30： 前3小时👉1.25元/15分钟（=5元/小时） 超3小时👉",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 35,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "封顶10元 ✅24小时最高35元（和之前完全一致） 划重点✍",
+            "confidence": "low",
+            "priority": 100
+          }
+        ]
+      }
+    ],
+    "45": [
+      {
+        "id": 1001,
+        "name": "新外科大楼住院部有三层停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：在网上查了一圈 大多说京溪南方医院的停车费是20元/天 住院免停车费 然鹅 大漏特漏…… 实地考察结果 ： 住院 并不会免费 新外科大楼住院；在网上查了一圈 大多说京溪南方医院的停车费是20元/天 住院免停车费 然鹅 大漏特漏…… 实地考察结果 ： 住院 并不会免费 新外科大楼住院部有三层停车场 45元/天 我们停了4天6个多小时 付了215元 大概5元；查了一圈 大多说京溪南方医院的停车费是20元/天 住院免停车费 然鹅 大漏特漏…… 实地考察结果 ： 住院 并不会免费 新外科大楼住院部有三层停车场 45元/天 我们停了4天6个多小时 付了215元 大概5元/小时 以上 希望能帮到有需要的小伙伴\n2、实付记录：在网上查了一圈 大多说京溪南方医院的停车费是20元/天 住院免停车费 然鹅 大漏特漏…… 实地考察结果 ： 住院 并不会免费 新外科大楼住院部有三层停车场 45元/天 我们停了4天6个多小时 付了215元 大概5元；查了一圈 大多说京溪南方医院的停车费是20元/天 住院免停车费 然鹅 大漏特漏…… 实地考察结果 ： 住院 并不会免费 新外科大楼住院部有三层停车场 45元/天 我们停了4天6个多小时 付了215元 大概5元/小时 以上 希望能帮到有需要的小伙伴；0元/天 住院免停车费 然鹅 大漏特漏…… 实地考察结果 ： 住院 并不会免费 新外科大楼住院部有三层停车场 45元/天 我们停了4天6个多小时 付了215元 大概5元/小时 以上 希望能帮到有需要的小伙伴 #孕期；住院 并不会免费 新外科大楼住院部有三层停车场 45元/天 我们停了4天6个多小时 付了215元 大概5元/小时 以上 希望能帮到有需要的小伙伴 #孕期",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": true,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/644cd693000000001300410b?xsec_token=ABzTYuCIMmPiglQWJptYAtfqUZR3OoK-dF0cJACyFHjwE=&xsec_source=",
+            "source_title": "孕27W+ | 产前探京溪南方医院停车费",
+            "source_author": "孕27W+ | 产前探京溪南方医院停车费 球宝妈妈",
+            "source_published_at": "2023-04-29",
+            "rank": 8,
+            "raw_file": "server/xhs-raw/p0-remaining2-20260914/20260914T045552134Z-广州 南方医科大学南方医院 停车攻略-note-08-644cd693000000001300410b.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 20,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "在网上查了一圈 大多说京溪南方医院的停车费是20元/天 住院免停车费 然鹅 大漏特漏…… 实地考察结果 ： 住院 并不会免费 新外科大楼住院",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 5,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "在网上查了一圈 大多说京溪南方医院的停车费是20元/天 住院免停车费 然鹅 大漏特漏…… 实地考察结果 ： 住院 并不会免费 新外科大楼住院部有三层停车场 45元/天 我们停了4天6个多小时 付了215元 大概5元",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 5,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "查了一圈 大多说京溪南方医院的停车费是20元/天 住院免停车费 然鹅 大漏特漏…… 实地考察结果 ： 住院 并不会免费 新外科大楼住院部有三层停车场 45元/天 我们停了4天6个多小时 付了215元 大概5元/小时 以上 希望能帮到有需要的小伙伴",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "50": [
+      {
+        "id": 1007,
+        "name": "二沙岛体育公园停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：一天封顶45元\n2、注意：免去被抄牌的风险。；不给停了吗；没钱交停车费不要学别人买车；管制 1 橙子爱吃桃",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/686549b1000000000d0180bf?xsec_token=AB-zbzONTXBZ_WJMR0BMWppBlHTJJU5y-tZNuU3EafhpQ=&xsec_source=",
+            "source_title": "目前已取消",
+            "source_author": "目前已取消 东山 RUNNER",
+            "source_published_at": "06-29",
+            "rank": 10,
+            "raw_file": "server/xhs-raw/p0-remaining2-20260914/20260914T052259013Z-广州 珠江新城 停车攻略-note-10-686549b1000000000d0180bf.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 45,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "一天封顶45元",
+            "confidence": "low",
+            "priority": 100
+          }
+        ]
+      }
+    ],
+    "112": [
+      {
+        "id": 1008,
+        "name": "天河路299号·天河体育中心停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：天河路299号·天河体育中心停车场 🕒新规速览（穗发改规字【2026】6号）： ✅前15分钟免费（老规矩没变） ✅白天7:30-21:30： 前3小时👉；天河路299号·天河体育中心停车场 🕒新规速览（穗发改规字【2026】6号）： ✅前15分钟免费（老规矩没变） ✅白天7:30-21:30： 前3小时👉1.25元/15分钟（=5元/小时） 超3小时👉；封顶10元 ✅24小时最高35元（和之前完全一致） 划重点✍\n2、路线：只是把“半小时”拆成“15分钟”算而已啦🫢 刷到好几个帖子说涨价了 本天河打工人火速核实—— ❌不是涨价！；只是计费颗粒度变细了（半小时→15分钟） 总价一分没多收！；📍天河路299号·天河体育中心停车场 🕒新规速览（穗发改规字【2026】6号）： ✅前15分钟免费（老规矩没变） ✅白天7:30-21:30： 前3小时👉1.25元/15分钟（=5元/小时） 超3小时👉2.5元/15分钟（=10元/小时） ✅夜间21:30-次日7:30： 0.5元/15分钟；你停5分钟也收半小时钱 🔹现在按15分钟计费",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": true,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a916cc50000000021025385?xsec_token=ABTaIeN5tFPWY1JW8noMPakO7rCnY8_VjMztnA2rTT8qE=&xsec_source=",
+            "source_title": "天河体育中心停车收费方式变了",
+            "source_author": "天河体育中心停车收费方式变了 广州托利斯",
+            "source_published_at": "08-28",
+            "rank": 3,
+            "raw_file": "server/xhs-raw/p0-remaining2-20260914/20260914T053824763Z-广州 岗顶 停车攻略-note-03-6a916cc50000000021025385.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 5,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "天河路299号·天河体育中心停车场 🕒新规速览（穗发改规字【2026】6号）： ✅前15分钟免费（老规矩没变） ✅白天7:30-21:30： 前3小时👉1.25元/15分钟（=5元/小时） 超3小时👉",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 35,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "封顶10元 ✅24小时最高35元（和之前完全一致） 划重点✍",
+            "confidence": "low",
+            "priority": 100
+          }
+        ]
+      }
+    ],
+    "113": [
+      {
+        "id": 1009,
+        "name": "原来是进错停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：黑山停车场【图1】—5元/小时；白天封顶40（这个停车场也是误打误撞进来的；APM时代国际停车场——6元/小时【图2】 停好车走路几分钟\n2、路线：但费用便宜 2.APM时代国际停车场——6元/小时【图2】 停好车走路几分钟\n3、注意：收费也是和牌子一样的费用 misscc 你好啊",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": true,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6964af31000000000903b932?xsec_token=ABMAX4k2mkOulAaaHE8pdWTXroW_CC0GoJS3U4KTTAGN4=&xsec_source=",
+            "source_title": "广州天马、APM、壹马服装城便宜停车攻略",
+            "source_author": "广州天马、APM、壹马服装城便宜停车攻略 月亮在发酵le",
+            "source_published_at": "01-12",
+            "rank": 10,
+            "raw_file": "server/xhs-raw/p0-remaining2-20260914/20260914T054212833Z-广州 五羊新城 停车攻略-note-10-6964af31000000000903b932.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 5,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "黑山停车场【图1】—5元/小时",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 6,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "APM时代国际停车场——6元/小时【图2】 停好车走路几分钟",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1010,
+        "name": "APM时代国际停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：白天封顶40（这个停车场也是误打误撞进来的；APM时代国际停车场——6元/小时【图2】 停好车走路几分钟就到壹马 天马 APM\n2、路线：但费用便宜 2.APM时代国际停车场——6元/小时【图2】 停好车走路几分钟就到壹马 天马 APM\n3、注意：收费也是和牌子一样的费用 misscc 你好啊",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6964af31000000000903b932?xsec_token=ABMAX4k2mkOulAaaHE8pdWTXroW_CC0GoJS3U4KTTAGN4=&xsec_source=",
+            "source_title": "广州天马、APM、壹马服装城便宜停车攻略",
+            "source_author": "广州天马、APM、壹马服装城便宜停车攻略 月亮在发酵le",
+            "source_published_at": "01-12",
+            "rank": 10,
+            "raw_file": "server/xhs-raw/p0-remaining2-20260914/20260914T054212833Z-广州 五羊新城 停车攻略-note-10-6964af31000000000903b932.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 6,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "APM时代国际停车场——6元/小时【图2】 停好车走路几分钟就到壹马 天马 APM",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "114": [
+      {
+        "id": 1011,
+        "name": "中洲交易中心（六元素商场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：中洲交易中心（六元素商场） 广交会限时停车优惠 白天日卡39.9元",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69e8746f0000000023023480?xsec_token=ABVZPC9zOAjHRwVGK4DX1NFmfTtdL5fPvxDXqIUORIwEI=&xsec_source=",
+            "source_title": "海珠琶洲停车",
+            "source_author": "海珠琶洲停车 广州停车",
+            "source_published_at": "04-22",
+            "rank": 7,
+            "raw_file": "server/xhs-raw/p0-remaining2-20260914/20260914T054600144Z-广州 琶洲 停车攻略-note-07-69e8746f0000000023023480.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 39.9,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "中洲交易中心（六元素商场） 广交会限时停车优惠 白天日卡39.9元",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ]
+  },
+  "tipsByPlace": {
+    "7": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理5个停车点。步行与入口：1⃣️2⃣️、宏发大厦停车场（近万菱汇、天河南二路）：15分钟内免费；08:00-22:00 4元/15分钟；；22:00-次日08:00 4元/15分钟；1⃣️3⃣️、创展中心（近正佳广场、万菱汇、天河南二路）：15分钟内免费；汇、天河南二路）：15分钟内免费；1⃣️4⃣️、财富广场停车场（近广州酒家、体育中心、时尚天河）：08:00-22:00 4元/15分钟；22:00-次日08:00 1元/15分钟；️、财富广场停车场（近广州酒家、体育中心、时尚天河）：08:00-22:00 4元/15分钟；22:00-次日08:00 1元/15分钟；00 4元/15分钟；22:00-次日08:00 1元/15分钟；1⃣️6⃣️、佳兆业广场停车场：08:00-22:00 首15分钟免费；4元/15分钟。停车注意：1⃣️4⃣️、 堵的要死；；抄牌😂 1 🐦🐤🐣🐥🐔🐓 体育西附近的路边停车为什么是人工来的；堵的要死；1⃣️5⃣️、 堵的要死；；抄牌😂 1 🐦🐤🐣🐥🐔🐓 体育西附近的路边停车为什么是人工来的；堵的要死；1⃣️6⃣️、佳兆业广场停车场：08: 堵的要死；；抄牌😂 1 🐦🐤🐣🐥🐔🐓 体育西附近的路边停车为什么是人工来的；堵的要死；抄牌😂 1 🐦🐤🐣🐥🐔🐓 体育西附近的路边停车为什么是人工来的；堵的要死",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "10": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "15": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "42": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "44": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "45": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理1个停车点",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "47": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "48": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "50": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理1个停车点。停车注意：免去被抄牌的风险。；不给停了吗；没钱交停车费不要学别人买车；管制 1 橙子爱吃桃",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "53": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "54": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "111": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "112": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理1个停车点。步行与入口：只是把“半小时”拆成“15分钟”算而已啦🫢 刷到好几个帖子说涨价了 本天河打工人火速核实—— ❌不是涨价！；只是计费颗粒度变细了（半小时→15分钟） 总价一分没多收！；📍天河路299号·天河体育中心停车场 🕒新规速览（穗发改规字【2026】6号）： ✅前15分钟免费（老规矩没变） ✅白天7:30-21:30： 前3小时👉1.25元/15分钟（=5元/小时） 超3小时👉2.5元/15分钟（=10元/小时） ✅夜间21:30-次日7:30： 0.5元/15分钟；你停5分钟也收半小时钱 🔹现在按15分钟计费",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "113": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理2个停车点。步行与入口：但费用便宜 2.APM时代国际停车场——6元/小时【图2】 停好车走路几分钟；但费用便宜 2.APM时代国际停车场——6元/小时【图2】 停好车走路几分钟就到壹马 天马 APM。停车注意：收费也是和牌子一样的费用 misscc 你好啊",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "114": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理1个停车点",
+        "source": "编辑整理（公开信息）"
+      }
+    ]
+  }
+}

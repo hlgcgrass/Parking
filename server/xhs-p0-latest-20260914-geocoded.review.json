@@ -1,0 +1,533 @@
+[
+  {
+    "level": "地点",
+    "place": "广州图书馆",
+    "name": "广州图书馆",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "广州图书馆",
+    "name": "广州图书馆停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "广州图书馆",
+    "name": "花城汇P13区停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "海心沙",
+    "name": "海心沙",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "海心沙",
+    "name": "海心沙亚运公园停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "海心沙",
+    "name": "珠江帝景北门停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "海珠湖",
+    "name": "海珠湖",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "海珠湖",
+    "name": "海珠湖公园停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "海珠湖",
+    "name": "坚真花园停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "海珠湖",
+    "name": "东风经济联合社工会联合会停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "华南植物园",
+    "name": "华南植物园",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "华南植物园",
+    "name": "华南植物园正门停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "华南植物园",
+    "name": "华南植物园西门停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "黄埔军校",
+    "name": "黄埔军校",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "黄埔军校",
+    "name": "黄埔军校旧址纪念馆配套地上停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "黄埔军校",
+    "name": "长洲岛地上停车场-出入口",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "莲花山",
+    "name": "莲花山",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "莲花山",
+    "name": "莲花山旅游区西门停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "南越王博物院",
+    "name": "南越王博物院",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "南越王博物院",
+    "name": "越秀公园东北门停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "沙湾古镇",
+    "name": "沙湾古镇",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "沙湾古镇",
+    "name": "沙湾古镇西门停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "沙湾古镇",
+    "name": "沙湾古镇南停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "永庆坊/荔枝湾",
+    "name": "永庆坊/荔枝湾",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "永庆坊/荔枝湾",
+    "name": "永庆坊金声停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "永庆坊/荔枝湾",
+    "name": "广州市荔湾路125号停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "永庆坊/荔枝湾",
+    "name": "昌华街居民住宅停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "余荫山房",
+    "name": "余荫山房",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "余荫山房",
+    "name": "余荫山房停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "长隆旅游度假区",
+    "name": "长隆旅游度假区",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "长隆旅游度假区",
+    "name": "长隆野生动物世界P5停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "长隆旅游度假区",
+    "name": "长隆野生动物世界P3停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "中山纪念堂",
+    "name": "中山纪念堂",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "中山纪念堂",
+    "name": "广州交易广场地下停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "中山纪念堂",
+    "name": "颐德中心地下停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "广东省妇幼保健院",
+    "name": "广东省妇幼保健院",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "广东省妇幼保健院",
+    "name": "广东省妇幼保健院番禺院区停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "广东省妇幼保健院",
+    "name": "7号小镇创意园停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "广东省人民医院",
+    "name": "广东省人民医院",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "广东省人民医院",
+    "name": "七橙酒店楼下停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "广东省人民医院",
+    "name": "青龙里小区停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "广东省中医院",
+    "name": "广东省中医院",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "广东省中医院",
+    "name": "广东省中医院大德路总院地下停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "广东省中医院",
+    "name": "车海洋自助洗车入口露天停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "广州市第一人民医院",
+    "name": "广州市第一人民医院",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "广州市第一人民医院",
+    "name": "广州市第一人民医院院内停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "广州市第一人民医院",
+    "name": "金通泰停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "广州市妇女儿童医疗中心（珠江新城院区）",
+    "name": "广州市妇女儿童医疗中心（珠江新城院区）",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "广州市妇女儿童医疗中心（珠江新城院区）",
+    "name": "市妇幼停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "广州市妇女儿童医疗中心（珠江新城院区）",
+    "name": "中山眼科停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "广州医科大学附属第一医院",
+    "name": "广州医科大学附属第一医院",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "广州医科大学附属第一医院",
+    "name": "广州医科大学附属第一医院总院停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "大夫山森林公园",
+    "name": "大夫山森林公园",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "大夫山森林公园",
+    "name": "大夫山森林公园南门停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "大夫山森林公园",
+    "name": "大夫山森林公园北门停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "地点",
+    "place": "二沙岛",
+    "name": "二沙岛",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "二沙岛",
+    "name": "二沙岛体育公园停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "二沙岛",
+    "name": "文立方商场停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  },
+  {
+    "level": "停车场",
+    "place": "二沙岛",
+    "name": "宏城公园停车场",
+    "poi": "",
+    "address": "无高置信候选",
+    "score": 0,
+    "status": "待补充"
+  }
+]

@@ -1,0 +1,2264 @@
+{
+  "meta": {
+    "city": "广州",
+    "city_code": "440100",
+    "exported_at": "2026-09-14T04:50:33.689Z",
+    "places": 20,
+    "parkings": 31,
+    "fee_rules": 34,
+    "source": "小红书最多收藏排序前10条笔记的保守整理"
+  },
+  "cities": [
+    {
+      "id": 1,
+      "name": "广州",
+      "code": "440100",
+      "pinyin": "guangzhou",
+      "province": "广东省",
+      "lng": 113.2644,
+      "lat": 23.1291,
+      "hot_level": 5
+    }
+  ],
+  "categories": [
+    {
+      "name": "景点",
+      "count": 22
+    },
+    {
+      "name": "商圈",
+      "count": 19
+    },
+    {
+      "name": "医院",
+      "count": 13
+    }
+  ],
+  "places": [
+    {
+      "id": 24,
+      "name": "广州图书馆",
+      "category": "景点",
+      "address": "广州市天河区珠江东路4号",
+      "lng": 113.324,
+      "lat": 23.119,
+      "heat": 65,
+      "summary": "珠江新城地标图书馆，免费开放，市民阅读空间。",
+      "tags": [
+        "免费",
+        "图书馆",
+        "地铁APM大剧院/花城大道"
+      ],
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "search_text": "广州图书馆 广州市天河区珠江东路4号 免费 图书馆 地铁APM大剧院/花城大道",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.559Z",
+      "district": "天河区",
+      "city_code": "440100",
+      "parking_count": 0,
+      "min_price": 5,
+      "min_price_display": "¥5/h起"
+    },
+    {
+      "id": 21,
+      "name": "海心沙",
+      "category": "景点",
+      "address": "广州市天河区珠江新城临江大道海心沙",
+      "lng": 113.325,
+      "lat": 23.115,
+      "heat": 80,
+      "summary": "珠江中洲岛公园，亚运会开幕式场地，看广州塔与珠江新城夜景佳。",
+      "tags": [
+        "亚运公园",
+        "花城广场",
+        "灯光秀",
+        "APM海心沙"
+      ],
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "search_text": "海心沙 广州市天河区珠江新城临江大道海心沙 亚运公园 花城广场 灯光秀 APM海心沙",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.567Z",
+      "district": "天河区",
+      "city_code": "440100",
+      "parking_count": 0,
+      "min_price": 5,
+      "min_price_display": "¥5/h"
+    },
+    {
+      "id": 39,
+      "name": "海珠湖",
+      "category": "景点",
+      "address": "广州市海珠区新滘中路（海珠国家湿地公园）",
+      "lng": 113.33,
+      "lat": 23.07,
+      "heat": 70,
+      "summary": "海珠国家湿地公园核心湖，城市绿心。",
+      "tags": [
+        "湿地公园",
+        "免费/收费区",
+        "地铁3号线大塘",
+        "亲子"
+      ],
+      "area_tips": "该地点已整理2个停车点。步行与入口：近距离接触大自然。",
+      "search_text": "海珠湖 广州市海珠区新滘中路（海珠国家湿地公园） 湿地公园 免费/收费区 地铁3号线大塘 亲子",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.572Z",
+      "district": "海珠区",
+      "city_code": "440100",
+      "parking_count": 2,
+      "min_price": 10,
+      "min_price_display": "¥10/h"
+    },
+    {
+      "id": 33,
+      "name": "华南植物园",
+      "category": "景点",
+      "address": "广州市天河区天源路1190号",
+      "lng": 113.36,
+      "lat": 23.19,
+      "heat": 78,
+      "summary": "中科院国家植物园，华南最大植物科研与观赏基地。",
+      "tags": [
+        "国家植物园",
+        "亲子",
+        "地铁6号线植物园",
+        "收费"
+      ],
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "search_text": "华南植物园 广州市天河区天源路1190号 国家植物园 亲子 地铁6号线植物园 收费",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.574Z",
+      "district": "天河区",
+      "city_code": "440100",
+      "parking_count": 0,
+      "min_price": 2.5,
+      "min_price_display": "¥2.5/h起"
+    },
+    {
+      "id": 34,
+      "name": "黄埔军校",
+      "category": "景点",
+      "address": "广州市黄埔区长洲岛金洲北路",
+      "lng": 113.45,
+      "lat": 23.08,
+      "heat": 75,
+      "summary": "中国近代著名军事院校旧址，长洲岛历史文化地标。",
+      "tags": [
+        "近代史",
+        "免费",
+        "长洲岛",
+        "地铁7号线深井"
+      ],
+      "area_tips": "该地点已整理3个停车点。步行与入口：下车后可步行前往场馆；走路的话需要走十到二十分钟左右；距离场馆约1公里；要么绕来绕去找不到入口；要么绕来绕去找不到入口；步行2分钟就到越秀山步道入口。停车注意：⚠️避坑&实用Tips 1️⃣ 周末/节假日车位紧张；⚠️避坑&实用Tips 1️⃣ 周末/节假日车位紧张；不用排队！",
+      "search_text": "黄埔军校 广州市黄埔区长洲岛金洲北路 近代史 免费 长洲岛 地铁7号线深井",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.580Z",
+      "district": "黄埔区",
+      "city_code": "440100",
+      "parking_count": 3,
+      "min_price": 10,
+      "min_price_display": "¥10/h"
+    },
+    {
+      "id": 37,
+      "name": "莲花山",
+      "category": "景点",
+      "address": "广州市番禺区石楼镇莲花山",
+      "lng": 113.48,
+      "lat": 22.97,
+      "heat": 74,
+      "summary": "番禺东部风景名胜区，古采石场遗迹与观音像。",
+      "tags": [
+        "AAAA",
+        "古采石场",
+        "望海观音",
+        "地铁4号线石碁"
+      ],
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "search_text": "莲花山 广州市番禺区石楼镇莲花山 AAAA 古采石场 望海观音 地铁4号线石碁",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.582Z",
+      "district": "番禺区",
+      "city_code": "440100",
+      "parking_count": 0,
+      "min_price": 3,
+      "min_price_display": "¥3/h"
+    },
+    {
+      "id": 114,
+      "name": "南越王博物院",
+      "category": "景点",
+      "address": "广州市越秀区解放北路867号（王墓展区）",
+      "lng": 113.261015,
+      "lat": 23.137823,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 2,
+      "area_tips": "该地点已整理2个停车点。步行与入口：不在墓室里 ✔ 下层就是\"踩原石板+近距离看石门\"的沉浸感；想听收费深度版： 墓室下层+考古主题导赏 150r/人（90分钟） 埃及展官方拼团讲解 49r/人 ❸ 埃及馆《尼罗河的赠礼》值不值 \"双。停车注意：（非假期日的工作日时间完全不用排队） 另外还有俩免费音频方案： 公众号菜单进\"线上语音导览\"；不用排队)",
+      "updated_at": "2026-09-14T04:50:33.584Z"
+    },
+    {
+      "id": 35,
+      "name": "沙湾古镇",
+      "category": "景点",
+      "address": "广州市番禺区沙湾街道",
+      "lng": 113.34,
+      "lat": 23.01,
+      "heat": 76,
+      "summary": "800年岭南古镇，广府文化与音乐之乡，免费开放街区。",
+      "tags": [
+        "历史文化名镇",
+        "免费街区",
+        "广府美食",
+        "留耕堂"
+      ],
+      "area_tips": "该地点已整理1个停车点。步行与入口：1.2米以下及65岁以上免费 • 最佳季节：3-5月、9-11月（气候宜人。停车注意：免费停3小时；停车费 元一天。",
+      "search_text": "沙湾古镇 广州市番禺区沙湾街道 历史文化名镇 免费街区 广府美食 留耕堂",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.587Z",
+      "district": "番禺区",
+      "city_code": "440100",
+      "parking_count": 1,
+      "min_price": 10,
+      "min_price_display": "¥10/h"
+    },
+    {
+      "id": 28,
+      "name": "永庆坊/荔枝湾",
+      "category": "景点",
+      "address": "广州市荔湾区恩宁路/龙津西路",
+      "lng": 113.248,
+      "lat": 23.12,
+      "heat": 86,
+      "summary": "西关风情历史文化街区，网红月亮桥、粤剧艺术博物馆所在地。",
+      "tags": [
+        "西关",
+        "骑楼",
+        "月亮桥",
+        "粤剧博物馆",
+        "地铁1号线长寿路"
+      ],
+      "area_tips": "该地点已整理2个停车点。步行与入口：步行约10分钟 - 公交：15路 恩宁路·永庆坊站 - 停车：导航「永庆坊金声停车场」",
+      "search_text": "永庆坊/荔枝湾 广州市荔湾区恩宁路/龙津西路 西关 骑楼 月亮桥 粤剧博物馆 地铁1号线长寿路",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.588Z",
+      "district": "荔湾区",
+      "city_code": "440100",
+      "parking_count": 2,
+      "min_price": 5,
+      "min_price_display": "¥5/h"
+    },
+    {
+      "id": 36,
+      "name": "余荫山房",
+      "category": "景点",
+      "address": "广州市番禺区南村镇北大街",
+      "lng": 113.38,
+      "lat": 23.02,
+      "heat": 70,
+      "summary": "广东四大名园之一，精巧清代私家园林。",
+      "tags": [
+        "岭南四大名园",
+        "收费18元",
+        "地铁7号线板桥",
+        "古建摄影"
+      ],
+      "area_tips": "该地点已整理1个停车点",
+      "search_text": "余荫山房 广州市番禺区南村镇北大街 岭南四大名园 收费18元 地铁7号线板桥 古建摄影",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.589Z",
+      "district": "番禺区",
+      "city_code": "440100",
+      "parking_count": 1,
+      "min_price": 3,
+      "min_price_display": "¥3/h"
+    },
+    {
+      "id": 32,
+      "name": "长隆旅游度假区",
+      "category": "景点",
+      "address": "广州市番禺区汉溪大道东299号",
+      "lng": 113.32,
+      "lat": 23.01,
+      "heat": 95,
+      "summary": "广州头部亲子度假区，含野生动物世界、欢乐世界、水上乐园等。",
+      "tags": [
+        "主题乐园",
+        "野生动物世界",
+        "欢乐世界",
+        "酒店停车"
+      ],
+      "area_tips": "该地点已整理2个停车点。停车注意：这个时候可以去做缆车真的人少不排队做完到北门开始常规玩。",
+      "search_text": "长隆旅游度假区 广州市番禺区汉溪大道东299号 主题乐园 野生动物世界 欢乐世界 酒店停车",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.590Z",
+      "district": "番禺区",
+      "city_code": "440100",
+      "parking_count": 2,
+      "min_price": 1,
+      "min_price_display": "¥1/h"
+    },
+    {
+      "id": 30,
+      "name": "中山纪念堂",
+      "category": "景点",
+      "address": "广州市越秀区东风中路299号",
+      "lng": 113.27,
+      "lat": 23.133,
+      "heat": 72,
+      "summary": "纪念孙中山的宫殿式建筑，园区免费、主体10元。",
+      "tags": [
+        "免费园区",
+        "近代建筑",
+        "地铁2号线纪念堂",
+        "木棉"
+      ],
+      "area_tips": "该地点已整理2个停车点。步行与入口：要么绕来绕去找不到入口；要么绕来绕去找不到入口；步行2分钟就到越秀山步道入口。停车注意：⚠️避坑&实用Tips 1️⃣ 周末/节假日车位紧张；⚠️避坑&实用Tips 1️⃣ 周末/节假日车位紧张；不用排队！",
+      "search_text": "中山纪念堂 广州市越秀区东风中路299号 免费园区 近代建筑 地铁2号线纪念堂 木棉",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.591Z",
+      "district": "越秀区",
+      "city_code": "440100",
+      "parking_count": 2,
+      "min_price": 8,
+      "min_price_display": "¥8/h"
+    },
+    {
+      "id": 49,
+      "name": "广东省妇幼保健院",
+      "category": "医院",
+      "address": "广州市番禺区南村镇兴南大道521号（番禺院区）",
+      "lng": 113.37,
+      "lat": 22.99,
+      "heat": 78,
+      "summary": "省级妇儿三甲，番禺院区为主要院区。",
+      "tags": [
+        "三甲妇幼",
+        "番禺",
+        "停车优惠",
+        "地铁7号线员岗"
+      ],
+      "area_tips": "该地点已整理2个停车点。步行与入口：逛足一天 白鹅潭大湾区艺术中心完整游玩攻略 免预约免费 🚇交通方式 1. 地铁：1号/11号线芳村站B1/I出口；步行约5分钟到达 2. 水上巴士（体验感强；约10分钟",
+      "search_text": "广东省妇幼保健院 广州市番禺区南村镇兴南大道521号（番禺院区） 三甲妇幼 番禺 停车优惠 地铁7号线员岗",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.645Z",
+      "district": "番禺区",
+      "city_code": "440100",
+      "parking_count": 2,
+      "min_price": 6,
+      "min_price_display": "¥6/h"
+    },
+    {
+      "id": 43,
+      "name": "广东省人民医院",
+      "category": "医院",
+      "address": "广州市越秀区中山二路106号",
+      "lng": 113.29,
+      "lat": 23.125,
+      "heat": 90,
+      "summary": "以心血管闻名的三甲综合医院，东川院本部车位紧张。",
+      "tags": [
+        "三甲",
+        "心血管强",
+        "停车难",
+        "地铁1号线烈士陵园"
+      ],
+      "area_tips": "该地点已整理1个停车点。停车注意：停车也需要一定的车技 不让停说满了；不让停说满了",
+      "search_text": "广东省人民医院 广州市越秀区中山二路106号 三甲 心血管强 停车难 地铁1号线烈士陵园",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.647Z",
+      "district": "越秀区",
+      "city_code": "440100",
+      "parking_count": 1,
+      "min_price": 10,
+      "min_price_display": "¥10/h"
+    },
+    {
+      "id": 52,
+      "name": "广东省中医院",
+      "category": "医院",
+      "address": "广州市越秀区大德路111号（大德路总院）",
+      "lng": 113.255,
+      "lat": 23.12,
+      "heat": 83,
+      "summary": "全国顶尖中医院，大德路总院。",
+      "tags": [
+        "三甲",
+        "中医",
+        "大德路",
+        "地铁6号线一德路"
+      ],
+      "area_tips": "该地点已整理1个停车点",
+      "search_text": "广东省中医院 广州市越秀区大德路111号（大德路总院） 三甲 中医 大德路 地铁6号线一德路",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.650Z",
+      "district": "越秀区",
+      "city_code": "440100",
+      "parking_count": 1,
+      "min_price": 2,
+      "min_price_display": "¥2/h"
+    },
+    {
+      "id": 51,
+      "name": "广州市第一人民医院",
+      "category": "医院",
+      "address": "广州市越秀区盘福路1号",
+      "lng": 113.265,
+      "lat": 23.13,
+      "heat": 76,
+      "summary": "越秀盘福路三甲综合医院，院内车位约320个。",
+      "tags": [
+        "三甲",
+        "综合",
+        "盘福路",
+        "地铁2号线纪念堂"
+      ],
+      "area_tips": "该地点已整理2个停车点。步行与入口：车位 一进闸就有保安大叔过来指挥停车 问了停车费10元/小时（也是很低了）💸 停好车原路走出 去到医院也就3分钟 超方便 应该算最近省医的一个停车场了吧 保安大叔说平时挺多去医院的在这停车",
+      "search_text": "广州市第一人民医院 广州市越秀区盘福路1号 三甲 综合 盘福路 地铁2号线纪念堂",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.653Z",
+      "district": "越秀区",
+      "city_code": "440100",
+      "parking_count": 2,
+      "min_price": 4,
+      "min_price_display": "¥4/h起"
+    },
+    {
+      "id": 50,
+      "name": "广州市妇女儿童医疗中心（珠江新城院区）",
+      "category": "医院",
+      "address": "广州市天河区金穗路9号",
+      "lng": 113.33,
+      "lat": 23.12,
+      "heat": 80,
+      "summary": "广州主要妇女儿童三甲医疗中心，珠江新城院区。",
+      "tags": [
+        "三甲妇儿",
+        "珠江新城",
+        "停车难",
+        "地铁5号线猎德"
+      ],
+      "area_tips": "该地点已整理3个停车点。步行与入口：比较好停 3）缺点是离医院需要走十几分钟；大概200米左右。；复北路停车场） ✅步行几分钟到医院；不会暴晒 🌧️下雨天：只有过马路1分钟会淋到。停车注意：排队才能进去 1 晕眩的蟹 福强停车场咋样；住院是免费的；停车没收费；人工收费的；早到基本有位置；；老城区车位紧张",
+      "search_text": "广州市妇女儿童医疗中心（珠江新城院区） 广州市天河区金穗路9号 三甲妇儿 珠江新城 停车难 地铁5号线猎德",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.681Z",
+      "district": "天河区",
+      "city_code": "440100",
+      "parking_count": 3,
+      "min_price": 5,
+      "min_price_display": "¥5/h起"
+    },
+    {
+      "id": 46,
+      "name": "广州医科大学附属第一医院",
+      "category": "医院",
+      "address": "广州市越秀区沿江西路151号（总院）",
+      "lng": 113.255,
+      "lat": 23.11,
+      "heat": 84,
+      "summary": "以呼吸疾病闻名的三甲医院，总院位于沿江路。",
+      "tags": [
+        "三甲",
+        "呼吸科全国第一",
+        "沿江路",
+        "地铁2号线海珠广场"
+      ],
+      "area_tips": "该地点已整理3个停车点。步行与入口：去门诊 → 北二路拆迁地块停车场（步行5分钟） 去急诊 → 辽宁红医和平停车场（步行5分钟） 临时短停 → 海润国际停车场（5元/小时；去门诊 → 北二路拆迁地块停车场（步行5分钟） 去急诊 → 辽宁红医和平停车场（步行5分钟） 临时短停 → 海润国际停车场（5元/小时；北二路拆迁地块停车场15分钟内免费；；辽宁红医和平停车场30分钟内免费；；海润国际停车场10分钟内免费；；北二路拆迁地块停车场15分钟内免费；；辽宁红医和平停车场30分钟内免费；；海润国际停车场10分钟内免费；",
+      "search_text": "广州医科大学附属第一医院 广州市越秀区沿江西路151号（总院） 三甲 呼吸科全国第一 沿江路 地铁2号线海珠广场",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.684Z",
+      "district": "越秀区",
+      "city_code": "440100",
+      "parking_count": 3,
+      "min_price": 4,
+      "min_price_display": "¥4/h起"
+    },
+    {
+      "id": 38,
+      "name": "大夫山森林公园",
+      "category": "景点",
+      "address": "广州市番禺区沙头街道禺山西路",
+      "lng": 113.35,
+      "lat": 23,
+      "heat": 72,
+      "summary": "番禺“氧吧”免费森林公园，骑行露营胜地。",
+      "tags": [
+        "免费公园",
+        "骑行",
+        "落羽杉",
+        "露营"
+      ],
+      "area_tips": "该地点已整理2个停车点",
+      "search_text": "大夫山森林公园 广州市番禺区沙头街道禺山西路 免费公园 骑行 落羽杉 露营",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.687Z",
+      "district": "番禺区",
+      "city_code": "440100",
+      "parking_count": 2,
+      "min_price": 5,
+      "min_price_display": "¥5/h"
+    },
+    {
+      "id": 41,
+      "name": "二沙岛",
+      "category": "景点",
+      "address": "广州市越秀区二沙岛",
+      "lng": 113.31,
+      "lat": 23.115,
+      "heat": 68,
+      "summary": "珠江中低密度文化岛，广东美术馆、星海音乐厅所在地。",
+      "tags": [
+        "江心岛",
+        "免费",
+        "艺术馆",
+        "跑步",
+        "星海音乐厅"
+      ],
+      "area_tips": "该地点已整理2个停车点。步行与入口：步行5分钟。；🔹 周边推荐： - 文立方商场停车场（步行5分钟）：💰10元/小时；宏城公园停车场（步行8分钟）：；🔹 周边推荐： - 文立方商场停车场（步行5分钟）：💰10元/小时；宏城公园停车场（步行8分钟）：💰5元/小时",
+      "search_text": "二沙岛 广州市越秀区二沙岛 江心岛 免费 艺术馆 跑步 星海音乐厅",
+      "view_count": 0,
+      "updated_at": "2026-09-14T04:50:33.689Z",
+      "district": "越秀区",
+      "city_code": "440100",
+      "parking_count": 2,
+      "min_price": 5,
+      "min_price_display": "¥5/h起"
+    }
+  ],
+  "parkingsByPlace": {
+    "28": [
+      {
+        "id": 1009,
+        "name": "昌华街",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：昌华街居民住宅 每次停车都是10元\n2、注意：给停车费而已 加壹 哩家唔起西关生活啦？",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/68de5f9e00000000050302ba?xsec_token=ABznqu53b_Xy0dZqRluab85bgNK5nPPtOallv6gpiGbrg=&xsec_source=",
+            "source_title": "10月2日的广州永庆坊",
+            "source_author": "10月2日的广州永庆坊 小明Carrory",
+            "source_published_at": "2025-10-02",
+            "rank": 8,
+            "raw_file": "server/xhs-raw/p0-cap20-20260914/20260914T034600908Z-广州 永庆坊 停车攻略-note-08-68de5f9e00000000050302ba.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "昌华街居民住宅 每次停车都是10元",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1010,
+        "name": "永庆坊金声停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：粤剧艺术博物馆（免费\n2、路线：步行约10分钟 - 公交：15路 恩宁路·永庆坊站 - 停车：导航「永庆坊金声停车场」",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a9ba572000000002a027ff2?xsec_token=AB5kF79I5XCgHNFLrNLQBOLXz6szQM0z1oeiseuWz4haU=&xsec_source=",
+            "source_title": "小红书 - 你的生活兴趣社区",
+            "source_author": "**永庆坊片区一日游攻略** 利喜宝",
+            "source_published_at": "09-05",
+            "rank": 9,
+            "raw_file": "server/xhs-raw/p0-cap20-20260914/20260914T034600908Z-广州 永庆坊 停车攻略-note-09-6a9ba572000000002a027ff2.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "30": [
+      {
+        "id": 1014,
+        "name": "越秀公园东北门停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：45元\n2、路线：要么绕来绕去找不到入口\n3、注意：⚠️避坑&实用Tips 1️⃣ 周末/节假日车位紧张",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69f9ad91000000001a02d042?xsec_token=ABNw1jWZswcf1O9uBIqx5_4KlASn4XDmp_Ou-gcs2o9T0=&xsec_source=",
+            "source_title": "广州越秀公园停车｜别被坑！官方停车场太香了",
+            "source_author": "广州越秀公园停车｜别被坑！官方停车场太香了 肥娃娃小吉",
+            "source_published_at": "05-05",
+            "rank": 10,
+            "raw_file": "server/xhs-raw/p0-cap20-cont-20260914/20260914T040015240Z-广州 中山纪念堂 停车攻略-note-10-69f9ad91000000001a02d042.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 45,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "45元",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1015,
+        "name": "搜越秀公园东北门停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：45元\n2、路线：要么绕来绕去找不到入口；步行2分钟就到越秀山步道入口\n3、注意：⚠️避坑&实用Tips 1️⃣ 周末/节假日车位紧张；不用排队！",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69f9ad91000000001a02d042?xsec_token=ABNw1jWZswcf1O9uBIqx5_4KlASn4XDmp_Ou-gcs2o9T0=&xsec_source=",
+            "source_title": "广州越秀公园停车｜别被坑！官方停车场太香了",
+            "source_author": "广州越秀公园停车｜别被坑！官方停车场太香了 肥娃娃小吉",
+            "source_published_at": "05-05",
+            "rank": 10,
+            "raw_file": "server/xhs-raw/p0-cap20-cont-20260914/20260914T040015240Z-广州 中山纪念堂 停车攻略-note-10-69f9ad91000000001a02d042.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 45,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "45元",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "32": [
+      {
+        "id": 1012,
+        "name": "至P5",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：封顶36元/天\n2、注意：这个时候可以去做缆车真的人少不排队做完到北门开始常规玩。",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6932abd9000000001e0097fc?xsec_token=AB5jmMaHLcblBl-qQy4toy-DOMUyKszgbfMcUDjBC3NWM=&xsec_source=",
+            "source_title": "长隆动物南门南门进世界攻略",
+            "source_author": "长隆动物南门南门进世界攻略 萱宝遛娃攻略",
+            "source_published_at": "2025-12-05",
+            "rank": 8,
+            "raw_file": "server/xhs-raw/p0-cap20-20260914/20260914T035402949Z-广州 长隆 停车攻略-note-08-6932abd9000000001e0097fc.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 36,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "封顶36元/天",
+            "confidence": "low",
+            "priority": 100
+          }
+        ]
+      },
+      {
+        "id": 1013,
+        "name": "没位置可以停园区其他停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：再搭乘免费摆渡车抵达南门 最重要的是\n2、注意：堵住别人车吗？",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a70209a0000000005028e6a?xsec_token=ABkHrsZYEzh6yc7Pb0A8F2Y6l0RR0piH3CwLHKMOkCxu8=&xsec_source=",
+            "source_title": "带2岁娃去长隆动物园（省心省力版）",
+            "source_author": "带2岁娃去长隆动物园（省心省力版） 臭涂涂",
+            "source_published_at": "08-03",
+            "rank": 9,
+            "raw_file": "server/xhs-raw/p0-cap20-20260914/20260914T035402949Z-广州 长隆 停车攻略-note-09-6a70209a0000000005028e6a.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "34": [
+      {
+        "id": 1003,
+        "name": "思源学校（P8）",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：导航到思源学校（P8）停车免费；想听这个免费的\n2、路线：下车后可步行前往场馆；走路的话需要走十到二十分钟左右；距离场馆约1公里\n3、注意：这里最大优势是散场基本不堵车。；极易长时间拥堵。；但一定要四点左右提早到场；如果停一天不开走还免费吗？；问一下p4停车费是多少啊 我想好好说话(说不过就拉黑?；思源高中 困了就睡觉 现在还免费停吗 1 我想好好说话(说不过就拉黑?",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a2d962000000000070241e4?xsec_token=ABll7BV-YIfZ40tXDybMbPAugenL1gVHdrAA4Gl30vL1Q=&xsec_source=",
+            "source_title": "广州奥体停车攻略",
+            "source_author": "广州奥体停车攻略 我想好好说话(说不过就拉黑?)",
+            "source_published_at": "07-14",
+            "rank": 7,
+            "raw_file": "server/xhs-raw/p0-cap20-20260914/20260914T033048979Z-广州 黄埔军校 停车攻略-note-07-6a2d962000000000070241e4.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1004,
+        "name": "越秀公园东北门停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：45元\n2、路线：要么绕来绕去找不到入口\n3、注意：⚠️避坑&实用Tips 1️⃣ 周末/节假日车位紧张",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69f9ad91000000001a02d042?xsec_token=ABNw1jWZswcf1O9uBIqx5_4KlASn4XDmp_Ou-gcs2o9T0=&xsec_source=",
+            "source_title": "广州越秀公园停车｜别被坑！官方停车场太香了",
+            "source_author": "广州越秀公园停车｜别被坑！官方停车场太香了 肥娃娃小吉",
+            "source_published_at": "05-05",
+            "rank": 8,
+            "raw_file": "server/xhs-raw/p0-cap20-20260914/20260914T033048979Z-广州 黄埔军校 停车攻略-note-08-69f9ad91000000001a02d042.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 45,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "45元",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1005,
+        "name": "搜越秀公园东北门停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：45元\n2、路线：要么绕来绕去找不到入口；步行2分钟就到越秀山步道入口\n3、注意：⚠️避坑&实用Tips 1️⃣ 周末/节假日车位紧张；不用排队！",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69f9ad91000000001a02d042?xsec_token=ABNw1jWZswcf1O9uBIqx5_4KlASn4XDmp_Ou-gcs2o9T0=&xsec_source=",
+            "source_title": "广州越秀公园停车｜别被坑！官方停车场太香了",
+            "source_author": "广州越秀公园停车｜别被坑！官方停车场太香了 肥娃娃小吉",
+            "source_published_at": "05-05",
+            "rank": 8,
+            "raw_file": "server/xhs-raw/p0-cap20-20260914/20260914T033048979Z-广州 黄埔军校 停车攻略-note-08-69f9ad91000000001a02d042.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 45,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "45元",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "35": [
+      {
+        "id": 1008,
+        "name": "沙湾古镇南停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：3-5月、9-11月（气候宜人；部分免费）或“西门停车场”（10元/天）\n2、路线：1.2米以下及65岁以上免费 • 最佳季节：3-5月、9-11月（气候宜人\n3、注意：免费停3小时；停车费 元一天。",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6946c088000000001b023a42?xsec_token=ABASt2pzlPlxKgkB3vipHi68IKgosrklV4I4_WEOb_XrM=&xsec_source=",
+            "source_title": "沙湾古镇打卡",
+            "source_author": "沙湾古镇打卡 🎀ss🍓",
+            "source_published_at": "2025-12-20",
+            "rank": 2,
+            "raw_file": "server/xhs-raw/p0-cap20-20260914/20260914T034212516Z-广州 沙湾古镇 停车攻略-note-02-6946c088000000001b023a42.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "部分免费）或“西门停车场”（10元/天）",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "36": [
+      {
+        "id": 1011,
+        "name": "景区外有免费停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：景区外有免费停车场 🚇地铁：7号线板桥站A口（步行15分钟 建议骑共享单车） —— 🪷「游览亮点」",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/68aabe6c000000001c00bccd?xsec_token=ABLAe1w8ghmba5YdY8z7U8VsW8-MPc30yXOZetg1BIgbI=&xsec_source=",
+            "source_title": "周末游🍃岭南园林遗珠｜余荫山房",
+            "source_author": "周末游🍃岭南园林遗珠｜余荫山房 记录初中的美好时光",
+            "source_published_at": "2025-08-24",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p0-cap20-20260914/20260914T034954501Z-广州 余荫山房 停车攻略-note-01-68aabe6c000000001c00bccd.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "38": [
+      {
+        "id": 1028,
+        "name": "南门智能停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：封顶36元",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69ac47a9000000001d013440?xsec_token=ABeoxIXjL-cDqAFqGNLgy0P8FGkb_1wYCr5eTuPcNwAeI=&xsec_source=",
+            "source_title": "番禺区︱大夫山森林公园",
+            "source_author": "番禺区︱大夫山森林公园 Kitty",
+            "source_published_at": "03-08",
+            "rank": 2,
+            "raw_file": "server/xhs-raw/p0-remaining-20260914-test2/20260914T030406256Z-广州 大夫山森林公园 停车攻略-note-02-69ac47a9000000001d013440.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 36,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "封顶36元",
+            "confidence": "low",
+            "priority": 100
+          }
+        ]
+      },
+      {
+        "id": 1029,
+        "name": "大夫山森林公园北门停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：24小时封顶30💰 🚇地铁7号线【钟村站】A1口——288路/番125路/番109路🚍抵达大夫山北门（首选） 🚇地铁3号线【市桥站】B口——番16路🚍抵达大夫山南门总站 ✨必玩项目",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a7995ad0000000033013003?xsec_token=ABjjO09gE42Ow7Y76dCsrpVpCB_wttymau0pWrJue11jg=&xsec_source=",
+            "source_title": "约会好去处——【大夫山森林公园】",
+            "source_author": "约会好去处——【大夫山森林公园】 麦麦夺冠辣",
+            "source_published_at": "08-10",
+            "rank": 4,
+            "raw_file": "server/xhs-raw/p0-remaining-20260914-test2/20260914T030406256Z-广州 大夫山森林公园 停车攻略-note-04-6a7995ad0000000033013003.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 30,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "24小时封顶30💰 🚇地铁7号线【钟村站】A1口——288路/番125路/番109路🚍抵达大夫山北门（首选） 🚇地铁3号线【市桥站】B口——番16路🚍抵达大夫山南门总站 ✨必玩项目",
+            "confidence": "low",
+            "priority": 100
+          }
+        ]
+      }
+    ],
+    "39": [
+      {
+        "id": 1001,
+        "name": "海珠湖北广场停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：免费",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/67e2ddd6000000001c000ae4?xsec_token=ABojoPeG4lMyJBfqRewTylymHLTaoZ2ExFbHyy6WCb-qQ=&xsec_source=",
+            "source_title": "这个时候去海珠湖真的很舒服！",
+            "source_author": "这个时候去海珠湖真的很舒服！ 吃完这顿",
+            "source_published_at": "2025-03-26",
+            "rank": 4,
+            "raw_file": "server/xhs-raw/p0-cap20-20260914/20260914T032311676Z-广州 海珠湖 停车攻略-note-04-67e2ddd6000000001c000ae4.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1002,
+        "name": "自驾也有停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：娃可以免费玩半天\n2、路线：近距离接触大自然。",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69f01dcf000000002301d5c6?xsec_token=ABelEC4QqSZTVOl4hjSkIcwdygSdilEKRkj2DErWwpYzg=&xsec_source=",
+            "source_title": "海珠湖遛娃｜免费城央氧吧✨推娃就能逛",
+            "source_author": null,
+            "source_published_at": null,
+            "rank": 7,
+            "raw_file": "server/xhs-raw/p0-cap20-20260914/20260914T032311676Z-广州 海珠湖 停车攻略-note-07-69f01dcf000000002301d5c6.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "41": [
+      {
+        "id": 1030,
+        "name": "文立方商场停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：- 文立方商场停车场（步行5分钟）：💰10元/小时\n2、路线：步行5分钟。；🔹 周边推荐： - 文立方商场停车场（步行5分钟）：💰10元/小时；宏城公园停车场（步行8分钟）：",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6809f33a000000001c0348b4?xsec_token=AB5jkkqN4hJ63WT0bEndba5sdFeREvf2b9h7Ya6s540sw=&xsec_source=",
+            "source_title": "📸 广州二沙岛艺术公园｜CBD里的治愈绿",
+            "source_author": "📸 广州二沙岛艺术公园｜CBD里的治愈绿 Selin",
+            "source_published_at": "2025-04-24",
+            "rank": 6,
+            "raw_file": "server/xhs-raw/p0-remaining-20260914/20260914T030808680Z-广州 二沙岛 停车攻略-note-06-6809f33a000000001c0348b4.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "- 文立方商场停车场（步行5分钟）：💰10元/小时",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1031,
+        "name": "宏城公园停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：- 文立方商场停车场（步行5分钟）：💰10元/小时；💰5元/小时\n2、路线：🔹 周边推荐： - 文立方商场停车场（步行5分钟）：💰10元/小时；宏城公园停车场（步行8分钟）：💰5元/小时",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": true,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6809f33a000000001c0348b4?xsec_token=AB5jkkqN4hJ63WT0bEndba5sdFeREvf2b9h7Ya6s540sw=&xsec_source=",
+            "source_title": "📸 广州二沙岛艺术公园｜CBD里的治愈绿",
+            "source_author": "📸 广州二沙岛艺术公园｜CBD里的治愈绿 Selin",
+            "source_published_at": "2025-04-24",
+            "rank": 6,
+            "raw_file": "server/xhs-raw/p0-remaining-20260914/20260914T030808680Z-广州 二沙岛 停车攻略-note-06-6809f33a000000001c0348b4.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "- 文立方商场停车场（步行5分钟）：💰10元/小时",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 5,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "💰5元/小时",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "43": [
+      {
+        "id": 1018,
+        "name": "七橙酒店楼下停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：早8晚10收费10元/小时；晚10早8收费10元/次；⃣医院英东楼对面小区收费也是10元/小时\n2、注意：停车也需要一定的车技 不让停说满了；不让停说满了",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/66967f8e0000000005007cc9?xsec_token=AB0xaUgDf0v6YqB4WTwHo1tg8sF2EqP4m9UUzrhHCSjnk=&xsec_source=",
+            "source_title": "省人民医院附近宝藏停车场",
+            "source_author": "省人民医院附近宝藏停车场 Cathy",
+            "source_published_at": "2024-07-16",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p0-cap20-cont-20260914/20260914T040749956Z-广州 广东省人民医院 停车攻略-note-01-66967f8e0000000005007cc9.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "早8晚10收费10元/小时",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "晚10早8收费10元/次",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "⃣医院英东楼对面小区收费也是10元/小时",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "46": [
+      {
+        "id": 1025,
+        "name": "辽宁红医和平停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：去门诊 → 北二路拆迁地块停车场（步行5分钟） 去急诊 → 辽宁红医和平停车场（步行5分钟） 临时短停 → 海润国际停车场（5元/小时\n2、路线：去门诊 → 北二路拆迁地块停车场（步行5分钟） 去急诊 → 辽宁红医和平停车场（步行5分钟） 临时短停 → 海润国际停车场（5元/小时",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a2015280000000021018c87?xsec_token=ABqTiQNKK0EqaDxGQJqfhffvI4bWBiaDe2uLsKu3xBkdU=&xsec_source=",
+            "source_title": "中国医大一院周边部分社会停车场停车指引",
+            "source_author": "中国医大一院周边部分社会停车场停车指引 医大一院甲状腺外科护士",
+            "source_published_at": "06-03",
+            "rank": 2,
+            "raw_file": "server/xhs-raw/p0-cap20-cont-20260914/20260914T042527751Z-广州 广州医科大学附属第一医院 停车攻略-note-02-6a2015280000000021018c87.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 5,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "去门诊 → 北二路拆迁地块停车场（步行5分钟） 去急诊 → 辽宁红医和平停车场（步行5分钟） 临时短停 → 海润国际停车场（5元/小时",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1026,
+        "name": "海润国际停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：去门诊 → 北二路拆迁地块停车场（步行5分钟） 去急诊 → 辽宁红医和平停车场（步行5分钟） 临时短停 → 海润国际停车场（5元/小时；北二路拆迁地块停车场15分钟内免费；辽宁红医和平停车场30分钟内免费；海润国际停车场10分钟内免费\n2、路线：去门诊 → 北二路拆迁地块停车场（步行5分钟） 去急诊 → 辽宁红医和平停车场（步行5分钟） 临时短停 → 海润国际停车场（5元/小时；北二路拆迁地块停车场15分钟内免费；；辽宁红医和平停车场30分钟内免费；；海润国际停车场10分钟内免费；",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a2015280000000021018c87?xsec_token=ABqTiQNKK0EqaDxGQJqfhffvI4bWBiaDe2uLsKu3xBkdU=&xsec_source=",
+            "source_title": "中国医大一院周边部分社会停车场停车指引",
+            "source_author": "中国医大一院周边部分社会停车场停车指引 医大一院甲状腺外科护士",
+            "source_published_at": "06-03",
+            "rank": 2,
+            "raw_file": "server/xhs-raw/p0-cap20-cont-20260914/20260914T042527751Z-广州 广州医科大学附属第一医院 停车攻略-note-02-6a2015280000000021018c87.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 5,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "去门诊 → 北二路拆迁地块停车场（步行5分钟） 去急诊 → 辽宁红医和平停车场（步行5分钟） 临时短停 → 海润国际停车场（5元/小时",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1027,
+        "name": "残疾车所有停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：→ 海润国际停车场（5元/小时；北二路拆迁地块停车场15分钟内免费；辽宁红医和平停车场30分钟内免费；海润国际停车场10分钟内免费；军车、残疾车所有停车场均免费\n2、路线：北二路拆迁地块停车场15分钟内免费；；辽宁红医和平停车场30分钟内免费；；海润国际停车场10分钟内免费；",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a2015280000000021018c87?xsec_token=ABqTiQNKK0EqaDxGQJqfhffvI4bWBiaDe2uLsKu3xBkdU=&xsec_source=",
+            "source_title": "中国医大一院周边部分社会停车场停车指引",
+            "source_author": "中国医大一院周边部分社会停车场停车指引 医大一院甲状腺外科护士",
+            "source_published_at": "06-03",
+            "rank": 2,
+            "raw_file": "server/xhs-raw/p0-cap20-cont-20260914/20260914T042527751Z-广州 广州医科大学附属第一医院 停车攻略-note-02-6a2015280000000021018c87.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 5,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "→ 海润国际停车场（5元/小时",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "49": [
+      {
+        "id": 1016,
+        "name": "白鹅潭大湾区艺术中心",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：逛足一天 白鹅潭大湾区艺术中心完整游玩攻略 免预约免费 🚇交通方式\n2、路线：逛足一天 白鹅潭大湾区艺术中心完整游玩攻略 免预约免费 🚇交通方式 1. 地铁：1号/11号线芳村站B1/I出口；步行约5分钟到达 2. 水上巴士（体验感强；约10分钟",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6aa6abfd0000000012037986?xsec_token=ABorLfJxCM8VPa0-7USwUb8UGJ9zsRmspEyTj4CrnkCoM=&xsec_source=",
+            "source_title": "广州亲子游，白鹅潭艺术中心，逛足一天 白鹅潭大湾区艺术中心完整游玩攻略 免预约免费 🚇交通方式 1. 地铁：1号/11号线芳村站B1/I出口，步行约5分钟到达 2. 水上巴士（体验感强，亲子友好）：黄沙码头坐S06线水巴，2元，约10分钟，直达艺术中心码头下船即到，刷乘车码/羊城通 3. 自驾：直接导航白鹅潭大湾区艺术中心，馆内无公共停车位 🏛️三大展馆亮点 1. 广东省非遗馆｜👨‍👩‍👧亲子首选，1 1.5h - 展品：千角灯、广彩、醒狮、木雕、粤剧相关文物，岭南传统文化大集合 - 有互动装置，周末会有非遗体验、粤剧小表演 2. 广东美术馆（白鹅潭新馆）｜📸拍照出片，2h - 网红点：纯白旋转楼梯、巨型玻璃穹顶、270°江景长廊，看珠江江景；数字艺术展厅氛围感强 - 多楼层展厅；一楼有文创商店、咖啡厅 3. 广东文学馆｜📚安静文艺，1h - 巨型书墙、岭南作家手稿原件，「海上生明月」光影展区非常梦幻；设有儿童绘本阅读区 - 鲁迅的展厅还是不错的 🚶游览路线方案 带小孩可以先逛非遗馆 🍜餐饮 非遗馆出口左边是立白中心大楼，楼下很多吃饭的地方，有港式餐厅，潮汕牛肉，地下还有海南鸡饭等等；入口处那条路往前也有越南粉，麦当劳之类的 💡重要贴士 1. 馆内每层有直饮水台，可接水喝 2. 展厅空调非常足，带薄外套，真的很冷，尤其是美术馆 3. 有免费行李寄存柜 ✨周边联动玩法 可以顺路搭配：对面就是沙面岛、十三行博物馆、洲头咀公园 #广州周末溜娃 #广州亲子游 #广州看展攻略 #美术展 #美术馆推荐季",
+            "source_author": null,
+            "source_published_at": null,
+            "rank": 3,
+            "raw_file": "server/xhs-raw/p0-cap20-cont-20260914/20260914T040402634Z-广州 广东省妇幼保健院 停车攻略-note-03-6aa6abfd0000000012037986.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1017,
+        "name": "大排畸",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：之前23周用二级超声免费券做了一次“大排畸”",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a8d0af70000000021011095?xsec_token=AB1g0bRZP0Ldx540sPb15hG5tHtObYWj5cu4J6qHa9Qn0=&xsec_source=",
+            "source_title": "孕26周｜广州产检之大排畸记录",
+            "source_author": "孕26周｜广州产检之大排畸记录 何女士的孕育笔记（孕中期）",
+            "source_published_at": "08-25",
+            "rank": 7,
+            "raw_file": "server/xhs-raw/p0-cap20-cont-20260914/20260914T040402634Z-广州 广东省妇幼保健院 停车攻略-note-07-6a8d0af70000000021011095.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "50": [
+      {
+        "id": 1022,
+        "name": "绿景酒店停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：这个是评论区姐妹说2h免费的；并不免费 1）车位不算特别多；地面和地下停车场都是20块钱第一个小时；60封顶\n2、路线：比较好停 3）缺点是离医院需要走十几分钟\n3、注意：排队才能进去 1 晕眩的蟹 福强停车场咋样；住院是免费的；停车没收费",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/67052ef2000000001902febb?xsec_token=AB8BeADDc3-sJg5v3gsk0Yb3n6qVUueC8eXu0raTGnmAo=&xsec_source=",
+            "source_title": "码住！🚗市妇幼福强停车🅿️攻略",
+            "source_author": "码住！🚗市妇幼福强停车🅿️攻略 可可爱爱芋圆崽",
+            "source_published_at": "2024-10-18",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p0-cap20-cont-20260914/20260914T042130049Z-广州 广州市妇女儿童医疗中心 停车攻略-note-01-67052ef2000000001902febb.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 20,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "地面和地下停车场都是20块钱第一个小时",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1023,
+        "name": "永通地面停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：12小时内50元封顶 没有月保 车位比较小\n2、路线：大概200米左右。\n3、注意：人工收费的",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6898532b000000002302a74e?xsec_token=ABhBWgu8t_uo6a9ITTM9X-xARybjl1TkU5QMpd-a96DoM=&xsec_source=",
+            "source_title": "广州市妇女儿童医疗中心停车场",
+            "source_author": "广州市妇女儿童医疗中心停车场 一天又一天",
+            "source_published_at": "2025-08-10",
+            "rank": 5,
+            "raw_file": "server/xhs-raw/p0-cap20-cont-20260914/20260914T042130049Z-广州 广州市妇女儿童医疗中心 停车攻略-note-05-6898532b000000002302a74e.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 50,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "12小时内50元封顶 没有月保 车位比较小",
+            "confidence": "low",
+            "priority": 100
+          }
+        ]
+      },
+      {
+        "id": 1024,
+        "name": "五羊城酒店停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：建议早点出门抢位 🏨五羊城酒店停车场 💰20元/小时 适合赶时间、不差钱的宝妈\n2、路线：复北路停车场） ✅步行几分钟到医院；不会暴晒 🌧️下雨天：只有过马路1分钟会淋到\n3、注意：早到基本有位置；；老城区车位紧张",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a910e8200000000250380de?xsec_token=ABTaIeN5tFPWY1JW8noMPakAbXfDSit3MTne5Iiz_88p8=&xsec_source=",
+            "source_title": "广州儿童医宝妈救命停车攻略✨",
+            "source_author": "广州儿童医宝妈救命停车攻略✨ 小诗琪",
+            "source_published_at": "08-28",
+            "rank": 6,
+            "raw_file": "server/xhs-raw/p0-cap20-cont-20260914/20260914T042130049Z-广州 广州市妇女儿童医疗中心 停车攻略-note-06-6a910e8200000000250380de.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 20,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "建议早点出门抢位 🏨五羊城酒店停车场 💰20元/小时 适合赶时间、不差钱的宝妈",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "51": [
+      {
+        "id": 1020,
+        "name": "停好车原路",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：就非常顺利地进门有车位 一进闸就有保安大叔过来指挥停车 问了停车费10元/小时（也是很低了）💸 停好车原路走出 去到医院也就3分钟 超方便 应该算最近省医的一个\n2、路线：车位 一进闸就有保安大叔过来指挥停车 问了停车费10元/小时（也是很低了）💸 停好车原路走出 去到医院也就3分钟 超方便 应该算最近省医的一个停车场了吧 保安大叔说平时挺多去医院的在这停车",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/671635cd000000002100b63a?xsec_token=ABFrZxX9puaNQZxKmjNefUlM8DtGOmRvP2e1LSAdUJuxw=&xsec_source=",
+            "source_title": "广东省人民医院停车攻略🅿️步行距离3分钟",
+            "source_author": "广东省人民医院停车攻略🅿️步行距离3分钟 GGGGGG",
+            "source_published_at": "2024-10-21",
+            "rank": 3,
+            "raw_file": "server/xhs-raw/p0-cap20-cont-20260914/20260914T041547665Z-广州 广州市第一人民医院 停车攻略-note-03-671635cd000000002100b63a.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "就非常顺利地进门有车位 一进闸就有保安大叔过来指挥停车 问了停车费10元/小时（也是很低了）💸 停好车原路走出 去到医院也就3分钟 超方便 应该算最近省医的一个",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1021,
+        "name": "中山一停车也推荐这俩停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：身活动中心（东湖路店）地下停车场 💰5 元 /h 封顶 45 元 🚌公交 542 路",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a9fee40000000002900e36d?xsec_token=ABMxDyAQMztLxqZBQakr8zGCeAyQ98sVAmfwet8zhLrkY=&xsec_source=",
+            "source_title": "广东省人民医院停车指南",
+            "source_author": "广东省人民医院停车指南 广州西瓜香蕉（陪诊版）",
+            "source_published_at": "5天前",
+            "rank": 5,
+            "raw_file": "server/xhs-raw/p0-cap20-cont-20260914/20260914T041547665Z-广州 广州市第一人民医院 停车攻略-note-05-6a9fee40000000002900e36d.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 45,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "身活动中心（东湖路店）地下停车场 💰5 元 /h 封顶 45 元 🚌公交 542 路",
+            "confidence": "low",
+            "priority": 100
+          }
+        ]
+      }
+    ],
+    "52": [
+      {
+        "id": 1019,
+        "name": "中山一停车也推荐这俩停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：身活动中心（东湖路店）地下停车场 💰5 元 /h 封顶 45 元 🚌公交 542 路",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a9fee40000000002900e36d?xsec_token=ABMxDyAQMztLxqZBQakr8zGCeAyQ98sVAmfwet8zhLrkY=&xsec_source=",
+            "source_title": "广东省人民医院停车指南",
+            "source_author": "广东省人民医院停车指南 广州西瓜香蕉（陪诊版）",
+            "source_published_at": "5天前",
+            "rank": 9,
+            "raw_file": "server/xhs-raw/p0-cap20-cont-20260914/20260914T041138268Z-广州 广东省中医院 停车攻略-note-09-6a9fee40000000002900e36d.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 45,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "身活动中心（东湖路店）地下停车场 💰5 元 /h 封顶 45 元 🚌公交 542 路",
+            "confidence": "low",
+            "priority": 100
+          }
+        ]
+      }
+    ],
+    "114": [
+      {
+        "id": 1006,
+        "name": "踩原石板+近距离看石门停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：省心不亏 ❷ 免费讲解怎么约（0元；30一场免费定时定点人工讲解（限20人；（非假期日的工作日时间完全不用排队） 另外还有俩免费音频方案： 公众号菜单进\"线上语音导览\"；展厅扫码免费听\n2、路线：不在墓室里 ✔ 下层就是\"踩原石板+近距离看石门\"的沉浸感；想听收费深度版： 墓室下层+考古主题导赏 150r/人（90分钟） 埃及展官方拼团讲解 49r/人 ❸ 埃及馆《尼罗河的赠礼》值不值 \"双\n3、注意：（非假期日的工作日时间完全不用排队） 另外还有俩免费音频方案： 公众号菜单进\"线上语音导览\"",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a9bc8cd000000000d025171?xsec_token=AB5kF79I5XCgHNFLrNLQBOLSb8IwV083g8oVRIZiyBNnw=&xsec_source=",
+            "source_title": "南越王博物馆不必纠结约下层墓室",
+            "source_author": "南越王博物馆不必纠结约下层墓室 三瓣橘子",
+            "source_published_at": "09-05",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p0-cap20-20260914/20260914T033824699Z-广州 南越王博物院 停车攻略-note-01-6a9bc8cd000000000d025171.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "省心不亏 ❷ 免费讲解怎么约（0元",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1007,
+        "name": "跟着指示下地下停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：跟着指示下地下停车场即可 西南门停车3元/小时(图16是二维码可提前缴费) 南门进；10点志愿者免费讲解曾乙侯馆(编钟)等三个展馆(图\n2、注意：不用排队)",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6aa6ce3f000000002603839a?xsec_token=ABorLfJxCM8VPa0-7USwUb8c6rFR4NDGkdy93v8AbSf1w=&xsec_source=",
+            "source_title": "湖北省博物馆-游玩路线",
+            "source_author": null,
+            "source_published_at": null,
+            "rank": 8,
+            "raw_file": "server/xhs-raw/p0-cap20-20260914/20260914T033824699Z-广州 南越王博物院 停车攻略-note-08-6aa6ce3f000000002603839a.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 3,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "跟着指示下地下停车场即可 西南门停车3元/小时(图16是二维码可提前缴费) 南门进",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ]
+  },
+  "tipsByPlace": {
+    "21": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "24": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "28": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理2个停车点。步行与入口：步行约10分钟 - 公交：15路 恩宁路·永庆坊站 - 停车：导航「永庆坊金声停车场」",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "30": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理2个停车点。步行与入口：要么绕来绕去找不到入口；要么绕来绕去找不到入口；步行2分钟就到越秀山步道入口。停车注意：⚠️避坑&实用Tips 1️⃣ 周末/节假日车位紧张；⚠️避坑&实用Tips 1️⃣ 周末/节假日车位紧张；不用排队！",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "32": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理2个停车点。停车注意：这个时候可以去做缆车真的人少不排队做完到北门开始常规玩。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "33": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "34": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理3个停车点。步行与入口：下车后可步行前往场馆；走路的话需要走十到二十分钟左右；距离场馆约1公里；要么绕来绕去找不到入口；要么绕来绕去找不到入口；步行2分钟就到越秀山步道入口。停车注意：⚠️避坑&实用Tips 1️⃣ 周末/节假日车位紧张；⚠️避坑&实用Tips 1️⃣ 周末/节假日车位紧张；不用排队！",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "35": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理1个停车点。步行与入口：1.2米以下及65岁以上免费 • 最佳季节：3-5月、9-11月（气候宜人。停车注意：免费停3小时；停车费 元一天。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "36": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理1个停车点",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "37": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "38": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理2个停车点",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "39": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理2个停车点。步行与入口：近距离接触大自然。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "41": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理2个停车点。步行与入口：步行5分钟。；🔹 周边推荐： - 文立方商场停车场（步行5分钟）：💰10元/小时；宏城公园停车场（步行8分钟）：；🔹 周边推荐： - 文立方商场停车场（步行5分钟）：💰10元/小时；宏城公园停车场（步行8分钟）：💰5元/小时",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "43": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理1个停车点。停车注意：停车也需要一定的车技 不让停说满了；不让停说满了",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "46": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理3个停车点。步行与入口：去门诊 → 北二路拆迁地块停车场（步行5分钟） 去急诊 → 辽宁红医和平停车场（步行5分钟） 临时短停 → 海润国际停车场（5元/小时；去门诊 → 北二路拆迁地块停车场（步行5分钟） 去急诊 → 辽宁红医和平停车场（步行5分钟） 临时短停 → 海润国际停车场（5元/小时；北二路拆迁地块停车场15分钟内免费；；辽宁红医和平停车场30分钟内免费；；海润国际停车场10分钟内免费；；北二路拆迁地块停车场15分钟内免费；；辽宁红医和平停车场30分钟内免费；；海润国际停车场10分钟内免费；",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "49": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理2个停车点。步行与入口：逛足一天 白鹅潭大湾区艺术中心完整游玩攻略 免预约免费 🚇交通方式 1. 地铁：1号/11号线芳村站B1/I出口；步行约5分钟到达 2. 水上巴士（体验感强；约10分钟",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "50": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理3个停车点。步行与入口：比较好停 3）缺点是离医院需要走十几分钟；大概200米左右。；复北路停车场） ✅步行几分钟到医院；不会暴晒 🌧️下雨天：只有过马路1分钟会淋到。停车注意：排队才能进去 1 晕眩的蟹 福强停车场咋样；住院是免费的；停车没收费；人工收费的；早到基本有位置；；老城区车位紧张",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "51": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理2个停车点。步行与入口：车位 一进闸就有保安大叔过来指挥停车 问了停车费10元/小时（也是很低了）💸 停好车原路走出 去到医院也就3分钟 超方便 应该算最近省医的一个停车场了吧 保安大叔说平时挺多去医院的在这停车",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "52": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理1个停车点",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "114": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理2个停车点。步行与入口：不在墓室里 ✔ 下层就是\"踩原石板+近距离看石门\"的沉浸感；想听收费深度版： 墓室下层+考古主题导赏 150r/人（90分钟） 埃及展官方拼团讲解 49r/人 ❸ 埃及馆《尼罗河的赠礼》值不值 \"双。停车注意：（非假期日的工作日时间完全不用排队） 另外还有俩免费音频方案： 公众号菜单进\"线上语音导览\"；不用排队)",
+        "source": "编辑整理（公开信息）"
+      }
+    ]
+  }
+}
