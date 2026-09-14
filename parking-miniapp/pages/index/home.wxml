@@ -50,7 +50,7 @@
           <text class="item__title ellipsis">{{item.name}}</text>
           <view class="badge badge--plain" style="margin-left:16rpx">{{item.category}}</view>
         </view>
-        <view class="fs-caption t3 ellipsis mt-sm">{{item.district}} · {{item.address}}</view>
+        <view class="fs-caption t3 ellipsis mt-sm">{{item._locationText}}</view>
       </view>
 
       <view class="col" style="align-items:flex-end;margin-left:24rpx">

@@ -64,7 +64,7 @@
       <view class="row mt-md">
         <text class="fs-caption tp">{{item.distance_text}}</text>
         <text class="fs-caption t3" style="margin-left:24rpx">{{item.parking_count}} 个车场</text>
-        <text class="fs-caption t3 grow" style="text-align:right">{{item.district}}</text>
+        <text class="fs-caption t3 grow" style="text-align:right">{{item._locationText}}</text>
       </view>
     </view>
   </view>

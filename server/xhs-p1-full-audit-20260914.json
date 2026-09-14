@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-09-14T09:07:57.666Z",
+  "input": "server/xhs-p1-curated-ready-import-20260914.json",
+  "output": "server/xhs-p1-full-import-20260914.json",
+  "places": 18,
+  "parkings": 35,
+  "fee_rules": 51,
+  "guide_pending_places": [
+    "南沙湿地公园",
+    "黄花岗公园",
+    "广州烈士陵园",
+    "广州博物馆",
+    "粤剧艺术博物馆"
+  ],
+  "missing_coordinate_places": [
+    "十三行博物馆",
+    "东山口",
+    "白水寨",
+    "宝墨园",
+    "广州美术馆",
+    "星海音乐厅",
+    "南沙湿地公园",
+    "黄花岗公园",
+    "广州烈士陵园",
+    "广州博物馆",
+    "粤剧艺术博物馆"
+  ]
+}

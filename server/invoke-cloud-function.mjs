@@ -30,7 +30,12 @@ function call(ws, method, params = {}) {
 }
 
 const payload = verifyOnly ? null : JSON.parse(await fs.readFile(inputPath, 'utf8'));
-const event = verifyOnly ? { action: verifyAction, ...(verifyAction === 'places' ? { cityCode: '440100', size: 50 } : {}) } : {
+const verifyParams = verifyAction === 'places'
+  ? { cityCode: '440100', size: 50 }
+  : verifyAction === 'place'
+    ? { id: Number(process.env.VERIFY_ID || 59), sort: 'like' }
+    : {};
+const event = verifyOnly ? { action: verifyAction, ...verifyParams } : {
   action: 'admin-sync-guides',
   data: {
     places: payload.places,
@@ -62,4 +67,10 @@ const result = await call(ws, 'App.callFunction', {
 });
 
 console.log(JSON.stringify({ endpoint, sdkVersion: info?.SDKVersion, verifyOnly, dryRun, replacePlaceParkings, result }, null, 2));
+if (verifyOnly && verifyAction === 'bootstrap' && process.env.VERIFY_OUTPUT) {
+  const data = result?.result?.result?.data;
+  if (!data) throw new Error('bootstrap 返回缺少 data');
+  await fs.writeFile(process.env.VERIFY_OUTPUT, `${JSON.stringify(data, null, 2)}\n`);
+  console.log(`已保存 bootstrap：${process.env.VERIFY_OUTPUT}`);
+}
 ws.close();

@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-09-14T08:55:03.128Z",
+  "input": "server/xhs-p1-candidates-20260914.json",
+  "capture": "server/xhs-captures-p1-31-direct-relevance-combined-20260914.json",
+  "captured_places": 18,
+  "included_places": 13,
+  "excluded_places": 5,
+  "included_parkings": 35,
+  "included_fee_rules": 51,
+  "pending_place_coordinates": 13,
+  "pending_parking_coordinates": 35,
+  "conflict_parkings": 6,
+  "excluded": [
+    {
+      "place": "南沙湿地公园",
+      "reason": "原始搜索页或详情页没有形成可落到具体停车点的有效停车事实，本轮不凑建泛称车场。",
+      "raw_files": []
+    },
+    {
+      "place": "黄花岗公园",
+      "reason": "原始搜索页或详情页没有形成可落到具体停车点的有效停车事实，本轮不凑建泛称车场。",
+      "raw_files": [
+        "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T083716495Z-黄花岗公园 停车攻略-note-01-66b88b18000000000502397b.json"
+      ]
+    },
+    {
+      "place": "广州烈士陵园",
+      "reason": "原始搜索页或详情页没有形成可落到具体停车点的有效停车事实，本轮不凑建泛称车场。",
+      "raw_files": []
+    },
+    {
+      "place": "广州博物馆",
+      "reason": "原始搜索页或详情页没有形成可落到具体停车点的有效停车事实，本轮不凑建泛称车场。",
+      "raw_files": []
+    },
+    {
+      "place": "粤剧艺术博物馆",
+      "reason": "原始搜索页或详情页没有形成可落到具体停车点的有效停车事实，本轮不凑建泛称车场。",
+      "raw_files": []
+    }
+  ]
+}

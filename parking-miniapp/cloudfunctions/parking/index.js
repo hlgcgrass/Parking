@@ -41,6 +41,27 @@ const C_LIKE = 'p_likes';
 const ADMIN_OPENIDS = (process.env.ADMIN_OPENIDS || '')
   .split(',').map(s => s.trim()).filter(Boolean);
 
+// 地点字段口径固定：已知行政区可由地点名补齐；无法确认的值仍保留为空，
+// 由前端统一显示“位置待补充”，绝不把空值直接拼成“null”。
+const PLACE_DISTRICT_HINTS = {
+  '黄埔大沙地': '黄埔区', '岗顶': '天河区', '五羊新城': '越秀区', '琶洲': '海珠区'
+};
+function placeLocationText(place) {
+  const district = textValue(place && place.district);
+  const address = textValue(place && place.address);
+  if (district && address) return `${district} · ${address}`;
+  return district || address || '位置待补充';
+}
+
+function parkingCountForPlace(place) {
+  const explicit = place && place.parking_count;
+  if (explicit !== null && explicit !== undefined && String(explicit).trim() !== '') {
+    const count = Number(explicit);
+    if (Number.isFinite(count)) return count;
+  }
+  return (cache.parkingsByPlace[place && place.id] || []).length;
+}
+
 // ---------- 静态数据（云函数实例缓存，权威源=数据库） ----------
 let cache = {
   meta: null, places: [], parkingsByPlace: {}, tipsByPlace: {}, parkingById: {},
@@ -467,6 +488,12 @@ function fuzzyIncludes(text, keyword) {
   return true;
 }
 
+function fmtPrice(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return value;
+  return Math.round((number + Number.EPSILON) * 100) / 100;
+}
+
 function parkingDisplayPrice(rules, minPriceHour) {
   const list = Array.isArray(rules) ? rules : [];
   const candidates = list.filter(rule => {
@@ -480,19 +507,25 @@ function parkingDisplayPrice(rules, minPriceHour) {
     const price = Number(rule.price);
     if (price === 0) return { value: '免费', unit: '' };
     if ((rule.unit === 'minute' || rule.unit === 'time') && Number(rule.unit_minutes) > 0) {
-      return { value: price, unit: `${Number(rule.unit_minutes)}分钟`, hourlyValue: price * 60 / Number(rule.unit_minutes) };
+      return {
+        value: fmtPrice(price),
+        unit: `${Number(rule.unit_minutes)}分钟`,
+        hourlyValue: fmtPrice(price * 60 / Number(rule.unit_minutes))
+      };
     }
-    if (rule.unit === 'time') return { value: price, unit: '次' };
-    if (rule.unit === 'day') return { value: price, unit: '天' };
-    if (rule.unit === 'month') return { value: price, unit: '月' };
-    return { value: price, unit: '小时', hourlyValue: price };
+    if (rule.unit === 'time') return { value: fmtPrice(price), unit: '次' };
+    if (rule.unit === 'day') return { value: fmtPrice(price), unit: '天' };
+    if (rule.unit === 'month') return { value: fmtPrice(price), unit: '月' };
+    return { value: fmtPrice(price), unit: '小时', hourlyValue: fmtPrice(price) };
   }
   const hourly = minPriceHour == null || minPriceHour === '' ? null : Number(minPriceHour);
   if (hourly != null && Number.isFinite(hourly) && hourly >= 0) {
-    return hourly === 0 ? { value: '免费', unit: '' } : { value: hourly, unit: '小时', hourlyValue: hourly };
+    return hourly === 0
+      ? { value: '免费', unit: '' }
+      : { value: fmtPrice(hourly), unit: '小时', hourlyValue: fmtPrice(hourly) };
   }
   const cap = list.find(rule => rule && rule.rule_type === 'cap' && Number(rule.price) >= 0);
-  return cap ? { value: Number(cap.price), unit: '封顶' } : null;
+  return cap ? { value: fmtPrice(cap.price), unit: '封顶' } : null;
 }
 
 function placeDisplayPrice(parkings, minPrice) {
@@ -504,12 +537,12 @@ function placeDisplayPrice(parkings, minPrice) {
   if (!values.length) {
     const fallback = minPrice == null || minPrice === '' ? null : Number(minPrice);
     return fallback != null && Number.isFinite(fallback) && fallback >= 0
-      ? { value: fallback, unit: 'h', suffix: '' }
+      ? { value: fmtPrice(fallback), unit: 'h', suffix: '' }
       : null;
   }
   const min = Math.min(...values);
   const max = Math.max(...values);
-  return { value: min, unit: 'h', suffix: max > min ? '起' : '' };
+  return { value: fmtPrice(min), unit: 'h', suffix: max > min ? '起' : '' };
 }
 
 function minPriceDisplay(price) {
@@ -536,6 +569,8 @@ function buildList({ cityCode, category, keyword, page = 1, size = 20, lat, lng,
   return list.slice(offset, offset + sizeN).map(p => {
     const price = placeDisplayPrice(cache.parkingsByPlace[p.id], p.min_price);
     const out = { ...p };
+    out.parking_count = parkingCountForPlace(p);
+    out._locationText = placeLocationText(p);
     out._hasPrice = !!price;
     out._priceValue = price ? price.value : '';
     out._priceUnit = price ? price.unit : '';
@@ -583,7 +618,8 @@ async function getDetail(id, lat, lng, sort, openid) {
   const image = publicPlaceImage(place.id, place.image_file_id || imageMeta.image_file_id);
   return {
     id: place.id, name: place.name, category: place.category, address: place.address,
-    district: place.district, city_name: (c0 && c0.name) || '广州',
+    district: place.district, _districtText: textValue(place.district),
+    _addressText: textValue(place.address) || '地点位置待补充', city_name: (c0 && c0.name) || '广州',
     city_code: (c0 && c0.code) || '440100', lng: place.lng, lat: place.lat,
     heat: place.heat, summary: place.summary, tags: place.tags || [], area_tips: place.area_tips,
     updated_at: place.updated_at, ...image, parkings: parkingList, tips: cache.tipsByPlace[place.id] || []
@@ -606,6 +642,8 @@ function searchPlaces(keyword, cityCode, limit = 20) {
       if (name === kw) rank = 0; else if (name.startsWith(kw)) rank = 1;
       return {
         ...p, _rank: rank,
+        parking_count: parkingCountForPlace(p),
+        _locationText: placeLocationText(p),
         _hasPrice: !!price,
         _priceValue: price ? price.value : '',
         _priceUnit: price ? price.unit : '',
@@ -630,7 +668,8 @@ function nearbyPlaces(lat, lng, radius = 3000, limit = 20) {
       const price = placeDisplayPrice(cache.parkingsByPlace[p.id], p.min_price);
       return {
         id: p.id, name: p.name, category: p.category, address: p.address, district: p.district,
-        lng: p.lng, lat: p.lat, parking_count: p.parking_count, min_price: p.min_price,
+        lng: p.lng, lat: p.lat, parking_count: parkingCountForPlace(p), min_price: p.min_price,
+        _locationText: placeLocationText(p),
         _hasPrice: !!price, _priceValue: price ? price.value : '', _priceUnit: price ? price.unit : '',
         _priceSuffix: price ? price.suffix : '',
         min_price_display: p.min_price_display || minPriceDisplay(price),
@@ -776,6 +815,14 @@ const SYNC_GUIDES_CONFIRM = 'SYNC_GUIDES';
 
 function textValue(value) {
   return String(value == null ? '' : value).trim();
+}
+
+function normalizedPlaceLocation(input, existingPlace, name) {
+  const district = textValue(input && input.district) || textValue(existingPlace && existingPlace.district)
+    || PLACE_DISTRICT_HINTS[name] || null;
+  const address = textValue(input && (input.address || input.location))
+    || textValue(existingPlace && existingPlace.address) || null;
+  return { district, address };
 }
 
 function numberOrNull(value) {
@@ -1063,6 +1110,12 @@ function normalizeImportedFeeRules(value, pathLabel) {
     const rawUnit = textValue(rule && rule.unit) || 'hour';
     // 历史数据曾用 time 表示按半小时计费；有 unit_minutes 时统一按分钟展示和计算。
     const unit = rawUnit === 'time' && Number(rule && rule.unit_minutes) > 0 ? 'minute' : rawUnit;
+    if (!['hour', 'minute', 'day', 'month', 'time'].includes(unit)) {
+      throw new Error(`${pathLabel}.fee_rules[${index}].unit 无效`);
+    }
+    if (unit === 'minute' && !(Number(rule && rule.unit_minutes) > 0)) {
+      throw new Error(`${pathLabel}.fee_rules[${index}] 为 minute 时必须提供正数 unit_minutes`);
+    }
     const ruleType = textValue(rule && rule.rule_type) || 'normal';
     if (!['free', 'first', 'normal', 'cap', 'night'].includes(ruleType)) {
       throw new Error(`${pathLabel}.fee_rules[${index}].rule_type 无效`);
@@ -1075,7 +1128,7 @@ function normalizeImportedFeeRules(value, pathLabel) {
       time_end: textValue(rule && rule.time_end) || null,
       price,
       unit,
-      unit_minutes: numberOrNull(rule && rule.unit_minutes),
+      unit_minutes: unit === 'month' ? null : numberOrNull(rule && rule.unit_minutes),
       priority: numberOrNull(rule && rule.priority) ?? 50,
       description: textValue(rule && rule.description),
       confidence: textValue(rule && rule.confidence) || 'medium'
@@ -1099,9 +1152,12 @@ async function repairExistingPriceFields() {
   const places = await allDocs(C_PLACE);
   const parkings = await allDocs(C_PARKING, 2000);
   const placeValues = new Map();
+  const placeCounts = new Map();
   let changed = false;
 
   for (const row of parkings) {
+    const placeId = Number(row.place_id);
+    placeCounts.set(placeId, (placeCounts.get(placeId) || 0) + 1);
     const rules = Array.isArray(row.fee_rules) ? row.fee_rules : [];
     const derived = importedMinPriceHour(rules);
     const current = numberOrNull(row.min_price_hour);
@@ -1113,7 +1169,6 @@ async function repairExistingPriceFields() {
       changed = true;
     }
     if (effective != null) {
-      const placeId = Number(row.place_id);
       const values = placeValues.get(placeId) || [];
       values.push(effective);
       placeValues.set(placeId, values);
@@ -1124,10 +1179,19 @@ async function repairExistingPriceFields() {
     const values = placeValues.get(Number(place.id)) || [];
     const fallback = numberOrNull(place.min_price);
     const min = values.length ? Math.min(...values) : fallback;
-    if (min == null) continue;
+    const count = placeCounts.get(Number(place.id)) || 0;
+    const countChanged = Number(place.parking_count) !== count;
+    if (min == null) {
+      if (countChanged) {
+        await db.collection(C_PLACE).doc(place._id).update({ data: { parking_count: count, updated_at: nowISO() } });
+        changed = true;
+      }
+      continue;
+    }
     const max = values.length ? Math.max(...values) : min;
     const display = `¥${min}/h${max > min ? '起' : ''}`;
     const data = {};
+    if (countChanged) data.parking_count = count;
     if (numberOrNull(place.min_price) !== min) data.min_price = min;
     if (place.min_price_display !== display) data.min_price_display = display;
     if (Object.keys(data).length) {
@@ -1223,7 +1287,7 @@ async function adminImportGuides(openid, data) {
         city_code: textValue(pk.city_code || input.city_code || data.city_code) || '440100',
         name: parkingName,
         address: location || null,
-        type: textValue(pk.type) || null,
+        type: textValue(pk.type) || '停车场',
         total_spots: numberOrNull(pk.total_spots),
         lng, lat,
         free_minutes: numberOrNull(pk.free_minutes) ?? 0,
@@ -1246,7 +1310,7 @@ async function adminImportGuides(openid, data) {
       });
     }
     const tags = stringArray(input.tags);
-    const placeAddress = textValue(input.address || input.location);
+    const placeLocation = normalizedPlaceLocation(input, null, name);
     const placeSummary = textValue(input.summary || input.area_tips);
     const placePrice = placeDisplayPrice(parkings, input.min_price);
     plans.push({
@@ -1255,15 +1319,15 @@ async function adminImportGuides(openid, data) {
         city_code: textValue(input.city_code || data.city_code) || '440100',
         name,
         category: textValue(input.category) || '景点',
-        address: placeAddress || null,
-        district: textValue(input.district) || null,
+        address: placeLocation.address,
+        district: placeLocation.district,
         lng: numberOrNull(input.lng),
         lat: numberOrNull(input.lat),
         heat: numberOrNull(input.heat) ?? 50,
         summary: placeSummary || null,
         tags,
         area_tips: textValue(input.area_tips) || null,
-        search_text: [name, placeAddress, tags.join(' ')].filter(Boolean).join(' '),
+        search_text: [name, placeLocation.address, placeLocation.district, tags.join(' ')].filter(Boolean).join(' '),
         parking_count: parkings.length,
         min_price: placePrice ? placePrice.value : null,
         min_price_display: minPriceDisplay(placePrice),
@@ -1347,7 +1411,7 @@ async function adminSyncGuides(openid, data) {
         existing_id: existingParking?._id || null,
         id: parkingId, place_id: placeId, city_code: textValue(pk.city_code || input.city_code) || '440100',
         name: parkingName, address: textValue(pk.coordinate_address || pk.address || pk.location) || null,
-        type: textValue(pk.type) || null, total_spots: numberOrNull(pk.total_spots), lng, lat,
+        type: textValue(pk.type) || '停车场', total_spots: numberOrNull(pk.total_spots), lng, lat,
         free_minutes: numberOrNull(pk.free_minutes) ?? 0, daily_cap: numberOrNull(pk.daily_cap), night_flat: numberOrNull(pk.night_flat),
         open_hours: textValue(pk.open_hours) || null, payment: Array.isArray(pk.payment) ? pk.payment : [],
         min_price_hour: numberOrNull(pk.min_price_hour) ?? importedMinPriceHour(feeRules), tips: guideText, fee_summary: feeDetail,
@@ -1362,10 +1426,10 @@ async function adminSyncGuides(openid, data) {
     }
     const tags = stringArray(input.tags);
     const placePrice = placeDisplayPrice(parkings, input.min_price);
-    const placeAddress = textValue(input.address || input.location);
+    const placeLocation = normalizedPlaceLocation(input, existingPlace, name);
     plans.push({
       existing_id: existingPlace?._id || null,
-      place: { id: placeId, city_code: textValue(input.city_code) || '440100', name, category: textValue(input.category) || '景点', address: placeAddress || null, district: textValue(input.district) || null, lng: numberOrNull(input.lng), lat: numberOrNull(input.lat), heat: numberOrNull(input.heat) ?? existingPlace?.heat ?? 50, summary: textValue(input.summary || input.area_tips) || null, tags, area_tips: textValue(input.area_tips) || null, search_text: [name, placeAddress, tags.join(' ')].filter(Boolean).join(' '), parking_count: parkings.length, min_price: placePrice && Number.isFinite(Number(placePrice.value)) ? Number(placePrice.value) : (numberOrNull(input.min_price) ?? null), min_price_display: placePrice ? minPriceDisplay(placePrice) : (textValue(input.min_price_display) || null), status: input.status == null ? (existingPlace?.status ?? 1) : Number(input.status) }, parkings
+      place: { id: placeId, city_code: textValue(input.city_code) || '440100', name, category: textValue(input.category) || '景点', address: placeLocation.address, district: placeLocation.district, lng: numberOrNull(input.lng), lat: numberOrNull(input.lat), heat: numberOrNull(input.heat) ?? existingPlace?.heat ?? 50, summary: textValue(input.summary || input.area_tips) || null, tags, area_tips: textValue(input.area_tips) || null, search_text: [name, placeLocation.address, placeLocation.district, tags.join(' ')].filter(Boolean).join(' '), parking_count: parkings.length, min_price: placePrice && Number.isFinite(Number(placePrice.value)) ? Number(placePrice.value) : (numberOrNull(input.min_price) ?? null), min_price_display: placePrice ? minPriceDisplay(placePrice) : (textValue(input.min_price_display) || null), status: input.status == null ? (existingPlace?.status ?? 1) : Number(input.status) }, parkings
     });
   }
 

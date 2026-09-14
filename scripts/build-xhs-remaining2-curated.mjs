@@ -9,6 +9,12 @@ const candidates = JSON.parse(fs.readFileSync(candidatePath, 'utf8'));
 const legacy = JSON.parse(fs.readFileSync(legacyPath, 'utf8'));
 const byPlace = new Map(candidates.places.map(p => [p.place, p]));
 const forbidden = /小红书|笔记|评论区|评论中|原文|作者回复|薯友|博主|帖子|扒数据/;
+const PLACE_METADATA = {
+  '黄埔大沙地': { address: '广州市黄埔区大沙地', district: '黄埔区' },
+  '岗顶': { address: '广州市天河区岗顶', district: '天河区' },
+  '五羊新城': { address: '广州市越秀区五羊新城', district: '越秀区' },
+  '琶洲': { address: '广州市海珠区琶洲', district: '海珠区' }
+};
 
 function noteFor(place, needle) {
   const notes = byPlace.get(place)?.notes || [];
@@ -32,7 +38,13 @@ const duration = (price, minutes, description) => rule('normal', price, 'minute'
 const day = (price, description) => rule('normal', price, 'day', description, { unit_minutes: 1440 });
 const month = (price, description) => rule('normal', price, 'month', description, { unit_minutes: null });
 const cap = (price, unit, description) => rule('cap', price, unit, description, { unit_minutes: unit === 'day' ? 1440 : unit === 'minute' ? 30 : 60 });
-const free = description => rule('free', 0, 'hour', description);
+const free = description => {
+  const text = String(description || '');
+  const match = !/约|大概|上下|看起来/.test(text) && text.match(/(?:前|内)(\d+)(分钟|小时)/);
+  if (!match) return rule('free', 0, 'hour', description);
+  const minutes = Number(match[1]) * (match[2] === '小时' ? 60 : 1);
+  return rule('free', 0, 'minute', description, { unit_minutes: minutes, end_minute: minutes });
+};
 
 function parking(place, name, fee_detail, guide_text, location, fee_rules, needles, extra = {}) {
   if ([name, fee_detail, guide_text, location].some(x => forbidden.test(String(x)))) throw new Error(`Forbidden source wording in ${place}/${name}`);
@@ -191,14 +203,32 @@ const outPlaces = defs.map((def, placeIndex) => {
   const old = legacyFor(def);
   const parkings = def.parkings.map((p, i) => ({ id: 2000 + placeIndex * 100 + i, ...p }));
   const cleanTips = def.area_tips.replace(/小红书|笔记|评论区|评论中|原文|作者回复|薯友|博主|帖子|扒数据/g, '').replace(/\s+/g, ' ').trim();
+  const metadata = PLACE_METADATA[def.name] || {};
+  const address = old?.address || metadata.address || null;
+  const district = old?.district || metadata.district || null;
   return {
     id: old?.id || 1000 + placeIndex, name: def.name, city_code: '440100', category: old?.category || '商圈',
-    address: old?.address || null, district: old?.district || null, lng: old?.lng ?? null, lat: old?.lat ?? null,
+    address, district, lng: old?.lng ?? null, lat: old?.lat ?? null,
     heat: old?.heat ?? 50, summary: old?.summary || cleanTips, tags: old?.tags || ['停车'],
     area_tips: cleanTips, coordinate_status: old ? '待核验' : '待补充', navigation_available: false,
     parkings, parking_count: parkings.length, updated_at: new Date().toISOString()
   };
 });
+
+const REQUIRED_PLACE_TEXT = ['name', 'category', 'city_code', 'address', 'district', 'summary', 'area_tips'];
+const REQUIRED_PARKING_TEXT = ['name', 'fee_detail', 'guide_text', 'location', 'address', 'type', 'source'];
+for (const place of outPlaces) {
+  for (const field of REQUIRED_PLACE_TEXT) {
+    if (!String(place[field] || '').trim()) throw new Error(`地点字段缺失：${place.name}/${field}`);
+  }
+  if (!Array.isArray(place.tags) || !Array.isArray(place.parkings)) throw new Error(`地点数组字段无效：${place.name}`);
+  for (const parkingRow of place.parkings) {
+    for (const field of REQUIRED_PARKING_TEXT) {
+      if (!String(parkingRow[field] || '').trim()) throw new Error(`车场字段缺失：${place.name}/${parkingRow.name}/${field}`);
+    }
+    if (!Array.isArray(parkingRow.fee_rules)) throw new Error(`收费规则字段无效：${place.name}/${parkingRow.name}`);
+  }
+}
 
 const forbiddenFields = outPlaces.flatMap(p => [p.area_tips, ...p.parkings.flatMap(k => [k.name, k.fee_detail, k.guide_text, k.location])]).filter(x => forbidden.test(String(x)));
 if (forbiddenFields.length) throw new Error(`Forbidden wording count=${forbiddenFields.length}`);

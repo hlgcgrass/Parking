@@ -1,0 +1,177 @@
+{
+  "places": [
+    {
+      "id": 15,
+      "name": "番禺万博",
+      "city_code": "440100",
+      "category": "商圈",
+      "address": "广州市番禺区汉溪大道东万博商务区",
+      "district": "番禺区",
+      "lng": 113.3482,
+      "lat": 23.007661,
+      "heat": 85,
+      "summary": "番禺新兴商务商业中心，地下环路串联多 mall，停车友好且便宜。",
+      "tags": [
+        "番禺CBD",
+        "地铁7/18号线",
+        "天河城/四海城/万达"
+      ],
+      "area_tips": "万博商圈可优先比较华新汇、奥园和万达；华新汇和奥园有短时优惠口径，但地下环路和商场步行指引不够直观，建议提前确认出口。",
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "parkings": [
+        {
+          "id": 2900,
+          "name": "华新汇停车场",
+          "fee_detail": "约15分钟或半小时内免费，之后约5元/小时；派出所附近另有少量免费车位，数量有限。",
+          "guide_text": "跟随华新汇停车指引开上坡道；到万博派出所办理业务时可优先看附近少量免费位。",
+          "location": "华新汇停车场（万博派出所旁）",
+          "fee_rules": [
+            {
+              "rule_type": "free",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 0,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "description": "约15分钟或半小时内免费",
+              "confidence": "low",
+              "priority": 50
+            },
+            {
+              "rule_type": "normal",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 5,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "description": "之后约5元/小时",
+              "confidence": "low",
+              "priority": 50
+            }
+          ],
+          "type": "停车场",
+          "fee_summary": "约15分钟或半小时内免费，之后约5元/小时；派出所附近另有少量免费车位，数量有限。",
+          "address": "华新汇停车场（万博派出所旁）",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "min_price_hour": 0,
+          "free_minutes": null,
+          "daily_cap": null,
+          "night_flat": null,
+          "open_hours": null,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "source": "编辑整理（公开信息）",
+          "source_records": [
+            {
+              "source_type": "raw_capture",
+              "source_title": "番禺万博派出所24小时营业有自助机",
+              "source_url": "https://www.xiaohongshu.com/explore/69a3d802000000002603db7f?xsec_token=ABlz9BY-uok15mgnw4oxvMsLe1woqV4vtfIcpMJDSTSlw=&xsec_source=",
+              "published_at": "03-01",
+              "rank": 3,
+              "raw_file": "server/xhs-raw/p0-remaining2-20260914/20260914T052701719Z-广州 番禺万博 停车攻略-note-03-69a3d802000000002603db7f.json"
+            }
+          ]
+        },
+        {
+          "id": 2901,
+          "name": "奥园停车场",
+          "fee_detail": "1小时内免费，超出后按现场标准收费。",
+          "guide_text": "从地下环路进入后按奥园停车指引；场内标识较少，建议记住电梯编号和出口方向。",
+          "location": "奥园停车场（番禺万博地下环路）",
+          "fee_rules": [
+            {
+              "rule_type": "free",
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "price": 0,
+              "unit": "hour",
+              "unit_minutes": 60,
+              "description": "1小时内免费",
+              "confidence": "low",
+              "priority": 50
+            }
+          ],
+          "type": "停车场",
+          "fee_summary": "1小时内免费，超出后按现场标准收费。",
+          "address": "奥园停车场（番禺万博地下环路）",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "min_price_hour": 0,
+          "free_minutes": null,
+          "daily_cap": null,
+          "night_flat": null,
+          "open_hours": null,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "source": "编辑整理（公开信息）",
+          "source_records": [
+            {
+              "source_type": "raw_capture",
+              "source_title": "番禺南村万博花市开啦～地下停车怎么去",
+              "source_url": "https://www.xiaohongshu.com/explore/698d8d15000000000a03c800?xsec_token=ABeJg4EzrLOJpdfs4BVJE0lohPhHL7wG21eW5kYZFzBdk=&xsec_source=",
+              "published_at": "02-12",
+              "rank": 4,
+              "raw_file": "server/xhs-raw/p0-remaining2-20260914/20260914T052701719Z-广州 番禺万博 停车攻略-note-04-698d8d15000000000a03c800.json"
+            }
+          ]
+        },
+        {
+          "id": 2902,
+          "name": "番禺万达停车场",
+          "fee_detail": "停留2小时19分钟实付18元；不同消费、影片和时段可能有优惠差异，按现场规则结算。",
+          "guide_text": "适合前往万达广场及影院，离场前确认是否有消费减免或活动。",
+          "location": "番禺万达停车场",
+          "fee_rules": [],
+          "type": "停车场",
+          "fee_summary": "停留2小时19分钟实付18元；不同消费、影片和时段可能有优惠差异，按现场规则结算。",
+          "address": "番禺万达停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "min_price_hour": null,
+          "free_minutes": null,
+          "daily_cap": null,
+          "night_flat": null,
+          "open_hours": null,
+          "payment": [],
+          "confidence": "low",
+          "conflict_flag": false,
+          "source": "编辑整理（公开信息）",
+          "source_records": [
+            {
+              "source_type": "raw_capture",
+              "source_title": "番禺万达，停车费这么高的吗",
+              "source_url": "https://www.xiaohongshu.com/explore/6a006a9d00000000350237f3?xsec_token=AB-Y9w772H-1VTsaYhP5Mz71UmQ5J-xLi5KSLHqgaKTQY=&xsec_source=",
+              "published_at": "05-10",
+              "rank": 1,
+              "raw_file": "server/xhs-raw/p0-remaining2-20260914/20260914T052701719Z-广州 番禺万博 停车攻略-note-01-6a006a9d00000000350237f3.json"
+            }
+          ]
+        }
+      ],
+      "parking_count": 3,
+      "updated_at": "2026-09-14T06:58:57.881Z",
+      "coordinate_source": "腾讯位置服务地点搜索 POI 坐标（商圈中心候选，待人工核验）",
+      "coordinate_poi_name": "万博商务区营销中心",
+      "coordinate_poi_id": "1540618782399605525",
+      "coordinate_address": "广东省广州市番禺区汇智三路万博商务区",
+      "coordinate_verified_at": null,
+      "entrance_verified": false
+    }
+  ]
+}

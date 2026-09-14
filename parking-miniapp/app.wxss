@@ -189,6 +189,8 @@ button::after { border: none; }
   border-radius: var(--radius-sm);
   font-size: 22rpx;
   line-height: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .badge--primary { background: var(--primary-50); color: var(--primary-600); }
 .badge--warn    { background: #FAEEDA; color: #854F0B; }

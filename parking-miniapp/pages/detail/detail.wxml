@@ -1,4 +1,4 @@
-<view class="page" wx:if="{{place || (imagePreview && imagePreview.src && !errorText)}}">
+<view class="page" wx:if="{{place}}">
 
   <!-- 地点信息 -->
   <view class="hero" wx:if="{{place}}">
@@ -7,46 +7,49 @@
     </view>
     <view class="row mt-sm">
       <view class="badge badge--primary">{{place.category}}</view>
-      <text class="fs-caption t3" style="margin-left:16rpx">{{place.district}}</text>
+      <text wx:if="{{place._districtText}}" class="fs-caption t3" style="margin-left:16rpx">{{place._districtText}}</text>
       <text class="fs-caption t3" style="margin-left:16rpx">{{place.parkings.length}} 个车场</text>
     </view>
-    <view class="fs-caption t3 mt-md">{{place.address}}</view>
+    <view class="fs-caption t3 mt-md">{{place._addressText}}</view>
   </view>
 
-  <!-- 地点形象图 -->
-  <view class="place-photo" wx:if="{{imagePreview && imagePreview.src}}">
-    <image
-      class="place-photo__image"
-      src="{{imagePreview.src}}"
-      mode="aspectFill"
-      lazy-load="false"
-      bindload="onPlaceImageLoad"
-      binderror="onPlaceImageError"
-    />
-    <view class="place-photo__caption">{{imagePreview.alt}} · {{imagePreview.credit}}</view>
+  <!-- 地点定位地图 -->
+  <view class="place-map-wrap" wx:if="{{hasPlaceLocation}}">
+    <map
+      class="place-map"
+      latitude="{{mapLatitude}}"
+      longitude="{{mapLongitude}}"
+      markers="{{placeMarkers}}"
+      scale="15"
+    ></map>
+    <view class="place-map__caption">
+      <text>地点定位</text>
+      <text class="tp">点击底部“导航”查看路线</text>
+    </view>
   </view>
+  <view class="place-map-empty" wx:elif="{{place}}">暂无地点定位信息</view>
 
   <block wx:if="{{place}}">
     <!-- 区域攻略 -->
-    <view class="pad" wx:if="{{place.area_tips || place.summary}}">
+    <view class="pad" wx:if="{{place._guideText}}">
     <view class="tipbar mt-md">
       <view class="tipbar__dot"></view>
       <view class="grow">
         <view class="fs-caption tp">停车攻略</view>
-        <view class="tipbar__text mt-sm">{{place.area_tips || place.summary}}</view>
+        <view class="tipbar__text mt-sm">{{place._guideText}}</view>
       </view>
     </view>
     </view>
 
   <!-- 停车场列表 -->
-    <view class="section">
+    <view class="section" wx:if="{{place.parkings.length}}">
     <view class="between">
       <text class="section__title">停车场</text>
       <text class="section__more">按点赞量排序</text>
     </view>
     </view>
 
-    <view class="card-list mt-md">
+    <view class="card-list mt-md" wx:if="{{place.parkings.length}}">
     <view class="card" wx:for="{{place.parkings}}" wx:for-index="parkingIndex" wx:key="id">
 
       <view bindtap="toggleFee" data-index="{{parkingIndex}}">
@@ -147,6 +150,8 @@
       </view>
     </view>
     </view>
+
+    <view wx:else class="place-guide-pending mt-md">攻略完善中</view>
 
     <view class="source-note">数据更新于 2026-09 · 实际收费以现场为准 · 发现错误欢迎纠错</view>
     <view class="safe-bottom" style="height:200rpx"></view>

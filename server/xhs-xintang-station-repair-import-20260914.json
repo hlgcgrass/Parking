@@ -1,0 +1,321 @@
+{
+  "places": [
+    {
+      "name": "新塘站",
+      "category": "交通枢纽",
+      "city_code": "440100",
+      "address": "广州市增城区新塘镇新塘站片区",
+      "district": "增城区",
+      "summary": "新塘站服务增城及东部片区铁路出行。",
+      "area_tips": "站北停车场步行到站约5至8分钟，收费记录为2元/小时、12元/天封顶；北侧临时停车场靠近东进站口，1元/30分钟、全天12元封顶，但可能满位；社会停车场有首小时6元、之后1.5元/15分钟、24小时21元封顶的收费口径；东进站口对面另有露天社会停车场，存在12元/天封顶记录。不同车场的开放和收费可能调整，入场前按现场公示确认。",
+      "tags": [
+        "自驾",
+        "交通枢纽"
+      ],
+      "lng": 113.606329,
+      "lat": 23.133998,
+      "coordinate_status": "待核验",
+      "navigation_available": false,
+      "coordinate_source": "腾讯位置服务地点搜索 POI 坐标（目标地点 POI，待入口复核）",
+      "coordinate_poi_name": "广州新塘站",
+      "coordinate_poi_id": "13005981794020610370",
+      "coordinate_address": "广东省广州市增城区新塘地铁站E3口步行120米",
+      "coordinate_verified_at": null,
+      "entrance_verified": false,
+      "min_price": 2,
+      "min_price_display": "¥2/h起",
+      "parkings": [
+        {
+          "name": "新塘站站北停车场",
+          "fee_detail": "2元/小时；有12元/天封顶的收费记录，优惠时段和当前标准以现场公示为准。",
+          "guide_text": "导航搜索“站北停车场”；停车后步行到新塘站约5至8分钟，路线按当日开放入口通行。车位相对充足，但高峰期仍需确认余位。",
+          "location": "站北停车场",
+          "address": "站北停车场",
+          "type": "停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "coordinate_source": null,
+          "coordinate_poi_name": null,
+          "coordinate_poi_id": null,
+          "coordinate_address": null,
+          "coordinate_verified_at": null,
+          "entrance_verified": false,
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 2,
+              "unit": "hour",
+              "unit_minutes": null,
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "description": "基础收费：2元/小时",
+              "confidence": "medium",
+              "priority": 50
+            },
+            {
+              "rule_type": "cap",
+              "price": 12,
+              "unit": "day",
+              "unit_minutes": null,
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "description": "日封顶：12元/天",
+              "confidence": "medium",
+              "priority": 50
+            }
+          ],
+          "daily_cap": 12,
+          "night_flat": null,
+          "min_price_hour": 2,
+          "confidence": "medium",
+          "conflict_flag": true,
+          "source_records": [
+            {
+              "source_type": "xiaohongshu",
+              "source_url": "https://www.xiaohongshu.com/explore/698996a1000000000b00a25f?xsec_token=ABuhATzUVBduoNvLDhshN3-kgEhMeRHeVL9tZiBVazKAc=&xsec_source=pc_search",
+              "source_title": "广州新塘站停车居然有新年特惠？12封顶 - 小红书",
+              "source_author": null,
+              "source_published_at": null,
+              "rank": 1,
+              "evidence_type": "正文",
+              "raw_file": "server\\xhs-raw\\p1-33-direct-relevance2-20260914\\20260914T091058911Z-新塘站 停车攻略-note-01-698996a1000000000b00a25f.json"
+            },
+            {
+              "source_type": "xiaohongshu",
+              "source_url": "https://www.xiaohongshu.com/explore/6a4a680d000000000701192b?xsec_token=AB9TRZB8R2k2kN-Ka7kF-yMqlllKsmKAB1Lq1rmW7PldE=&xsec_source=pc_search",
+              "source_title": "广州新塘站目前为止停过最便宜的停车场 - 小红书",
+              "source_author": null,
+              "source_published_at": null,
+              "rank": 3,
+              "evidence_type": "正文",
+              "raw_file": "server\\xhs-raw\\p1-33-direct-relevance2-20260914\\20260914T091058911Z-新塘站 停车攻略-note-03-6a4a680d000000000701192b.json"
+            }
+          ],
+          "source": "编辑整理（公开信息）",
+          "verified_at": null
+        },
+        {
+          "name": "新塘站北侧临时停车场",
+          "fee_detail": "1元/30分钟；全天封顶12元。24小时可进出，但夜间现场管理情况需到场确认。",
+          "guide_text": "可尝试导航“新塘高铁站北侧临时停车场”或“新塘站-临时地上停车场”，位置靠近东进站口。停车场为露天，监控区域约240个车位，可能出现满位。",
+          "location": "新塘高铁站北侧临时停车场",
+          "address": "新塘高铁站北侧临时停车场",
+          "type": "停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "coordinate_source": null,
+          "coordinate_poi_name": null,
+          "coordinate_poi_id": null,
+          "coordinate_address": null,
+          "coordinate_verified_at": null,
+          "entrance_verified": false,
+          "fee_rules": [
+            {
+              "rule_type": "normal",
+              "price": 1,
+              "unit": "minute",
+              "unit_minutes": 30,
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "description": "基础收费：1元/30分钟",
+              "confidence": "medium",
+              "priority": 50
+            },
+            {
+              "rule_type": "cap",
+              "price": 12,
+              "unit": "day",
+              "unit_minutes": null,
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "description": "全天封顶：12元/天",
+              "confidence": "medium",
+              "priority": 50
+            }
+          ],
+          "daily_cap": 12,
+          "night_flat": null,
+          "min_price_hour": 2,
+          "confidence": "medium",
+          "conflict_flag": false,
+          "source_records": [
+            {
+              "source_type": "xiaohongshu",
+              "source_url": "https://www.xiaohongshu.com/explore/65bb45a90000000002012ddd?xsec_token=AB91AHtc0I4ZOq6ydij_G4kSNtXscPdSpBFob6MlJo50g=&xsec_source=pc_search",
+              "source_title": "广州新塘站停车🅿️攻略 - 小红书",
+              "source_author": null,
+              "source_published_at": null,
+              "rank": 2,
+              "evidence_type": "正文",
+              "raw_file": "server\\xhs-raw\\p1-33-direct-relevance2-20260914\\20260914T091058911Z-新塘站 停车攻略-note-02-65bb45a90000000002012ddd.json"
+            },
+            {
+              "source_type": "xiaohongshu",
+              "source_url": "https://www.xiaohongshu.com/explore/67a7019d000000002803c1bc?xsec_token=AB4MQW2OPYJIxZkSf3CnvJ6rjQd99REcJHJ8xWNeXuVZ4=&xsec_source=pc_search",
+              "source_title": "新塘站北侧临时停车场收费标准 - 小红书",
+              "source_author": null,
+              "source_published_at": null,
+              "rank": 5,
+              "evidence_type": "正文",
+              "raw_file": "server\\xhs-raw\\p1-33-direct-relevance2-20260914\\20260914T091058911Z-新塘站 停车攻略-note-05-67a7019d000000002803c1bc.json"
+            }
+          ],
+          "source": "编辑整理（公开信息）",
+          "verified_at": null
+        },
+        {
+          "name": "广州新塘站社会停车场",
+          "fee_detail": "首小时6元；之后1.5元/15分钟；24小时封顶21元。收费可能随时段或管理调整，入场前以现场公示为准。",
+          "guide_text": "可搜索“广州新塘站社会停车场”；停车后按当日开放进站口前往站房，东、西进站路线可能随站区管理调整。",
+          "location": "广州新塘站社会停车场",
+          "address": "广州新塘站社会停车场",
+          "type": "停车场",
+          "lng": 113.607216,
+          "lat": 23.134824,
+          "coordinate_status": "待核验",
+          "navigation_available": false,
+          "coordinate_source": "腾讯位置服务地点搜索 POI 坐标（停车场出入口，待入口复核）",
+          "coordinate_poi_name": "广州新塘站社会停车场-出入口",
+          "coordinate_poi_id": "12738419480803323090",
+          "coordinate_address": "广东省广州市增城区站前路与站区道路交叉口正南方向106米左右",
+          "coordinate_verified_at": null,
+          "entrance_verified": false,
+          "fee_rules": [
+            {
+              "rule_type": "first",
+              "price": 6,
+              "unit": "hour",
+              "unit_minutes": null,
+              "start_minute": null,
+              "end_minute": 60,
+              "time_start": null,
+              "time_end": null,
+              "description": "首小时：6元/小时",
+              "confidence": "medium",
+              "priority": 50
+            },
+            {
+              "rule_type": "normal",
+              "price": 1.5,
+              "unit": "minute",
+              "unit_minutes": 15,
+              "start_minute": 60,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "description": "之后：1.5元/15分钟",
+              "confidence": "medium",
+              "priority": 50
+            },
+            {
+              "rule_type": "cap",
+              "price": 21,
+              "unit": "day",
+              "unit_minutes": null,
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "description": "24小时封顶：21元/天",
+              "confidence": "medium",
+              "priority": 50
+            }
+          ],
+          "daily_cap": 21,
+          "night_flat": null,
+          "min_price_hour": 6,
+          "confidence": "medium",
+          "conflict_flag": true,
+          "source_records": [
+            {
+              "source_type": "xiaohongshu",
+              "source_url": "https://www.xiaohongshu.com/explore/6a4a680d000000000701192b?xsec_token=AB9TRZB8R2k2kN-Ka7kF-yMqlllKsmKAB1Lq1rmW7PldE=&xsec_source=pc_search",
+              "source_title": "广州新塘站目前为止停过最便宜的停车场 - 小红书",
+              "source_author": null,
+              "source_published_at": null,
+              "rank": 3,
+              "evidence_type": "正文",
+              "raw_file": "server\\xhs-raw\\p1-33-direct-relevance2-20260914\\20260914T091058911Z-新塘站 停车攻略-note-03-6a4a680d000000000701192b.json"
+            },
+            {
+              "source_type": "xiaohongshu",
+              "source_url": "https://www.xiaohongshu.com/explore/6a1667070000000007028802?xsec_token=AB7JgFRIA97lrbXtoD37_rz0SRQNF0scShy5M2SRO94Bk=&xsec_source=pc_search",
+              "source_title": "广州新塘站停车推荐 - 小红书",
+              "source_author": null,
+              "source_published_at": null,
+              "rank": 4,
+              "evidence_type": "正文",
+              "raw_file": "server\\xhs-raw\\p1-33-direct-relevance2-20260914\\20260914T091058911Z-新塘站 停车攻略-note-04-6a1667070000000007028802.json"
+            }
+          ],
+          "source": "编辑整理（公开信息）",
+          "verified_at": null
+        },
+        {
+          "name": "新塘站东进站口对面露天社会停车场",
+          "fee_detail": "有12元/天封顶的收费记录；另有免费记录，具体场地和收费时段存在差异，入场前以现场公示为准。",
+          "guide_text": "位置在新塘站东进站口对面一带，认准社会停车场入口；该处为露天车场，停车后按现场指引步行进站。",
+          "location": "新塘站东进站口对面社会停车场",
+          "address": "新塘站东进站口对面社会停车场",
+          "type": "停车场",
+          "lng": null,
+          "lat": null,
+          "coordinate_status": "待补充",
+          "navigation_available": false,
+          "coordinate_source": null,
+          "coordinate_poi_name": null,
+          "coordinate_poi_id": null,
+          "coordinate_address": null,
+          "coordinate_verified_at": null,
+          "entrance_verified": false,
+          "fee_rules": [
+            {
+              "rule_type": "cap",
+              "price": 12,
+              "unit": "day",
+              "unit_minutes": null,
+              "start_minute": null,
+              "end_minute": null,
+              "time_start": null,
+              "time_end": null,
+              "description": "日封顶：12元/天",
+              "confidence": "low",
+              "priority": 50
+            }
+          ],
+          "daily_cap": null,
+          "night_flat": null,
+          "min_price_hour": null,
+          "confidence": "low",
+          "conflict_flag": true,
+          "source_records": [
+            {
+              "source_type": "xiaohongshu",
+              "source_url": "https://www.xiaohongshu.com/explore/6a1667070000000007028802?xsec_token=AB7JgFRIA97lrbXtoD37_rz0SRQNF0scShy5M2SRO94Bk=&xsec_source=pc_search",
+              "source_title": "广州新塘站停车推荐 - 小红书",
+              "source_author": null,
+              "source_published_at": null,
+              "rank": 4,
+              "evidence_type": "正文",
+              "raw_file": "server\\xhs-raw\\p1-33-direct-relevance2-20260914\\20260914T091058911Z-新塘站 停车攻略-note-04-6a1667070000000007028802.json"
+            }
+          ],
+          "source": "编辑整理（公开信息）",
+          "verified_at": null
+        }
+      ]
+    }
+  ]
+}

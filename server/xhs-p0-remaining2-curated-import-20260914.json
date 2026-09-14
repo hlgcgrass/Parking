@@ -2,7 +2,7 @@
   "meta": {
     "city": "广州",
     "city_code": "440100",
-    "generated_at": "2026-09-14T06:26:08.233Z",
+    "generated_at": "2026-09-14T06:58:57.882Z",
     "source_dir": "server/xhs-raw/p0-remaining2-20260914",
     "places": 15,
     "parkings": 37,
@@ -32,7 +32,7 @@
       "navigation_available": false,
       "parkings": [],
       "parking_count": 0,
-      "updated_at": "2026-09-14T06:26:08.232Z"
+      "updated_at": "2026-09-14T06:58:57.880Z"
     },
     {
       "id": 45,
@@ -221,7 +221,7 @@
         }
       ],
       "parking_count": 3,
-      "updated_at": "2026-09-14T06:26:08.232Z"
+      "updated_at": "2026-09-14T06:58:57.881Z"
     },
     {
       "id": 48,
@@ -294,7 +294,7 @@
         }
       ],
       "parking_count": 1,
-      "updated_at": "2026-09-14T06:26:08.233Z"
+      "updated_at": "2026-09-14T06:58:57.881Z"
     },
     {
       "id": 44,
@@ -419,7 +419,7 @@
         }
       ],
       "parking_count": 2,
-      "updated_at": "2026-09-14T06:26:08.233Z"
+      "updated_at": "2026-09-14T06:58:57.881Z"
     },
     {
       "id": 42,
@@ -634,7 +634,7 @@
         }
       ],
       "parking_count": 5,
-      "updated_at": "2026-09-14T06:26:08.233Z"
+      "updated_at": "2026-09-14T06:58:57.881Z"
     },
     {
       "id": 47,
@@ -727,7 +727,7 @@
         }
       ],
       "parking_count": 2,
-      "updated_at": "2026-09-14T06:26:08.233Z"
+      "updated_at": "2026-09-14T06:58:57.881Z"
     },
     {
       "id": 53,
@@ -834,7 +834,7 @@
         }
       ],
       "parking_count": 2,
-      "updated_at": "2026-09-14T06:26:08.233Z"
+      "updated_at": "2026-09-14T06:58:57.881Z"
     },
     {
       "id": 7,
@@ -867,12 +867,12 @@
             {
               "rule_type": "free",
               "start_minute": null,
-              "end_minute": null,
+              "end_minute": 15,
               "time_start": null,
               "time_end": null,
               "price": 0,
-              "unit": "hour",
-              "unit_minutes": 60,
+              "unit": "minute",
+              "unit_minutes": 15,
               "description": "前15分钟免费",
               "confidence": "low",
               "priority": 50
@@ -967,12 +967,12 @@
             {
               "rule_type": "free",
               "start_minute": null,
-              "end_minute": null,
+              "end_minute": 15,
               "time_start": null,
               "time_end": null,
               "price": 0,
-              "unit": "hour",
-              "unit_minutes": 60,
+              "unit": "minute",
+              "unit_minutes": 15,
               "description": "前15分钟免费",
               "confidence": "low",
               "priority": 50
@@ -1176,12 +1176,12 @@
             {
               "rule_type": "free",
               "start_minute": null,
-              "end_minute": null,
+              "end_minute": 15,
               "time_start": null,
               "time_end": null,
               "price": 0,
-              "unit": "hour",
-              "unit_minutes": 60,
+              "unit": "minute",
+              "unit_minutes": 15,
               "description": "白天前15分钟免费",
               "confidence": "low",
               "priority": 50
@@ -1202,12 +1202,12 @@
             {
               "rule_type": "free",
               "start_minute": null,
-              "end_minute": null,
+              "end_minute": 30,
               "time_start": null,
               "time_end": null,
               "price": 0,
-              "unit": "hour",
-              "unit_minutes": 60,
+              "unit": "minute",
+              "unit_minutes": 30,
               "description": "夜间前30分钟免费",
               "confidence": "low",
               "priority": 50
@@ -1289,12 +1289,12 @@
             {
               "rule_type": "free",
               "start_minute": null,
-              "end_minute": null,
+              "end_minute": 15,
               "time_start": null,
               "time_end": null,
               "price": 0,
-              "unit": "hour",
-              "unit_minutes": 60,
+              "unit": "minute",
+              "unit_minutes": 15,
               "description": "前15分钟免费",
               "confidence": "low",
               "priority": 50
@@ -1402,7 +1402,7 @@
         }
       ],
       "parking_count": 6,
-      "updated_at": "2026-09-14T06:26:08.233Z"
+      "updated_at": "2026-09-14T06:58:57.881Z"
     },
     {
       "id": 8,
@@ -1523,7 +1523,7 @@
         }
       ],
       "parking_count": 2,
-      "updated_at": "2026-09-14T06:26:08.233Z"
+      "updated_at": "2026-09-14T06:58:57.881Z"
     },
     {
       "id": 15,
@@ -1690,7 +1690,7 @@
         }
       ],
       "parking_count": 3,
-      "updated_at": "2026-09-14T06:26:08.233Z"
+      "updated_at": "2026-09-14T06:58:57.881Z"
     },
     {
       "id": 10,
@@ -1763,15 +1763,15 @@
         }
       ],
       "parking_count": 1,
-      "updated_at": "2026-09-14T06:26:08.233Z"
+      "updated_at": "2026-09-14T06:58:57.881Z"
     },
     {
       "id": 1011,
       "name": "黄埔大沙地",
       "city_code": "440100",
       "category": "商圈",
-      "address": null,
-      "district": null,
+      "address": "广州市黄埔区大沙地",
+      "district": "黄埔区",
       "lng": null,
       "lat": null,
       "heat": 50,
@@ -1928,15 +1928,15 @@
         }
       ],
       "parking_count": 3,
-      "updated_at": "2026-09-14T06:26:08.233Z"
+      "updated_at": "2026-09-14T06:58:57.881Z"
     },
     {
       "id": 1012,
       "name": "岗顶",
       "city_code": "440100",
       "category": "商圈",
-      "address": null,
-      "district": null,
+      "address": "广州市天河区岗顶",
+      "district": "天河区",
       "lng": null,
       "lat": null,
       "heat": 50,
@@ -2024,15 +2024,15 @@
         }
       ],
       "parking_count": 1,
-      "updated_at": "2026-09-14T06:26:08.233Z"
+      "updated_at": "2026-09-14T06:58:57.881Z"
     },
     {
       "id": 1013,
       "name": "五羊新城",
       "city_code": "440100",
       "category": "商圈",
-      "address": null,
-      "district": null,
+      "address": "广州市越秀区五羊新城",
+      "district": "越秀区",
       "lng": null,
       "lat": null,
       "heat": 50,
@@ -2141,15 +2141,15 @@
         }
       ],
       "parking_count": 2,
-      "updated_at": "2026-09-14T06:26:08.233Z"
+      "updated_at": "2026-09-14T06:58:57.881Z"
     },
     {
       "id": 1014,
       "name": "琶洲",
       "city_code": "440100",
       "category": "商圈",
-      "address": null,
-      "district": null,
+      "address": "广州市海珠区琶洲",
+      "district": "海珠区",
       "lng": null,
       "lat": null,
       "heat": 50,
@@ -2388,7 +2388,7 @@
         }
       ],
       "parking_count": 4,
-      "updated_at": "2026-09-14T06:26:08.233Z"
+      "updated_at": "2026-09-14T06:58:57.882Z"
     }
   ]
 }

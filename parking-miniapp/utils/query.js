@@ -29,6 +29,18 @@ const CONF_TEXT = {
 const PLACE_IMAGES = require('./place-images.js');
 const { placeDisplayPrice } = require('./fee.js');
 
+function visibleText(value) {
+  const text = String(value == null ? '' : value).trim();
+  return text && !/^(?:null|undefined)$/i.test(text) ? text : '';
+}
+
+function placeLocationText(place) {
+  const district = visibleText(place && place.district);
+  const address = visibleText(place && place.address);
+  if (district && address) return `${district} · ${address}`;
+  return district || address || '位置待补充';
+}
+
 // 构建索引（parkingsByPlace / parkingById / tipsByPlace），结果缓存到 s._maps 避免重复计算
 function ensureMaps(s) {
   if (s._maps) return s._maps;
@@ -97,7 +109,8 @@ function buildList(s, { cityCode, category, keyword, page = 1, size = 20, lat, l
       _hasPrice: !!price,
       _priceValue: price ? price.value : '',
       _priceUnit: price ? price.unit : '',
-      _priceSuffix: price ? price.suffix : ''
+      _priceSuffix: price ? price.suffix : '',
+      _locationText: placeLocationText(p)
     });
     if (lat != null && lng != null && p.lat != null && p.lng != null) out.distance_m = haversine(lat, lng, p.lat, p.lng);
     return out;
@@ -125,7 +138,8 @@ function searchPlaces(s, keyword, cityCode, limit = 20) {
         _hasPrice: !!price,
         _priceValue: price ? price.value : '',
         _priceUnit: price ? price.unit : '',
-        _priceSuffix: price ? price.suffix : ''
+        _priceSuffix: price ? price.suffix : '',
+        _locationText: placeLocationText(p)
       });
     })
     .sort((a, b) => a._rank - b._rank || (b.heat || 0) - (a.heat || 0))
@@ -149,6 +163,7 @@ function nearbyPlaces(s, lat, lng, radius = 3000, limit = 20) {
         lng: p.lng, lat: p.lat, parking_count: p.parking_count ?? (maps.parkingsByPlace[p.id] || []).length, min_price: p.min_price,
         _hasPrice: !!price, _priceValue: price ? price.value : '', _priceUnit: price ? price.unit : '',
         _priceSuffix: price ? price.suffix : '',
+        _locationText: placeLocationText(p),
         top_parking: top ? top.name : null, distance_m: p.distance_m
       };
     });
@@ -182,10 +197,16 @@ function getDetailStatic(s, id, lat, lng, sort, favSet, likeSet, imageMap) {
   const image = Object.assign({}, PLACE_IMAGES[place.id] || {}, imageMap && (imageMap[place.id] || imageMap[String(place.id)]) || {});
   return {
     id: place.id, name: place.name, category: place.category, address: place.address,
-    district: place.district, city_name: (c0 && c0.name) || '广州',
+    district: place.district, _districtText: visibleText(place.district),
+    _addressText: visibleText(place.address) || '地点位置待补充', city_name: (c0 && c0.name) || '广州',
     city_code: (c0 && c0.code) || '440100', lng: place.lng, lat: place.lat,
     heat: place.heat, summary: place.summary, tags: place.tags || [], area_tips: place.area_tips,
-    updated_at: place.updated_at, ...image, parkings: parkingList, tips: maps.tipsByPlace[place.id] || []
+    updated_at: place.updated_at, ...image,
+    _guidePending: parkingList.length === 0,
+    _guideText: parkingList.length === 0
+      ? '攻略完善中'
+      : (visibleText(place.area_tips) || visibleText(place.summary) || '攻略完善中'),
+    parkings: parkingList, tips: maps.tipsByPlace[place.id] || []
   };
 }
 

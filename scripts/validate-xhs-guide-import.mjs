@@ -44,7 +44,7 @@ if (!data || !Array.isArray(data.places) || data.places.length === 0) {
 const placeNames = new Set();
 const parkingNames = new Set();
 const ruleTypes = new Set(['first', 'normal', 'cap', 'free', 'night']);
-const units = new Set(['hour', 'minute', 'day', 'time']);
+const units = new Set(['hour', 'minute', 'day', 'month', 'time']);
 
 for (const [placeIndex, place] of (data.places ?? []).entries()) {
   const placeLabel = `places[${placeIndex}]`;
@@ -63,14 +63,20 @@ for (const [placeIndex, place] of (data.places ?? []).entries()) {
   checkVisibleText(place?.area_tips, `${placeLabel}.area_tips`);
   const placeHasLng = place?.lng !== null && place?.lng !== undefined;
   const placeHasLat = place?.lat !== null && place?.lat !== undefined;
-  if (!placeHasLng || !placeHasLat) error(`${placeLabel}地点经纬度不能为空，必须先完成目标地点定位`);
+  if (!placeHasLng && !placeHasLat && place?.coordinate_status !== '待补充') error(`${placeLabel}缺失坐标时 coordinate_status 必须为待补充`);
   if (placeHasLng !== placeHasLat) error(`${placeLabel}地点经纬度必须成对出现`);
   if (placeHasLng && (!Number.isFinite(place.lng) || place.lng < -180 || place.lng > 180)) error(`${placeLabel}.lng 范围不合法`);
   if (placeHasLat && (!Number.isFinite(place.lat) || place.lat < -90 || place.lat > 90)) error(`${placeLabel}.lat 范围不合法`);
-  if (place?.coordinate_status !== '已核验') error(`${placeLabel}.coordinate_status 必须为已核验`);
-  if (place?.navigation_available !== true) error(`${placeLabel}.navigation_available 必须为 true`);
-  if (!Array.isArray(place?.parkings) || place.parkings.length === 0) {
-    error(`${placeLabel}.parkings 必须至少包含一条停车场`);
+  if (placeHasLng && !['已核验', '待核验'].includes(place?.coordinate_status)) error(`${placeLabel}.coordinate_status 不合法`);
+  if (!placeHasLng && place?.navigation_available !== false) error(`${placeLabel}缺失坐标时 navigation_available 必须为 false`);
+  if (placeHasLng && place?.coordinate_status === '已核验' && place?.navigation_available !== true) error(`${placeLabel}已核验坐标必须开启导航`);
+  if (placeHasLng && place?.coordinate_status === '待核验' && place?.navigation_available !== false) error(`${placeLabel}待核验坐标必须关闭导航`);
+  if (!Array.isArray(place?.parkings)) {
+    error(`${placeLabel}.parkings 必须是数组`);
+    continue;
+  }
+  if (place.parkings.length === 0) {
+    if (place.area_tips !== '攻略完善中') error(`${placeLabel}无停车场时 area_tips 必须为“攻略完善中”`);
     continue;
   }
 
@@ -107,8 +113,8 @@ for (const [placeIndex, place] of (data.places ?? []).entries()) {
         if (rule?.unit === 'minute' && (!Number.isInteger(rule?.unit_minutes) || rule.unit_minutes <= 0)) {
           error(`${ruleLabel}.unit_minutes 必须是正整数`);
         }
-        if (rule?.time_start !== undefined && !/^\d{2}:\d{2}$/.test(rule.time_start)) error(`${ruleLabel}.time_start 格式不合法`);
-        if (rule?.time_end !== undefined && !/^\d{2}:\d{2}$/.test(rule.time_end)) error(`${ruleLabel}.time_end 格式不合法`);
+        if (rule?.time_start !== null && rule?.time_start !== undefined && !/^\d{2}:\d{2}$/.test(rule.time_start)) error(`${ruleLabel}.time_start 格式不合法`);
+        if (rule?.time_end !== null && rule?.time_end !== undefined && !/^\d{2}:\d{2}$/.test(rule.time_end)) error(`${ruleLabel}.time_end 格式不合法`);
       }
     }
 
@@ -117,9 +123,11 @@ for (const [placeIndex, place] of (data.places ?? []).entries()) {
     if (hasLng !== hasLat) error(`${label}经纬度必须成对出现`);
     if (hasLng && (!Number.isFinite(parking.lng) || parking.lng < -180 || parking.lng > 180)) error(`${label}.lng 范围不合法`);
     if (hasLat && (!Number.isFinite(parking.lat) || parking.lat < -90 || parking.lat > 90)) error(`${label}.lat 范围不合法`);
-    if (!hasLng) error(`${label}停车场经纬度不能为空，必须先完成停车场定位`);
-    if (hasLng && parking?.coordinate_status !== '已核验') error(`${label}coordinate_status 必须为已核验`);
-    if (parking?.navigation_available !== true) error(`${label}navigation_available 必须为 true`);
+    if (!hasLng && parking?.coordinate_status !== '待补充') error(`${label}缺失坐标时 coordinate_status 必须为待补充`);
+    if (hasLng && !['已核验', '待核验'].includes(parking?.coordinate_status)) error(`${label}coordinate_status 不合法`);
+    if (!hasLng && parking?.navigation_available !== false) error(`${label}缺失坐标时 navigation_available 必须为 false`);
+    if (hasLng && parking?.coordinate_status === '已核验' && parking?.navigation_available !== true) error(`${label}已核验坐标必须开启导航`);
+    if (hasLng && parking?.coordinate_status === '待核验' && parking?.navigation_available !== false) error(`${label}待核验坐标必须关闭导航`);
     if (parking?.conflict_flag === true && !isNonEmpty(parking?.fee_detail)) {
       warnings.push(`${label}标记收费冲突但缺少文字收费明细`);
     }

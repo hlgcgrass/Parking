@@ -13,6 +13,26 @@ const query = require('./query.js');
 
 const useCloud = DATA_SOURCE === 'cloud';
 
+// 云函数旧版本可能返回未格式化的小时价（例如 1.6666666666666667）。
+// 只在展示字段上做兜底，避免影响收费计算和其他业务数值。
+function normalizePriceFields(value) {
+  if (Array.isArray(value)) return value.map(normalizePriceFields);
+  if (!value || typeof value !== 'object') return value;
+
+  const out = {};
+  Object.keys(value).forEach(key => {
+    let item = value[key];
+    if (key === '_priceValue' && item !== '' && item != null) {
+      const number = Number(item);
+      if (Number.isFinite(number)) item = Math.round((number + Number.EPSILON) * 100) / 100;
+    } else if (item && typeof item === 'object') {
+      item = normalizePriceFields(item);
+    }
+    out[key] = item;
+  });
+  return out;
+}
+
 // ---------------- 云开发通道 ----------------
 function cloudCall(action, data = {}) {
   return new Promise((resolve, reject) => {
@@ -21,7 +41,7 @@ function cloudCall(action, data = {}) {
       data: Object.assign({ action }, data),
       success(res) {
         const r = res.result || {};
-        if (r.code === 0) return resolve(r.data);
+        if (r.code === 0) return resolve(normalizePriceFields(r.data));
         reject(new Error(r.message || '云函数调用失败'));
       },
       fail(err) {
@@ -46,7 +66,9 @@ function cloudCall(action, data = {}) {
           data: Object.assign({ action }, data),
           success(res) {
             const r = res.result || {};
-            r.code === 0 ? resolve(r.data) : reject(new Error(r.message || '云函数调用失败'));
+            r.code === 0
+              ? resolve(normalizePriceFields(r.data))
+              : reject(new Error(r.message || '云函数调用失败'));
           },
           fail(e2) { reject(new Error(e2.errMsg || '云函数调用失败')); }
         });

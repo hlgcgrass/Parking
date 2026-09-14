@@ -1,0 +1,2294 @@
+{
+  "meta": {
+    "city": "广州",
+    "city_code": "440100",
+    "exported_at": "2026-09-14T08:50:39.814Z",
+    "places": 14,
+    "parkings": 30,
+    "fee_rules": 59,
+    "source": "小红书最多收藏排序前10条笔记的保守整理"
+  },
+  "cities": [
+    {
+      "id": 1,
+      "name": "广州",
+      "code": "440100",
+      "pinyin": "guangzhou",
+      "province": "广东省",
+      "lng": 113.2644,
+      "lat": 23.1291,
+      "hot_level": 5
+    }
+  ],
+  "categories": [
+    {
+      "name": "景点",
+      "count": 22
+    },
+    {
+      "name": "商圈",
+      "count": 19
+    },
+    {
+      "name": "医院",
+      "count": 13
+    }
+  ],
+  "places": [
+    {
+      "id": 100,
+      "name": "十三行博物馆",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 1,
+      "area_tips": "该地点已整理1个停车点",
+      "updated_at": "2026-09-14T08:50:39.800Z"
+    },
+    {
+      "id": 101,
+      "name": "黄埔古港",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 1,
+      "area_tips": "该地点已整理1个停车点。步行与入口：步行就能到黄埔村、黄埔古港、工美港创意园、北岛创意园、广州航海学院琶洲校区。；🚗 交通超便利 • 快速接驳新化快速、环城高速新洲出口。停车注意：上下高速完全不受广州高峰限行限制；元一小时",
+      "updated_at": "2026-09-14T08:50:39.802Z"
+    },
+    {
+      "id": 102,
+      "name": "太古仓",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 2,
+      "area_tips": "该地点已整理2个停车点",
+      "updated_at": "2026-09-14T08:50:39.804Z"
+    },
+    {
+      "id": 103,
+      "name": "东山口",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 8,
+      "area_tips": "该地点已整理8个停车点。步行与入口：步行3分钟到网红街。；🅿️ 一方东山停车场 📍位置：越秀区庙前西街48号（创意园内） 💴收费：4元/15分钟 🚗车位：约50个；园内） 💴收费：4元/15分钟 🚗车位：约50个；离东山口核心街区仅步行5分钟。停车注意：来过东山口的都懂 街巷窄、人流密、车位少 开车过来逛街；车位少；💡 真心话实用建议：能不开车就别开车❗ 东山口本身就是老城区街巷格局 道路窄、单行线多、行人密集 加上网红街区人流量大；开车进来非常容易堵车、绕路。",
+      "updated_at": "2026-09-14T08:50:39.806Z"
+    },
+    {
+      "id": 104,
+      "name": "南沙天后宫",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 3,
+      "area_tips": "该地点已整理3个停车点。步行与入口：儿童/学生/老人/残疾人/南沙人才卡B卡持卡者（必须带本人卡或者小程序）10元/人 通过景区官方公众号 广州南沙天后宫旅游景区—线上购票 停车 距离天后宫东门（距离石像及主路线最近）： 南沙海滨公园北停车场（目前还在修缮；树荫多） 祈福 ①天后宫主入口进入主广场 ②主广场妈祖神像（有香炉、可点香、献香、香烛、花） ③主广场右边有土地公神像庙（有香炉、可点香、献香、香烛、花；走大概15分钟。；自驾直接导航「广州市公交站北面停车场」停车费良心👇 ✅ 30分钟内免费 ✅ 10元/次（5小时） 👶遛娃省钱；不要找周边的停车场（要25元/次）甚至外围停车场还要走10几分钟过去。。停车注意：车位少；看着别的孩子排队冲水；一样的收费；有网友说p9不是这个收费政策 1 Jason Yu🐬 停了P9停车场；对面的天后宫停车场也是一样的收费 狮子座_ [呃R][呃R][呃R][呃R]南沙那些人是真敢收啊；有网友说p9不是这个收费政策 1 Jason Yu🐬 停了P9停车场；对面的天后宫停车场也是一样的收费 狮子座_ [呃R][呃R][呃R][呃R]南沙那些人是真敢收啊",
+      "updated_at": "2026-09-14T08:50:39.807Z"
+    },
+    {
+      "id": 105,
+      "name": "白水寨",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 0,
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "updated_at": "2026-09-14T08:50:39.808Z"
+    },
+    {
+      "id": 106,
+      "name": "流溪河国家森林公园",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 2,
+      "area_tips": "该地点已整理2个停车点。步行与入口：米妈生活 2024-11-14 200 广州小众秘境 流溪河国家森林公园游玩攻略 觅知 2025-10-11 84 大家都在搜 森林公园停车场收费 流溪河国家森林公园免费停车 流溪河从都湿地公园停车 流溪河自驾游攻略 流溪河国家森林公园懒人游简单攻略 momo 2025-11-08 56 看了10年",
+      "updated_at": "2026-09-14T08:50:39.809Z"
+    },
+    {
+      "id": 107,
+      "name": "宝墨园",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 1,
+      "area_tips": "该地点已整理1个停车点",
+      "updated_at": "2026-09-14T08:50:39.809Z"
+    },
+    {
+      "id": 108,
+      "name": "黄花岗公园",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 1,
+      "area_tips": "该地点已整理1个停车点",
+      "updated_at": "2026-09-14T08:50:39.810Z"
+    },
+    {
+      "id": 109,
+      "name": "广州美术馆",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 3,
+      "area_tips": "该地点已整理3个停车点。停车注意：广州停车会按你这个收费吗 史蒂芬妮Stephanie 今天大雨滂沱过来看展；停车费比往返打车都贵。",
+      "updated_at": "2026-09-14T08:50:39.811Z"
+    },
+    {
+      "id": 110,
+      "name": "广州大剧院",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 0,
+      "area_tips": "本轮未提取到可确认的停车信息。",
+      "updated_at": "2026-09-14T08:50:39.811Z"
+    },
+    {
+      "id": 111,
+      "name": "星海音乐厅",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 6,
+      "area_tips": "该地点已整理6个停车点。步行与入口：00 可停车 如上述路段停满还有收费停车场可选 文立方广场停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次；00 可停车 如上述路段停满还有收费停车场可选 文立方广场停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次；16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次 新创举中心停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 /；0 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次 新创举中心停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 二沙岛体育公园停车场 7：30-21：30 三小时以内（2.5元/半小时） 三小时以外（5元/半小时) 21。停车注意：否则过节也会贴条；全宇宙超级无敌第一深情 停车场要收费吗！；商场里面停车要收费的；我看其他人说看音乐会可以免费停到星海音乐厅；车位有限早到早停！",
+      "updated_at": "2026-09-14T08:50:39.812Z"
+    },
+    {
+      "id": 112,
+      "name": "广东科学中心",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 1,
+      "area_tips": "该地点已整理1个停车点。停车注意：最新停车收费信息 置顶评论 2 一万个为什么 这是地面的停车吗 小",
+      "updated_at": "2026-09-14T08:50:39.813Z"
+    },
+    {
+      "id": 113,
+      "name": "广州文化馆",
+      "category": "景点",
+      "address": null,
+      "lng": null,
+      "lat": null,
+      "heat": 50,
+      "summary": "",
+      "tags": [],
+      "search_text": "",
+      "parking_count": 1,
+      "area_tips": "该地点已整理1个停车点",
+      "updated_at": "2026-09-14T08:50:39.814Z"
+    }
+  ],
+  "parkingsByPlace": {
+    "100": [
+      {
+        "id": 1001,
+        "name": "十三行博物馆有停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：免费停车攻略 阳春影子 2025-11-19 12 广州文博攻略2:十三行博物馆 疯狂抹茶脑 09-03 11 广州十三行博物馆 读懂百年海上贸易史🌊 CoCoJun6 08-30 9 大家都在搜 十三行博物馆有停车场吗 十三行附近停车攻略 广州十三行博物馆停车在哪里 十三行博物馆周边停车 旅游推荐 广州旅游必去景点 退居二线的神奇女侠® 2023-11-04 8 活动 1/6 钩针图纸搬运工 关注 十三行周边停车场荔湾路125号停车场 地铁方便；哪里 十三行博物馆周边停车 旅游推荐 广州旅游必去景点 退居二线的神奇女侠® 2023-11-04 8 活动 1/11 阳春影子 关注 广州十三行开车免费停车攻略 我东莞出发的；我上次发布了一个在官湖地铁口的免费停车位；#十三行攻略 #十三行免费停车",
+        "source": "编辑整理（公开信息）",
+        "confidence": "medium",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6783eaa1000000000b015221?xsec_token=ABNY-7mNhddrpr49WvGc31eCw6nRhGDkn36c0ypNfUleY=&xsec_source=pc_search",
+            "source_title": "十三行周边停车场荔湾路125号停车场",
+            "source_author": "十三行周边停车场荔湾路125号停车场 钩针图纸搬运工",
+            "source_published_at": "2025-01-13",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082703625Z-十三行博物馆 停车攻略-note-01-6783eaa1000000000b015221.json"
+          },
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/691d6260000000000d00dbc1?xsec_token=AB-96Az3lU0mF1WVEmRkQwFvEc2v7Z8a1EOYObaKKni10=&xsec_source=pc_search",
+            "source_title": "广州十三行开车免费停车攻略",
+            "source_author": "广州十三行开车免费停车攻略 阳春影子",
+            "source_published_at": "2025-11-19",
+            "rank": 3,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082703625Z-十三行博物馆 停车攻略-note-03-691d6260000000000d00dbc1.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "101": [
+      {
+        "id": 1002,
+        "name": "珠投一横路停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：💰 停车费用超实惠 • 月租只要450元/月；24小时封顶30元\n2、路线：步行就能到黄埔村、黄埔古港、工美港创意园、北岛创意园、广州航海学院琶洲校区。；🚗 交通超便利 • 快速接驳新化快速、环城高速新洲出口\n3、注意：上下高速完全不受广州高峰限行限制；元一小时",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/65f67b89000000001203f8dd?xsec_token=ABdJyD1nkyFDY9Ne2QBzOs52boiP0pD3bw7YX-okE7RpQ=&xsec_source=pc_search",
+            "source_title": "【黄埔村】琶洲会展、黄埔古港旁的宝藏停车场",
+            "source_author": "【黄埔村】琶洲会展、黄埔古港旁的宝藏停车场 momo",
+            "source_published_at": "01-31",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082753782Z-黄埔古港 停车攻略-note-01-65f67b89000000001203f8dd.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 450,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "💰 停车费用超实惠 • 月租只要450元/月",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 30,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "24小时封顶30元",
+            "confidence": "low",
+            "priority": 100
+          }
+        ]
+      }
+    ],
+    "102": [
+      {
+        "id": 1003,
+        "name": "广州太古仓码头",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：向阳花in深圳 2023-05-04 50 太古仓码头：广州夜生活的开始 爱玩广州 02-15 44 大家都在搜 广州太古仓码头停车 太古仓免费停车 太古仓停车停在哪 广州太古仓附近停车攻略 💥太古仓真实避坑指南 元气娜娜🐣 02-09 29 太古仓 小仓鼠丶 2025-11-09 20 太古仓 不准叫我葫蘆娃 2021-11-21 11 太古仓·码头 猫猫侠😺 2021-10-27 11 广州太古仓",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/64539f720000000027002bff?xsec_token=AB-bOoSHXvRCATio0cRSFreho1rYtLCfh2ypV--yQU2hs=&xsec_source=pc_search",
+            "source_title": "【广州太古仓码头】详细攻略（自驾）",
+            "source_author": "【广州太古仓码头】详细攻略（自驾） 向阳花in深圳",
+            "source_published_at": "2023-05-04",
+            "rank": 2,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082855131Z-太古仓 停车攻略-note-02-64539f720000000027002bff.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1004,
+        "name": "大型室内停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：固定车位880元/月；固定车位2640元/季度",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/66c7058d000000001f014909?xsec_token=ABpB52bFQBp4m10iVpwHq0VPoihYbIcWRdt1I16-EolHA=&xsec_source=pc_search",
+            "source_title": "广州市海珠区（太古仓附近）地下停车场出租",
+            "source_author": "广州市海珠区（太古仓附近）地下停车场出租 Liam Yik",
+            "source_published_at": "2025-03-23",
+            "rank": 3,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082855131Z-太古仓 停车攻略-note-03-66c7058d000000001f014909.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 880,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "固定车位880元/月",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 2640,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "固定车位2640元/季度",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "103": [
+      {
+        "id": 1005,
+        "name": "东山口停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：佛山🚗广州 小鱼日常 2025-04-06 177 广州东山口停车 琳瑾Jolly 2025-08-04 170 低至6元/h",
+        "source": "编辑整理（公开信息）",
+        "confidence": "medium",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/653d3914000000001e03ee6b?xsec_token=ABx1rAuNb9R6xD8AFjJWhbFmfuRzpLQuGxv7ZlJQ2fJkI=&xsec_source=pc_search",
+            "source_title": "东山口停车攻略",
+            "source_author": "东山口停车攻略 Ken",
+            "source_published_at": "2023-10-29",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082935780Z-东山口 停车攻略-note-01-653d3914000000001e03ee6b.json"
+          },
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/67d653f0000000000900ea93?xsec_token=ABZ8Dpqt1TIEMnOm1-2s7jCiLpvMDrB1dgH-Q32DAnXb0=&xsec_source=pc_search",
+            "source_title": "🔥东山口停车刺客退！亲测8元/h宝藏停车场",
+            "source_author": "🔥东山口停车刺客退！亲测8元/h宝藏停车场 方方圆圆",
+            "source_published_at": "2025-03-16",
+            "rank": 2,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082935780Z-东山口 停车攻略-note-02-67d653f0000000000900ea93.json"
+          },
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6607c0c1000000001b00eddf?xsec_token=AB1B2TqGJuvpXDI5zzKhApR70Wfw2XAmLXd625SVrbQms=&xsec_source=pc_search",
+            "source_title": "广州东山口停车攻略",
+            "source_author": "广州东山口停车攻略 Fy123",
+            "source_published_at": "2024-03-30",
+            "rank": 3,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082935780Z-东山口 停车攻略-note-03-6607c0c1000000001b00eddf.json"
+          },
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/688ef68c000000002502aab2?xsec_token=ABwRk5sr4NI8Wu_2dZeE9Oh4l8hFLkOCXieQaEuT7FHPI=&xsec_source=pc_search",
+            "source_title": "广州东山口停车",
+            "source_author": "广州东山口停车 琳瑾Jolly",
+            "source_published_at": "2025-08-04",
+            "rank": 4,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082935780Z-东山口 停车攻略-note-04-688ef68c000000002502aab2.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 6,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "佛山🚗广州 小鱼日常 2025-04-06 177 广州东山口停车 琳瑾Jolly 2025-08-04 170 低至6元/h",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1006,
+        "name": "实测德心轩地下停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：200元/次刺客警告⚠；48元封顶真香预警‼",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/67d653f0000000000900ea93?xsec_token=ABZ8Dpqt1TIEMnOm1-2s7jCiLpvMDrB1dgH-Q32DAnXb0=&xsec_source=pc_search",
+            "source_title": "🔥东山口停车刺客退！亲测8元/h宝藏停车场",
+            "source_author": "🔥东山口停车刺客退！亲测8元/h宝藏停车场 方方圆圆",
+            "source_published_at": "2025-03-16",
+            "rank": 2,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082935780Z-东山口 停车攻略-note-02-67d653f0000000000900ea93.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 200,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "200元/次刺客警告⚠",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 48,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "48元封顶真香预警‼",
+            "confidence": "low",
+            "priority": 100
+          }
+        ]
+      },
+      {
+        "id": 1007,
+        "name": "金城宾馆停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：越秀区东华北路168号 💴收费：16元/小时；约100个\n2、路线：步行3分钟到网红街。\n3、注意：来过东山口的都懂 街巷窄、人流密、车位少 开车过来逛街",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69eddfd000000000350311d5?xsec_token=ABL8rDS-z_aV2EZVdjcjZqRostgNL-8MOgQx5WFnxndFQ=&xsec_source=pc_search",
+            "source_title": "低至6元/h！东山口附近5个停车场攻略",
+            "source_author": "低至6元/h！东山口附近5个停车场攻略 东山小灵通",
+            "source_published_at": "04-26",
+            "rank": 5,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082935780Z-东山口 停车攻略-note-05-69eddfd000000000350311d5.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 16,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "越秀区东华北路168号 💴收费：16元/小时",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1008,
+        "name": "锦轩现代城停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：约100个；农林下路4-6号（东山口地铁站上盖） 💴收费：12元/小时 🚗特点：东山口相对稳妥的常驻停车选择\n2、路线：步行3分钟到网红街。",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69eddfd000000000350311d5?xsec_token=ABL8rDS-z_aV2EZVdjcjZqRostgNL-8MOgQx5WFnxndFQ=&xsec_source=pc_search",
+            "source_title": "低至6元/h！东山口附近5个停车场攻略",
+            "source_author": "低至6元/h！东山口附近5个停车场攻略 东山小灵通",
+            "source_published_at": "04-26",
+            "rank": 5,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082935780Z-东山口 停车攻略-note-05-69eddfd000000000350311d5.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 12,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "农林下路4-6号（东山口地铁站上盖） 💴收费：12元/小时 🚗特点：东山口相对稳妥的常驻停车选择",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1009,
+        "name": "一方东山停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：12元/小时 🚗特点：东山口相对稳妥的常驻停车选择；越秀区庙前西街48号（创意园内） 💴收费：4元/15分钟 🚗车位：约50个\n2、路线：🅿️ 一方东山停车场 📍位置：越秀区庙前西街48号（创意园内） 💴收费：4元/15分钟 🚗车位：约50个\n3、注意：车位少",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69eddfd000000000350311d5?xsec_token=ABL8rDS-z_aV2EZVdjcjZqRostgNL-8MOgQx5WFnxndFQ=&xsec_source=pc_search",
+            "source_title": "低至6元/h！东山口附近5个停车场攻略",
+            "source_author": "低至6元/h！东山口附近5个停车场攻略 东山小灵通",
+            "source_published_at": "04-26",
+            "rank": 5,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082935780Z-东山口 停车攻略-note-05-69eddfd000000000350311d5.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 12,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "12元/小时 🚗特点：东山口相对稳妥的常驻停车选择",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 4,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "越秀区庙前西街48号（创意园内） 💴收费：4元/15分钟 🚗车位：约50个",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1010,
+        "name": "德心轩地下停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：4元/15分钟 🚗车位：约50个；越秀区庙前西街15-9号（巷内） 💴收费：8元/小时；约28个\n2、路线：园内） 💴收费：4元/15分钟 🚗车位：约50个\n3、注意：车位少",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69eddfd000000000350311d5?xsec_token=ABL8rDS-z_aV2EZVdjcjZqRostgNL-8MOgQx5WFnxndFQ=&xsec_source=pc_search",
+            "source_title": "低至6元/h！东山口附近5个停车场攻略",
+            "source_author": "低至6元/h！东山口附近5个停车场攻略 东山小灵通",
+            "source_published_at": "04-26",
+            "rank": 5,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082935780Z-东山口 停车攻略-note-05-69eddfd000000000350311d5.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 4,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "4元/15分钟 🚗车位：约50个",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 8,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "越秀区庙前西街15-9号（巷内） 💴收费：8元/小时",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1011,
+        "name": "小型地下车库",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：越秀区庙前西街15-9号（巷内） 💴收费：8元/小时；约28个\n2、注意：车位少",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69eddfd000000000350311d5?xsec_token=ABL8rDS-z_aV2EZVdjcjZqRostgNL-8MOgQx5WFnxndFQ=&xsec_source=pc_search",
+            "source_title": "低至6元/h！东山口附近5个停车场攻略",
+            "source_author": "低至6元/h！东山口附近5个停车场攻略 东山小灵通",
+            "source_published_at": "04-26",
+            "rank": 5,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082935780Z-东山口 停车攻略-note-05-69eddfd000000000350311d5.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 8,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "越秀区庙前西街15-9号（巷内） 💴收费：8元/小时",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1012,
+        "name": "启明社区地上停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：8元/小时；约28个；越秀区启明大马路与庙前西街交叉口 💴收费：3元/半小时 🚗车位：约30个\n2、路线：离东山口核心街区仅步行5分钟\n3、注意：💡 真心话实用建议：能不开车就别开车❗ 东山口本身就是老城区街巷格局 道路窄、单行线多、行人密集 加上网红街区人流量大；开车进来非常容易堵车、绕路。",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": true,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69eddfd000000000350311d5?xsec_token=ABL8rDS-z_aV2EZVdjcjZqRostgNL-8MOgQx5WFnxndFQ=&xsec_source=pc_search",
+            "source_title": "低至6元/h！东山口附近5个停车场攻略",
+            "source_author": "低至6元/h！东山口附近5个停车场攻略 东山小灵通",
+            "source_published_at": "04-26",
+            "rank": 5,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T082935780Z-东山口 停车攻略-note-05-69eddfd000000000350311d5.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 8,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "8元/小时",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 3,
+            "unit": "time",
+            "unit_minutes": 30,
+            "description": "越秀区启明大马路与庙前西街交叉口 💴收费：3元/半小时 🚗车位：约30个",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "104": [
+      {
+        "id": 1013,
+        "name": "南沙海滨公园北停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：儿童/学生/老人/残疾人/南沙人才卡B卡持卡者（必须带本人卡或者小程序）10元/人 通过景区官方公众号 广州南沙天后宫旅游景区—线上购票 停车 距离天后宫东门（距离石像及主路线最近）： 南沙海滨公园北停车场（目前还在修缮\n2、路线：儿童/学生/老人/残疾人/南沙人才卡B卡持卡者（必须带本人卡或者小程序）10元/人 通过景区官方公众号 广州南沙天后宫旅游景区—线上购票 停车 距离天后宫东门（距离石像及主路线最近）： 南沙海滨公园北停车场（目前还在修缮；树荫多） 祈福 ①天后宫主入口进入主广场 ②主广场妈祖神像（有香炉、可点香、献香、香烛、花） ③主广场右边有土地公神像庙（有香炉、可点香、献香、香烛、花\n3、注意：车位少",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6694897200000000250150dd?xsec_token=ABLinn6z14K8-dT7ownEccX2teudt5YIqtg2auSjxEP8g=&xsec_source=pc_search",
+            "source_title": "广州南沙天后宫自驾祈福超详细攻略（一）",
+            "source_author": "广州南沙天后宫自驾祈福超详细攻略（一） 清风徐来",
+            "source_published_at": "2024-07-15",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T083037088Z-南沙天后宫 停车攻略-note-01-6694897200000000250150dd.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "儿童/学生/老人/残疾人/南沙人才卡B卡持卡者（必须带本人卡或者小程序）10元/人 通过景区官方公众号 广州南沙天后宫旅游景区—线上购票 停车 距离天后宫东门（距离石像及主路线最近）： 南沙海滨公园北停车场（目前还在修缮",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1014,
+        "name": "南沙天后宫西北门停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：自驾直接导航「广州市公交站北面停车场」停车费良心👇 ✅ 30分钟内免费 ✅ 10元/次（5小时） 👶遛娃省钱；不要找周边的停车场（要25元/；猪猪头子 09-07 7 活动 1/2 Xiaoputao 关注 南沙天后宫停车 图1 停车场25块全天\n2、路线：走大概15分钟。；自驾直接导航「广州市公交站北面停车场」停车费良心👇 ✅ 30分钟内免费 ✅ 10元/次（5小时） 👶遛娃省钱\n3、注意：看着别的孩子排队冲水；一样的收费；有网友说p9不是这个收费政策 1 Jason Yu🐬 停了P9停车场；对面的天后宫停车场也是一样的收费 狮子座_ [呃R][呃R][呃R][呃R]南沙那些人是真敢收啊",
+        "source": "编辑整理（公开信息）",
+        "confidence": "medium",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69d4918a0000000022000503?xsec_token=ABXbZZPgoG84pzD4HWfjsDqyah4HLYIshjAMncGUurTQA=&xsec_source=pc_search",
+            "source_title": "南沙天后宫沙滩停车&amp;省钱遛娃攻略✨",
+            "source_author": "南沙天后宫沙滩停车&省钱遛娃攻略✨ kary周欣欣",
+            "source_published_at": "04-07",
+            "rank": 2,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T083037088Z-南沙天后宫 停车攻略-note-02-69d4918a0000000022000503.json"
+          },
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/699895a10000000015038fec?xsec_token=ABPxn4MoGFJKepgt-c-fnbEynW8mi9Jl8fvwLtBWJ0JJs=&xsec_source=pc_search",
+            "source_title": "南沙天后宫停车攻略",
+            "source_author": "南沙天后宫停车攻略 momo",
+            "source_published_at": "02-21",
+            "rank": 3,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T083037088Z-南沙天后宫 停车攻略-note-03-699895a10000000015038fec.json"
+          },
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6a729b6d000000003300db7a?xsec_token=ABSxUMed9lZoujEECRER162jX-25GhaOZ93tKVTy9XnR0=&xsec_source=pc_search",
+            "source_title": "南沙天后宫停车",
+            "source_author": "南沙天后宫停车 Xiaoputao",
+            "source_published_at": "08-05",
+            "rank": 4,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T083037088Z-南沙天后宫 停车攻略-note-04-6a729b6d000000003300db7a.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "time",
+            "unit_minutes": 30,
+            "description": "自驾直接导航「广州市公交站北面停车场」停车费良心👇 ✅ 30分钟内免费 ✅ 10元/次（5小时） 👶遛娃省钱",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 25,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "不要找周边的停车场（要25元/",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 25,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "猪猪头子 09-07 7 活动 1/2 Xiaoputao 关注 南沙天后宫停车 图1 停车场25块全天",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1015,
+        "name": "次）甚至外围停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：不要找周边的停车场（要25元/次）甚至外围停车场还要走10几分钟过去；不过周边的高价停车人员会冒牌工作人员指引你进25元/次的停车场\n2、路线：不要找周边的停车场（要25元/次）甚至外围停车场还要走10几分钟过去。\n3、注意：有网友说p9不是这个收费政策 1 Jason Yu🐬 停了P9停车场；对面的天后宫停车场也是一样的收费 狮子座_ [呃R][呃R][呃R][呃R]南沙那些人是真敢收啊",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/699895a10000000015038fec?xsec_token=ABPxn4MoGFJKepgt-c-fnbEynW8mi9Jl8fvwLtBWJ0JJs=&xsec_source=pc_search",
+            "source_title": "南沙天后宫停车攻略",
+            "source_author": "南沙天后宫停车攻略 momo",
+            "source_published_at": "02-21",
+            "rank": 3,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T083037088Z-南沙天后宫 停车攻略-note-03-699895a10000000015038fec.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 25,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "不要找周边的停车场（要25元/次）甚至外围停车场还要走10几分钟过去",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 25,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "不过周边的高价停车人员会冒牌工作人员指引你进25元/次的停车场",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "106": [
+      {
+        "id": 1016,
+        "name": "森林公园停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：4-11-14 200 广州小众秘境 流溪河国家森林公园游玩攻略 觅知 2025-10-11 84 大家都在搜 森林公园停车场收费 流溪河国家森林公园免费停车 流溪河从都湿地公园停车 流溪河自驾游攻略 流溪河国家森林公园懒人游简单攻略 momo\n2、路线：米妈生活 2024-11-14 200 广州小众秘境 流溪河国家森林公园游玩攻略 觅知 2025-10-11 84 大家都在搜 森林公园停车场收费 流溪河国家森林公园免费停车 流溪河从都湿地公园停车 流溪河自驾游攻略 流溪河国家森林公园懒人游简单攻略 momo 2025-11-08 56 看了10年",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/673420d3000000001a01c895?xsec_token=ABB-1M9jA1lmJI6iTN-ak15Vw7MQC9IBarpH3Fu3MfwJM=&xsec_source=pc_search",
+            "source_title": "广州流溪河森林公园自驾游攻略（一）",
+            "source_author": "广州流溪河森林公园自驾游攻略（一） 米妈生活",
+            "source_published_at": "2024-11-14",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T083234069Z-流溪河国家森林公园 停车攻略-note-01-673420d3000000001a01c895.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1017,
+        "name": "流溪河森林公园停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：从化流溪河国家森林公园吸氧🌲 周末出逃 2025-11-30 18 大家都在搜 流溪河森林公园停车场 流溪河公园免费停车 流溪河营地 流溪河国家森林公园桨板 流溪河森林公园 FollowWind 2025-02-01 17 周末亲子遛娃好去处：广州流溪河森林公园 小杨不打烊 2025-11-26 16 流溪河国家森林公园 紫泡泡 07-04 14 从化流溪河国家森林公园 提前买票有优惠噢",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/673420d3000000001a01c895?xsec_token=ABB-1M9jA1lmJI6iTN-ak15Vw7MQC9IBarpH3Fu3MfwJM=&xsec_source=pc_search",
+            "source_title": "广州流溪河森林公园自驾游攻略（一）",
+            "source_author": "广州流溪河森林公园自驾游攻略（一） 米妈生活",
+            "source_published_at": "2024-11-14",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T083234069Z-流溪河国家森林公园 停车攻略-note-01-673420d3000000001a01c895.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "107": [
+      {
+        "id": 1018,
+        "name": "宝墨园正门停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：来了绝不后悔的岭南园林 职场爸爸周末在遛娃（自装中） 2024-09-01 103 大家都在搜 宝墨园免费停车攻略 宝墨园附近停车 宝墨园正门停车场 宝墨园外面停车收费吗 二刷宝墨园 适合全家老小的保姆级攻略 黑猫漫游志 05-29 53 避雷",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6729c637000000001d039826?xsec_token=ABVL7mP8xtXFKMOdS8R4Kd9dxlKUp2bHKdSWldgWdD0mQ=&xsec_source=pc_search",
+            "source_title": "宝墨园避坑帖⚠️含停车🅿️捞鱼🐟餐饮攻略❗️",
+            "source_author": "宝墨园避坑帖⚠️含停车🅿️捞鱼🐟餐饮攻略❗️ 呆萌袋鼠酱",
+            "source_published_at": "2024-11-08",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T083645903Z-宝墨园 停车攻略-note-01-6729c637000000001d039826.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "108": [
+      {
+        "id": 1019,
+        "name": "黄花岗公园有停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：饮胜会 拔丝光粘 2020-05-29 27 广州丨黄花岗站附近 海上十七郎 04-22 24 大家都在搜 黄花岗公园免费停车 黄花岗公园好停车吗 黄花岗公园有停车场吗 黄花岗公园游玩攻略 黄花岗公园 Ai dd 04-29 23 广州一个人可以去的地方 Renka 5天前 13 公园一日",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/66b88b18000000000502397b?xsec_token=ABZvMo9HbLGjiEMep_h5F79n-L4nRH6WOvqDCh7SLVmb0=&xsec_source=pc_search",
+            "source_title": "《黄花岗公园自驾游玩打卡全攻略》",
+            "source_author": "《黄花岗公园自驾游玩打卡全攻略》 背包客日记",
+            "source_published_at": "2024-08-11",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T083716495Z-黄花岗公园 停车攻略-note-01-66b88b18000000000502397b.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "109": [
+      {
+        "id": 1020,
+        "name": "四季天地停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：5元/小时；封顶45元；12元/小时；封顶80元；16元/小时；封顶128",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": true,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/695cc7fa000000001a02b39e?xsec_token=ABr38BpszWhBO4nCDIMzwI4KoGq7kdFUbgV4Rg9pTmtXU=&xsec_source=pc_search",
+            "source_title": "广州艺术博物院停车攻略（2026）",
+            "source_author": "广州艺术博物院停车攻略（2026） 414",
+            "source_published_at": "01-06",
+            "rank": 3,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T083806880Z-广州美术馆 停车攻略-note-03-695cc7fa000000001a02b39e.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 5,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "5元/小时",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 45,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "封顶45元",
+            "confidence": "low",
+            "priority": 100
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 12,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "12元/小时",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 80,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "封顶80元",
+            "confidence": "low",
+            "priority": 100
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 16,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "16元/小时",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1021,
+        "name": "TIT创意园停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：5元/小时；封顶45元；12元/小时；封顶80元；16元/小时；封顶128元；位置最近、价格有封顶、安全放心",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": true,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/695cc7fa000000001a02b39e?xsec_token=ABr38BpszWhBO4nCDIMzwI4KoGq7kdFUbgV4Rg9pTmtXU=&xsec_source=pc_search",
+            "source_title": "广州艺术博物院停车攻略（2026）",
+            "source_author": "广州艺术博物院停车攻略（2026） 414",
+            "source_published_at": "01-06",
+            "rank": 3,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T083806880Z-广州美术馆 停车攻略-note-03-695cc7fa000000001a02b39e.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 5,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "5元/小时",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 45,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "封顶45元",
+            "confidence": "low",
+            "priority": 100
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 12,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "12元/小时",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 80,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "封顶80元",
+            "confidence": "low",
+            "priority": 100
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 16,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "16元/小时",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 128,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "封顶128元",
+            "confidence": "low",
+            "priority": 100
+          }
+        ]
+      },
+      {
+        "id": 1022,
+        "name": "广州美术馆有停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：Nana💫 04-12 25 广艺博停车新攻略✨低至1元/半小时封顶10元 Sour plum 2025-12-30 21 广州艺术博物馆攻略 超全指引🫡 开心超人 05-07 8 大家都在搜 广州美术馆有停车场吗 广州美术馆方便停车吗 广州美术馆附近停车 广州美术馆新馆停车攻略 广州艺术博物馆 哈利亚发 08-16 8 广州美术馆打卡攻略 MK悟空摄影 2024-04-25 6 【遛娃】广东美术馆（二沙岛馆） 小宝养成记 2025-07-10 6 广东美术馆 环游世界的刘姥姥 2025-05-25 4 今日CityWalk广州艺术博物院 广州美术馆 南天 2025-05-13 616 ⛰；广州免费新展丨仿佛走进了新疆的山河之间 TC今日去边度 08-17 321 怎么有博物馆不提供停车\n2、注意：广州停车会按你这个收费吗 史蒂芬妮Stephanie 今天大雨滂沱过来看展；停车费比往返打车都贵。",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": true,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/69548d23000000001d03fcfa?xsec_token=ABq-vfb8OGlc0xopJ5ABhKktwvkiC3Usrp4e5k2SVYPPI=&xsec_source=pc_search",
+            "source_title": "广州艺术博物院对外提供收费停车服务的通知",
+            "source_author": "广州艺术博物院对外提供收费停车服务的通知 广州艺术博物院（广州美术馆）",
+            "source_published_at": "2025-12-31",
+            "rank": 4,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T083806880Z-广州美术馆 停车攻略-note-04-69548d23000000001d03fcfa.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "time",
+            "unit_minutes": 30,
+            "description": "Nana💫 04-12 25 广艺博停车新攻略✨低至1元/半小时封顶10元 Sour plum 2025-12-30 21 广州艺术博物馆攻略 超全指引🫡 开心超人 05-07 8 大家都在搜 广州美术馆有停车场吗 广州美术馆方便停车吗 广州美术馆附近停车 广州美术馆新馆停车攻略 广州艺术博物馆 哈利亚发 08-16 8 广州美术馆打卡攻略 MK悟空摄影 2024-04-25 6 【遛娃】广东美术馆（二沙岛馆） 小宝养成记 2025-07-10 6 广东美术馆 环游世界的刘姥姥 2025-05-25 4 今日CityWalk广州艺术博物院 广州美术馆 南天 2025-05-13 616 ⛰",
+            "confidence": "low",
+            "priority": 100
+          }
+        ]
+      }
+    ],
+    "111": [
+      {
+        "id": 1023,
+        "name": "星海音乐厅停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：我在楼上看到你了 Shailene风眠 06-08 648 二沙岛免费停车攻略 +丨 2025-09-14 636 谁懂啊\n2、注意：否则过节也会贴条；全宇宙超级无敌第一深情 停车场要收费吗！；商场里面停车要收费的；我看其他人说看音乐会可以免费停到星海音乐厅",
+        "source": "编辑整理（公开信息）",
+        "confidence": "medium",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/667f6722000000001c0251f8?xsec_token=ABotnRbxUw0baf_MZ3R6zVDUNifrxCZ1NA5sVXEpb3qus=&xsec_source=pc_search",
+            "source_title": "星海音乐厅看演出停车指南，速收藏！",
+            "source_author": "星海音乐厅看演出停车指南，速收藏！ 混在剧场的日子",
+            "source_published_at": "2024-06-29",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T084009363Z-星海音乐厅 停车攻略-note-01-667f6722000000001c0251f8.json"
+          },
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/645e4909000000001303c77f?xsec_token=ABymg3PZ045Z4vNiY-DpNKW76hdwTDfeAax10c8OdjccA=&xsec_source=pc_search",
+            "source_title": "星海音乐厅不好停车",
+            "source_author": "星海音乐厅不好停车 一杯热美式",
+            "source_published_at": "2023-05-12",
+            "rank": 2,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T084009363Z-星海音乐厅 停车攻略-note-02-645e4909000000001303c77f.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1024,
+        "name": "星海音乐厅地下停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：免费区域如下\n2、注意：车位有限早到早停！",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/667f6722000000001c0251f8?xsec_token=ABotnRbxUw0baf_MZ3R6zVDUNifrxCZ1NA5sVXEpb3qus=&xsec_source=pc_search",
+            "source_title": "星海音乐厅看演出停车指南，速收藏！",
+            "source_author": "星海音乐厅看演出停车指南，速收藏！ 混在剧场的日子",
+            "source_published_at": "2024-06-29",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T084009363Z-星海音乐厅 停车攻略-note-01-667f6722000000001c0251f8.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1025,
+        "name": "文立方广场停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：00 可停车 非工作日：7:00 - 23:00 可停车 如上述路段停满还有收费停车场可选 文立方广场停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次；00 可停车 如上述路段停满还有收费停车场可选 文立方广场停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次\n2、路线：00 可停车 如上述路段停满还有收费停车场可选 文立方广场停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/667f6722000000001c0251f8?xsec_token=ABotnRbxUw0baf_MZ3R6zVDUNifrxCZ1NA5sVXEpb3qus=&xsec_source=pc_search",
+            "source_title": "星海音乐厅看演出停车指南，速收藏！",
+            "source_author": "星海音乐厅看演出停车指南，速收藏！ 混在剧场的日子",
+            "source_published_at": "2024-06-29",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T084009363Z-星海音乐厅 停车攻略-note-01-667f6722000000001c0251f8.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "00 可停车 非工作日：7:00 - 23:00 可停车 如上述路段停满还有收费停车场可选 文立方广场停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "00 可停车 如上述路段停满还有收费停车场可选 文立方广场停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1026,
+        "name": "亚洲羽毛球馆停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：7:00 - 23:00 可停车 如上述路段停满还有收费停车场可选 文立方广场停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场；00 可停车 如上述路段停满还有收费停车场可选 文立方广场停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:；00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次；00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次\n2、路线：00 可停车 如上述路段停满还有收费停车场可选 文立方广场停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/667f6722000000001c0251f8?xsec_token=ABotnRbxUw0baf_MZ3R6zVDUNifrxCZ1NA5sVXEpb3qus=&xsec_source=pc_search",
+            "source_title": "星海音乐厅看演出停车指南，速收藏！",
+            "source_author": "星海音乐厅看演出停车指南，速收藏！ 混在剧场的日子",
+            "source_published_at": "2024-06-29",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T084009363Z-星海音乐厅 停车攻略-note-01-667f6722000000001c0251f8.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "7:00 - 23:00 可停车 如上述路段停满还有收费停车场可选 文立方广场停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "00 可停车 如上述路段停满还有收费停车场可选 文立方广场停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1027,
+        "name": "新创举中心停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场；00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:；00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次 新创举中心停车场 8；00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次 新创举中心停车场 8:00 - 22:00 16元 / 60分钟 22:0；00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次 新创举中心停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次；00 - 8:00（次日）10元 / 每次 新创举中心停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次\n2、路线：16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次 新创举中心停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 /",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/667f6722000000001c0251f8?xsec_token=ABotnRbxUw0baf_MZ3R6zVDUNifrxCZ1NA5sVXEpb3qus=&xsec_source=pc_search",
+            "source_title": "星海音乐厅看演出停车指南，速收藏！",
+            "source_author": "星海音乐厅看演出停车指南，速收藏！ 混在剧场的日子",
+            "source_published_at": "2024-06-29",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T084009363Z-星海音乐厅 停车攻略-note-01-667f6722000000001c0251f8.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次 新创举中心停车场 8",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 16,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次 新创举中心停车场 8:00 - 22:00 16元 / 60分钟 22:0",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次 新创举中心停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "00 - 8:00（次日）10元 / 每次 新创举中心停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      },
+      {
+        "id": 1028,
+        "name": "二沙岛体育公园停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：00 - 8:00（次日）10元 / 每次 新创举中心停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 二沙岛体育公园停车场 7：30-21：30 三小时以内（；00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 二沙岛体育公园停车场 7：30-21：30 三小时以内（2.5元/半小时） 三小时以外（5元/半小时) 21:30 - 次日7:30 1元/半小时 最高限；30 - 次日7:30 1元/半小时 最高限价10元 24小时最高限价45元 #星海音乐厅 #二沙岛停车指南\n2、路线：0 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次 新创举中心停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 二沙岛体育公园停车场 7：30-21：30 三小时以内（2.5元/半小时） 三小时以外（5元/半小时) 21",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": true,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/667f6722000000001c0251f8?xsec_token=ABotnRbxUw0baf_MZ3R6zVDUNifrxCZ1NA5sVXEpb3qus=&xsec_source=pc_search",
+            "source_title": "星海音乐厅看演出停车指南，速收藏！",
+            "source_author": "星海音乐厅看演出停车指南，速收藏！ 混在剧场的日子",
+            "source_published_at": "2024-06-29",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T084009363Z-星海音乐厅 停车攻略-note-01-667f6722000000001c0251f8.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 10,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "00 - 8:00（次日）10元 / 每次 新创举中心停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 二沙岛体育公园停车场 7：30-21：30 三小时以内（",
+            "confidence": "low",
+            "priority": 50
+          },
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 1,
+            "unit": "time",
+            "unit_minutes": 30,
+            "description": "00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 二沙岛体育公园停车场 7：30-21：30 三小时以内（2.5元/半小时） 三小时以外（5元/半小时) 21:30 - 次日7:30 1元/半小时 最高限",
+            "confidence": "low",
+            "priority": 100
+          },
+          {
+            "rule_type": "cap",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 45,
+            "unit": "time",
+            "unit_minutes": 30,
+            "description": "30 - 次日7:30 1元/半小时 最高限价10元 24小时最高限价45元 #星海音乐厅 #二沙岛停车指南",
+            "confidence": "low",
+            "priority": 100
+          }
+        ]
+      }
+    ],
+    "112": [
+      {
+        "id": 1029,
+        "name": "广东科学中心有停车场",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": null,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：广州亲子游必去（详细攻略） 带娃行万里路.省钱版 04-28 329 ❤亲子放电首选—广东科学中心⛳ 潘津 2025-10-01 234 停车一天4块5\n2、注意：最新停车收费信息 置顶评论 2 一万个为什么 这是地面的停车吗 小",
+        "source": "编辑整理（公开信息）",
+        "confidence": "medium",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6692117d00000000250141f1?xsec_token=ABhcjKp0V29Fjw2SbthN4h90a751uwSEBzykbazF8HT-A=&xsec_source=pc_search",
+            "source_title": "广东科学中心停车费不再是4.5元停一天了🥹",
+            "source_author": "广东科学中心停车费不再是4.5元停一天了🥹 Sally遛娃分享",
+            "source_published_at": "2024-07-13",
+            "rank": 1,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T084039833Z-广东科学中心 停车攻略-note-01-6692117d00000000250141f1.json"
+          },
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/6814555e000000002202dd1d?xsec_token=AB1KtIuv-7tw4EyZlMaYX6xJ648LtNOx3wrn9SVlq2XJA=&xsec_source=pc_search",
+            "source_title": "5.2广东科学中心停车难🅿️",
+            "source_author": "5.2广东科学中心停车难🅿️ nico_0116",
+            "source_published_at": "2025-05-02",
+            "rank": 2,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T084039833Z-广东科学中心 停车攻略-note-02-6814555e000000002202dd1d.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "normal",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 4,
+            "unit": "day",
+            "unit_minutes": 60,
+            "description": "广州亲子游必去（详细攻略） 带娃行万里路.省钱版 04-28 329 ❤亲子放电首选—广东科学中心⛳ 潘津 2025-10-01 234 停车一天4块5",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ],
+    "113": [
+      {
+        "id": 1030,
+        "name": "停车避雷广州市文化馆和海珠公园",
+        "address": null,
+        "type": "停车场",
+        "total_spots": null,
+        "lng": null,
+        "lat": null,
+        "coordinate_status": "待补充",
+        "navigation_available": false,
+        "free_minutes": 0,
+        "daily_cap": null,
+        "night_flat": null,
+        "open_hours": null,
+        "payment": [],
+        "min_price_hour": null,
+        "tips": "1、收费：停车so easy 大笨象會跳舞 03-14 10 大家都在搜 广州文化馆附近有停车场吗 广州文化馆停车收费标准 广东省文化馆停车攻略 广州市文化馆有免费停车地方吗 停车避雷广州市文化馆和海珠公园 毛豆3仔仔的出游 2025-03-15 9 我比本地人先来",
+        "source": "编辑整理（公开信息）",
+        "confidence": "low",
+        "verified_at": "2026-09-14",
+        "status": 1,
+        "conflict_flag": false,
+        "source_records": [
+          {
+            "source_type": "xiaohongshu",
+            "source_url": "https://www.xiaohongshu.com/explore/68a9533c000000001d02e85b?xsec_token=AB3Yc2tfq1zRGYUuTNhFubTUxe771jOz5y2Zh_jFs5o6Q=&xsec_source=pc_search",
+            "source_title": "广州市文化馆……停车攻略",
+            "source_author": "广州市文化馆……停车攻略 FollowWind",
+            "source_published_at": "2025-08-23",
+            "rank": 4,
+            "raw_file": "server/xhs-raw/p1-31-direct-relevance-combined-20260914/20260914T084110354Z-广州文化馆 停车攻略-note-04-68a9533c000000001d02e85b.json"
+          }
+        ],
+        "fee_rules": [
+          {
+            "rule_type": "free",
+            "start_minute": null,
+            "end_minute": null,
+            "time_start": null,
+            "time_end": null,
+            "price": 0,
+            "unit": "hour",
+            "unit_minutes": 60,
+            "description": "免费停车",
+            "confidence": "low",
+            "priority": 50
+          }
+        ]
+      }
+    ]
+  },
+  "tipsByPlace": {
+    "100": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理1个停车点",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "101": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理1个停车点。步行与入口：步行就能到黄埔村、黄埔古港、工美港创意园、北岛创意园、广州航海学院琶洲校区。；🚗 交通超便利 • 快速接驳新化快速、环城高速新洲出口。停车注意：上下高速完全不受广州高峰限行限制；元一小时",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "102": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理2个停车点",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "103": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理8个停车点。步行与入口：步行3分钟到网红街。；🅿️ 一方东山停车场 📍位置：越秀区庙前西街48号（创意园内） 💴收费：4元/15分钟 🚗车位：约50个；园内） 💴收费：4元/15分钟 🚗车位：约50个；离东山口核心街区仅步行5分钟。停车注意：来过东山口的都懂 街巷窄、人流密、车位少 开车过来逛街；车位少；💡 真心话实用建议：能不开车就别开车❗ 东山口本身就是老城区街巷格局 道路窄、单行线多、行人密集 加上网红街区人流量大；开车进来非常容易堵车、绕路。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "104": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理3个停车点。步行与入口：儿童/学生/老人/残疾人/南沙人才卡B卡持卡者（必须带本人卡或者小程序）10元/人 通过景区官方公众号 广州南沙天后宫旅游景区—线上购票 停车 距离天后宫东门（距离石像及主路线最近）： 南沙海滨公园北停车场（目前还在修缮；树荫多） 祈福 ①天后宫主入口进入主广场 ②主广场妈祖神像（有香炉、可点香、献香、香烛、花） ③主广场右边有土地公神像庙（有香炉、可点香、献香、香烛、花；走大概15分钟。；自驾直接导航「广州市公交站北面停车场」停车费良心👇 ✅ 30分钟内免费 ✅ 10元/次（5小时） 👶遛娃省钱；不要找周边的停车场（要25元/次）甚至外围停车场还要走10几分钟过去。。停车注意：车位少；看着别的孩子排队冲水；一样的收费；有网友说p9不是这个收费政策 1 Jason Yu🐬 停了P9停车场；对面的天后宫停车场也是一样的收费 狮子座_ [呃R][呃R][呃R][呃R]南沙那些人是真敢收啊；有网友说p9不是这个收费政策 1 Jason Yu🐬 停了P9停车场；对面的天后宫停车场也是一样的收费 狮子座_ [呃R][呃R][呃R][呃R]南沙那些人是真敢收啊",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "105": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "106": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理2个停车点。步行与入口：米妈生活 2024-11-14 200 广州小众秘境 流溪河国家森林公园游玩攻略 觅知 2025-10-11 84 大家都在搜 森林公园停车场收费 流溪河国家森林公园免费停车 流溪河从都湿地公园停车 流溪河自驾游攻略 流溪河国家森林公园懒人游简单攻略 momo 2025-11-08 56 看了10年",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "107": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理1个停车点",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "108": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理1个停车点",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "109": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理3个停车点。停车注意：广州停车会按你这个收费吗 史蒂芬妮Stephanie 今天大雨滂沱过来看展；停车费比往返打车都贵。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "110": [
+      {
+        "category": "攻略",
+        "content": "本轮未提取到可确认的停车信息。",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "111": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理6个停车点。步行与入口：00 可停车 如上述路段停满还有收费停车场可选 文立方广场停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次；00 可停车 如上述路段停满还有收费停车场可选 文立方广场停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次；16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 亚洲羽毛球馆停车场 8:00 - 19:00 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次 新创举中心停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 /；0 10元 / 60分钟 19:00 - 8:00（次日）10元 / 每次 新创举中心停车场 8:00 - 22:00 16元 / 60分钟 22:00 - 8:00（次日）10元 / 每次 二沙岛体育公园停车场 7：30-21：30 三小时以内（2.5元/半小时） 三小时以外（5元/半小时) 21。停车注意：否则过节也会贴条；全宇宙超级无敌第一深情 停车场要收费吗！；商场里面停车要收费的；我看其他人说看音乐会可以免费停到星海音乐厅；车位有限早到早停！",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "112": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理1个停车点。停车注意：最新停车收费信息 置顶评论 2 一万个为什么 这是地面的停车吗 小",
+        "source": "编辑整理（公开信息）"
+      }
+    ],
+    "113": [
+      {
+        "category": "攻略",
+        "content": "该地点已整理1个停车点",
+        "source": "编辑整理（公开信息）"
+      }
+    ]
+  }
+}

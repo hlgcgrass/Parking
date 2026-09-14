@@ -2,14 +2,14 @@ const api = require('../../utils/api.js');
 const user = require('../../utils/user.js');
 const detailEntry = require('../../utils/detail-entry.js');
 const { calcFee, displayPrice } = require('../../utils/fee.js');
-const cache = require('../../utils/cache.js');
-const PLACE_IMAGES = require('../../utils/place-images.js');
 const app = getApp();
 
 const HOURS_OPTIONS = [1, 2, 3, 4, 8, 24];
 function feeUnit(rule) {
   if (rule.unit === 'minute') return rule.unit_minutes ? `${rule.unit_minutes}分钟` : '分钟';
+  if (rule.unit === 'time' && rule.unit_minutes) return `${rule.unit_minutes}分钟`;
   if (rule.unit === 'day') return '天';
+  if (rule.unit === 'month') return '月';
   if (rule.unit === 'time') return '次';
   return '小时';
 }
@@ -37,12 +37,19 @@ const guideLines = text => String(text || '')
   .filter(Boolean)
   .filter(line => !/^\d+[、.)]?\s*(收费|价格)\s*[:：]/.test(line))
   .filter(line => !/^(收费|价格)\s*[:：]/.test(line));
+const visibleText = (value) => {
+  const text = String(value == null ? '' : value).trim();
+  return /^(?:null|undefined)$/i.test(text) ? '' : text;
+};
 
 Page({
   data: {
     id: null,
     place: null,
-    imagePreview: null,
+    hasPlaceLocation: false,
+    mapLatitude: null,
+    mapLongitude: null,
+    placeMarkers: [],
     errorText: '',
     hoursOptions: HOURS_OPTIONS
   },
@@ -58,69 +65,7 @@ Page({
       return;
     }
     this.setData({ id, errorText: '' });
-    this.prepareImagePreview(id);
     this.loadDetail();
-  },
-
-  // 详情接口还没返回时，先用本地图片元数据启动首图请求。
-  prepareImagePreview(id, place) {
-    const meta = PLACE_IMAGES[id] || PLACE_IMAGES[String(id)] || {};
-    const stored = cache.getPlaceImages()[id] || cache.getPlaceImages()[String(id)] || {};
-    const localPath = cache.getPlaceImageFile(id);
-    const sources = [
-      localPath,
-      stored.image_file_id,
-      meta.image_url,
-      place && place.image_file_id,
-      place && place.image_url
-    ].filter(Boolean).filter((src, index, list) => list.indexOf(src) === index);
-    if (!sources.length) return;
-    const old = this.data.imagePreview || {};
-    const oldSrc = old.src && sources.indexOf(old.src) >= 0 ? old.src : sources[0];
-    const index = Math.max(0, sources.indexOf(oldSrc));
-    this.setData({
-      imagePreview: {
-        src: oldSrc,
-        sources,
-        index,
-        alt: (place && place.image_alt) || meta.image_alt || '地点实景图',
-        credit: (place && place.image_credit) || meta.image_credit || ''
-      }
-    });
-  },
-
-  onPlaceImageLoad() {
-    const preview = this.data.imagePreview;
-    if (!preview || !preview.src || cache.getPlaceImageFile(this.data.id)) return;
-    if (this._imageCaching) return;
-    this._imageCaching = true;
-
-    const save = (tempFilePath) => {
-      wx.saveFile({
-        tempFilePath,
-        success: (res) => cache.updatePlaceImageFile(this.data.id, res.savedFilePath || tempFilePath),
-        complete: () => { this._imageCaching = false; }
-      });
-    };
-    const fail = () => { this._imageCaching = false; };
-    const src = preview.src;
-    if (/^cloud:\/\//.test(src) && wx.cloud && wx.cloud.downloadFile) {
-      wx.cloud.downloadFile({ fileID: src, success: res => save(res.tempFilePath), fail });
-    } else if (/^https?:\/\//.test(src)) {
-      wx.downloadFile({ url: src, success: res => save(res.tempFilePath), fail });
-    } else {
-      this._imageCaching = false;
-    }
-  },
-
-  onPlaceImageError() {
-    const preview = this.data.imagePreview;
-    if (!preview || !preview.sources) return;
-    const nextIndex = (preview.index || 0) + 1;
-    if (nextIndex >= preview.sources.length) return;
-    this.setData({
-      imagePreview: { ...preview, index: nextIndex, src: preview.sources[nextIndex] }
-    });
   },
 
   loadDetail() {
@@ -158,8 +103,38 @@ Page({
             _fee: price && price.canCalculate ? calcFee(feeRules, 3 * 60) : null
           };
         });
-        this.prepareImagePreview(this.data.id, place);
-        this.setData({ place: { ...place, parkings }, errorText: '' });
+        const latitude = Number(place.lat);
+        const longitude = Number(place.lng);
+        const hasPlaceLocation = Number.isFinite(latitude) && Number.isFinite(longitude)
+          && latitude >= -90 && latitude <= 90 && longitude >= -180 && longitude <= 180;
+        const placeMarkers = hasPlaceLocation ? [{
+          id: 1,
+          latitude,
+          longitude,
+          title: place.name,
+          width: 32,
+          height: 32
+        }] : [];
+        const guideText = parkings.length === 0
+          ? '攻略完善中'
+          : (visibleText(place.area_tips) || visibleText(place.summary) || '攻略完善中');
+        this.setData({
+          place: {
+            ...place,
+            _guidePending: parkings.length === 0,
+            _guideText: guideText,
+            _districtText: String(place.district == null ? '' : place.district).trim()
+              .replace(/^(?:null|undefined)$/i, ''),
+            _addressText: String(place.address == null ? '' : place.address).trim()
+              .replace(/^(?:null|undefined)$/i, '') || '地点位置待补充',
+            parkings
+          },
+          hasPlaceLocation,
+          mapLatitude: hasPlaceLocation ? latitude : null,
+          mapLongitude: hasPlaceLocation ? longitude : null,
+          placeMarkers,
+          errorText: ''
+        });
       })
       .catch((err) => {
         const message = err && err.message ? err.message : '详情加载失败，请稍后重试';
